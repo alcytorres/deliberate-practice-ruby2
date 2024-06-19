@@ -1,3 +1,6 @@
+# Write a custom method with valid syntax
+
+
 # 1. Write a method that takes in a number and returns the number times two. Then run the method and print the result.
 def get_double(number)
   number * 2

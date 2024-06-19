@@ -1,3 +1,6 @@
+# Write number and string variables with built-in methods
+
+
 #1. Write a program that uses a variable to store a number, then prints that number plus 10.
 number = 7
 p number + 10

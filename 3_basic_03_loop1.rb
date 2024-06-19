@@ -1,3 +1,6 @@
+# Write a loop which modifies a variable each time the loop runs
+
+
 # 1. Write a while loop to print the numbers 1 through 10.
 
 # index = 1

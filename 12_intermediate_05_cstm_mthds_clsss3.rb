@@ -1,3 +1,6 @@
+# Write a custom class with custom methods
+
+
 # 1. Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
 
 class Song
@@ -20,6 +23,20 @@ new_song = Song.new("Thank You for the Music", "ABBA", "3:52")
 new_song.print_info
 
 # 2. Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
+class Rectangle 
+  def initialize(width, height)
+    @width = width
+    @height = height
+  end
+
+  def area
+    return "The area is #{@width * @height}"
+  end
+end
+
+rectangle = Rectangle.new(10, 20)
+pp rectangle
+pp rectangle.area
 
 
 # 3. Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
@@ -32,6 +49,22 @@ new_song.print_info
 
 
 # 6. Write a Movie class with attributes and reader/writer methods for title, director, and year. Then write a method that prints out the attributes in a single sentence.
+class Movie
+  def initialize(title, director, year)
+    @title = title
+    @director = director
+    @year = year
+  end
+
+  def print_info
+    pp "#{@title} is a movie by #{@director} that released in #{@year}."
+  end
+
+end
+
+movie = Movie.new("Inception", "Christopher Nolan", "2010")
+pp movie
+movie.print_info
 
 
 # 7. Write a Car class with attributes and reader/writer methods for make, model, year, and color. Then write a method that returns the make and model as a single sentence in all lowercase letters.

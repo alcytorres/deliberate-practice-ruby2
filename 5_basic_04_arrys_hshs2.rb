@@ -1,3 +1,6 @@
+# Write a hash, read items from a hash, and add new items to existing hash
+
+
 # 1. Make a hash to store a person's first name, last name, and email address. Then print each attribute on separate lines.
 person = {"first_name" => "John", "last_name" => "Smith", "email_address" => "johnsmith@gmail.com" }
 puts person["first_name"]

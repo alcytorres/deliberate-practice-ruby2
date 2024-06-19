@@ -1,3 +1,6 @@
+# Write an array, read items from an array, and add new items to existing array
+
+
 # 1. Create an array to store 3 words. Then add two more words to the array and print the array on one line.
 words = ["sky", "star", "lake"]
 words.push("glacier")

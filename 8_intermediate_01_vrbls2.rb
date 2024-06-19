@@ -1,3 +1,7 @@
+# Insert a variable into a string using either concatenation or interpolation
+
+
+
 # 1. Write a program that uses variables to store a first and last name, then prints the full name in one line using string concatenation (the + operator).
 first_name = "John"
 last_name = "Smith"
