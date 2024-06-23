@@ -54,6 +54,15 @@ p w_strings
 # 3. Start with an array of hashes and create a new array with only the hashes with prices greater than 5 (from the :price key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "chair", price: 100}].
 
+items = [{ name: "chair", price: 100 }, { name: "pencil", price: 1 }, { name: "book", price: 4 }]
+expensive_items = []
+items.each do |item|
+  if item[:price] > 5
+    expensive_items << item
+  end
+end
+p expensive_items
+
 
 # 4. Start with an array of numbers and create a new array with only the even numbers.
 #    For example, [2, 4, 5, 1, 8, 9, 7] becomes [2, 4, 8].
@@ -81,17 +90,25 @@ p w_strings
 
 # 10. Start with an array of numbers and create a new array with only the odd numbers.
 #     For example, [2, 4, 5, 1, 8, 9, 7] becomes [5, 1, 9, 7].
+
+# numbers = [2, 4, 5, 1, 8, 9, 7]
+# odd_numbers = []
+# i = 0
+# while i < numbers.length
+#   if numbers[i] % 2 == 1
+#     odd_numbers << numbers[i]
+#   end
+#   i += 1
+# end
+# p odd_numbers
+
 numbers = [2, 4, 5, 1, 8, 9, 7]
 odd_numbers = []
-i = 0
-while i < numbers.length
-  if numbers[i] % 2 == 1
-    odd_numbers << numbers[i]
+numbers.each do |number|
+  if number % 2 == 1
+    odd_numbers << number
   end
-  i += 1
 end
 p odd_numbers
-
-
 
 
