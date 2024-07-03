@@ -3,6 +3,11 @@
 # These methods are fundamental and are frequently used in Ruby programming for various common tasks such as iteration, transformation, filtering, and basic data manipulation.
 
 
+each_with_index 
+.split
+
+
+
 # each
 
 # Description: Iterates over each element in a collection, such as an array or hash.
@@ -185,5 +190,7 @@ puts [1, 2, 3].to_s
 # Output:
 # 123
 # [1, 2, 3]
+
+
 
 

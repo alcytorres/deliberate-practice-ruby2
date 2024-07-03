@@ -4,6 +4,7 @@
 # 1. Start with an array of numbers and create a new array with each number times 3.
 #    For example, [1, 2, 3] becomes [3, 6, 9].
 
+
 # numbers = [1, 2, 3]
 # product = []
 # index = 0
@@ -132,13 +133,24 @@ end
 p age_hash
 
 
+
 # 10. Start with an array of numbers and create a new array with each number converted into a string.
 #     For example, [1, 2, 3] becomes ["1", "2", "3"].
+
 numbers = [1, 2, 3]
 string_numbers = []
-i = 0
-while i < numbers.length
-  string_numbers << numbers[i].to_s
-  i += 1
+numbers.each do |number|
+  string_numbers << number.to_s
 end
+
 p string_numbers
+
+
+# numbers = [1, 2, 3]
+# string_numbers = []
+# i = 0
+# while i < numbers.length
+#   string_numbers << numbers[i].to_s
+#   i += 1
+# end
+# p string_numbers

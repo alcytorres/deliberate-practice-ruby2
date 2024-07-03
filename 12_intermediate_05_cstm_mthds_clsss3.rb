@@ -40,6 +40,21 @@ pp rectangle.area
 
 
 # 3. Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
+class Person
+  def initialize(name, age)
+    @name = name
+    @age = age
+  end
+
+  def name_cap
+    return @name.upcase
+  end
+
+end
+
+person = Person.new("Alcy", 25)
+pp person.name_cap
+
 
 
 # 4. Write a Coordinate class with attributes and reader/writer methods for latitude and longitude. Then write a method that prints out the latitude and longitude in a single sentence.

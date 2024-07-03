@@ -4,6 +4,21 @@
 # 1. Start with an array of numbers and compute the sum of all the numbers.
 #    For example, [5, 10, 8, 3] becomes 26.
 
+numbers = [5, 10, 8, 3]
+sum = 0
+numbers.each do |number|
+  sum += number
+end
+p sum
+
+numbers = [5, 10, 8, 3]
+total = 0
+numbers.each do |number|
+  total = total + number
+end
+p total
+
+
 # numbers =  [5, 10, 8, 3]
 # total = 0
 # i = 0
@@ -13,12 +28,7 @@
 # end
 # p total
 
-numbers = [5, 10, 8, 3]
-total = 0
-numbers.each do |number|
-  total = total + number
-end
-p total
+
 
 
 # 2. Start with an array of strings and combine them all into a single string.
@@ -105,8 +115,20 @@ p string_length
 
 # 6. Start with an array of hashes and find the hash with the lowest price (from the :price key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "pencil", price: 1}.
-
 # (REDO)
+
+
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] 
+lowest_price = items[0]
+items.each do |item| 
+  if item[:price] < lowest_price[:price]
+    lowest_price = item
+  end
+end
+
+p lowest_price
+
+
 # items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] 
 # cheapest_item = items[0]
 # index = 0
@@ -120,15 +142,6 @@ p string_length
 
 # p cheapest_item
 
-items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] 
-lowest_price = items[0]
-items.each do |item| 
-  if item[:price] < lowest_price[:price]
-    lowest_price = item
-  end
-end
-
-p lowest_price
 
 
 
