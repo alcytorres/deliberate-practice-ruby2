@@ -29,10 +29,9 @@ def arithmetic(a, b)
 end
 
 
-
-
 fruits = ["apple", "pear", "bananna", "orange", "grape"]
 
 fruits.each do |fruit|
-  p fruit 
+  p fruit
 end
+
