@@ -78,9 +78,48 @@ p max_product
 # 5. Use a nested loop to compute the sum of all the numbers in an array of number pairs.
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes 39.
 
+numbers = [[1, 3], [8, 9], [2, 16]]
+total = 0
+numbers.each do |number|
+  current_sum = number[0] + number[1]
+  total += current_sum
+end
+p total
+
+
 
 # 6. Use a nested loop with two arrays of numbers to create a new array of the sums of each combination of numbers.
 #    For example, [1, 2] and [6, 7, 8] becomes [7, 8, 9, 8, 9, 10].
+
+numbers1 = [1, 2]
+numbers2 = [6, 7, 8]
+numbers_sum = []
+numbers1.each do |first_number|
+  numbers2.each do |second_number|
+    numbers_sum << first_number + second_number
+  end
+end
+
+p numbers_sum
+
+
+
+numbers1 = [1, 2]
+numbers2 = [6, 7, 8]
+numbers_sum = []
+index1 = 0
+while index1 < numbers1.length
+  first_number = numbers1[index1]
+  index2 = 0
+  while index2 < numbers2.length
+    second_number = numbers2[index2]
+    numbers_sum << first_number + second_number
+    index2 += 1
+  end
+  index1 += 1
+end
+
+p numbers_sum
 
 
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.

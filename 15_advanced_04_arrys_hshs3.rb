@@ -108,9 +108,25 @@ p flattened_array
 # 8. Combine data from a hash with names and prices and an array of hashes with names, colors, and weights to make a new hash.
 #    For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
 
+prices = {"chair" => 75, "book" => 15}
+items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
+# {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
+combined_hash = {}
+items.each do |item|
+  name = item[:name]
+  color = item[:color]
+  weight = item[:weight]
+  price = prices[name]
+  combined_hash[name] = {price: price, color: color, weight: weight}
+end
+
+p combined_hash
+
 
 # 9. Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
 #    For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
+
+
 
 
 # 10. Given a hash, create a new hash that has the keys and values switched.
