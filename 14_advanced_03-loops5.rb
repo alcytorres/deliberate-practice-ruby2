@@ -203,4 +203,12 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 # 10. Use a nested loop to convert an array of string arrays into a single string.
 #     For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama".
 
+strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+combined_strings = ""
+strings.each do |current_array|
+  current_array.each do |current_string|
+    combined_strings << current_string
+  end
+end
 
+p combined_strings
