@@ -124,14 +124,80 @@ p numbers_sum
 
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
 #    For example, [2, 8, 3] becomes [4, 16, 6, 16, 64, 24, 6, 24, 9].
+numbers = [2, 8, 3]
+numbers_array = []
+numbers.each do |num1|
+  numbers.each do |num2|
+    numbers_array << num1 * num2
+  end
+end
+
+p numbers_array
 
 
 # 8. Use a nested loop to find the largest sum of any two different numbers within an array.
 #    For example, [1, 8, 3, 10] becomes 18.
 
+numbers = [1, 8, 3, 10]
+max_sum = numbers[0] + numbers[1]
+numbers.each do |num1|
+  numbers.each do |num2|
+    if num1 != num2
+      current_sum = num1 + num2
+      if current_sum > max_sum
+        max_sum = current_sum
+      end
+    end
+  end
+end
+
+p max_sum
+
 
 # 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
 #    For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
+
+
+numbers = [2, 5, 3, 1, 0, 7, 11]
+result = false  # Initialize result to false
+
+numbers.each do |num1|   # Iterate through each number in the array as num1
+  numbers.each do |num2|  # Iterate through each number in the array as num2
+    if num1 != num2 && (num1 + num2) == 10  # Check if num1 and num2 are different and their sum is 10
+      result = [num1, num2]  # If condition is met, set result to the pair [num1, num2]
+      break   # Break the inner loop as the pair is found
+    end
+  end
+  break if result  # Break the outer loop if a pair is found (because result is now truthy)
+end
+
+p result  # Print the result, which will be the pair that sums to 10 or false if none is found
+
+# Explanation of: break if result
+# This line is crucial. After the inner loop is broken, the outer loop will continue to its next iteration unless it is also explicitly broken. The break if result line checks if result is no longer false (which means a valid pair has been found). If result is truthy (in this case, it will be an array [num1, num2]), the outer loop is also broken, and the program exits the loop structure entirely.
+
+
+
+
+# numbers = [2, 5, 3, 1, 0, 7, 11]
+# result = false
+# index1 = 0
+# while index1 < numbers.length
+#   current_number = numbers[index1]
+#   index2 = 0
+#   while index2 < numbers.length
+#     if index1 != index2
+#       other_number = numbers[index2]
+#       if current_number + other_number == 10 && result == false
+#         result = [current_number, other_number]
+#       end
+#     end
+#     index2 += 1
+#   end
+#   index1 += 1
+# end
+# p result
+
 
 
 # 10. Use a nested loop to convert an array of string arrays into a single string.
