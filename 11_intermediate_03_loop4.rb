@@ -43,7 +43,7 @@ p total
 # end
 # p combined_string
 
-sports = ["volleyball", "basketball", "badminton"] 
+sports = ["volleyball", "basketball", "badminton"]
 word = ""
 sports.each do |sport|
   word = word + sport
@@ -62,7 +62,7 @@ p word
 #   total = total + items[i][:price]
 #   i += 1
 # end
-# p total 
+# p total
 
 items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 total_price = 0
@@ -118,9 +118,9 @@ p string_length
 # (REDO)
 
 
-items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] 
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 lowest_price = items[0]
-items.each do |item| 
+items.each do |item|
   if item[:price] < lowest_price[:price]
     lowest_price = item
   end
@@ -129,7 +129,7 @@ end
 p lowest_price
 
 
-# items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] 
+# items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 # cheapest_item = items[0]
 # index = 0
 # while index < items.length
@@ -147,6 +147,14 @@ p lowest_price
 
 # 7. Start with an array of numbers and compute product of all the numbers.
 #    For example, [5, 10, 8, 3] becomes 1200.
+
+numbers = [5, 10, 8, 3]
+product = 1
+numbers.each do |number|
+  product = product * number
+end
+p product
+
 
 # numbers = [5, 10, 8, 3]
 # product = 1
