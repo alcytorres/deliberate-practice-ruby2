@@ -208,6 +208,16 @@ p string
 # 10. Start with an array of numbers and compute the maximum number.
 #     For example, [5, 10, 8, 3] becomes 10.
 
+numbers = [5, 10, 8, 3]
+max_number = numbers[0]
+numbers.each do |number|
+  if number > max_number
+    max_number = number
+  end
+end
+p max_number
+
+
 # numbers = [5, 10, 8, 3]
 # max_number = numbers[0]
 # i = 0
