@@ -191,6 +191,19 @@ p string
 # 9. Start with an array of hashes and find the hash with the shortest name (from the :name key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "book", price: 4}.
 
+
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
+item1_name_length = items[0][:name].length
+items.each do |item|
+  if item[:name].length < item1_name_length
+    item1_name_length = item
+  end
+end
+p item1_name_length
+
+
+
+
 # items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 # hash = {}
 # item1_name_length = items[0][:name].length
