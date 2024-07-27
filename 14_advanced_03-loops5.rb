@@ -3,6 +3,17 @@
 
 # 1. Use a nested loop to convert an array of number pairs into a single flattened array.
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes [1, 3, 8, 9, 2, 16].
+
+number_pairs = [[1, 3], [8, 9], [2, 16]]
+flattened_numbers = []
+number_pairs.each do |current_pair|
+  current_pair.each do |current_number|
+    flattened_numbers << current_number
+  end
+end
+p flattened_numbers
+
+
 number_pairs = [[1, 3], [8, 9], [2, 16]]
 flattened_numbers = []
 index1 = 0
@@ -18,14 +29,7 @@ while index1 < number_pairs.length
 end
 p flattened_numbers
 
-number_pairs = [[1, 3], [8, 9], [2, 16]]
-flattened_numbers = []
-number_pairs.each do |current_pair|
-  current_pair.each do |current_number|
-    flattened_numbers << current_number
-  end
-end
-p flattened_numbers
+
 
 
 # 2. Use a nested loop with two arrays of strings to create a new array of strings with each string combined.
