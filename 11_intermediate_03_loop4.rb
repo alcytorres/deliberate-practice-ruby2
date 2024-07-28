@@ -19,14 +19,14 @@ end
 p total
 
 
-# numbers =  [5, 10, 8, 3]
-# total = 0
-# i = 0
-# while i < numbers.length
-#   total = total + numbers[i]
-#   i += 1
-# end
-# p total
+numbers =  [5, 10, 8, 3, 30]
+total = 0
+i = 0
+while i < numbers.length
+  total = total + numbers[i]
+  i += 1
+end
+p total
 
 
 
