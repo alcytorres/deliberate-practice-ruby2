@@ -128,9 +128,6 @@ end
 p numbers_sum
 
 
-LEFT OFF HERE
-
-
 # numbers1 = [1, 2]
 # numbers2 = [6, 7, 8]
 # numbers_sum = []
@@ -151,6 +148,7 @@ LEFT OFF HERE
 
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
 #    For example, [2, 8, 3] becomes [4, 16, 6, 16, 64, 24, 6, 24, 9].
+
 numbers = [2, 8, 3]
 numbers_array = []
 numbers.each do |num1|
@@ -179,6 +177,9 @@ numbers.each do |num1|
 end
 
 p max_sum
+
+
+LEFT OF HERE
 
 
 # 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.

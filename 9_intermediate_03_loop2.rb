@@ -112,11 +112,10 @@ end
 p sale_prices
 
 
-LEFT OFF HERE
-
 
 # 8. Start with an array of strings and create a new array with each string's first letter only.
 #    For example, ["hello", "goodbye"] becomes ["h", "g"].
+
 words = ["hello", "goodbye"]
 first_letters = []
 words.each do |word|
@@ -143,12 +142,12 @@ p age_hash
 #     For example, [1, 2, 3] becomes ["1", "2", "3"].
 
 numbers = [1, 2, 3]
-string_numbers = []
+strings = []
 numbers.each do |number|
-  string_numbers << number.to_s
+  strings << number.to_s
 end
 
-p string_numbers
+p strings
 
 
 # numbers = [1, 2, 3]

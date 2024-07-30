@@ -58,6 +58,27 @@ puts "Fine amount: $#{fine_amount}"
 # If the total order value is between $50 and $100, the discount is 5% for regular customers and 10% for premium customers.
 # If the total order value is greater than $100, the discount is 10% for regular customers and 15% for premium customers.
 
+order_value = 1000
+membership = "premium"
+
+if order_value < 50
+  discount = 0
+elsif order_value >= 50 && order_value <= 100
+  if membership == "regular"
+    discount = 0.05
+  else
+    discount = 0.1
+  end
+elsif order_value > 100
+  if membership == "regular"
+    discount = 0.1
+  else
+    discount = 0.15
+  end
+end
+
+puts "Discount amount: $ #{order_value * discount}"
+
 
 
 # 4. Write a Ruby program that stores the weight of a package and the destination (domestic or international). Then calculate the shipping fee based on the following conditions:
