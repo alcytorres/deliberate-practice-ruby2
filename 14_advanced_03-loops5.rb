@@ -179,8 +179,7 @@ end
 p max_sum
 
 
-LEFT OF HERE
-
+DO THIS PROBLEM
 
 # 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
 #    For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
@@ -233,8 +232,8 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 combined_strings = ""
-strings.each do |current_array|
-  current_array.each do |current_string|
+strings.each do |current_pair|
+  current_pair.each do |current_string|
     combined_strings << current_string
   end
 end
