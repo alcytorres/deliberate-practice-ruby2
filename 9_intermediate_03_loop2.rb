@@ -5,11 +5,11 @@
 #    For example, [1, 2, 3] becomes [3, 6, 9].
 
 numbers = [1, 2, 3]
-product = []
+product_array = []
 numbers.each do |number|
-  product << number * 3
+  product_array << number * 3
 end
-p product
+p product_array
 
 
 # numbers = [1, 2, 3]
