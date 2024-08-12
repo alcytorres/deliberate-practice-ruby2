@@ -5,11 +5,11 @@
 #    For example, [1, 2, 3] becomes [3, 6, 9].
 
 numbers = [1, 2, 3]
-product_array = []
+product = []
 numbers.each do |number|
-  product_array << number * 3
+  product << number * 3
 end
-p product_array
+p product
 
 
 # numbers = [1, 2, 3]
@@ -58,14 +58,15 @@ persons.each do |person|
 end
 p names
 
-# people = [{name: "Alice", age: 27}, {name: "Blane", age: 16}]
-# names = []
-# i = 0
-# while i < people.length
-#   names << people[i][:name]
-#   i += 1
-# end
-# p names
+
+people = [{name: "Alice", age: 27}, {name: "Blane", age: 16}]
+names = []
+i = 0
+while i < people.length
+  names << people[i][:name]
+  i += 1
+end
+p names
 
 
 # 4. Start with an array of numbers and create a new array with each number plus 7.
