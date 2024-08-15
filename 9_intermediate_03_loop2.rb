@@ -58,15 +58,14 @@ persons.each do |person|
 end
 p names
 
-
-people = [{name: "Alice", age: 27}, {name: "Blane", age: 16}]
-names = []
-i = 0
-while i < people.length
-  names << people[i][:name]
-  i += 1
-end
-p names
+# people = [{name: "Alice", age: 27}, {name: "Blane", age: 16}]
+# names = []
+# i = 0
+# while i < people.length
+#   names << people[i][:name]
+#   i += 1
+# end
+# p names
 
 
 # 4. Start with an array of numbers and create a new array with each number plus 7.

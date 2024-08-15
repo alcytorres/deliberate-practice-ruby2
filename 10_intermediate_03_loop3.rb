@@ -124,8 +124,6 @@ end
 p low_numbers
 
 
-LEFT OFF HERE
-
 
 # 8. Start with an array of strings and create a new array with only the strings that don't start with the letter "b".
 #    For example, ["big", "little", "good", "bad"] becomes ["little", "good"].
@@ -143,6 +141,7 @@ p new_strings
 # 9. Start with an array of hashes and create a new array with only the hashes with prices less than 10 (from the :price key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "pencil", price: 1}, {name: "book", price: 4}].
 
+
 items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 cheap_items = []
 items.each do |item|
@@ -151,7 +150,6 @@ items.each do |item|
   end
 end
 p cheap_items
-
 
 
 # 10. Start with an array of numbers and create a new array with only the odd numbers.
