@@ -96,6 +96,7 @@ end
 p short_strings
 
 
+
 # 6. Start with an array of hashes and create a new array with only the hashes with names shorter than 6 letters (from the :name key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "chair", price: 100}, {name: "book", price: 4}].
 
@@ -124,7 +125,6 @@ end
 p low_numbers
 
 
-
 # 8. Start with an array of strings and create a new array with only the strings that don't start with the letter "b".
 #    For example, ["big", "little", "good", "bad"] becomes ["little", "good"].
 
@@ -151,7 +151,6 @@ end
 p cheap_items
 
 
-
 # 10. Start with an array of numbers and create a new array with only the odd numbers.
 #     For example, [2, 4, 5, 1, 8, 9, 7] becomes [5, 1, 9, 7].
 
@@ -165,13 +164,13 @@ end
 p odd_numbers
 
 
-# numbers = [2, 4, 5, 1, 8, 9, 7]
-# odd_numbers = []
-# i = 0
-# while i < numbers.length
-#   if numbers[i] % 2 == 1
-#     odd_numbers << numbers[i]
-#   end
-#   i += 1
-# end
-# p odd_numbers
+numbers = [2, 4, 5, 1, 8, 9, 7]
+odd_numbers = []
+i = 0
+while i < numbers.length
+  if numbers[i] % 2 == 1
+    odd_numbers << numbers[i]
+  end
+  i += 1
+end
+p odd_numbers
