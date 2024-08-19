@@ -91,22 +91,22 @@ puts "Discount amount: $ #{order_value * discount}"
 # If the weight is greater than 1 kg, the shipping fee is $25.
 
 
-destination = "domestic"
-weight = 4
+# destination = "domestic"
+# weight = 4
 
-shipping_fee = 0
-if destination == "domestic"
-  if weight <= 1
-    shipping_fee = 5
-  else
-    shipping_fee = 10
-  end
-elsif destination == "international"
-  if weight <= 1
-    shipping_fee = 15
-  else
-    shipping_fee = 25
-  end
-end
+# shipping_fee = 0
+# if destination == "domestic"
+#   if weight <= 1
+#     shipping_fee = 5
+#   else
+#     shipping_fee = 10
+#   end
+# elsif destination == "international"
+#   if weight <= 1
+#     shipping_fee = 15
+#   else
+#     shipping_fee = 25
+#   end
+# end
 
-puts "Shipping fee: $#{shipping_fee}"
+# puts "Shipping fee: $#{shipping_fee}"
