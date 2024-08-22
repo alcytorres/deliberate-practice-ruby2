@@ -164,13 +164,13 @@ end
 p odd_numbers
 
 
-# numbers = [2, 4, 5, 1, 8, 9, 7]
-# odd_numbers = []
-# i = 0
-# while i < numbers.length
-#   if numbers[i] % 2 == 1
-#     odd_numbers << numbers[i]
-#   end
-#   i += 1
-# end
-# p odd_numbers
+numbers = [2, 4, 5, 1, 8, 9, 7]
+odd_numbers = []
+i = 0
+while i < numbers.length
+  if numbers[i] % 2 == 1
+    odd_numbers << numbers[i]
+  end
+  i += 1
+end
+p odd_numbers
