@@ -129,18 +129,18 @@ end
 p lowest_price
 
 
-# items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
-# cheapest_item = items[0]
-# index = 0
-# while index < items.length
-#   item = items[index]
-#   if item[:price] < cheapest_item[:price]
-#     cheapest_item = item
-#   end
-#   index += 1
-# end
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
+cheapest_item = items[0]
+index = 0
+while index < items.length
+  item = items[index]
+  if item[:price] < cheapest_item[:price]
+    cheapest_item = item
+  end
+  index += 1
+end
 
-# p cheapest_item
+p cheapest_item
 
 
 
