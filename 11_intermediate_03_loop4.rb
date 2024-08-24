@@ -156,14 +156,14 @@ end
 p product
 
 
-# numbers = [5, 10, 8, 3]
-# product = 1
-# i = 0
-# while i < numbers.length
-#   product = product * numbers[i]
-#   i += 1
-# end
-# p product
+numbers = [5, 10, 8, 3]
+product = 1
+i = 0
+while i < numbers.length
+  product = product * numbers[i]
+  i += 1
+end
+p product
 
 
 
@@ -204,17 +204,17 @@ p item1_name_length
 
 
 
-# items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
-# hash = {}
-# item1_name_length = items[0][:name].length
-# i = 0
-# while i < items.length
-#   if items[i][:name].length < item1_name_length
-#     hash = items[i]
-#   end
-#   i += 1
-# end
-# p hash
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
+hash = {}
+item1_name_length = items[0][:name].length
+i = 0
+while i < items.length
+  if items[i][:name].length < item1_name_length
+    hash = items[i]
+  end
+  i += 1
+end
+p hash
 
 
 
