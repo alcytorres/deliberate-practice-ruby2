@@ -128,22 +128,22 @@ end
 p numbers_sum
 
 
-numbers1 = [1, 2]
-numbers2 = [6, 7, 8]
-numbers_sum = []
-index1 = 0
-while index1 < numbers1.length
-  first_number = numbers1[index1]
-  index2 = 0
-  while index2 < numbers2.length
-    second_number = numbers2[index2]
-    numbers_sum << first_number + second_number
-    index2 += 1
-  end
-  index1 += 1
-end
+# numbers1 = [1, 2]
+# numbers2 = [6, 7, 8]
+# numbers_sum = []
+# index1 = 0
+# while index1 < numbers1.length
+#   first_number = numbers1[index1]
+#   index2 = 0
+#   while index2 < numbers2.length
+#     second_number = numbers2[index2]
+#     numbers_sum << first_number + second_number
+#     index2 += 1
+#   end
+#   index1 += 1
+# end
 
-p numbers_sum
+# p numbers_sum
 
 
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
