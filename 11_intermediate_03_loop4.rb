@@ -170,14 +170,14 @@ p product
 #  8. Start with an array of strings and combine them all into a single string, separated by dashes.
 #     For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
 
-# sports = ["volleyball", "basketball", "badminton"]
-# string = "-"
-# i = 0
-# while i < sports.length
-#   string = string + sports[i] + "-"
-#   i += 1
-# end
-# p string
+sports = ["volleyball", "basketball", "badminton"]
+string = "-"
+i = 0
+while i < sports.length
+  string = string + sports[i] + "-"
+  i += 1
+end
+p string
 
 sports = ["volleyball", "basketball", "badminton"]
 string = "-"
@@ -204,17 +204,17 @@ p item1_name_length
 
 
 
-items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
-hash = {}
-item1_name_length = items[0][:name].length
-i = 0
-while i < items.length
-  if items[i][:name].length < item1_name_length
-    hash = items[i]
-  end
-  i += 1
-end
-p hash
+# items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
+# hash = {}
+# item1_name_length = items[0][:name].length
+# i = 0
+# while i < items.length
+#   if items[i][:name].length < item1_name_length
+#     hash = items[i]
+#   end
+#   i += 1
+# end
+# p hash
 
 
 
