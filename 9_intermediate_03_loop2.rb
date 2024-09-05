@@ -4,6 +4,7 @@
 # 1. Start with an array of numbers and create a new array with each number times 3.
 #    For example, [1, 2, 3] becomes [3, 6, 9].
 
+
 numbers = [1, 2, 3]
 product = []
 numbers.each do |number|
@@ -30,6 +31,15 @@ p product
 # 2. Start with an array of strings and create a new array with each string upcased.
 #    For example, ["hello", "goodbye"] becomes ["HELLO", "GOODBYE"].
 
+
+strings = ["hello", "goodbye"]
+strings_uppercase = []
+strings.each do |string|
+  strings_uppercase << string.upcase
+end
+p strings_uppercase
+
+
 # strings = ["hello", "goodbye"]
 # strings_caps = []
 # i = 0
@@ -40,16 +50,9 @@ p product
 # p strings_caps
 
 
-strings = ["hello", "goodbye"]
-strings_caps = []
-strings.each do |string|
-  strings_caps << string.upcase
-end
-p strings_caps
-
-
 # 3. Start with an array of hashes and create a new array of string values from each hash's :name key.
 #    For example, [{name: "Alice", age: 27}, {name: "Blane", age: 16}] becomes ["Alice", "Blane"].
+
 
 persons = [{name: "Alice", age: 27}, {name: "Blane", age: 16}]
 names = []
@@ -57,6 +60,7 @@ persons.each do |person|
   names << person[:name]
 end
 p names
+
 
 # people = [{name: "Alice", age: 27}, {name: "Blane", age: 16}]
 # names = []

@@ -4,12 +4,14 @@
 # 1. Start with an array of numbers and compute the sum of all the numbers.
 #    For example, [5, 10, 8, 3] becomes 26.
 
+
 numbers = [5, 10, 8, 3]
 sum = 0
 numbers.each do |number|
   sum += number
 end
 p sum
+
 
 numbers = [5, 10, 8, 3]
 total = 0
@@ -34,6 +36,14 @@ p total
 # 2. Start with an array of strings and combine them all into a single string.
 #    For example, ["volleyball", "basketball", "badminton"] becomes "volleyballbasketballbadminton".
 
+sports = ["volleyball", "basketball", "badminton"]
+combined_string = ""
+sports.each do |sport|
+  combined_string += sport
+end
+p combined_string
+
+
 # sports = ["volleyball", "basketball", "badminton"]
 # combined_string = ""
 # i = 0
@@ -43,17 +53,19 @@ p total
 # end
 # p combined_string
 
-sports = ["volleyball", "basketball", "badminton"]
-word = ""
-sports.each do |sport|
-  word = word + sport
-end
-p word
-
 
 
 # 3. Start with an array of hashes and compute the sum of the prices (from the :price key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes 105.
+
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
+total = 0
+items.each do |item|
+  total += item[:price]
+end
+p total
+
+
 
 # items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 # total = 0
@@ -63,13 +75,6 @@ p word
 #   i += 1
 # end
 # p total
-
-items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
-total_price = 0
-items.each do |item|
-  total_price = total_price + item[:price]
-end
-p total_price
 
 
 
