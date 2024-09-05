@@ -19,16 +19,16 @@ new_numbers = numbers.select { |number| number < 20 }
 p new_numbers
 
 
-# numbers = [2, 32, 80, 18, 12, 3]
-# new_numbers = []
-# index = 0
-# while index < numbers.length
-#   if numbers[index] < 20
-#     new_numbers << numbers[index]
-#   end
-#   index += 1
-# end
-# p new_numbers
+numbers = [2, 32, 80, 18, 12, 3]
+new_numbers = []
+index = 0
+while index < numbers.length
+  if numbers[index] < 20
+    new_numbers << numbers[index]
+  end
+  index += 1
+end
+p new_numbers
 
 
 # 2. Start with an array of strings and create a new array with only the strings that start with the letter "w".
@@ -43,16 +43,16 @@ strings.each do |string|
 end
 p w_strings
 
-strings = ["winner", "winner", "chicken", "dinner"]
-w_strings = []
-i = 0
-while i < strings.length
-  if strings[i][0] == "w"
-    w_strings << strings[i]
-  end
-  i += 1
-end
-p w_strings
+# strings = ["winner", "winner", "chicken", "dinner"]
+# w_strings = []
+# i = 0
+# while i < strings.length
+#   if strings[i][0] == "w"
+#     w_strings << strings[i]
+#   end
+#   i += 1
+# end
+# p w_strings
 
 
 # 3. Start with an array of hashes and create a new array with only the hashes with prices greater than 5 (from the :price key).

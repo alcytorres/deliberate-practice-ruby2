@@ -150,11 +150,11 @@ end
 p strings
 
 
-numbers = [1, 2, 3]
-string_numbers = []
-i = 0
-while i < numbers.length
-  string_numbers << numbers[i].to_s
-  i += 1
-end
-p string_numbers
+# numbers = [1, 2, 3]
+# string_numbers = []
+# i = 0
+# while i < numbers.length
+#   string_numbers << numbers[i].to_s
+#   i += 1
+# end
+# p string_numbers
