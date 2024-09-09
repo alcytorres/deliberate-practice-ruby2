@@ -177,20 +177,20 @@ p product
 
 sports = ["volleyball", "basketball", "badminton"]
 string = "-"
-i = 0
-while i < sports.length
-  string = string + sports[i] + "-"
-  i += 1
-end
-p string
-
-sports = ["volleyball", "basketball", "badminton"]
-string = "-"
 sports.each do |sport|
   string << sport + "-"
 end
 p string
 
+
+# sports = ["volleyball", "basketball", "badminton"]
+# string = "-"
+# i = 0
+# while i < sports.length
+#   string = string + sports[i] + "-"
+#   i += 1
+# end
+# p string
 
 
 # 9. Start with an array of hashes and find the hash with the shortest name (from the :name key).
@@ -209,17 +209,17 @@ p item1_name_length
 
 
 
-# items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
-# hash = {}
-# item1_name_length = items[0][:name].length
-# i = 0
-# while i < items.length
-#   if items[i][:name].length < item1_name_length
-#     hash = items[i]
-#   end
-#   i += 1
-# end
-# p hash
+items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
+hash = {}
+item1_name_length = items[0][:name].length
+i = 0
+while i < items.length
+  if items[i][:name].length < item1_name_length
+    hash = items[i]
+  end
+  i += 1
+end
+p hash
 
 
 
