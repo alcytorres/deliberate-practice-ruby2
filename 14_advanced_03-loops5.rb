@@ -33,6 +33,7 @@ p flattened_numbers
 # 2. Use a nested loop with two arrays of strings to create a new array of strings with each string combined.
 #    For example, ["a", "b", "c"] and ["d", "e", "f", "g"] becomes ["ad", "ae", "af", "ag", "bd", "be", "bf", "bg", "cd", "ce", "cf", "cg"].
 
+
 letters1 = ["a", "b", "c"]
 letters2 = ["d", "e", "f", "g"]
 strings_combined = []
@@ -45,8 +46,10 @@ p strings_combined
 
 
 
+
 # 3. Use a nested loop with one array of strings to create a new array that contains every combination of each string with every other string in the array.
 #    For example, ["a", "b", "c", "d"] becomes ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"].
+
 
 letters = ["a", "b", "c", "d"]
 letter_combinations = []
@@ -128,22 +131,22 @@ end
 p numbers_sum
 
 
-numbers1 = [1, 2]
-numbers2 = [6, 7, 8]
-numbers_sum = []
-index1 = 0
-while index1 < numbers1.length
-  first_number = numbers1[index1]
-  index2 = 0
-  while index2 < numbers2.length
-    second_number = numbers2[index2]
-    numbers_sum << first_number + second_number
-    index2 += 1
-  end
-  index1 += 1
-end
+# numbers1 = [1, 2]
+# numbers2 = [6, 7, 8]
+# numbers_sum = []
+# index1 = 0
+# while index1 < numbers1.length
+#   first_number = numbers1[index1]
+#   index2 = 0
+#   while index2 < numbers2.length
+#     second_number = numbers2[index2]
+#     numbers_sum << first_number + second_number
+#     index2 += 1
+#   end
+#   index1 += 1
+# end
 
-p numbers_sum
+# p numbers_sum
 
 
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
