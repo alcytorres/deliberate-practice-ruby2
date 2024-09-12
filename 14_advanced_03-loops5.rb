@@ -169,6 +169,7 @@ p numbers_array
 # 8. Use a nested loop to find the largest sum of any two different numbers within an array.
 #    For example, [1, 8, 3, 10] becomes 18.
 
+
 numbers = [1, 8, 3, 10]
 max_sum = numbers[0] + numbers[1]
 numbers.each do |num1|
@@ -192,6 +193,21 @@ p max_sum
 
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
+result = false
+numbers.each do |num1|
+  numbers.each do |num2|
+    if num1 != num2 && num1 + num2 == 10
+      result = [num1, num2]
+      break
+    end
+  end
+  break if result
+end
+p result
+
+
+
+numbers = [2, 5, 3, 1, 0, 7, 11]
 result = false  # Initialize result to false
 
 numbers.each do |num1|   # Iterate through each number in the array as num1
@@ -212,24 +228,24 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 
 
-numbers = [2, 5, 3, 1, 0, 7, 11]
-result = false
-index1 = 0
-while index1 < numbers.length
-  current_number = numbers[index1]
-  index2 = 0
-  while index2 < numbers.length
-    if index1 != index2
-      other_number = numbers[index2]
-      if current_number + other_number == 10 && result == false
-        result = [current_number, other_number]
-      end
-    end
-    index2 += 1
-  end
-  index1 += 1
-end
-p result
+# numbers = [2, 5, 3, 1, 0, 7, 11]
+# result = false
+# index1 = 0
+# while index1 < numbers.length
+#   current_number = numbers[index1]
+#   index2 = 0
+#   while index2 < numbers.length
+#     if index1 != index2
+#       other_number = numbers[index2]
+#       if current_number + other_number == 10 && result == false
+#         result = [current_number, other_number]
+#       end
+#     end
+#     index2 += 1
+#   end
+#   index1 += 1
+# end
+# p result
 
 
 
