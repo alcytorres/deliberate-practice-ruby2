@@ -3,32 +3,32 @@
 
 # 1. Write a ShoppingCart class that stores an array of items with methods to add an item, remove an item, and display all the items.
 
-class ShoppingCart
-  def initialize
-    @items = []
-  end
+# class ShoppingCart
+#   def initialize
+#     @items = []
+#   end
 
-  def add_item(item)
-    @items.push(item)
-  end
+#   def add_item(item)
+#     @items.push(item)
+#   end
 
-  def remove_item(item)
-    @items.delete(item)
-  end
+#   def remove_item(item)
+#     @items.delete(item)
+#   end
 
-  def display_items
-    puts "Items in shopping cart"
-    @items.each {|item| puts "- #{item}"}
-  end
-end
+#   def display_items
+#     puts "Items in shopping cart"
+#     @items.each {|item| puts "- #{item}"}
+#   end
+# end
 
-cart = ShoppingCart.new
-cart.add_item("Apple")
-cart.add_item("Banana")
-cart.add_item("Orange")
-cart.display_items
-cart.remove_item("Banana")
-cart.display_items
+# cart = ShoppingCart.new
+# cart.add_item("Apple")
+# cart.add_item("Banana")
+# cart.add_item("Orange")
+# cart.display_items
+# cart.remove_item("Banana")
+# cart.display_items
 
 
 

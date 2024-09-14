@@ -51,8 +51,10 @@ end
 p letter_frequencies
 
 
+
 # 4. Convert a hash into an array of arrays.
 #    For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
+
 
 items = {"chair" => 100, "book" => 14}
 items_hash = []
@@ -64,6 +66,7 @@ p items_hash
 
 # 5. Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
 #    For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
+
 
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 # [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
@@ -79,6 +82,7 @@ p persons_array
 # 6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
 #    For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
 
+
 strings = ["do", "or", "do", "not"]
 strings_hash = {}
 strings.each do |string|
@@ -91,8 +95,10 @@ end
 p strings_hash
 
 
+
 # 7. Convert a hash into a flat array containing all the hash’s keys and values.
 #    For example, {"a" => 1, "b" => 2, "c" => 3, "d" => 4} becomes ["a", 1, "b", 2, "c", 3, "d", 4].
+
 
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
@@ -107,6 +113,7 @@ p flattened_array
 
 # 8. Combine data from a hash with names and prices and an array of hashes with names, colors, and weights to make a new hash.
 #    For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
+
 
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
@@ -125,6 +132,7 @@ p combined_hash
 
 # 9. Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
 #    For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
+
 
 
 
