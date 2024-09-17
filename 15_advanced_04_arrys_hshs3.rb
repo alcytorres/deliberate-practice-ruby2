@@ -14,13 +14,12 @@ end
 p numbers_hash
 
 
-
 # 2. Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
 #    For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
 
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
-#        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
+#        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 items_hash = {}
 items.each do |item|
   key = item[:id]
@@ -55,7 +54,6 @@ p letter_frequencies
 # 4. Convert a hash into an array of arrays.
 #    For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
 
-
 items = {"chair" => 100, "book" => 14}
 items_hash = []
 items.each do |key, value|
@@ -64,18 +62,22 @@ end
 p items_hash
 
 
+
+
 # 5. Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
 #    For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
 
 
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
-# [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+#         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 persons_array = []
 persons.each do |key, person|
+  # This line adds a new key-value pair :id => key to the person hash.
   person[:id] = key
   persons_array << person
 end
 p persons_array
+
 
 
 

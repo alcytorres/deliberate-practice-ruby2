@@ -50,6 +50,11 @@ end
 # 2
 # 3
 
+# numbers = [1, 2, 3]
+# product = []
+# numbers.each do
+# end
+
 
 
 
@@ -208,7 +213,5 @@ puts [1, 2, 3].to_s
 # Output:
 # 123
 # [1, 2, 3]
-
-
 
 
