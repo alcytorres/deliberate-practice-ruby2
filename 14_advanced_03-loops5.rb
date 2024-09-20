@@ -4,6 +4,7 @@
 # 1. Use a nested loop to convert an array of number pairs into a single flattened array.
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes [1, 3, 8, 9, 2, 16].
 
+
 number_pairs = [[1, 3], [8, 9], [2, 16]]
 flattened_array = []
 number_pairs.each do |current_pair|
@@ -14,20 +15,20 @@ end
 p flattened_array
 
 
-number_pairs = [[1, 3], [8, 9], [2, 16]]
-flattened_numbers = []
-index1 = 0
-while index1 < number_pairs.length
-  current_pair = number_pairs[index1]
-  index2 = 0
-  while index2 < current_pair.length
-    current_number = current_pair[index2]
-    flattened_numbers << current_number
-    index2 += 1
-  end
-  index1 += 1
-end
-p flattened_numbers
+# number_pairs = [[1, 3], [8, 9], [2, 16]]
+# flattened_numbers = []
+# index1 = 0
+# while index1 < number_pairs.length
+#   current_pair = number_pairs[index1]
+#   index2 = 0
+#   while index2 < current_pair.length
+#     current_number = current_pair[index2]
+#     flattened_numbers << current_number
+#     index2 += 1
+#   end
+#   index1 += 1
+# end
+# p flattened_numbers
 
 
 # 2. Use a nested loop with two arrays of strings to create a new array of strings with each string combined.
@@ -98,14 +99,24 @@ p max_product
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes 39.
 
 
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 total = 0
 numbers.each do |current_pair|
   current_pair.each do |current_number|
-    total = total + current_number
+    total += current_number
   end
 end
 p total
+
+# numbers = [[1, 3], [8, 9], [2, 16]]
+# total = 0
+# numbers.each do |current_pair|
+#   current_pair.each do |current_number|
+#     total = total + current_number
+#   end
+# end
+# p total
 
 
 numbers = [[1, 3], [8, 9], [2, 16]]
@@ -170,6 +181,7 @@ p numbers_array
 #    For example, [1, 8, 3, 10] becomes 18.
 
 
+
 numbers = [1, 8, 3, 10]
 max_sum = numbers[0] + numbers[1]
 numbers.each do |num1|
@@ -184,6 +196,8 @@ numbers.each do |num1|
 end
 
 p max_sum
+
+
 
 
 # DO THIS PROBLEM
@@ -228,24 +242,24 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 
 
-numbers = [2, 5, 3, 1, 0, 7, 11]
-result = false
-index1 = 0
-while index1 < numbers.length
-  current_number = numbers[index1]
-  index2 = 0
-  while index2 < numbers.length
-    if index1 != index2
-      other_number = numbers[index2]
-      if current_number + other_number == 10 && result == false
-        result = [current_number, other_number]
-      end
-    end
-    index2 += 1
-  end
-  index1 += 1
-end
-p result
+# numbers = [2, 5, 3, 1, 0, 7, 11]
+# result = false
+# index1 = 0
+# while index1 < numbers.length
+#   current_number = numbers[index1]
+#   index2 = 0
+#   while index2 < numbers.length
+#     if index1 != index2
+#       other_number = numbers[index2]
+#       if current_number + other_number == 10 && result == false
+#         result = [current_number, other_number]
+#       end
+#     end
+#     index2 += 1
+#   end
+#   index1 += 1
+# end
+# p result
 
 
 

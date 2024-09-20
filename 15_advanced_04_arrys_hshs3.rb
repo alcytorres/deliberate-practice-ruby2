@@ -5,6 +5,7 @@
 #     For example, [[1, 3], [8, 9], [2, 16]] becomes {1 => 3, 8 => 9, 2 => 16}.
 
 
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 numbers_hash = {}
 numbers.each do |key, value|
@@ -12,6 +13,8 @@ numbers.each do |key, value|
 end
 
 p numbers_hash
+
+
 
 
 # 2. Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
@@ -67,6 +70,7 @@ p items_hash
 
 # 5. Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
 #    For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
+
 
 
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
@@ -142,6 +146,22 @@ p combined_hash
 
 # 9. Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
 #    For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
+
+
+
+books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
+#       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
+books_hash = {}
+books.each do |book|
+  author = book[:author]
+  title = book[:title]
+  if books_hash[author] == nil
+    books_hash[author] = []
+  end
+  books_hash[author] << title
+end
+p books_hash
+
 
 
 
