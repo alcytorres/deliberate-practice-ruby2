@@ -79,6 +79,7 @@ p letter_combinations
 # 4. Use a nested loop to find the largest product of any two different numbers within a given array.
 #    For example, [5, -2, 1, -9, -7, 2, 6] becomes 63.
 
+
 numbers = [5, -2, 1, -9, -7, 2, 6]
 max_product = numbers[0] * numbers[1]
 numbers.each do |first_number|
@@ -186,6 +187,11 @@ p numbers_array
 
 
 numbers = [1, 8, 3, 10]
+# max_sum =
+
+
+
+numbers = [1, 8, 3, 10]
 max_sum = numbers[0] + numbers[1]
 numbers.each do |num1|
   numbers.each do |num2|
@@ -268,6 +274,14 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 # 10. Use a nested loop to convert an array of string arrays into a single string.
 #     For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama".
+
+
+
+strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+# combined_strings =
+
+
+
 
 
 

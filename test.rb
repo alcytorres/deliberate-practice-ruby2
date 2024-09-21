@@ -101,9 +101,30 @@ end
 
 
 
-class Solution {
-public:
-    int climbStairs(int n) {
+# class Solution {
+# public:
+#     int climbStairs(int n) {
 
-    }
-};
+#     }
+# };
+
+
+
+# Test the .each do method on an array
+prices = {"chair" => 75, "book" => 15}
+test = []
+prices.each do |price|
+  test << price
+end
+p test
+# output: [["chair", 75], ["book", 15]]
+
+prices = {"chair" => 75, "book" => 15}
+test = []
+prices.each do |key, value|
+  test << key
+  test << value
+end
+p test
+# output: ["chair", 75, "book", 15]
+
