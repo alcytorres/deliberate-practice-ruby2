@@ -110,14 +110,14 @@ numbers.each do |current_pair|
 end
 p total
 
-# numbers = [[1, 3], [8, 9], [2, 16]]
-# total = 0
-# numbers.each do |current_pair|
-#   current_pair.each do |current_number|
-#     total = total + current_number
-#   end
-# end
-# p total
+numbers = [[1, 3], [8, 9], [2, 16]]
+total = 0
+numbers.each do |current_pair|
+  current_pair.each do |current_number|
+    total = total + current_number
+  end
+end
+p total
 
 
 numbers = [[1, 3], [8, 9], [2, 16]]
