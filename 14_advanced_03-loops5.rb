@@ -5,6 +5,12 @@
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes [1, 3, 8, 9, 2, 16].
 
 
+
+number_pairs = [[1, 3], [8, 9], [2, 16]]
+flattened_array =
+
+
+
 number_pairs = [[1, 3], [8, 9], [2, 16]]
 flattened_array = []
 number_pairs.each do |current_pair|
@@ -50,6 +56,14 @@ p strings_combined
 
 # 3. Use a nested loop with one array of strings to create a new array that contains every combination of each string with every other string in the array.
 #    For example, ["a", "b", "c", "d"] becomes ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"].
+
+
+
+letters = ["a", "b", "c", "d"]
+letter_combinations =
+
+
+
 
 
 letters = ["a", "b", "c", "d"]
@@ -215,6 +229,17 @@ p max_sum
 #    For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
 
 
+
+numbers = [2, 5, 3, 1, 0, 7, 11]
+result =
+
+
+
+
+
+
+
+
 numbers = [2, 5, 3, 1, 0, 7, 11]
 result = false
 numbers.each do |num1|
@@ -246,7 +271,21 @@ end
 p result  # Print the result, which will be the pair that sums to 10 or false if none is found
 
 # Explanation of: break if result
-# This line is crucial. After the inner loop is broken, the outer loop will continue to its next iteration unless it is also explicitly broken. The break if result line checks if result is no longer false (which means a valid pair has been found). If result is truthy (in this case, it will be an array [num1, num2]), the outer loop is also broken, and the program exits the loop structure entirely.
+# This line is crucial. After the inner loop is broken, the outer loop will continue to its next iteration unless it is also explicitly BROKEN. The break if result line checks if result is no longer false (which means a valid pair has been found). If result is truthy (in this case, it will be an array [num1, num2]), the outer loop is also broken, and the program exits the loop structure entirely.
+
+
+# Truthy vs Flasy Breakdown
+# In Ruby, truthy and falsy values determine how conditions behave. Here's how they relate to the line break if result:
+      # Truthy: In Ruby, any value that is not false or nil is considered "truthy." This means that if result holds something like [num1, num2] (a pair of numbers), it’s considered truthy.
+      # Falsy: In Ruby, only false and nil are considered "falsy." When result is false, it’s considered falsy, meaning no pair has been found yet.
+
+# Relation to break if result:
+      # At the start, result is set to false (falsy), so the loop keeps running.
+      # When a pair of numbers is found, result is assigned a truthy value (the pair, like [num1, num2]).
+      # The line "break if result" checks if result is truthy. Once it becomes truthy, the condition is met, and the loop breaks.
+
+# Summary:
+      # break if result only triggers when result is no longer falsy (i.e., it becomes truthy after finding a pair). If result is still false (falsy), the loop continues.
 
 
 
