@@ -115,6 +115,14 @@ p max_product
 
 
 
+# numbers = [[1, 3], [8, 9], [2, 16]]
+# total =
+
+
+
+
+
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 total = 0
 numbers.each do |current_pair|
@@ -148,6 +156,14 @@ p total
 #    For example, [1, 2] and [6, 7, 8] becomes [7, 8, 9, 8, 9, 10].
 
 
+
+# numbers1 = [1, 2]
+# numbers2 = [6, 7, 8]
+# numbers_sum =
+
+
+
+
 numbers1 = [1, 2]
 numbers2 = [6, 7, 8]
 numbers_sum = []
@@ -157,6 +173,7 @@ numbers1.each do |first_number|
   end
 end
 p numbers_sum
+
 
 
 # numbers1 = [1, 2]
@@ -232,8 +249,6 @@ p max_sum
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
 result =
-
-
 
 
 
