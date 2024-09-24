@@ -188,18 +188,12 @@ p combined_hash
 
 
 
+
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
-books_hash = {}
-books.each do |book|
-  author = book[:author]
-  title = book[:title]
-  if books_hash[author] == nil
-    books_hash[author] = []
-  end
-  books_hash[author] << title
-end
-p books_hash
+# books_hash =
+
+
 
 
 
@@ -245,6 +239,13 @@ p books_hash
 
 # 10. Given a hash, create a new hash that has the keys and values switched.
 #     For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
+
+
+
+# original_hash = { "a" => 1, "b" => 2, "c" => 3 }
+# new_hash =
+
+
 
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 flipped_hash = {}

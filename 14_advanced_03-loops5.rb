@@ -94,12 +94,19 @@ p letter_combinations
 #    For example, [5, -2, 1, -9, -7, 2, 6] becomes 63.
 
 
+
+# numbers = [5, -2, 1, -9, -7, 2, 6]
+# max_product =
+
+
+
+
 numbers = [5, -2, 1, -9, -7, 2, 6]
 max_product = numbers[0] * numbers[1]
-numbers.each do |first_number|
-  numbers.each do |second_number|
-    if first_number != second_number
-      current_product = first_number * second_number
+numbers.each do |num1|
+  numbers.each do |num2|
+    if num1 != num2
+      current_product = num1 * num2
       if current_product > max_product
         max_product = current_product
       end
@@ -200,6 +207,12 @@ p numbers_sum
 
 
 numbers = [2, 8, 3]
+# numbers_array =
+
+
+
+
+numbers = [2, 8, 3]
 numbers_array = []
 numbers.each do |num1|
   numbers.each do |num2|
@@ -247,8 +260,10 @@ p max_sum
 
 
 
+
 numbers = [2, 5, 3, 1, 0, 7, 11]
-result =
+# result =
+
 
 
 
@@ -346,5 +361,4 @@ strings.each do |current_pair|
     combined_strings << current_string
   end
 end
-
 p combined_strings
