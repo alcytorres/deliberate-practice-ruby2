@@ -139,6 +139,15 @@ p strings_hash
 
 
 
+
+hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
+# flattened_array =
+
+
+
+
+
+
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
@@ -155,6 +164,7 @@ p flattened_array
 #    For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
 
 
+# Recently answered correctly
 
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]

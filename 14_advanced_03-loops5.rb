@@ -101,6 +101,8 @@ p letter_combinations
 
 
 
+
+
 numbers = [5, -2, 1, -9, -7, 2, 6]
 max_product = numbers[0] * numbers[1]
 numbers.each do |num1|
@@ -347,18 +349,23 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
-# combined_strings =
-
-
-
-
-
-
-strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 combined_strings = ""
-strings.each do |current_pair|
-  current_pair.each do |current_string|
-    combined_strings << current_string
+strings.each do |array|
+  array.each do |string|
+    combined_strings << string
   end
 end
 p combined_strings
+
+
+
+
+
+# strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+# combined_strings = ""
+# strings.each do |current_pair|
+#   current_pair.each do |current_string|
+#     combined_strings << current_string
+#   end
+# end
+# p combined_strings
