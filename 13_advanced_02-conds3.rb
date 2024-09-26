@@ -7,8 +7,19 @@
 # If the age is between 13 and 59 years old and the movie is before 6 PM, the ticket price is $7. After 6 PM, the ticket price is $10.
 # If the customer is 60 years old or older, the ticket price is $7.
 
-age = 50
-time = 12
+
+
+
+# age =
+# time =
+
+
+
+
+
+
+age = 17
+time = 23
 if age <= 12
   ticket_price = 5
 elsif age >= 13 && age <= 59

@@ -27,6 +27,15 @@ p numbers_hash
 
 
 
+
+items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
+#        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
+# hash =
+
+
+
+
+
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 items_hash = {}
@@ -120,6 +129,13 @@ p persons_array
 
 
 
+# strings = ["do", "or", "do", "not"]
+# strings_hash =
+
+
+
+
+
 strings = ["do", "or", "do", "not"]
 strings_hash = {}
 strings.each do |string|
@@ -202,6 +218,7 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
+
 
 
 
