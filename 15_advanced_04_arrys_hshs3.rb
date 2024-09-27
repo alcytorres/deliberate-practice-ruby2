@@ -27,13 +27,31 @@ p numbers_hash
 
 
 
+items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
+#        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
+hash =
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-# hash =
-
-
-
+hash = {}
+items.each do |item|
+  id = item[:id]
+  hash[id] = item
+end
+p hash
 
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
@@ -81,8 +99,14 @@ p letter_frequencies
 
 
 
-items = {"chair" => 100, "book" => 14}
-items_hash =
+# items = {"chair" => 100, "book" => 14}
+# items_hash =
+
+
+
+
+
+
 
 
 
@@ -186,6 +210,14 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 # {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
+
+
+
+
+
+
+
+
 
 
 

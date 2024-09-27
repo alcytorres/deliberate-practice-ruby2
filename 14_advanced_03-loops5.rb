@@ -51,6 +51,8 @@ p flattened_array
 
 
 
+
+
 letters1 = ["a", "b", "c"]
 letters2 = ["d", "e", "f", "g"]
 strings_combined = []
@@ -60,6 +62,7 @@ letters1.each do |letter1|
   end
 end
 p strings_combined
+
 
 
 
@@ -107,6 +110,7 @@ p letter_combinations
 
 # numbers = [5, -2, 1, -9, -7, 2, 6]
 # max_product =
+
 
 
 
@@ -176,6 +180,9 @@ p total
 
 
 
+
+
+
 # numbers1 = [1, 2]
 # numbers2 = [6, 7, 8]
 # numbers_sum =
@@ -183,15 +190,21 @@ p total
 
 
 
+
+
+
+
 numbers1 = [1, 2]
 numbers2 = [6, 7, 8]
 numbers_sum = []
-numbers1.each do |first_number|
-  numbers2.each do |second_number|
-    numbers_sum << first_number + second_number
+numbers1.each do |num1|
+  numbers2.each do |num2|
+    numbers_sum << num1 + num2
   end
 end
 p numbers_sum
+
+
 
 
 
