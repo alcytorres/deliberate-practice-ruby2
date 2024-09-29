@@ -7,7 +7,12 @@
 
 
 number_pairs = [[1, 3], [8, 9], [2, 16]]
-flattened_array =
+# flattened_array =
+
+
+
+
+
 
 
 
@@ -69,7 +74,6 @@ p strings_combined
 
 # 3. Use a nested loop with one array of strings to create a new array that contains every combination of each string with every other string in the array.
 #    For example, ["a", "b", "c", "d"] becomes ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"].
-
 
 
 
@@ -204,13 +208,16 @@ p total
 #    For example, [1, 2] and [6, 7, 8] becomes [7, 8, 9, 8, 9, 10].
 
 
-
-
-
-
-# numbers1 = [1, 2]
-# numbers2 = [6, 7, 8]
+numbers1 = [1, 2]
+numbers2 = [6, 7, 8]
 # numbers_sum =
+
+
+
+
+
+
+
 
 
 
@@ -257,7 +264,7 @@ p numbers_sum
 
 
 
-# numbers = [2, 8, 3]
+numbers = [2, 8, 3]
 # numbers_array =
 
 
@@ -402,6 +409,23 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 # 10. Use a nested loop to convert an array of string arrays into a single string.
 #     For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama".
+
+
+
+strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+# combined_strings = ""
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
