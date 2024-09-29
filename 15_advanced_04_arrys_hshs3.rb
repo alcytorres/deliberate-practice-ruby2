@@ -159,7 +159,7 @@ p persons_array
 
 
 
-# strings = ["do", "or", "do", "not"]
+strings = ["do", "or", "do", "not"]
 # strings_hash =
 
 
@@ -327,8 +327,12 @@ p books_hash
 
 
 
-# original_hash = { "a" => 1, "b" => 2, "c" => 3 }
+original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 # new_hash =
+
+
+
+
 
 
 
