@@ -129,7 +129,13 @@ p items_hash
 
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-persons_array =
+# persons_array =
+
+
+
+
+
+
 
 
 
@@ -182,6 +188,15 @@ p strings_hash
 
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 # flattened_array =
+
+
+
+
+
+
+
+
+
 
 
 
@@ -250,6 +265,17 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
+
+
+
+
+
+
+
+
+
+
+
 
 
 

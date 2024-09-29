@@ -44,8 +44,8 @@ p flattened_array
 
 
 
-# letters1 = ["a", "b", "c"]
-# letters2 = ["d", "e", "f", "g"]
+letters1 = ["a", "b", "c"]
+letters2 = ["d", "e", "f", "g"]
 # strings_combined =
 
 
@@ -72,10 +72,32 @@ p strings_combined
 
 
 
+
 letters = ["a", "b", "c", "d"]
-letter_combinations =
+# letter_combinations =
 
 
+
+
+
+
+
+
+
+
+
+
+
+# letters = ["a", "b", "c", "d"]
+# letter_combinations = []
+# letters.each do |l1|
+#   letters.each do |l2|
+#     if l1 != l2
+#       letter_combinations << l1 + l2
+#     end
+#   end
+# end
+# p letter_combinations
 
 
 
@@ -108,7 +130,7 @@ p letter_combinations
 
 
 
-# numbers = [5, -2, 1, -9, -7, 2, 6]
+numbers = [5, -2, 1, -9, -7, 2, 6]
 # max_product =
 
 
@@ -138,8 +160,11 @@ p max_product
 
 
 
-# numbers = [[1, 3], [8, 9], [2, 16]]
+numbers = [[1, 3], [8, 9], [2, 16]]
 # total =
+
+
+
 
 
 
@@ -226,13 +251,22 @@ p numbers_sum
 # p numbers_sum
 
 
+
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
 #    For example, [2, 8, 3] becomes [4, 16, 6, 16, 64, 24, 6, 24, 9].
 
 
 
-numbers = [2, 8, 3]
+# numbers = [2, 8, 3]
 # numbers_array =
+
+
+
+
+
+
+
+
 
 
 
