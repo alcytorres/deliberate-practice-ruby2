@@ -7,7 +7,13 @@
 
 
 numbers = [[1, 3], [8, 9], [2, 16]]
-numbers_hash =
+# numbers_hash =
+
+
+
+
+
+
 
 
 
@@ -161,6 +167,10 @@ p persons_array
 
 strings = ["do", "or", "do", "not"]
 # strings_hash =
+
+
+
+
 
 
 
