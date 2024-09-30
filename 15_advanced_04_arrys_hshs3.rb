@@ -147,6 +147,9 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 
 
 
+
+
+
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 persons_array = []
@@ -164,7 +167,6 @@ p persons_array
 #    For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
 
 
-
 strings = ["do", "or", "do", "not"]
 # strings_hash =
 
@@ -176,6 +178,9 @@ strings = ["do", "or", "do", "not"]
 
 
 
+
+
+#GPT breakdown
 strings = ["do", "or", "do", "not"]
 strings_hash = {}
 strings.each do |string|
@@ -194,11 +199,8 @@ p strings_hash
 #    For example, {"a" => 1, "b" => 2, "c" => 3, "d" => 4} becomes ["a", 1, "b", 2, "c", 3, "d", 4].
 
 
-
-
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 # flattened_array =
-
 
 
 
@@ -234,7 +236,17 @@ p flattened_array
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 # {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
-# combined_hash =
+combined_hash = {}
+items.each do |item|
+  name = item[:name]
+  color = item[:color]
+  weight = item[:weight]
+  price = prices[name]
+  combined_hash[name] = {price: price, color: color, weight: weight}
+end
+p combined_hash
+
+
 
 
 
@@ -275,8 +287,6 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
-
-
 
 
 
@@ -336,9 +346,15 @@ p books_hash
 #     For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
 
 
-
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
-# new_hash =
+# flipped_hash =
+
+
+
+
+
+
+
 
 
 
