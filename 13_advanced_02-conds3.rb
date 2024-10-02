@@ -43,6 +43,22 @@ puts "Ticket price: $#{ticket_price}"
 # If the book is a reference book, there is no fine, regardless of the number of days overdue.
 # If the book is a special collection book, the fine is $5 per day, regardless of the number of days overdue.
 
+
+# days_overdue = 10
+# book_type = "special collection"
+
+# fine_amount =
+
+
+
+
+
+
+
+
+
+
+
 days_overdue = 10
 book_type = "special collection"
 
