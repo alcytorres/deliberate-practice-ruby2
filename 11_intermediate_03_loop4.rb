@@ -36,6 +36,7 @@ p total
 # 2. Start with an array of strings and combine them all into a single string.
 #    For example, ["volleyball", "basketball", "badminton"] becomes "volleyballbasketballbadminton".
 
+
 sports = ["volleyball", "basketball", "badminton"]
 combined_string = ""
 sports.each do |sport|
@@ -58,12 +59,15 @@ p combined_string
 # 3. Start with an array of hashes and compute the sum of the prices (from the :price key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes 105.
 
+
 items = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
 total = 0
 items.each do |item|
   total += item[:price]
 end
 p total
+
+
 
 
 
@@ -106,6 +110,7 @@ p min_value
 
 # 5. Start with an array of strings and compute the total length of all the strings.
 #    For example, ["volleyball", "basketball", "badminton"] becomes 29.
+
 
 sports =  ["volleyball", "basketball", "badminton"]
 string_length = 0
@@ -153,6 +158,7 @@ p lowest_price
 # 7. Start with an array of numbers and compute product of all the numbers.
 #    For example, [5, 10, 8, 3] becomes 1200.
 
+
 numbers = [5, 10, 8, 3]
 product = 1
 numbers.each do |number|
@@ -174,6 +180,7 @@ p product
 
 #  8. Start with an array of strings and combine them all into a single string, separated by dashes.
 #     For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
+
 
 sports = ["volleyball", "basketball", "badminton"]
 string = "-"
@@ -225,6 +232,7 @@ p hash
 
 # 10. Start with an array of numbers and compute the maximum number.
 #     For example, [5, 10, 8, 3] becomes 10.
+
 
 numbers = [5, 10, 8, 3]
 max_number = numbers[0]
