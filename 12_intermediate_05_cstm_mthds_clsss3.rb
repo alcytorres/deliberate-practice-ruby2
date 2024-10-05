@@ -3,6 +3,13 @@
 
 # 1. Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
 
+# class Song
+
+
+
+
+
+
 class Song
   attr_reader :name, :artist, :duration
   attr_writer :name, :artist, :duration
@@ -25,6 +32,15 @@ new_song.print_info
 
 
 # 2. Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
+
+# class Rectangle
+
+
+
+
+
+
+
 class Rectangle
   attr_reader :width, :height
   attr_writer :width, :height
@@ -47,6 +63,14 @@ pp rectangle.area
 
 
 # 3. Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
+
+# class Person
+
+
+
+
+
+
 class Person
   attr_reader :name, :age
   attr_writer :name, :age
@@ -74,6 +98,14 @@ pp person.name_cap
 
 
 # 6. Write a Movie class with attributes and reader/writer methods for title, director, and year. Then write a method that prints out the attributes in a single sentence.
+
+# class Movie
+
+
+
+
+
+
 class Movie
   attr_reader :title, :director, :year
   attr_writer :title, :director, :year
@@ -96,6 +128,11 @@ movie.print_info
 
 
 # 7. Write a Car class with attributes and reader/writer methods for make, model, year, and color. Then write a method that returns the make and model as a single sentence in all lowercase letters.
+
+# class Car
+
+
+
 class Car
   attr_reader :make, :model, :year, :color
   attr_writer :make, :model, :year, :color
@@ -119,6 +156,13 @@ pp car.return_info.downcase
 
 
 # 8. Write a Point class with attributes and reader/writer methods for x, y, and z coordinates. Then write a method that returns true if all 3 numbers are positive, otherwise it returns false.
+
+# class Point
+
+
+
+
+
 
 class Point
   attr_reader :x, :y, :z
@@ -144,6 +188,8 @@ pp point.check_positive
 
 
 # 9. Write a Book class with attributes and reader/writer methods for title, author, and year. Then write a method that returns "Classic" if the book is older than 2000, otherwise it returns "Modern".
+
+
 
 
 # 10. Write a Plant class with attributes and reader/writer methods for name, size, and price. Then write a method that prints out the attributes in a single sentence.
