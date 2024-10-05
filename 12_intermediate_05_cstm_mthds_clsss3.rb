@@ -22,6 +22,8 @@ end
 new_song = Song.new("Thank You for the Music", "ABBA", "3:52")
 new_song.print_info
 
+
+
 # 2. Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
 class Rectangle
   attr_reader :width, :height
@@ -40,6 +42,8 @@ end
 rectangle = Rectangle.new(10, 20)
 pp rectangle
 pp rectangle.area
+
+
 
 
 # 3. Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
