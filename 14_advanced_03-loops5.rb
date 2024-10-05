@@ -278,6 +278,8 @@ numbers = [2, 8, 3]
 
 
 
+
+
 numbers = [2, 8, 3]
 numbers_array = []
 numbers.each do |num1|
@@ -295,9 +297,21 @@ p numbers_array
 #    For example, [1, 8, 3, 10] becomes 18.
 
 
-
 numbers = [1, 8, 3, 10]
 # max_sum =
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
