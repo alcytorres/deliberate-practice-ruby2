@@ -293,7 +293,6 @@ books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", tit
 
 
 
-
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 books_hash = {}
@@ -339,6 +338,7 @@ p books_hash
 
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 # flipped_hash =
+
 
 
 

@@ -339,8 +339,6 @@ p max_sum
 #    For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
 
 
-
-
 numbers = [2, 5, 3, 1, 0, 7, 11]
 # result =
 
@@ -348,6 +346,13 @@ numbers = [2, 5, 3, 1, 0, 7, 11]
 
 
 
+
+
+
+
+
+
+# https://chatgpt.com/c/6702ba2d-ae1c-8011-885e-e47c5dbbfdd6
 
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
@@ -425,9 +430,8 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 #     For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama".
 
 
-
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
-# combined_strings = ""
+# combined_strings =
 
 
 
