@@ -347,12 +347,8 @@ numbers = [2, 5, 3, 1, 0, 7, 11]
 
 
 
-
-
-
-
-
 # https://chatgpt.com/c/6702ba2d-ae1c-8011-885e-e47c5dbbfdd6
+# https://chatgpt.com/c/67043d51-1ba0-8011-bccb-2f59f807708a
 
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
@@ -425,6 +421,22 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 # p result
 
 
+# THIS WAY RESULTS IN THE WRONG ANSWER: [7, 3]
+# numbers = [2, 5, 3, 1, 0, 7, 11]
+# result = false
+# numbers.each do |num1|
+#   numbers.each do |num2|
+#     if num1 != num2
+#       current_result = num1 + num2
+#       if current_result == 10
+#         result = [num1, num2]
+#       end
+#     end
+#   end
+# end
+# p result
+
+
 
 # 10. Use a nested loop to convert an array of string arrays into a single string.
 #     For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama".
@@ -432,6 +444,7 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 # combined_strings =
+
 
 
 
