@@ -7,6 +7,7 @@
 
 
 numbers = [[1, 3], [8, 9], [2, 16]]
+#         {1 => 3, 8 => 9, 2 => 16}
 # numbers_hash =
 
 
@@ -80,6 +81,7 @@ p items_hash
 
 
 word = "bookkeeper"
+#      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 # letter_frequencies =
 
 
@@ -106,6 +108,7 @@ p letter_frequencies
 
 
 # items = {"chair" => 100, "book" => 14}
+#         [["chair", 100], ["book", 14]]
 # items_hash =
 
 
@@ -168,7 +171,9 @@ p persons_array
 
 
 strings = ["do", "or", "do", "not"]
+#         {"do" => 2, "or" => 1, "not" => 1}
 # strings_hash =
+
 
 
 
@@ -200,7 +205,9 @@ p strings_hash
 
 
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
+#      ["a", 1, "b", 2, "c", 3, "d", 4]
 # flattened_array =
+
 
 
 
@@ -236,7 +243,7 @@ p flattened_array
 
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
-# {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
+#        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
 
 
@@ -280,6 +287,7 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
+
 
 
 
@@ -340,6 +348,7 @@ p books_hash
 
 
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
+#               {1 => "a", 2 => "b", 3 => "c"}
 # flipped_hash =
 
 

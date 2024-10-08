@@ -7,6 +7,7 @@
 
 
 number_pairs = [[1, 3], [8, 9], [2, 16]]
+#              [1, 3, 8, 9, 2, 16]
 # flattened_array =
 
 
@@ -51,6 +52,7 @@ p flattened_array
 
 letters1 = ["a", "b", "c"]
 letters2 = ["d", "e", "f", "g"]
+#          ["ad", "ae", "af", "ag", "bd", "be", "bf", "bg", "cd", "ce", "cf", "cg"]
 # strings_combined =
 
 
@@ -78,6 +80,7 @@ p strings_combined
 
 
 letters = ["a", "b", "c", "d"]
+#         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
 # letter_combinations =
 
 
@@ -135,6 +138,7 @@ p letter_combinations
 
 
 numbers = [5, -2, 1, -9, -7, 2, 6]
+#         63
 # max_product =
 
 
@@ -165,6 +169,7 @@ p max_product
 
 
 numbers = [[1, 3], [8, 9], [2, 16]]
+#         39
 # total =
 
 
@@ -210,6 +215,7 @@ p total
 
 numbers1 = [1, 2]
 numbers2 = [6, 7, 8]
+#          [7, 8, 9, 8, 9, 10]
 # numbers_sum =
 
 
@@ -265,6 +271,7 @@ p numbers_sum
 
 
 numbers = [2, 8, 3]
+#         [4, 16, 6, 16, 64, 24, 6, 24, 9]
 # numbers_array =
 
 
@@ -298,7 +305,11 @@ p numbers_array
 
 
 numbers = [1, 8, 3, 10]
+#         18
 # max_sum =
+
+
+
 
 
 
@@ -327,7 +338,6 @@ numbers.each do |num1|
     end
   end
 end
-
 p max_sum
 
 
@@ -340,7 +350,18 @@ p max_sum
 
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
+#         [3, 7]
 # result =
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -443,6 +464,7 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+#         "amanaplanacanalpanama"
 # combined_strings =
 
 
