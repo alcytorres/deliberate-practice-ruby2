@@ -231,7 +231,6 @@ numbers2 = [6, 7, 8]
 
 
 
-
 numbers1 = [1, 2]
 numbers2 = [6, 7, 8]
 numbers_sum = []
@@ -273,7 +272,6 @@ p numbers_sum
 numbers = [2, 8, 3]
 #         [4, 16, 6, 16, 64, 24, 6, 24, 9]
 # numbers_array =
-
 
 
 

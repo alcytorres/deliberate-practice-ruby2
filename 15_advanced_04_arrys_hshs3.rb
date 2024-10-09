@@ -107,9 +107,10 @@ p letter_frequencies
 
 
 
-# items = {"chair" => 100, "book" => 14}
+items = {"chair" => 100, "book" => 14}
 #         [["chair", 100], ["book", 14]]
 # items_hash =
+
 
 
 
@@ -135,10 +136,9 @@ p items_hash
 #    For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
 
 
-
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-# persons_array =
+# persons_array = []
 
 
 
@@ -150,8 +150,7 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 
 
 
-
-
+# This directly modifies the original person hash inside the persons hash by adding the :id key to it. Outcome = [{name: "Alice", age: 31, id: 321}, {name: "Maria", age: 27, id: 322}]
 
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
@@ -165,6 +164,20 @@ p persons_array
 
 
 
+# This results in a new hash being created for each person: Outcome = [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
+#         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+persons_array = []
+persons.each do |key, person|
+  id = key
+  name = person[:name]
+  age = person[:age]
+  persons_array << {id: key, name: name, age: age}
+end
+p persons_array
+
+
+
 
 # 6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
 #    For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
@@ -173,7 +186,6 @@ p persons_array
 strings = ["do", "or", "do", "not"]
 #         {"do" => 2, "or" => 1, "not" => 1}
 # strings_hash =
-
 
 
 
@@ -221,14 +233,12 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 
 
 
-
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
   flattened_array << key
   flattened_array << value
 end
-
 p flattened_array
 
 
@@ -287,6 +297,7 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
+
 
 
 
