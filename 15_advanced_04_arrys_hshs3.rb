@@ -36,7 +36,8 @@ p numbers_hash
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-hash =
+# hash =
+
 
 
 
@@ -197,6 +198,10 @@ strings = ["do", "or", "do", "not"]
 
 
 
+
+
+
+
 #GPT breakdown
 strings = ["do", "or", "do", "not"]
 strings_hash = {}
@@ -255,6 +260,7 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
+
 
 
 
@@ -361,6 +367,8 @@ p books_hash
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
 # flipped_hash =
+
+
 
 
 

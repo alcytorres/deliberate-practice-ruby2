@@ -147,6 +147,15 @@ numbers = [5, -2, 1, -9, -7, 2, 6]
 
 
 
+
+
+
+
+
+
+
+
+
 numbers = [5, -2, 1, -9, -7, 2, 6]
 max_product = numbers[0] * numbers[1]
 numbers.each do |num1|
@@ -349,7 +358,17 @@ p max_sum
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
-# result =
+result = false
+numbers.each do |num1|
+  numbers.each do |num2|
+    if num1 != num2 && num1 + num2 == 10
+      result = [num1, num2]
+      break
+    end
+  end
+  break if result
+end
+p result
 
 
 
@@ -357,17 +376,23 @@ numbers = [2, 5, 3, 1, 0, 7, 11]
 
 
 
+# The main difference between = and == is their purpose in code:
+
+# = is a Assignment Operator
+#      It assigns a value to a variable.
+#      For example, result = false means you are assigning the value false to the variable result.
+#      It is used to store data in a variable.
 
 
-
-
-
-
-
+# == is a Equality Comparison Operator
+#      It checks if two values are equal.
+#      For example, num1 + num2 == 10 means "Check if the sum of num1 and num2 is equal to 10."
+#      It is used for comparison, not assignment.
 
 
 # https://chatgpt.com/c/6702ba2d-ae1c-8011-885e-e47c5dbbfdd6
 # https://chatgpt.com/c/67043d51-1ba0-8011-bccb-2f59f807708a
+# https://chatgpt.com/c/67082dc1-53f0-8011-84ba-408318c3f003
 
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
