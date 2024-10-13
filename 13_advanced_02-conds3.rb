@@ -85,6 +85,16 @@ puts "Fine amount: $#{fine_amount}"
 # If the total order value is between $50 and $100, the discount is 5% for regular customers and 10% for premium customers.
 # If the total order value is greater than $100, the discount is 10% for regular customers and 15% for premium customers.
 
+
+# order_value =
+# membership =
+
+
+
+
+
+
+
 order_value = 1000
 membership = "premium"
 
@@ -121,19 +131,26 @@ puts "Discount amount: $ #{order_value * discount}"
 # destination = "domestic"
 # weight = 4
 
-# shipping_fee = 0
-# if destination == "domestic"
-#   if weight <= 1
-#     shipping_fee = 5
-#   else
-#     shipping_fee = 10
-#   end
-# elsif destination == "international"
-#   if weight <= 1
-#     shipping_fee = 15
-#   else
-#     shipping_fee = 25
-#   end
-# end
 
-# puts "Shipping fee: $#{shipping_fee}"
+
+
+
+destination = "domestic"
+weight = 4
+
+shipping_fee = 0
+if destination == "domestic"
+  if weight <= 1
+    shipping_fee = 5
+  else
+    shipping_fee = 10
+  end
+elsif destination == "international"
+  if weight <= 1
+    shipping_fee = 15
+  else
+    shipping_fee = 25
+  end
+end
+
+puts "Shipping fee: $#{shipping_fee}"
