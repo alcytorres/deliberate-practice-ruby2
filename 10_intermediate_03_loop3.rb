@@ -32,6 +32,7 @@ end
 p new_numbers
 
 
+
 # 2. Start with an array of strings and create a new array with only the strings that start with the letter "w".
 #    For example, ["winner", "winner", "chicken", "dinner"] becomes ["winner", "winner"].
 
@@ -126,6 +127,7 @@ end
 p short_names
 
 
+
 # 7. Start with an array of numbers and create a new array with only the numbers less than 10.
 #    For example, [8, 23, 0, 44, 1980, 3] becomes [8, 0, 3].
 
@@ -141,6 +143,7 @@ numbers.each do |number|
 end
 
 p low_numbers
+
 
 
 # 8. Start with an array of strings and create a new array with only the strings that don't start with the letter "b".
@@ -159,6 +162,7 @@ end
 p new_strings
 
 
+
 # 9. Start with an array of hashes and create a new array with only the hashes with prices less than 10 (from the :price key).
 #    For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes [{name: "pencil", price: 1}, {name: "book", price: 4}].
 
@@ -173,6 +177,7 @@ items.each do |item|
   end
 end
 p cheap_items
+
 
 
 # 10. Start with an array of numbers and create a new array with only the odd numbers.
