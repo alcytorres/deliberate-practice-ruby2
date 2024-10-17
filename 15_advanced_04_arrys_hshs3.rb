@@ -139,7 +139,7 @@ p items_hash
 
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-# persons_array = []
+# persons_array =
 
 
 
@@ -151,21 +151,13 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 
 
 
-# This directly modifies the original person hash inside the persons hash by adding the :id key to it. Outcome = [{name: "Alice", age: 31, id: 321}, {name: "Maria", age: 27, id: 322}]
-
-persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
-#         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-persons_array = []
-persons.each do |key, person|
-  # This line adds a new key-value pair :id => key to the person hash.
-  person[:id] = key
-  persons_array << person
-end
-p persons_array
 
 
 
-# This results in a new hash being created for each person: Outcome = [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+# This results in a new hash being created for each person:
+# Outcome = [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+# This is the CORRECT ANSWER based on the ouput provided in  the question
+
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 persons_array = []
@@ -173,9 +165,26 @@ persons.each do |key, person|
   id = key
   name = person[:name]
   age = person[:age]
-  persons_array << {id: key, name: name, age: age}
+  persons_array << {id: id, name: name, age: age}
 end
 p persons_array
+
+
+
+
+# This directly modifies the original person hash inside the persons hash by adding the :id key to it.
+# Outcome = [{name: "Alice", age: 31, id: 321}, {name: "Maria", age: 27, id: 322}]
+
+people = { 321 => { name: "Alice", age: 31 }, 322 => { name: "Maria", age: 27 } }
+#         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+persons_array = []
+people.each do |key, person|
+    # This line adds a new key-value pair :id => key to the person hash.
+  person[:id] = key
+  persons_array << person
+end
+p persons_array
+
 
 
 
@@ -187,8 +196,6 @@ p persons_array
 strings = ["do", "or", "do", "not"]
 #         {"do" => 2, "or" => 1, "not" => 1}
 # strings_hash =
-
-
 
 
 
@@ -224,6 +231,7 @@ p strings_hash
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 #      ["a", 1, "b", 2, "c", 3, "d", 4]
 # flattened_array =
+
 
 
 
@@ -277,7 +285,6 @@ items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black
 
 
 
-
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 # {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
@@ -303,6 +310,7 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
+
 
 
 
@@ -367,6 +375,7 @@ p books_hash
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
 # flipped_hash =
+
 
 
 
