@@ -8,8 +8,6 @@
 # If the customer is 60 years old or older, the ticket price is $7.
 
 
-
-
 # age =
 # time =
 
@@ -95,6 +93,7 @@ puts "Fine amount: $#{fine_amount}"
 
 
 
+
 order_value = 1000
 membership = "premium"
 
@@ -130,6 +129,7 @@ puts "Discount amount: $ #{order_value * discount}"
 
 # destination = "domestic"
 # weight = 4
+
 
 
 
