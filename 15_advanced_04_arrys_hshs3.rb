@@ -154,6 +154,7 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 
 
 
+
 # This results in a new hash being created for each person:
 # Outcome = [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # This is the CORRECT ANSWER based on the ouput provided in  the question
