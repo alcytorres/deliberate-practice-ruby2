@@ -176,7 +176,6 @@ p max_product
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes 39.
 
 
-
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         39
 # total =
@@ -188,6 +187,17 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
+
+
+numbers = [[1, 3], [8, 9], [2, 16]]
+#         39
+total = 0
+numbers.each do |array|
+  array.each do |number|
+    total += number
+  end
+end
+p total
 
 numbers = [[1, 3], [8, 9], [2, 16]]
 total = 0
@@ -226,6 +236,7 @@ numbers1 = [1, 2]
 numbers2 = [6, 7, 8]
 #          [7, 8, 9, 8, 9, 10]
 # numbers_sum =
+
 
 
 
@@ -294,6 +305,7 @@ numbers = [2, 8, 3]
 
 
 
+
 numbers = [2, 8, 3]
 numbers_array = []
 numbers.each do |num1|
@@ -314,6 +326,7 @@ p numbers_array
 numbers = [1, 8, 3, 10]
 #         18
 # max_sum =
+
 
 
 
@@ -358,6 +371,22 @@ p max_sum
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
+# result =
+
+
+
+
+
+
+
+
+
+
+
+
+
+numbers = [2, 5, 3, 1, 0, 7, 11]
+#         [3, 7]
 result = false
 numbers.each do |num1|
   numbers.each do |num2|
@@ -369,11 +398,6 @@ numbers.each do |num1|
   break if result
 end
 p result
-
-
-
-
-
 
 
 # The main difference between = and == is their purpose in code:
@@ -489,6 +513,7 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 #         "amanaplanacanalpanama"
 # combined_strings =
+
 
 
 
