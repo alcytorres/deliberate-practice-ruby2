@@ -17,6 +17,7 @@
 
 
 
+
 age = 17
 time = 23
 if age <= 12
@@ -43,8 +44,8 @@ puts "Ticket price: $#{ticket_price}"
 # If the book is a special collection book, the fine is $5 per day, regardless of the number of days overdue.
 
 
-# days_overdue = 10
-# book_type = "special collection"
+# days_overdue =
+# book_type =
 
 # fine_amount =
 
@@ -130,8 +131,8 @@ puts "Discount amount: $ #{order_value * discount}"
 # If the weight is greater than 1 kg, the shipping fee is $25.
 
 
-# destination = "domestic"
-# weight = 4
+# destination =
+# weight =
 
 
 
