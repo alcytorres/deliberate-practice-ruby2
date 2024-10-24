@@ -78,10 +78,10 @@ p strings_combined
 #    For example, ["a", "b", "c", "d"] becomes ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"].
 
 
-
 letters = ["a", "b", "c", "d"]
 #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
 # letter_combinations =
+
 
 
 
@@ -154,8 +154,6 @@ numbers = [5, -2, 1, -9, -7, 2, 6]
 
 
 
-
-
 numbers = [5, -2, 1, -9, -7, 2, 6]
 max_product = numbers[0] * numbers[1]
 numbers.each do |num1|
@@ -179,6 +177,9 @@ p max_product
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         39
 # total =
+
+
+
 
 
 
@@ -372,6 +373,7 @@ p max_sum
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
 # result =
+
 
 
 
