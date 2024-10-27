@@ -37,7 +37,6 @@ end
 puts "Ticket price: $#{ticket_price}"
 
 
-
 # 2. Write a program to store the type of book (regular, reference, or special collection) and the number of days its overdue. Then calculate the fine amount based on the following conditions:
 
 # If the book is a regular book and overdue by up to 7 days, the fine is $1 per day.
@@ -81,7 +80,6 @@ end
 puts "Fine amount: $#{fine_amount}"
 
 
-
 # 3. Write a program that stores a person's order value and membership level (regular or premium). Then calculate a discount amount based on the following conditions:
 
 # If the total order value is less than $50, there is no discount.
@@ -122,7 +120,6 @@ elsif order_value > 100
 end
 
 puts "Discount amount: $ #{order_value * discount}"
-
 
 
 # 4. Write a Ruby program that stores the weight of a package and the destination (domestic or international). Then calculate the shipping fee based on the following conditions:
