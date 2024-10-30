@@ -18,7 +18,6 @@
 
 
 
-
 age = 17
 time = 23
 if age <= 12
@@ -48,7 +47,6 @@ puts "Ticket price: $#{ticket_price}"
 # book_type =
 
 # fine_amount =
-
 
 
 
@@ -96,7 +94,6 @@ puts "Fine amount: $#{fine_amount}"
 
 
 
-
 order_value = 1000
 membership = "premium"
 
@@ -131,7 +128,6 @@ puts "Discount amount: $ #{order_value * discount}"
 
 # destination =
 # weight =
-
 
 
 
