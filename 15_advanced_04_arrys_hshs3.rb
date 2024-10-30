@@ -88,6 +88,16 @@ word = "bookkeeper"
 
 
 
+
+
+
+
+
+
+
+
+
+
 word = "bookkeeper"
 letter_frequencies = {}
 index = 0
@@ -139,11 +149,24 @@ p items_hash
 
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-# persons_array =
+persons_array = []
+persons.each do |key, person|
+  person[:id] = key
+  persons_array << person
+end
+p persons_array
 
 
-
-
+persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
+#         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+persons_array = []
+persons.each do |key, person|
+  id = key
+  name = person[:name]
+  age = person[:age]
+  persons_array << {id: id, name: name, age: age}
+end
+p persons_array
 
 
 
@@ -246,7 +269,6 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 
 
 
-
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
@@ -269,6 +291,7 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
+
 
 
 
@@ -308,8 +331,6 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
-
-
 
 
 
@@ -372,10 +393,6 @@ p books_hash
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
 # flipped_hash =
-
-
-
-
 
 
 
