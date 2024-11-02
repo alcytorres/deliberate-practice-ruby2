@@ -18,6 +18,7 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 numbers_hash = {}
 numbers.each do |key, value|
@@ -37,6 +38,7 @@ p numbers_hash
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
+
 
 
 
@@ -121,6 +123,7 @@ p letter_frequencies
 items = {"chair" => 100, "book" => 14}
 #         [["chair", 100], ["book", 14]]
 # items_hash =
+
 
 
 
@@ -269,6 +272,7 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 
 
 
+
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
@@ -291,6 +295,7 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
+
 
 
 
