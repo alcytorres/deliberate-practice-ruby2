@@ -19,6 +19,7 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 numbers_hash = {}
 numbers.each do |key, value|
@@ -38,6 +39,7 @@ p numbers_hash
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
+
 
 
 
@@ -86,6 +88,7 @@ p items_hash
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 # letter_frequencies =
+
 
 
 
