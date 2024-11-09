@@ -20,6 +20,9 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
+
+
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 numbers_hash = {}
 numbers.each do |key, value|
@@ -39,6 +42,7 @@ p numbers_hash
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
+
 
 
 
@@ -88,6 +92,7 @@ p items_hash
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 # letter_frequencies =
+
 
 
 
@@ -296,7 +301,6 @@ p flattened_array
 
 # Recently answered correctly
 
-
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
@@ -422,10 +426,10 @@ original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 
 
 
-original_hash = { "a" => 1, "b" => 2, "c" => 3 }
-flipped_hash = {}
-original_hash.each do |key, value|
-  flipped_hash[value] = key
-end
+# original_hash = { "a" => 1, "b" => 2, "c" => 3 }
+# flipped_hash = {}
+# original_hash.each do |key, value|
+#   flipped_hash[value] = key
+# end
 
-p flipped_hash
+# p flipped_hash
