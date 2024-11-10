@@ -23,6 +23,7 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 numbers_hash = {}
 numbers.each do |key, value|
@@ -42,6 +43,7 @@ p numbers_hash
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
+
 
 
 
@@ -126,12 +128,9 @@ p letter_frequencies
 # 4. Convert a hash into an array of arrays.
 #    For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
 
-
-
 items = {"chair" => 100, "book" => 14}
 #         [["chair", 100], ["book", 14]]
 # items_hash =
-
 
 
 
@@ -158,27 +157,9 @@ p items_hash
 # 5. Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
 #    For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
 
-
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-persons_array = []
-persons.each do |key, person|
-  person[:id] = key
-  persons_array << person
-end
-p persons_array
-
-
-persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
-#         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-persons_array = []
-persons.each do |key, person|
-  id = key
-  name = person[:name]
-  age = person[:age]
-  persons_array << {id: id, name: name, age: age}
-end
-p persons_array
+# persons_array =
 
 
 
@@ -232,6 +213,7 @@ p persons_array
 strings = ["do", "or", "do", "not"]
 #         {"do" => 2, "or" => 1, "not" => 1}
 # strings_hash =
+
 
 
 
@@ -304,8 +286,15 @@ p flattened_array
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
-# combined_hash =
-
+combined_hash = {}
+items.each do |item|
+  name = item[:name]
+  color = item[:color]
+  weight = item[:weight]
+  price = prices[name]
+  combined_hash[name] = {price: price, color: color, weight: weight}
+end
+p combined_hash
 
 
 
@@ -346,8 +335,16 @@ p combined_hash
 
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
-# books_hash =
-
+books_hash = {}
+books.each do |book|
+  author = book[:author]
+  title = book[:title]
+  if books_hash[author] == nil
+    books_hash[author] = []
+  end
+  books_hash[author] << title
+end
+p books_hash
 
 
 
@@ -421,15 +418,10 @@ original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 
 
 
+original_hash = { "a" => 1, "b" => 2, "c" => 3 }
+flipped_hash = {}
+original_hash.each do |key, value|
+  flipped_hash[value] = key
+end
 
-# Placeholder
-
-
-
-# original_hash = { "a" => 1, "b" => 2, "c" => 3 }
-# flipped_hash = {}
-# original_hash.each do |key, value|
-#   flipped_hash[value] = key
-# end
-
-# p flipped_hash
+p flipped_hash
