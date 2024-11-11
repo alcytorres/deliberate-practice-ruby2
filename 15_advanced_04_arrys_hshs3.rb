@@ -5,12 +5,13 @@
 #     For example, [[1, 3], [8, 9], [2, 16]] becomes {1 => 3, 8 => 9, 2 => 16}.
 
 
-
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
-# numbers_hash =
-
-
+numbers_hash = {}
+numbers.each do |key, value|
+  numbers_hash[key] = value
+end
+p numbers_hash
 
 
 
@@ -29,9 +30,22 @@ numbers_hash = {}
 numbers.each do |key, value|
   numbers_hash[key] = value
 end
-
 p numbers_hash
 
+
+
+# Why numbers_hash[key] = number Works:
+# The expression numbers_hash[key] = number directly assigns the number value to the key in numbers_hash.
+# This is a straightforward key-value assignment, where key becomes the unique key in numbers_hash and number becomes its corresponding value.
+
+
+# Why numbers_hash[key] << number Would Not Work:
+# The << operator is intended for appending values to an array, but numbers_hash[key] is not an array—it's a hash entry that holds a single value.
+
+# If you used numbers_hash[key] << number, Ruby would raise an error unless numbers_hash[key] was already an array (which it isn't, because it starts as an empty hash). Using << implies you're adding multiple items to a single key, but here you only want each key to hold a single, specific value.
+
+
+# In short, numbers_hash[key] = number correctly assigns a single value to each key, which is the expected behavior for a hash.
 
 
 
@@ -42,9 +56,12 @@ p numbers_hash
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-# hash =
-
-
+hash = {}
+items.each do |item|
+  id = item[:id]
+  hash[id] = item
+end
+p hash
 
 
 
@@ -84,6 +101,30 @@ end
 p items_hash
 
 
+items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
+#        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
+hash = {}
+items.each do |item|
+  id = item[:id]
+  color = item[:color]
+  price = item[:price]
+  hash[id] = {id: id, color: color, price: price}
+end
+p hash
+
+
+# Why hash[id] = item Works:
+# The expression hash[id] = item assigns item (the entire hash) to the key id in hash.
+# This works because each item in the array is already a complete hash, and you simply want to map each :id to its corresponding item.
+
+# Why hash[id] << item Would Cause an Error:
+# The << operator is used for appending elements to arrays, not for assigning values in a hash.
+# Since hash[id] is meant to hold a single hash, not an array, using << doesn’t apply. You’re not appending item to an existing array; you’re setting id directly to item.
+
+# In summary:
+# In Problem 2, hash[id] = item correctly assigns the entire item hash to a key in hash.
+
+
 
 # 3. Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
 #    For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
@@ -93,9 +134,17 @@ p items_hash
 
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
-# letter_frequencies =
-
-
+letter_frequencies = {}
+index = 0
+while index < word.length
+  letter = word[index]
+  if letter_frequencies[letter] == nil
+    letter_frequencies[letter] = 0
+  end
+  letter_frequencies[letter] += 1
+  index += 1
+end
+p letter_frequencies
 
 
 
@@ -202,6 +251,17 @@ people.each do |key, person|
 end
 p persons_array
 
+
+# Why persons_array << person Works:
+# persons_array << person appends each person hash (after adding the :id key) to the persons_array.
+# Each person is now a complete hash with an :id key, and << simply adds it to the array as a separate element, as expected.
+
+# Why persons_array = person Would Not Work:
+# persons_array = person would replace persons_array with a single person each time, overwriting the previous values.
+# This means that, in the end, persons_array would just contain the last person rather than an array of all people.
+
+# In summary:
+# In Problem 5, persons_array << person correctly appends each person hash to persons_array as a separate element.
 
 
 
