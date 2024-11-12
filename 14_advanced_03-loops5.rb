@@ -80,45 +80,47 @@ p strings_combined
 
 letters = ["a", "b", "c", "d"]
 #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
-# letter_combinations =
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# letters = ["a", "b", "c", "d"]
-# letter_combinations = []
-# letters.each do |l1|
-#   letters.each do |l2|
-#     if l1 != l2
-#       letter_combinations << l1 + l2
-#     end
-#   end
-# end
-# p letter_combinations
-
-
-
-letters = ["a", "b", "c", "d"]
 letter_combinations = []
-letters.each do |first_letter|
-  letters.each do |second_letter|
-    if first_letter != second_letter
-      letter_combinations << first_letter + second_letter
+letters.each do |letter1|
+  letters.each do |letter2|
+    if letter1 != letter2
+      letter_combinations << letter1 + letter2
     end
   end
 end
 p letter_combinations
 
+
+
+
+
+
+
+
+letters = ["a", "b", "c", "d"]
+# Initialize: letter_combinations = [] creates a starting point (an empty array) to store the output.
+letter_combinations = []
+letters.each do |l1|
+  letters.each do |l2|
+    if l1 != l2
+      # Collect Each Combination: letter_combinations << l1 + l1 generates each two-letter combination and appends it to letter_combinations, gradually building up the full list of combinations.
+      letter_combinations << l1 + l2
+    end
+  end
+end
+p letter_combinations
+
+
+# letters = ["a", "b", "c", "d"]
+# letter_combinations = []
+# letters.each do |first_letter|
+#   letters.each do |second_letter|
+#     if first_letter != second_letter
+#       letter_combinations << first_letter + second_letter
+#     end
+#   end
+# end
+# p letter_combinations
 
 
 letters = ["a", "b", "c", "d"]
@@ -139,7 +141,7 @@ p letter_combinations
 
 numbers = [5, -2, 1, -9, -7, 2, 6]
 #         63
-# max_product =
+# max_product
 
 
 
@@ -177,7 +179,6 @@ p max_product
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         39
 # total =
-
 
 
 
@@ -251,7 +252,6 @@ numbers2 = [6, 7, 8]
 
 
 
-
 numbers1 = [1, 2]
 numbers2 = [6, 7, 8]
 numbers_sum = []
@@ -293,9 +293,6 @@ p numbers_sum
 numbers = [2, 8, 3]
 #         [4, 16, 6, 16, 64, 24, 6, 24, 9]
 # numbers_array =
-
-
-
 
 
 
@@ -373,6 +370,9 @@ p max_sum
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
 # result =
+
+
+
 
 
 
@@ -515,8 +515,6 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 #         "amanaplanacanalpanama"
 # combined_strings =
-
-
 
 
 
