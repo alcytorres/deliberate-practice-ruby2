@@ -62,20 +62,109 @@ end
 words = ["apple", "banana", "avocado", "pear", "apricot"]
 puts count_words_starting_with_a(words) # Output: 3
 
+
 # 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
+
+def array_of_strings(strings)
+  result = ""
+  strings.each_with_index do |str, index|
+    result += str
+    result += ", " unless index == strings.length - 1
+  end
+  return result
+end
+
+strings = ["bat", "cat", "fly", "airplane"]
+puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
+
+
+
+
+# Breakdown
+def array_of_strings(strings)
+  result = ""
+  strings.each_with_index do |str, index|
+    result += str
+    # Adds ", " to result unless we’re at the last word to avoid a trailing comma.
+    result += ", " unless index == strings.length - 1
+  end
+  # After the loop is done, we return result, which now contains all the words joined with commas.
+  return result
+end
+
+strings = ["bat", "cat", "fly", "airplane"]
+puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
+
+
+
+def array_of_strings(strings)
+  result = ""
+  index = 0
+  while index < strings.length
+    result += strings[index]
+    result += ", " if index < strings.length
+    index += 1
+  end
+  # After the loop is done, we return result, which now contains all the words joined with commas.
+  return result
+end
+
+strings = ["bat", "cat", "fly", "airplane"]
+puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
 
 
 
 # 6. Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other).
 
 
+def product_of_array(numbers)
+  product = 1
+  numbers.each do |num|
+    product *= num
+  end
+  return product
+end
+
+numbers = [2, 3, 4]
+puts product_of_array(numbers) # Output: 24
+
+
+
+# def product_of_array(numbers)
+#   product = 1
+#   numbers.each do |num|
+#     product = product * num
+#   end
+#   return product
+# end
+
+# numbers = [2, 3, 4]
+# puts product_of_array(numbers) # Output: 24
+
 
 # 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
 
+# def two_smallest_numbers(numbers)
+# end
+
+
+
+# numbers = [7, 10, 3, 8, 2]
+# p two_smallest_numbers(numbers) # Output: [2, 3]
 
 
 # 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
 
+def count_zeros(numbers)
+  count = 0
+  numbers.each do |num|
+    count += 1 if num == 0
+  end
+  return count
+end
+
+numbers = [1, 0, 5, 0, 3, 0]
+puts count_zeros(numbers) # Output: 3
 
 
 # 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.

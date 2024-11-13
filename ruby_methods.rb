@@ -5,6 +5,12 @@
 
 # each_with_index
 
+fruits = ["apple", "banana", "cherry"]
+
+fruits.each_with_index do |fruit, i|
+  puts "Fruit at index #{i} is #{fruit}"
+end
+
 
 # .split
 Array = "Geeks For Geeks".split
@@ -134,6 +140,19 @@ puts "hello".include?("e")
 # Output:
 # true
 # true
+
+
+
+# .length
+
+# Description: Returns the number of characters in a string or elements in an array.
+# Primary Use Case: Measuring string length or array size.
+
+string = "hello"
+puts string.length # Output: 5 (since there are 5 characters)
+
+array = ["apple", "banana", "cherry"]
+puts array.length # Output: 3 (since there are 3 elements)
 
 
 

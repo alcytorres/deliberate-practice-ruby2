@@ -17,6 +17,10 @@ number_pairs = [[1, 3], [8, 9], [2, 16]]
 
 
 
+
+
+
+
 number_pairs = [[1, 3], [8, 9], [2, 16]]
 flattened_array = []
 number_pairs.each do |current_pair|
@@ -60,6 +64,12 @@ letters2 = ["d", "e", "f", "g"]
 
 
 
+
+
+
+
+
+
 letters1 = ["a", "b", "c"]
 letters2 = ["d", "e", "f", "g"]
 strings_combined = []
@@ -80,15 +90,16 @@ p strings_combined
 
 letters = ["a", "b", "c", "d"]
 #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
-letter_combinations = []
-letters.each do |letter1|
-  letters.each do |letter2|
-    if letter1 != letter2
-      letter_combinations << letter1 + letter2
-    end
-  end
-end
-p letter_combinations
+# letter_combinations =
+
+
+
+
+
+
+
+
+
 
 
 
