@@ -351,10 +351,6 @@ numbers = [1, 8, 3, 10]
 
 
 
-
-
-
-
 numbers = [1, 8, 3, 10]
 max_sum = numbers[0] + numbers[1]
 numbers.each do |num1|
@@ -381,7 +377,6 @@ p max_sum
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
 # result =
-
 
 
 

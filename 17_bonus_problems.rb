@@ -169,6 +169,19 @@ puts count_zeros(numbers) # Output: 3
 
 # 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
 
+def all_numbers_bigger_than_ten(numbers)
+  index = 0
+  while index < numbers.length
+    if numbers[index] <= 10
+      return false
+    end
+    index += 1
+  end
+  return true
+end
+
+numbers = [30, 40, 60]
+puts all_numbers_bigger_than_ten(numbers) # Output: true
 
 
 # 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
