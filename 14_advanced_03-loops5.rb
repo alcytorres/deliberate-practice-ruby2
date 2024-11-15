@@ -262,7 +262,6 @@ numbers2 = [6, 7, 8]
 
 
 
-
 numbers1 = [1, 2]
 numbers2 = [6, 7, 8]
 numbers_sum = []
@@ -315,6 +314,7 @@ numbers = [2, 8, 3]
 
 
 
+
 numbers = [2, 8, 3]
 numbers_array = []
 numbers.each do |num1|
@@ -322,7 +322,6 @@ numbers.each do |num1|
     numbers_array << num1 * num2
   end
 end
-
 p numbers_array
 
 

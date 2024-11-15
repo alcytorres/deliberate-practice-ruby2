@@ -57,14 +57,7 @@ p numbers_hash
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-hash = {}
-items.each do |item|
-  id = item[:id]
-  hash[id] = item
-end
-p hash
-
-
+# hash =
 
 
 
@@ -90,16 +83,16 @@ end
 p hash
 
 
-items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
-#        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-items_hash = {}
-items.each do |item|
-  key = item[:id]
-  value = item
-  items_hash[key] = value
-end
+# items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
+# #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
+# items_hash = {}
+# items.each do |item|
+#   key = item[:id]
+#   value = item
+#   items_hash[key] = value
+# end
 
-p items_hash
+# p items_hash
 
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
@@ -194,6 +187,7 @@ items = {"chair" => 100, "book" => 14}
 
 
 
+
 items = {"chair" => 100, "book" => 14}
 items_hash = []
 items.each do |key, value|
@@ -221,6 +215,8 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 
 
 
+
+
 # This results in a new hash being created for each person:
 # Outcome = [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # This is the CORRECT ANSWER based on the ouput provided in  the question
@@ -232,6 +228,7 @@ persons.each do |key, person|
   id = key
   name = person[:name]
   age = person[:age]
+  # This line adds a new hash to the persons_array for each person. The new hash contains:
   persons_array << {id: id, name: name, age: age}
 end
 p persons_array
@@ -289,6 +286,8 @@ strings = ["do", "or", "do", "not"]
 
 
 
+
+
 #GPT breakdown
 strings = ["do", "or", "do", "not"]
 strings_hash = {}
@@ -311,8 +310,6 @@ p strings_hash
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 #      ["a", 1, "b", 2, "c", 3, "d", 4]
 # flattened_array =
-
-
 
 
 
