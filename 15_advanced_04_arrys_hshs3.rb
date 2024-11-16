@@ -8,11 +8,7 @@
 
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
-numbers_hash = {}
-numbers.each do |key, value|
-  numbers_hash[key] = value
-end
-p numbers_hash
+# numbers_hash =
 
 
 
@@ -27,8 +23,10 @@ p numbers_hash
 
 
 numbers = [[1, 3], [8, 9], [2, 16]]
+#         {1 => 3, 8 => 9, 2 => 16}
 numbers_hash = {}
 numbers.each do |key, value|
+  # Adds a key-value pair to numbers_hash, with the sub-array's first element as the key and the second as the value.
   numbers_hash[key] = value
 end
 p numbers_hash
@@ -58,7 +56,6 @@ p numbers_hash
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
-
 
 
 
@@ -125,20 +122,10 @@ p hash
 # Look for alternative ways to solve this
 
 
-
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
-letter_frequencies = {}
-index = 0
-while index < word.length
-  letter = word[index]
-  if letter_frequencies[letter] == nil
-    letter_frequencies[letter] = 0
-  end
-  letter_frequencies[letter] += 1
-  index += 1
-end
-p letter_frequencies
+# letter_frequencies =
+
 
 
 

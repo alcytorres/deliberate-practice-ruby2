@@ -385,28 +385,6 @@ numbers = [2, 5, 3, 1, 0, 7, 11]
 
 
 
-
-
-
-
-
-
-
-numbers = [2, 5, 3, 1, 0, 7, 11]
-#         [3, 7]
-result = false
-numbers.each do |num1|
-  numbers.each do |num2|
-    if num1 != num2 && num1 + num2 == 10
-      result = [num1, num2]
-      break
-    end
-  end
-  break if result
-end
-p result
-
-
 # The main difference between = and == is their purpose in code:
 
 # = is a Assignment Operator
