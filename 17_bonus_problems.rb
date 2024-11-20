@@ -15,6 +15,7 @@ numbers = [7, 10, 23]
 p sum_of_array(numbers) # Output: 40
 
 
+
 # 2. Write a function that takes in an array of strings and returns the smallest string.
 
 def smallest_string(strings)
@@ -29,6 +30,7 @@ end
 
 strings = ["apple", "banana", "kiwi"]
 puts smallest_string(strings) # Output: "kiwi"
+
 
 
 # 3.  Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order.
@@ -47,6 +49,7 @@ numbers = [7, 10, 23, 30]
 p reverse_array(numbers) # Output: [30, 23, 10, 7]
 
 
+
 # 4. Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
 
 def count_words_starting_with_a(words)
@@ -61,6 +64,7 @@ end
 
 words = ["apple", "banana", "avocado", "pear", "apricot"]
 puts count_words_starting_with_a(words) # Output: 3
+
 
 
 # 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
@@ -153,6 +157,7 @@ puts product_of_array(numbers) # Output: 24
 # p two_smallest_numbers(numbers) # Output: [2, 3]
 
 
+
 # 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
 
 def count_zeros(numbers)
@@ -165,6 +170,7 @@ end
 
 numbers = [1, 0, 5, 0, 3, 0]
 puts count_zeros(numbers) # Output: 3
+
 
 
 # 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
@@ -182,6 +188,7 @@ end
 
 numbers = [30, 40, 60]
 puts all_numbers_bigger_than_ten(numbers) # Output: true
+
 
 
 # 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
