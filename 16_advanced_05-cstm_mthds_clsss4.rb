@@ -33,7 +33,6 @@ cart.display_items
 
 
 
-
 # 2. Write a Product class that stores the name, price, and metadata, where metadata is a hash that stores additional information about the product.
 
 
@@ -43,3 +42,5 @@ cart.display_items
 
 
 # 4. Write a Contact class that stores the name, age, and contact_info, where contact_info is a hash that stores any additional information about the contact.
+
+
