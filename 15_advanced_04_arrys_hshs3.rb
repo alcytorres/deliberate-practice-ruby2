@@ -26,6 +26,7 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
+
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
 numbers_hash = {}
@@ -60,6 +61,7 @@ p numbers_hash
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
+
 
 
 
@@ -149,6 +151,7 @@ word = "bookkeeper"
 
 
 
+
 word = "bookkeeper"
 letter_frequencies = {}
 index = 0
@@ -187,6 +190,7 @@ items = {"chair" => 100, "book" => 14}
 
 
 
+
 items = {"chair" => 100, "book" => 14}
 items_hash = []
 items.each do |key, value|
@@ -203,6 +207,7 @@ p items_hash
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # persons_array =
+
 
 
 
@@ -292,6 +297,7 @@ strings = ["do", "or", "do", "not"]
 
 
 
+
 #GPT breakdown
 strings = ["do", "or", "do", "not"]
 strings_hash = {}
@@ -330,6 +336,7 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 
 
 
+
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
@@ -351,6 +358,7 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
+
 
 
 
