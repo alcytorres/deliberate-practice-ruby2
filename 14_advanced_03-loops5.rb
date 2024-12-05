@@ -375,9 +375,17 @@ p max_sum
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
-# result =
-
-
+result = false
+numbers.each do |num1|
+  numbers.each do |num2|
+    if num1 != num2 && num1 + num2 == 10
+      result = [num1, num2]
+      break
+    end
+  end
+  break if result
+end
+p result
 
 
 
@@ -498,8 +506,6 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 #         "amanaplanacanalpanama"
 # combined_strings =
-
-
 
 
 

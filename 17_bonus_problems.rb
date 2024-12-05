@@ -11,8 +11,8 @@ def sum_of_array(numbers)
   return sum
 end
 
-numbers = [7, 10, 23]
-p sum_of_array(numbers) # Output: 40
+numbers = [1, 2, 4] # Output: 7
+p sum_of_array(numbers)
 
 
 
