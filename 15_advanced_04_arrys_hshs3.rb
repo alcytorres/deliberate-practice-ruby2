@@ -79,6 +79,8 @@ items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }
 
 
 
+
+
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 hash = {}
@@ -134,6 +136,7 @@ p hash
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 # letter_frequencies =
+
 
 
 
@@ -313,6 +316,7 @@ p strings_hash
 
 
 
+
 # 7. Convert a hash into a flat array containing all the hash’s keys and values.
 #    For example, {"a" => 1, "b" => 2, "c" => 3, "d" => 4} becomes ["a", 1, "b", 2, "c", 3, "d", 4].
 
@@ -337,6 +341,7 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 
 
 
+
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
@@ -344,6 +349,7 @@ hash.each do |key, value|
   flattened_array << value
 end
 p flattened_array
+
 
 
 
