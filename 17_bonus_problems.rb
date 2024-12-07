@@ -28,7 +28,8 @@ p sum_of_array(numbers)
 # 2. Write a function that takes in an array of strings and returns the smallest string.
 
 def smallest_string(strings)
-  strings.min_by { |string| string.length }
+  strings.min_by { |string| string.length}
+  # Finds the shortest string in the given strings array by evaluating the length of each string.
 end
 
 strings = ["apple", "banana", "kiwi"]
@@ -37,6 +38,12 @@ puts smallest_string(strings) # Output: "kiwi"
 
 def smallest_string(strings)
   strings.min_by(&:length)
+  # Call the `min_by` method on the `strings` array.
+  # The `&:length` is shorthand for `{ |string| string.length }`.
+  # It tells `min_by` to compare the strings based on their `length` attribute.
+  # The `&` operator converts the `:length` symbol into a block.
+  # This block effectively becomes `{ |string| string.length }`.
+  # `min_by` returns the string with the smallest length.
 end
 
 strings = ["apple", "banana", "kiwi"]
@@ -45,6 +52,10 @@ puts smallest_string(strings) # Output: "kiwi"
 
 def smallest_string(strings)
   strings.sort_by(&:length).first
+  # Call the `sort_by` method on the `strings` array.
+  # `sort_by(&:length)` sorts the strings in ascending order of their length.
+  # The `&:length` is shorthand for `{ |string| string.length }`, which computes the length of each string.
+  # After sorting, `.first` retrieves the first element of the sorted array (i.e., the shortest string).
 end
 
 strings = ["apple", "banana", "kiwi"]
@@ -95,6 +106,24 @@ p reverse_array(numbers) # Output: [4, 3, 2, 1]
 # 4. Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
 
 def count_words_starting_with_a(words)
+  words.count { |word| word.start_with?("a") }
+  # Use the `count` method to iterate over the array and count words
+  # The block checks if each word starts with "a" using `start_with?`
+end
+
+words = ["apple", "banana", "avocado", "pear", "apricot"]
+puts count_words_starting_with_a(words) # Output: 3
+
+
+def count_words_starting_with_a(words)
+  words.count { |word| word[0] == "a" }
+end
+
+words = ["apple", "banana", "avocado", "pear", "apricot"]
+puts count_words_starting_with_a(words) # Output: 3
+
+
+def count_words_starting_with_a(words)
   count = 0
   words.each do |word|
     if word[0] == "a"
@@ -110,6 +139,19 @@ puts count_words_starting_with_a(words) # Output: 3
 
 
 # 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
+
+def array_of_strings(strings)
+  strings.join(', ')
+  # Use the `join` method on the `strings` array.
+  # The `join` method concatenates all elements of the array into a single string,
+  # separated by the provided delimiter, which in this case is ', ' (comma and space).
+end
+
+strings = ["bat", "cat", "fly", "airplane"]
+puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
+
+
+
 
 def array_of_strings(strings)
   result = ""
@@ -161,6 +203,71 @@ puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
 
 
 # 6. Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other).
+
+
+def product_of_array(numbers)
+  product = 1
+  # Initialize a variable `product` to 1.
+  # This will hold the cumulative product of the array elements.
+  numbers.each { |num| product *= num }
+  # Iterate through each element in the `numbers` array.
+  # The `each` method passes each element (`num`) to the block.
+
+  # Inside the block, multiply the current value of `product` by `num`.
+  # Assign the result back to `product`.
+  # Example (with the input [2, 3, 4]):
+  #   - Start: product = 1
+  #   - Step 1: product = 1 * 2 = 2
+  #   - Step 2: product = 2 * 3 = 6
+  #   - Step 3: product = 6 * 4 = 24
+  product
+  # Return the final value of `product` after the loop.
+end
+
+numbers = [2, 3, 4]
+puts product_of_array(numbers) # Output: 24
+
+
+def product_of_array(numbers)
+  numbers.reduce(1) { |product, num| product * num }
+  # Use the `reduce` method on the `numbers` array.
+  # `reduce(1)` initializes the accumulator (`product`) to 1, which is the multiplicative identity.
+  # The block `{ |product, num| product * num }` multiplies each element in the array with the accumulator (`product`).
+end
+
+numbers = [2, 3, 4]
+puts product_of_array(numbers) # Output: 24
+
+# How reduce Works Internally
+# When you call reduce, you provide:
+
+# An Initial Value: This is the 1 in reduce(1).
+# A Block: This block { |product, num| product * num } is executed for each element of the array.
+# The magic happens because reduce uses the initial value you provide (in this case, 1) as the starting value for the first parameter of the block. That first parameter (product) starts with the initial value and gets updated on every iteration.
+
+
+
+# reduce method Syntax (Also known as inject)
+# collection.reduce(initial_value) { |accumulator, element| block }
+# initial_value (optional): The starting value for the accumulator. Defaults to the first element if omitted.
+# accumulator: The running total/result.
+# element: The current element of the collection.
+
+# How It Works
+# If initial_value is provided, the accumulator starts with that value.
+# For each element, the block calculates a new value for the accumulator.
+# After iterating through all elements, reduce returns the final value of the accumulator.
+
+
+# Examples
+# 1. Sum of Elements
+# numbers = [1, 2, 3, 4]
+# sum = numbers.reduce(0) { |acc, num| acc + num }
+# puts sum  # Output: 10
+# Starts with 0 as the initial value.
+# Adds each element to the accumulator (acc).
+
+
 
 
 def product_of_array(numbers)
