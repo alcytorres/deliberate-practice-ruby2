@@ -2,6 +2,15 @@
 
 # 1. Write a function that takes in an array of numbers and returns its sum.
 
+
+def sum_of_array(numbers)
+  numbers.sum
+end
+
+numbers = [1, 2, 4] # Output: 7
+p sum_of_array(numbers)
+
+
 def sum_of_array(numbers)
   sum = 0
   numbers.each do |num|
@@ -17,6 +26,30 @@ p sum_of_array(numbers)
 
 
 # 2. Write a function that takes in an array of strings and returns the smallest string.
+
+def smallest_string(strings)
+  strings.min_by { |string| string.length }
+end
+
+strings = ["apple", "banana", "kiwi"]
+puts smallest_string(strings) # Output: "kiwi"
+
+
+def smallest_string(strings)
+  strings.min_by(&:length)
+end
+
+strings = ["apple", "banana", "kiwi"]
+puts smallest_string(strings) # Output: "kiwi"
+
+
+def smallest_string(strings)
+  strings.sort_by(&:length).first
+end
+
+strings = ["apple", "banana", "kiwi"]
+puts smallest_string(strings) # Output: "kiwi"
+
 
 def smallest_string(strings)
   smallest = strings[0]
@@ -36,6 +69,15 @@ puts smallest_string(strings) # Output: "kiwi"
 # 3.  Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order.
 
 def reverse_array(numbers)
+  numbers.reverse
+end
+
+numbers = [1, 2, 3, 4]
+p reverse_array(numbers) # Output: [4, 3, 2, 1]
+
+
+
+def reverse_array(numbers)
   reversed = []
   i = numbers.length - 1
   while i >= 0
@@ -45,8 +87,8 @@ def reverse_array(numbers)
   return reversed
 end
 
-numbers = [7, 10, 23, 30]
-p reverse_array(numbers) # Output: [30, 23, 10, 7]
+numbers = [1, 2, 3, 4]
+p reverse_array(numbers) # Output: [4, 3, 2, 1]
 
 
 
