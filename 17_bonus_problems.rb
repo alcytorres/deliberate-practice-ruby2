@@ -204,7 +204,6 @@ puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
 
 # 6. Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other).
 
-
 def product_of_array(numbers)
   product = 1
   # Initialize a variable `product` to 1.
@@ -297,17 +296,60 @@ puts product_of_array(numbers) # Output: 24
 
 # 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
 
-# def two_smallest_numbers(numbers)
-# end
+def two_smallest_numbers(numbers)
+  numbers.sort[0, 2]
+  # `numbers.sort` returns a sorted array (e.g., [1, 3, 5, 8])
+  # `[0, 2]` slices the first two elements (index 0, take 2 elements) → [1, 3]
+end
+
+numbers = [5, 1, 8, 3]
+p two_smallest_numbers(numbers) # Output: [1, 3]
 
 
+# Breakdown
+# The part [0, 2] is array slicing in Ruby. Here’s a simple breakdown:
 
-# numbers = [7, 10, 3, 8, 2]
-# p two_smallest_numbers(numbers) # Output: [2, 3]
+# How It Works:
+# array[start, length] extracts a subarray starting at index start and includes length elements.
+# Applied to Your Example:
+# numbers.sort:
+# Sorts the array in ascending order.
+# Input: [7, 10, 3, 8, 2] → Output: [2, 3, 7, 8, 10]
 
+# [0, 2]:
+
+# 0 → Start at index 0 (the first element).
+# 2 → Take the next 2 elements starting from index 0.
+# Result:
+# From [2, 3, 7, 8, 10], slice the first two elements → [2, 3].
+
+# Final Output:
+# The method returns the two smallest numbers in the array: [2, 3].
 
 
 # 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
+
+def count_zeros(numbers)
+  numbers.count(0)
+  # Use the built-in `count` method with an argument 0.
+  # This will count how many elements in the array are exactly 0.
+end
+
+numbers = [0, 1, 0, 2, 3, 0]
+p count_zeros(numbers)  # Output: 3
+
+
+def count_zeros(numbers)
+  numbers.count { |num| num == 0 }
+  # Use `count` with a block.
+  # The block is evaluated for each element in `numbers`.
+  # If `num == 0` is true, that element is counted.
+end
+
+numbers = [1, 0, 2, 0, 3, 0]
+puts count_zeros(numbers) # Output: 3
+
+
 
 def count_zeros(numbers)
   count = 0
@@ -323,6 +365,14 @@ puts count_zeros(numbers) # Output: 3
 
 
 # 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
+
+def all_numbers_bigger_than_ten(numbers)
+  numbers.all? { |num| num > 10 }
+end
+
+numbers = [30, 40, 60]
+puts all_numbers_bigger_than_ten(numbers) # Output: true
+
 
 def all_numbers_bigger_than_ten(numbers)
   index = 0
@@ -341,6 +391,24 @@ puts all_numbers_bigger_than_ten(numbers) # Output: true
 
 
 # 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
+
+def count_a(words)
+  words.join.count("a")
+  # Join all words into a single string, then use `count` to count occurrences of "a".
+end
+
+words = ["bat", "cat", "hat", "car"]
+puts count_a(words) # Output: 4
+
+
+def count_a(words)
+  words.map { |word| word.count('a') }.sum
+  # Use `map` to transform each word into the count of "a" it contains,
+  # then sum those counts together.
+end
+
+words = ["bat", "cat", "hat", "car"]
+puts count_a(words) # Output: 4
 
 
 
