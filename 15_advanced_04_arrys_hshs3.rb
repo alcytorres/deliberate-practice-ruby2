@@ -26,7 +26,6 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
-
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
 numbers_hash = {}
@@ -61,7 +60,6 @@ p numbers_hash
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
-
 
 
 
@@ -176,7 +174,6 @@ p letter_frequencies
 items = {"chair" => 100, "book" => 14}
 #         [["chair", 100], ["book", 14]]
 # items_hash =
-
 
 
 
