@@ -227,6 +227,7 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 
 
 
+
 # This results in a new hash being created for each person:
 # Outcome = [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # This is the CORRECT ANSWER based on the ouput provided in  the question
@@ -301,6 +302,7 @@ strings = ["do", "or", "do", "not"]
 
 
 
+
 #GPT breakdown
 strings = ["do", "or", "do", "not"]
 strings_hash = {}
@@ -342,6 +344,7 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 
 
 
+
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
@@ -364,6 +367,7 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
+
 
 
 
