@@ -1,5 +1,3 @@
-# <!-- Work on the following problems in groups of two or three. (Take turns on doing each one.) Be sure to follow the process outlined in the guide! Do each problem the long way, avoid Ruby methods that solve the problem for you (like .sort, .reverse, etc.) After all people agree the solution is correct, one person should execute it and verify that it works!
-
 # 1. Write a function that takes in an array of numbers and returns its sum.
 
 def sum_of_array(numbers)
@@ -25,7 +23,7 @@ p sum_of_array(numbers)
 # 2. Write a function that takes in an array of strings and returns the smallest string.
 
 def smallest_string(strings)
-  strings.min_by {|string| string.length}
+  strings.min_by { |string| string.length}
 end
 
 strings = ["apple", "banana", "kiwi"]
