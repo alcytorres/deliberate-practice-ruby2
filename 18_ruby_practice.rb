@@ -99,7 +99,6 @@ puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
 
 
 
-
 # def array_of_strings(strings)
 #   strings.join(", ")
 # end
