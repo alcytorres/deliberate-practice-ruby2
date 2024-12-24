@@ -22,8 +22,8 @@ puts Array
 # Geeks
 
 # .split('')
-Array1 = "fly".split('')
-puts Array1
+array1 = "fly".split('')
+puts array1
 
 # Output
 # f
