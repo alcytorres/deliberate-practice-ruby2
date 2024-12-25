@@ -2,8 +2,8 @@
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that prints each number of an array.
 # Solution 1
-def print_elements(array)
-  array.each { |num| puts num }
+def print_elements(numbers)
+  numbers.each { |num| puts num }
 end
 
 numbers = [1, 2, 3]
@@ -15,8 +15,8 @@ print_elements(numbers)
 
 
 # Solution 2
-def print_elements(array)
-  array.each do |num|
+def print_elements(numbers)
+  numbers.each do |num|
     p num
   end
 end
@@ -32,8 +32,8 @@ print_elements(numbers)
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that prints each key-value pair in a hash.
 # Solution 1
-def print_hash(hash)
-  hash.each { |key, value| puts "#{key}: #{value}" }
+def print_hash(person)
+  person.each { |key, value| puts "#{key}: #{value}" }
 end
 
 person = { name: "Alice", age: 30 }
@@ -44,8 +44,8 @@ print_hash(person)
 
 
 # Solution 2
-def print_hash(hash)
-  hash.each do |key, value|
+def print_hash(person)
+  person.each do |key, value|
     p "#{key} => #{value}"
   end
 end
@@ -62,8 +62,8 @@ print_hash(person)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes an array of strings and returns a new array with each string in uppercase.
 # Solution 1
-def uppercase_all(strings)
-  strings.map { |str| str.upcase }
+def uppercase_all(words)
+  words.map { |str| str.upcase }
 end
 
 words = ["hello", "world"]
@@ -72,8 +72,8 @@ p uppercase_all(words)
 
 
 # Solution 2
-def uppercase_all(strings)
-  strings.map do |str|
+def uppercase_all(words)
+  words.map do |str|
     str.upcase
   end
 end
@@ -90,8 +90,8 @@ def increment_numbers(numbers)
   numbers.map { |num| num + 1 }
 end
 
-nums = [1, 2, 3]
-p increment_numbers(nums)
+numbers = [1, 2, 3]
+p increment_numbers(numbers)
 # Expected Output: [2, 3, 4]
 
 
@@ -102,8 +102,8 @@ def increment_numbers(numbers)
   end
 end
 
-nums = [1, 2, 3]
-p increment_numbers(nums)
+numbers = [1, 2, 3]
+p increment_numbers(numbers)
 # Expected Output: [2, 3, 4]
 
 
@@ -116,8 +116,8 @@ def evens_only(numbers)
   numbers.select { |num| num.even? }
 end
 
-nums = [1, 2, 3, 4, 5]
-p evens_only(nums)
+numbers = [1, 2, 3, 4, 5]
+p evens_only(numbers)
 # Expected Output: [2, 4]
 
 
@@ -128,8 +128,8 @@ def evens_only(numbers)
   end
 end
 
-nums = [1, 2, 3, 4, 5]
-p evens_only(nums)
+numbers = [1, 2, 3, 4, 5]
+p evens_only(numbers)
 # Expected Output: [2, 4]
 
 
@@ -140,8 +140,8 @@ def longer_than_three(words)
   words.select { |word| word.length > 3 }
 end
 
-array = ["apple", "car", "door"]
-p longer_than_three(array)
+words = ["apple", "car", "door"]
+p longer_than_three(words)
 # Expected Output: ["apple", "door"]
 
 
@@ -152,8 +152,8 @@ def longer_than_three(words)
   end
 end
 
-array = ["apple", "car", "door"]
-p longer_than_three(array)
+words = ["apple", "car", "door"]
+p longer_than_three(words)
 # Expected Output: ["apple", "door"]
 
 
@@ -166,8 +166,8 @@ def count_greater_than_ten(numbers)
   numbers.count { |num| num > 10 }
 end
 
-nums = [5, 12, 13, 8, 20]
-p count_greater_than_ten(nums)
+numbers = [5, 12, 13, 8, 20]
+p count_greater_than_ten(numbers)
 # Expected Output: 3
 
 
@@ -178,8 +178,8 @@ def count_greater_than_ten(numbers)
   end
 end
 
-nums = [5, 12, 13, 8, 20]
-p count_greater_than_ten(nums)
+numbers = [5, 12, 13, 8, 20]
+p count_greater_than_ten(numbers)
 # Expected Output: 3
 
 
@@ -190,8 +190,8 @@ def even_count(numbers)
   numbers.count { |num| num.even? }
 end
 
-nums = [1, 2, 3, 4, 5, 6]
-p even_count(nums)
+numbers = [1, 2, 3, 4, 5, 6]
+p even_count(numbers)
 # Expected Output: 3
 
 
@@ -202,13 +202,13 @@ def even_count(numbers)
   end
 end
 
-nums = [1, 2, 3, 4, 5, 6]
-p even_count(nums)
+numbers = [1, 2, 3, 4, 5, 6]
+p even_count(numbers)
 # Expected Output: 3
 
 
 
-# .reduce
+# .reduce or .inject
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that sums all elements in an array.
 # Solution 1
@@ -216,8 +216,8 @@ def sum_array(numbers)
   numbers.reduce(0) { |accumulator, num| accumulator + num }
 end
 
-nums = [1, 2, 3, 4]
-p sum_array(nums)
+numbers = [1, 2, 3, 4]
+p sum_array(numbers)
 # Expected Output: 10
 
 
@@ -228,8 +228,8 @@ def sum_array(numbers)
   end
 end
 
-nums = [1, 2, 3, 4]
-p sum_array(nums)
+numbers = [1, 2, 3, 4]
+p sum_array(numbers)
 # Expected Output: 10
 
 
@@ -240,8 +240,8 @@ def product_of_array(numbers)
   numbers.reduce(1) { |accumulator, num| accumulator * num }
 end
 
-nums = [2, 3, 4]
-p product_of_array(nums)
+numbers = [2, 3, 4]
+p product_of_array(numbers)
 # Expected Output: 24
 
 
@@ -252,9 +252,32 @@ def product_of_array(numbers)
   end
 end
 
-nums = [2, 3, 4]
-p product_of_array(nums)
+numbers = [2, 3, 4]
+p product_of_array(numbers)
 # Expected Output: 24
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that returns the total sum of an array of integers.
+# Solution 1
+def total_sum(numbers)
+  numbers.reduce(:+)
+end
+
+numbers = [1, 2, 3, 4]
+p total_sum(numbers)
+# Expected Output: 10
+
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that returns the total sum of a range of numbers.
+# Solution 1
+def sum_range(range)
+  range.reduce(:+)
+end
+
+p sum_range(1..5)
+# Expected Output: 15
 
 
 
@@ -266,8 +289,8 @@ def first_even(numbers)
   numbers.find { |num| num.even? }
 end
 
-nums = [1, 3, 5, 6, 7]
-p first_even(nums)
+numbers = [1, 3, 5, 6, 7]
+p first_even(numbers)
 # Expected Output: 6
 
 
@@ -278,8 +301,8 @@ def first_even(numbers)
   end
 end
 
-nums = [1, 3, 5, 6, 7]
-p first_even(nums)
+numbers = [1, 3, 5, 6, 7]
+p first_even(numbers)
 # Expected Output: 6
 
 
@@ -290,8 +313,8 @@ def first_long_word(words)
   words.find { |word| word.length > 4 }
 end
 
-arr = ["cat", "door", "apple", "hi"]
-p first_long_word(arr)
+words = ["cat", "door", "apple", "hi"]
+p first_long_word(words)
 # Expected Output: "apple"
 
 
@@ -302,8 +325,8 @@ def first_long_word(words)
   end
 end
 
-arr = ["cat", "door", "apple", "hi"]
-p first_long_word(arr)
+words = ["cat", "door", "apple", "hi"]
+p first_long_word(words)
 # Expected Output: "apple"
 
 
@@ -316,8 +339,8 @@ def total_sum(numbers)
   numbers.sum
 end
 
-nums = [1, 2, 3]
-p total_sum(nums)
+numbers = [1, 2, 3]
+p total_sum(numbers)
 # Expected Output: 6
 
 
@@ -326,8 +349,8 @@ def total_sum(numbers)
   numbers.inject(:+)
 end
 
-nums = [1, 2, 3]
-p total_sum(nums)
+numbers = [1, 2, 3]
+p total_sum(numbers)
 # Expected Output: 6
 
 
