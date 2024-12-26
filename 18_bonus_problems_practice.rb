@@ -209,6 +209,7 @@ words = ["bat", "cat", "hat", "car"]
 # puts count_a(words) # Output: 4
 
 
+
 # def count_a(words)
 #   words.join.count("a")
 # end
