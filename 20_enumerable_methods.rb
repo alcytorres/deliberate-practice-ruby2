@@ -1,4 +1,4 @@
-# .each
+each
 # What it does: Iterates through every element in a collection (array, hash, etc.).
 # Why use it: Performing an action on each item (e.g., printing values, modifying data in place).
 
@@ -68,7 +68,7 @@ print_hash(person)
 
 
 
-# .map
+map
 # What it does: Returns a new array (or collection) where each element is transformed based on the provided block.
 # Why use it: Create a modified version of your original data (e.g., incrementing numbers, converting strings to uppercase).
 
@@ -101,7 +101,7 @@ p increment_numbers(numbers)
 
 
 
-# .select
+select
 # What it does: Returns a new array containing only the elements that match a given condition.
 # Why use it: Filtering data, such as extracting only even numbers or finding students with high scores.
 
@@ -158,7 +158,7 @@ p longer_than_three(words)
 
 
 
-# .count
+count
 # What it does: Returns the number of elements in a collection, or the count of elements matching a condition if a block is given.
 # Why use it: Determining the total number of items (e.g., array.count) or those meeting specific criteria (e.g., array.count { |x| x > 10 }).
 
@@ -195,7 +195,7 @@ p count_greater_than_ten(numbers)
 
 
 
-# .reduce or .inject
+reduce or inject
 # What it does: Accumulates a value by iterating through all elements in a collection, applying an operation (e.g., addition).
 # Why use it: To condense a collection into a single value by repeatedly applying an operation (e.g., summing up all prices in a cart).
 
@@ -263,7 +263,7 @@ p sum_range(1..5)
 
 
 
-# .each_with_object
+each_with_object
 # What it does: Iterates through a collection and builds or updates an external object in the process.
 # Why use it: Creating or populating a data structure (like a hash) while iterating.
 
@@ -285,7 +285,7 @@ p word_lengths(words)
 
 
 
-# .find
+find
 # What it does: Returns the first element in a collection that matches a given condition, or nil if no element matches.
 # Why use it: Searching through data to get the initial match (e.g., finding the first user over age 18).
 
@@ -330,7 +330,7 @@ p first_long_word(words)
 
 
 
-# .sum
+sum
 # What it does: Quickly calculates the sum of elements in an array or other Enumerable object.
 # Why use it: Simplifies the process of adding up numbers (e.g., total points scored by a team).
 
@@ -366,8 +366,7 @@ p sum_range(1..5)
 
 
 
-
-# .min_by
+min_by
 # What it does: Finds the element with the minimum value as determined by the block.
 # Why use it: Useful for retrieving the "smallest" item based on a custom comparison.
 
@@ -376,9 +375,17 @@ collection.min_by do |element|
   # expression used to compare
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and returns the string with the fewest characters?
+def shortest_string(strings)
+  strings.min_by { |s| s.length }
+end
+
+words = ["apple", "cat", "banana"] # Output: "cat"
+p shortest_string(words)
 
 
-# .sort_by
+
+sort_by
 # What it does: Sorts a collection according to values computed in the given block.
 # Why use it: Great for custom sorting based on a specific property of each element.
 
@@ -387,9 +394,17 @@ collection.sort_by do |element|
   # expression used as sort key
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and returns them sorted by length?
+def sort_by_length(strings)
+  strings.sort_by { |s| s.length }
+end
+
+words = ["apple", "cat", "banana"] # Output: ["cat", "apple", "banana"]
+p sort_by_length(words)
 
 
-# .reject
+
+reject
 # What it does: Returns an array of elements for which the block condition is false.
 # Why use it: Opposite of .select — filters out elements you don't want.
 
@@ -398,9 +413,17 @@ collection.reject do |element|
   # condition that returns true or false
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
+def remove_negatives(numbers)
+  numbers.reject { |n| n < 0 }
+end
+
+nums = [-1, 2, -3, 4] # Output: [2, 4]
+p remove_negatives(nums)
 
 
-# .each_with_index
+
+each_with_index
 # What it does: Iterates through each element, providing both element and index.
 # Why use it: Needed when you must access or use the index during iteration.
 
@@ -409,9 +432,22 @@ collection.each_with_index do |element, index|
   # do something with element and index
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
+def print_with_index(strings)
+  strings.each_with_index do |str, i|
+    puts "#{i}: #{str}"
+  end
+end
+
+words = ["apple", "banana"]
+# Output:
+# 0: apple
+# 1: banana
+print_with_index(words)
 
 
-# .any?
+
+any?
 # What it does: Checks if at least one element meets the condition in the block.
 # Why use it: Quick way to see if there’s a match for a given criterion.
 
@@ -420,9 +456,17 @@ collection.any? do |element|
   # condition that returns true or false
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns true if there is at least one negative number?
+def any_negative?(numbers)
+  numbers.any? { |n| n < 0 }
+end
+
+nums = [1, -2, 3] # Output: true
+p any_negative?(nums)
 
 
-# .all?
+
+all?
 # What it does: Checks if all elements meet the condition in the block.
 # Why use it: Validates that every item in the collection satisfies a requirement.
 
@@ -431,9 +475,18 @@ collection.all? do |element|
   # condition that returns true or false
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns true if all numbers are positive?
+
+def all_positive?(numbers)
+  numbers.all? { |n| n > 0 }
+end
+
+nums = [1, 3, 5] # Output: true
+p all_positive?(nums)
 
 
-# .none?
+
+none?
 # What it does: Checks if no elements in the collection meet the condition in the block.
 # Why use it: Confirm that a certain condition does not apply to any element.
 
@@ -442,9 +495,18 @@ collection.none? do |element|
   # condition that returns true or false
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of words and returns true if none of them start with "z"?
+
+def none_start_with_z?(words)
+  words.none? { |w| w.start_with?("z") }
+end
+
+words = ["apple", "cat", "banana"] # Output: true
+p none_start_with_z?(words)
 
 
-# .group_by
+
+group_by
 # What it does: Groups collection elements into a hash, keyed by the result of the block.
 # Why use it: Useful for categorizing elements into multiple groups.
 
@@ -453,9 +515,18 @@ collection.group_by do |element|
   # return grouping criterion
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and groups them by even/odd?
+
+def group_by_parity(numbers)
+  numbers.group_by { |n| n.even? ? "even" : "odd" }
+end
+
+nums = [1, 2, 3, 4] # Output: {"odd"=>[1, 3], "even"=>[2, 4]}
+p group_by_parity(nums)
 
 
-# .flat_map
+
+flat_map
 # What it does: Maps each element to a new array and then flattens the result by one level.
 # Why use it: Efficient way to transform nested structures into a single-level collection.
 
@@ -464,9 +535,18 @@ collection.flat_map do |element|
   # return an array of transformed elements
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of arrays and returns a single flattened array with each element doubled?
+
+def double_flatten(array_of_arrays)
+  array_of_arrays.flat_map { |arr| arr.map { |n| n * 2 } }
+end
+
+arrays = [[1, 2], [3, 4]] # Output: [2, 4, 6, 8]
+p double_flatten(arrays)
 
 
-# .zip
+
+zip
 # What it does: Combines elements from multiple arrays (or enumerables) in sequence, creating sub-arrays.
 # Why use it: Align elements from two or more collections in parallel.
 
@@ -475,9 +555,19 @@ array1.zip(array2, array3) do |elements|
   # elements is an array of corresponding items from each array
 end
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in two arrays and returns a combined array of pairs?
+
+def pair_arrays(arr1, arr2)
+  arr1.zip(arr2)
+end
+
+arr1 = [1, 2]
+arr2 = ["a", "b"] # Output: [[1, "a"], [2, "b"]]
+p pair_arrays(arr1, arr2)
 
 
-# .lazy
+
+lazy
 # What it does: Creates a lazy enumerator, which processes elements on-demand.
 # Why use it: Useful for very large collections, as it avoids building large intermediate arrays.
 
@@ -487,3 +577,11 @@ collection.lazy
   .select { |x| x > 10 }
   .first(5)
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in a large array of numbers, squares them lazily, and returns the first 3 squares?
+
+def first_three_squares(numbers)
+  numbers.lazy.map { |n| n * n }.first(3)
+end
+
+nums = (1..10_000).to_a # Output: [1, 4, 9]
+p first_three_squares(nums)
