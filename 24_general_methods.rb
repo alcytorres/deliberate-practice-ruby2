@@ -1,217 +1,133 @@
-push
-# What it does: Adds an element to the end of an array.
-# Why use it: Handy for appending new items in place without creating a new array.
+# .keys
+# What it does: Retrieves an array of all keys in the hash.
+# Why use it: Useful for iterating over keys or understanding a hash’s structure.
 
 # Syntax:
-array.push(element)
+hash.keys
 
 
-
-pop
-# What it does: Removes the last element from an array and returns it.
-# Why use it: Useful when you need to remove the most recently added item.
-
-# Syntax:
-removed_element = array.pop
-
-
-
-join
-# What it does: Converts the elements of an array into a single string, separated by a given delimiter.
-# Why use it: Helpful for creating text output from array data.
+# .values
+# What it does: Retrieves an array of all values in the hash.
+# Why use it: Helpful for processing or inspecting the data stored under those keys.
 
 # Syntax:
-array.join("delimiter")
+hash.values
 
 
-
-sort
-# What it does: Sorts the elements of an array in ascending order (by default).
-# Why use it: Crucial for arranging data or performing sorting algorithms.
+# .merge
+# What it does: Combines two hashes into one, returning a new hash.
+# Why use it: Helpful when you want to unify data from multiple hashes, with the option to override keys.
 
 # Syntax:
-array.sort
+hash1.merge(hash2)
 # or
-array.sort { |a, b| b <=> a }  # for descending order
+hash1.merge(hash2) { |key, old_val, new_val| /* resolve conflict */ }
 
 
-
-include?
-# What it does: Checks if an array contains a specific element.
-# Why use it: Quickly verify membership before performing an action or returning a result.
-
-# Syntax:
-array.include?(item)
-
-
-
-.index / .rindex
-# What it does: .index returns the first index where the element is found; .rindex returns the last.
-# Why use it: Find the position(s) of an element to locate or manipulate it.
+# .fetch
+# What it does: Retrieves the value for a given key, and raises an error or uses a default if the key is not found.
+# Why use it: Prevents silent nil returns for missing keys, ensuring more robust code.
 
 # Syntax:
-array.index(element)
-array.rindex(element)
+hash.fetch(key)
+hash.fetch(key, default_value)
+hash.fetch(key) { |missing_key| /* handle missing key */ }
 
 
-
-.find_index
-# What it does: Returns the index of the first element for which the block condition is true.
-# Why use it: More flexible than .index by allowing a condition rather than a direct element match.
+# .dig
+# What it does: Safely accesses nested hash values without causing an error if a key is missing.
+# Why use it: Simplifies accessing deeply nested data structures by avoiding nil checks or exceptions.
 
 # Syntax:
-array.find_index do |element|
+nested_hash.dig(:level1, :level2, :level3)
+
+
+# .has_key?
+# What it does: Checks if the hash contains a given key (returns true or false).
+# Why use it: Quickly verify the presence of a key before accessing or modifying it.
+
+# Syntax:
+hash.has_key?(key)
+
+
+# .invert
+# What it does: Swaps each key and value in the hash, returning a new hash.
+# Why use it: Invert mappings, such as for lookups by value instead of key.
+
+# Syntax:
+hash.invert
+
+
+# .select
+# What it does: Returns a new hash containing only the key-value pairs that meet the condition in the block.
+# Why use it: Useful for filtering out specific entries while preserving hash format.
+
+# Syntax:
+hash.select do |key, value|
   # condition that returns true or false
 end
 
 
-
-.max / .min
-# What it does: .max returns the largest element; .min returns the smallest.
-# Why use it: Quickly retrieve the extremes in numeric or comparable data.
-
-# Syntax:
-array.max
-array.min
-
-
-
-uniq
-# What it does: Removes duplicate elements, returning a new array of unique values.
-# Why use it: Keep only distinct items, often for cleaning or filtering data.
+# .reject
+# What it does: Returns a new hash excluding the key-value pairs that meet the condition in the block.
+# Why use it: The opposite of .select — remove specific entries instead of keeping them.
 
 # Syntax:
-array.uniq
+hash.reject do |key, value|
+  # condition that returns true or false
+end
 
 
-
-first
-# What it does: Returns the first element of an array (or the first n elements if given an argument).
-# Why use it: Quickly access the beginning of a list.
+# .to_a / .to_h
+# What it does: Converts a hash to an array (of [key, value] pairs) or an array of pairs to a hash.
+# Why use it: Switch easily between array and hash representations for processing.
 
 # Syntax:
-array.first
-array.first(n)
+hash.to_a
+array_of_pairs.to_h
 
 
-
-last
-# What it does: Returns the last element of an array (or the last n elements if given an argument).
-# Why use it: Quickly access the end of a list.
-
-# Syntax:
-array.last
-array.last(n)
-
-
-
-flatten
-# What it does: Converts nested arrays into a single-level array.
-# Why use it: Useful for simplifying complex data structures.
+# .delete_if
+# What it does: Deletes every key-value pair for which the block condition is true.
+# Why use it: Mutates the original hash by removing unwanted entries in place.
 
 # Syntax:
-array.flatten
+hash.delete_if do |key, value|
+  # condition that returns true or false
+end
 
 
-
-sample
-# What it does: Returns a random element (or multiple elements) from an array.
-# Why use it: Perfect for randomization tasks or sampling data.
+# .each_key / .each_value
+# What it does: Iterates through only the keys (.each_key) or only the values (.each_value).
+# Why use it: More specific iteration when you don’t need both keys and values together.
 
 # Syntax:
-array.sample
-array.sample(n)
+hash.each_key do |key|
+  # work with key
+end
+
+hash.each_value do |value|
+  # work with value
+end
 
 
-
-shift
-# What it does: Removes the first element from an array and returns it.
-# Why use it: Dequeue-like functionality, often for sequential processing.
+# .transform_keys
+# What it does: Returns a new hash with the keys transformed by the given block.
+# Why use it: Cleanly modify keys (e.g., upcasing, symbolizing) without manual iteration.
 
 # Syntax:
-removed_element = array.shift
+hash.transform_keys do |key|
+  # return new_key
+end
 
 
-
-unshift
-# What it does: Adds one or more elements to the front of an array.
-# Why use it: Opposite of .push — useful for prepending data.
+# .transform_values
+# What it does: Returns a new hash with the values transformed by the given block.
+# Why use it: Systematically change or clean up hash values.
 
 # Syntax:
-array.unshift(element)
-
-
-
-compact
-# What it does: Removes all nil elements from an array, returning a new array.
-# Why use it: Cleanup arrays and eliminate nil values.
-
-# Syntax:
-array.compact
-
-
-
-slice
-# What it does: Retrieves a subset of an array by index or range.
-# Why use it: Extract specific segments of an array without modifying the original.
-
-# Syntax:
-array.slice(index, length)
-array.slice(range)
-
-
-
-partition
-# What it does: Splits an array into two arrays, based on the true/false result of a block.
-# Why use it: Separate elements that meet a criterion from those that don't.
-
-# Syntax:
-true_arr, false_arr = array.partition do |element|
-  # condition
-end
-
-
-
-combination
-# What it does: Generates all unique combinations of a given length from the array.
-# Why use it: Useful in combinatorial tasks or finding subsets.
-
-# Syntax:
-array.combination(2) do |combo|
-  # combo is an array of 2 elements
-end
-
-
-
-permutation
-# What it does: Generates permutations of the array elements (all possible orderings).
-# Why use it: Essential for problems requiring every arrangement (e.g., permutations of letters).
-
-# Syntax:
-array.permutation(2) do |perm|
-  # perm is an array of 2 elements
-end
-
-
-
-rotate
-# What it does: Returns a new array by rotating elements left by a given count.
-# Why use it: Cyclically shift items without manual loops.
-
-# Syntax:
-array.rotate
-array.rotate(n)  # n can be negative for right rotation
-
-
-
-bsearch
-# What it does: Performs a binary search on a sorted array, returning an element if found (or nil).
-# Why use it: Efficient lookup in sorted data (O(log n) complexity).
-
-# Syntax:
-array.bsearch do |element|
-  # block returns -1, 0, or 1 in older Ruby;
-  # more commonly, a boolean for "find minimum/maximum" usage
+hash.transform_values do |value|
+  # return new_value
 end
 
 
@@ -222,217 +138,132 @@ end
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 1) .push – Adds an element to the end of an array.
-# Write a function that takes in an array and a value, then pushes the value to the end of the array.
-def push_element(arr, val)
-  arr.push(val)
+# Problem 1: .keys – Retrieves all keys in the hash.
+# Write a function that takes in a hash and returns its keys as an array.
+def get_keys(hash)
+  hash.keys
 end
-numbers = [1, 2, 3] # Output: [1, 2, 3, 4]
-p push_element(numbers, 4)
+my_hash = { a: 1, b: 2, c: 3 } # Output: [:a, :b, :c]
+p get_keys(my_hash)
 
 
-# 2) .pop – Removes the last element from an array.
-# Write a function that takes in an array and removes its last element, returning the removed element.
-def pop_element(arr)
-  arr.pop
+# Problem 2: .values – Retrieves all values in the hash.
+# Write a function that takes in a hash and returns its values as an array.
+def get_values(hash)
+  hash.values
 end
-nums = [5, 6, 7] # Output: 7
-p pop_element(nums)
-p nums # Array now: [5, 6]
+value_hash = { x: 10, y: 20, z: 30 } # Output: [10, 20, 30]
+p get_values(value_hash)
 
 
-# 3) .join – Converts an array to a string with a specified separator.
-# Write a function that takes in an array of words and returns a single string joined by a separator.
-def join_words(words, separator)
-  words.join(separator)
+# Problem 3: .merge – Combines two hashes into one.
+# Write a function that takes in two hashes and returns their merged result.
+def merge_hashes(hash1, hash2)
+  hash1.merge(hash2)
 end
-words = ["Hello", "World"] # Output: "Hello World"
-p join_words(words, " ")
+hash_a = { a: 1, b: 2 }
+hash_b = { b: 3, c: 4 } # Output: { a: 1, b: 3, c: 4 }
+p merge_hashes(hash_a, hash_b)
 
 
-# 4) .sort – Sorts an array in ascending order.
-# Write a function that takes in an array of numbers and returns a sorted array.
-def sort_array(arr)
-  arr.sort
+# Problem 4: .fetch – Retrieves a value by key with optional error handling.
+# Write a function that fetches a value from a hash by its key, returning a default if key not found.
+def safe_fetch(hash, key, default_value)
+  hash.fetch(key, default_value)
 end
-unsorted = [3, 1, 2] # Output: [1, 2, 3]
-p sort_array(unsorted)
+fetch_hash = { name: "Alice", age: 30 }
+p safe_fetch(fetch_hash, :name, "Unknown") # Output: "Alice"
+p safe_fetch(fetch_hash, :city, "Unknown") # Output: "Unknown"
 
 
-# 5) .include? – Checks if the array contains a specific element.
-# Write a function that takes in an array and a value, and returns true if the array includes that value.
-def contains_value?(arr, val)
-  arr.include?(val)
+# Problem 5: .dig – Accesses nested hash values safely.
+# Write a function that safely digs for a nested value within a hash.
+def safe_dig(hash, *keys)
+  hash.dig(*keys)
 end
-check_array = [10, 20, 30] # Output: true
-p contains_value?(check_array, 20)
+nested_hash = { user: { info: { name: "Bob" } } } # Output: "Bob"
+p safe_dig(nested_hash, :user, :info, :name)
 
 
-# 6) .index / .rindex – Finds the index of the first/last occurrence of an element.
-# Write a function that takes in an array and a value, returning [first_index, last_index] of that value.
-def find_first_and_last_index(arr, val)
-  [arr.index(val), arr.rindex(val)]
+# Problem 6: .has_key? – Checks if a specific key exists in the hash.
+# Write a function that returns true if the hash contains the given key.
+def contains_key?(hash, key)
+  hash.has_key?(key)
 end
-example_arr = [4, 5, 6, 5, 7] # Output: [1, 3]
-p find_first_and_last_index(example_arr, 5)
+key_hash = { a: 1, b: 2 }
+p contains_key?(key_hash, :b) # Output: true
+p contains_key?(key_hash, :c) # Output: false
 
 
-# 7) .find_index – Finds the index of the first element matching a block condition.
-# Write a function that returns the index of the first odd number in an array.
-def index_of_first_odd(arr)
-  arr.find_index { |num| num.odd? }
+# Problem 7: .invert – Swaps keys and values in a hash.
+# Write a function that takes in a hash and returns a new hash with inverted keys and values.
+def invert_hash(hash)
+  hash.invert
 end
-mixed_numbers = [2, 4, 6, 7, 9] # Output: 3 (index of 7)
-p index_of_first_odd(mixed_numbers)
+invert_example = { a: 1, b: 2 } # Output: { 1 => :a, 2 => :b }
+p invert_hash(invert_example)
 
 
-# 8) .max / .min – Returns the maximum/minimum value from an array.
-# Write a function that returns both the max and min values from an array.
-def find_extremes(arr)
-  [arr.max, arr.min]
+# Problem 8: .select – Filters key-value pairs based on a condition.
+# Write a function that selects key-value pairs where the value is greater than 10.
+def select_greater_than_ten(hash)
+  hash.select { |_, value| value > 10 }
 end
-range_array = [2, 8, 1, 10, 5] # Output: [10, 1]
-p find_extremes(range_array)
+select_hash = { apple: 5, banana: 12, cherry: 20 } # Output: { banana: 12, cherry: 20 }
+p select_greater_than_ten(select_hash)
 
 
-# 9) .uniq – Removes duplicate elements from an array.
-# Write a function that takes in an array and returns a new array with duplicates removed.
-def remove_duplicates(arr)
-  arr.uniq
+# Problem 9: .reject – Filters out key-value pairs based on a condition.
+# Write a function that rejects key-value pairs where the value is even.
+def reject_even_values(hash)
+  hash.reject { |_, value| value.even? }
 end
-dupe_array = [1, 2, 2, 3, 1] # Output: [1, 2, 3]
-p remove_duplicates(dupe_array)
+reject_hash = { a: 1, b: 2, c: 3, d: 4 } # Output: { a: 1, c: 3 }
+p reject_even_values(reject_hash)
 
 
-# 10) .first – Retrieves the first element of an array.
-# Write a function that takes in an array and returns its first element.
-def first_element(arr)
-  arr.first
+# Problem 10: .to_a / .to_h – Converts between arrays and hashes.
+# Write a function that converts a hash to an array of [key, value] pairs and back to a hash.
+def hash_to_array_and_back(hash)
+  array_form = hash.to_a
+  array_form.to_h
 end
-sample_array = [10, 20, 30] # Output: 10
-p first_element(sample_array)
+convert_hash = { x: 1, y: 2 } # Output: { x: 1, y: 2 }
+p hash_to_array_and_back(convert_hash)
 
 
-# 11) .last – Retrieves the last element of an array.
-# Write a function that takes in an array and returns its last element.
-def last_element(arr)
-  arr.last
+# Problem 11: .delete_if – Deletes key-value pairs based on a condition.
+# Write a function that deletes all pairs where the value is less than 5.
+def delete_if_less_than_five(hash)
+  hash.delete_if { |_, value| value < 5 }
 end
-nums_array = [4, 5, 6] # Output: 6
-p last_element(nums_array)
+delete_hash = { one: 1, two: 2, five: 5, six: 6 } # Output: { five: 5, six: 6 }
+p delete_if_less_than_five(delete_hash)
 
 
-# 12) .flatten – Converts nested arrays into a single array.
-# Write a function that takes in a nested array and returns a flattened version.
-def flatten_array(arr)
-  arr.flatten
+# Problem 12: .each_key / .each_value – Iterates through just keys or values.
+# Write a function that prints all keys and all values in separate iterations.
+def print_keys_and_values(hash)
+  hash.each_key { |key| p key }    # prints each key
+  hash.each_value { |value| p value }  # prints each value
 end
-nested = [[1, 2], [3, 4], 5] # Output: [1, 2, 3, 4, 5]
-p flatten_array(nested)
+kv_hash = { a: 100, b: 200, c: 300 } # Output (printed to console): :a, :b, :c then 100, 200, 300
+print_keys_and_values(kv_hash)
 
 
-# 13) .sample – Retrieves a random element from an array.
-# Write a function that returns a random element from an array.
-def random_element(arr)
-  arr.sample
+# Problem 13: .transform_keys – Applies a transformation to all keys.
+# Write a function that converts all symbol keys to strings.
+def transform_keys_to_strings(hash)
+  hash.transform_keys { |key| key.to_s }
 end
-random_nums = [10, 20, 30, 40] # Output: (random element)
-p random_element(random_nums)
+transform_hash = { one: 1, two: 2 } # Output: { "one" => 1, "two" => 2 }
+p transform_keys_to_strings(transform_hash)
 
 
-# 14) .shift – Removes the first element from an array.
-# Write a function that takes in an array and removes its first element, returning the removed element.
-def shift_element(arr)
-  arr.shift
+# Problem 14: .transform_values – Applies a transformation to all values.
+# Write a function that doubles each value in the hash.
+def double_hash_values(hash)
+  hash.transform_values { |value| value * 2 }
 end
-shift_arr = [7, 8, 9] # Output: 7
-p shift_element(shift_arr)
-p shift_arr # Now [8, 9]
-
-
-# 15) .unshift – Adds an element to the beginning of an array.
-# Write a function that takes in an array and a value, and unshifts the value to the front of the array.
-def unshift_element(arr, val)
-  arr.unshift(val)
-end
-unshift_arr = [2, 3] # Output: [1, 2, 3]
-p unshift_element(unshift_arr, 1)
-
-
-# 16) .compact – Removes nil values from an array.
-# Write a function that takes in an array and returns a new array without nil values.
-def remove_nil(arr)
-  arr.compact
-end
-nil_array = [1, nil, 2, nil, 3] # Output: [1, 2, 3]
-p remove_nil(nil_array)
-
-
-# 17) .slice – Retrieves a subset of an array based on a range or index.
-# Write a function that slices the first 3 elements from an array.
-def slice_first_three(arr)
-  arr.slice(0, 3)
-end
-slice_array = [4, 5, 6, 7, 8] # Output: [4, 5, 6]
-p slice_first_three(slice_array)
-
-
-# 18) .partition – Divides an array into two arrays based on a condition.
-# Write a function that partitions an array of numbers into even and odd arrays.
-def partition_even_odd(arr)
-  arr.partition { |num| num.even? }
-end
-part_arr = [1, 2, 3, 4, 5] # Output: [[2, 4], [1, 3, 5]]
-p partition_even_odd(part_arr)
-
-
-# 19) .combination – Generates combinations of array elements.
-# Write a function that takes in an array and returns all 2-element combinations.
-def two_element_combinations(arr)
-  arr.combination(2).to_a
-end
-combo_arr = [1, 2, 3] # Output: [[1, 2], [1, 3], [2, 3]]
-p two_element_combinations(combo_arr)
-
-
-# 20) .permutation – Generates permutations of array elements.
-# Write a function that takes in an array and returns all permutations of length 2.
-def two_element_permutations(arr)
-  arr.permutation(2).to_a
-end
-perm_arr = [1, 2, 3] # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
-p two_element_permutations(perm_arr)
-
-
-# 21) .rotate – Rotates elements in the array by a given count.
-# Write a function that rotates an array by 1 position to the left.
-def rotate_left_by_one(arr)
-  arr.rotate(1)
-end
-rotate_arr = [1, 2, 3, 4] # Output: [2, 3, 4, 1]
-p rotate_left_by_one(rotate_arr)
-
-
-# 22) .bsearch – Performs binary search on a sorted array.
-# Write a function that takes in a sorted array and a target, and returns the element if found.
-def binary_search(arr, target)
-  arr.bsearch { |x| x >= target }
-end
-sorted_array = [1, 3, 5, 7, 9] # Output: 5 (when target is 5)
-p binary_search(sorted_array, 5)
+values_hash = { a: 2, b: 4, c: 6 } # Output: { a: 4, b: 8, c: 12 }
+p double_hash_values(values_hash)
