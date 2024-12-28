@@ -280,8 +280,9 @@ def word_lengths(words)
   end
 end
 
-words = ["cat", "bird"] # Output: {"cat"=>3, "bird"=>4}
+words = ["cat", "bird"]
 p word_lengths(words)
+# Output: {"cat"=>3, "bird"=>4}
 
 
 
@@ -302,7 +303,7 @@ end
 
 numbers = [1, 3, 5, 6, 7]
 p first_even(numbers)
-# Expected Output: 6
+# Output: 6
 
 
 #------------------------------------------------------------------------------
@@ -347,7 +348,7 @@ end
 
 numbers = [1, 2, 3]
 p total_sum(numbers)
-# Expected Output: 6
+# Output: 6
 
 
 #------------------------------------------------------------------------------
@@ -359,10 +360,6 @@ end
 
 p sum_range(1..5)
 # Expected Output: 15
-
-
-
-
 
 
 
@@ -380,8 +377,9 @@ def shortest_string(strings)
   strings.min_by { |s| s.length }
 end
 
-words = ["apple", "cat", "banana"] # Output: "cat"
+words = ["apple", "cat", "banana"]
 p shortest_string(words)
+# Output: "cat"
 
 
 
@@ -399,8 +397,9 @@ def sort_by_length(strings)
   strings.sort_by { |s| s.length }
 end
 
-words = ["apple", "cat", "banana"] # Output: ["cat", "apple", "banana"]
+words = ["apple", "cat", "banana"]
 p sort_by_length(words)
+# Output: ["cat", "apple", "banana"]
 
 
 
@@ -418,8 +417,9 @@ def remove_negatives(numbers)
   numbers.reject { |n| n < 0 }
 end
 
-nums = [-1, 2, -3, 4] # Output: [2, 4]
+nums = [-1, 2, -3, 4]
 p remove_negatives(nums)
+# Output: [2, 4]
 
 
 
@@ -440,10 +440,10 @@ def print_with_index(strings)
 end
 
 words = ["apple", "banana"]
+print_with_index(words)
 # Output:
 # 0: apple
 # 1: banana
-print_with_index(words)
 
 
 
@@ -461,8 +461,9 @@ def any_negative?(numbers)
   numbers.any? { |n| n < 0 }
 end
 
-nums = [1, -2, 3] # Output: true
+nums = [1, -2, 3]
 p any_negative?(nums)
+# Output: true
 
 
 
@@ -481,8 +482,9 @@ def all_positive?(numbers)
   numbers.all? { |n| n > 0 }
 end
 
-nums = [1, 3, 5] # Output: true
+nums = [1, 3, 5]
 p all_positive?(nums)
+# Output: true
 
 
 
@@ -501,8 +503,9 @@ def none_start_with_z?(words)
   words.none? { |w| w.start_with?("z") }
 end
 
-words = ["apple", "cat", "banana"] # Output: true
+words = ["apple", "cat", "banana"]
 p none_start_with_z?(words)
+# Output: true
 
 
 
@@ -521,8 +524,9 @@ def group_by_parity(numbers)
   numbers.group_by { |n| n.even? ? "even" : "odd" }
 end
 
-nums = [1, 2, 3, 4] # Output: {"odd"=>[1, 3], "even"=>[2, 4]}
+nums = [1, 2, 3, 4]
 p group_by_parity(nums)
+# Output: {"odd"=>[1, 3], "even"=>[2, 4]}
 
 
 
@@ -541,8 +545,9 @@ def double_flatten(array_of_arrays)
   array_of_arrays.flat_map { |arr| arr.map { |n| n * 2 } }
 end
 
-arrays = [[1, 2], [3, 4]] # Output: [2, 4, 6, 8]
+arrays = [[1, 2], [3, 4]]
 p double_flatten(arrays)
+# Output: [2, 4, 6, 8]
 
 
 
@@ -562,8 +567,9 @@ def pair_arrays(arr1, arr2)
 end
 
 arr1 = [1, 2]
-arr2 = ["a", "b"] # Output: [[1, "a"], [2, "b"]]
+arr2 = ["a", "b"]
 p pair_arrays(arr1, arr2)
+# Output: [[1, "a"], [2, "b"]]
 
 
 
@@ -585,3 +591,4 @@ end
 
 nums = (1..10_000).to_a # Output: [1, 4, 9]
 p first_three_squares(nums)
+
