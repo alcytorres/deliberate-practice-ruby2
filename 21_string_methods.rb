@@ -13,7 +13,7 @@ end
 
 sentence = "Hello world from Ruby"
 p sentence_to_words(sentence)
-# Expected Output: ["Hello", "world", "from", "Ruby"]
+# Output: ["Hello", "world", "from", "Ruby"]
 
 
 # Solution 2
@@ -23,7 +23,7 @@ end
 
 sentence = "Hello world from Ruby"
 p sentence_to_words(sentence)
-# Expected Output: ["Hello", "world", "from", "Ruby"]
+# Output: ["Hello", "world", "from", "Ruby"]
 
 
 #------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ end
 
 greeting = "Hello"
 p split_into_chars(greeting)
-# Expected Output: ["H", "e", "l", "l", "o"]
+# Output: ["H", "e", "l", "l", "o"]
 
 
 
@@ -54,7 +54,7 @@ end
 
 input = "   hello world   "
 p remove_whitespace(input)
-# Expected Output: "hello world"
+# Output: "hello world"
 
 
 # Solution 2
@@ -64,7 +64,7 @@ end
 
 input = "   hello world   "
 p remove_whitespace(input)
-# Expected Output: "hello world"
+# Output: "hello world"
 
 
 
@@ -83,10 +83,10 @@ end
 
 string1 = "I love ruby programming"
 string2 = "I love python programming"
-p contains_ruby?(string1)  # Expected Output: true
-p contains_ruby?(string2)  # Expected Output: false
-
-
+p contains_ruby?(string1)
+# Output: true
+p contains_ruby?(string2)
+# Output: false
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that checks if a name is in a list of guests (comma-separated string).
 # Solution 1
@@ -95,8 +95,10 @@ def guest_in_list?(guest_list, name)
 end
 
 list = "Alice,Bob,Carol"
-p guest_in_list?(list, "Bob")   # Expected Output: true
-p guest_in_list?(list, "David") # Expected Output: false
+p guest_in_list?(list, "Bob")
+# Output: true
+p guest_in_list?(list, "David")
+# Output: false
 
 
 
@@ -117,7 +119,7 @@ end
 
 string = "hello world from ruby"
 p spaces_to_hyphens(string)
-# Expected Output: "hello-world-from-ruby"
+# Output: "hello-world-from-ruby"
 
 
 # Solution 2
@@ -127,7 +129,7 @@ end
 
 string = "hello world from ruby"
 p spaces_to_hyphens(string)
-# Expected Output: "hello-world-from-ruby"
+# Output: "hello-world-from-ruby"
 
 
 #------------------------------------------------------------------------------
@@ -139,7 +141,7 @@ end
 
 test_str = "abc123def456"
 p remove_digits(test_str)
-# Expected Output: "abcdef"
+# Output: "abcdef"
 
 
 # Solution 2
@@ -149,7 +151,7 @@ end
 
 test_str = "abc123def456"
 p remove_digits(test_str)
-# Expected Output: "abcdef"
+# Output: "abcdef"
 
 
 
@@ -168,7 +170,7 @@ end
 
 greeting = "Hello"
 p reverse_string(greeting)
-# Expected Output: "olleH"
+# Output: "olleH"
 
 
 
@@ -184,9 +186,9 @@ string.end_with?("suffix")
 def start_hello_end_bye?(str)
   str.start_with?("hello") && str.end_with?("bye")
 end
-test_str = "hello something bye" # Output: true
+test_str = "hello something bye"
 p start_hello_end_bye?(test_str)
-
+# Output: true
 
 
 upcase
@@ -200,8 +202,9 @@ string.upcase
 def shout(str)
   str.upcase
 end
-phrase = "hello world" # Output: "HELLO WORLD"
+phrase = "hello world"
 p shout(phrase)
+# Output: "HELLO WORLD"
 
 
 
@@ -216,9 +219,9 @@ string.downcase
 def whisper(str)
   str.downcase
 end
-loud_phrase = "HELLO WORLD" # Output: "hello world"
+loud_phrase = "HELLO WORLD"
 p whisper(loud_phrase)
-
+# Output: "hello world"
 
 
 capitalize
@@ -232,9 +235,9 @@ string.capitalize
 def capitalize_first(str)
   str.capitalize
 end
-title = "hello" # Output: "Hello"
+title = "hello"
 p capitalize_first(title)
-
+# Output: "Hello"
 
 
 match
@@ -248,9 +251,9 @@ string.match(/pattern/)
 def digits_only?(str)
   !!str.match(/^\d+$/)
 end
-num_str = "12345" # Output: true
+num_str = "12345"
 p digits_only?(num_str)
-
+# Output: true
 
 
 chars
@@ -264,9 +267,9 @@ string.chars
 def string_to_chars(str)
   str.chars
 end
-greeting = "hi" # Output: ["h", "i"]
+greeting = "hi"
 p string_to_chars(greeting)
-
+# Output: ["h", "i"]
 
 
 delete
@@ -280,9 +283,9 @@ string.delete("chars_to_remove")
 def remove_vowels(str)
   str.delete("aeiouAEIOU")
 end
-vowel_string = "banana" # Output: "bnn"
+vowel_string = "banana"
 p remove_vowels(vowel_string)
-
+# Output: "bnn"
 
 
 tr
@@ -296,8 +299,9 @@ string.tr("abc", "xyz")
 def swap_a_for_z(str)
   str.tr("a", "z")
 end
-text = "banana" # Output: "bznznz"
+text = "banana"
 p swap_a_for_z(text)
+# Output: "bznznz"
 
 
 
@@ -312,8 +316,9 @@ string.scan(/pattern/)
 def words_starting_with_b(str)
   str.scan(/\bb\w*/)
 end
-sentence = "banana and berry are both fruits" # Output: ["banana", "berry", "both"]
+sentence = "banana and berry are both fruits"
 p words_starting_with_b(sentence)
+# Output: ["banana", "berry", "both"]
 
 
 
@@ -329,8 +334,9 @@ string.size
 def string_length(str)
   str.length
 end
-long_word = "supercalifragilistic" # Output: 20
+long_word = "supercalifragilistic"
 p string_length(long_word)
+# Output: 20
 
 
 
@@ -348,8 +354,9 @@ def first_char_ord_and_chr(str)
   first_char = str[0]
   [first_char.ord, first_char.ord.chr]
 end
-example_str = "Hello" # Output: [72, "H"]
+example_str = "Hello"
 p first_char_ord_and_chr(example_str)
+# Output: [72, "H"]
 
 
 
@@ -364,9 +371,9 @@ string.succ
 def next_string_value(str)
   str.succ
 end
-alpha = "abc" # Output: "abd"
+alpha = "abc"
 p next_string_value(alpha)
-
+# Output: "abd"
 
 
 

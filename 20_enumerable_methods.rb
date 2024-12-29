@@ -589,6 +589,6 @@ def first_three_squares(numbers)
   numbers.lazy.map { |n| n * n }.first(3)
 end
 
-nums = (1..10_000).to_a # Output: [1, 4, 9]
+nums = (1..10_000).to_a
 p first_three_squares(nums)
-
+# Output: [1, 4, 9]
