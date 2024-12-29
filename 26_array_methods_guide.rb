@@ -198,7 +198,7 @@ p find_first_and_last_index(example_arr, 5)
 # Output: [1, 3]
 
 
-.find_index
+find_index
 # What it does: Returns the index of the first element for which the block condition is true.
 # Why use it: More flexible than .index by allowing a condition rather than a direct element match.
 
