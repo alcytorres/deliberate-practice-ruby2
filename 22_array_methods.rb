@@ -13,7 +13,7 @@ end
 
 numbers = [1, 2, 3]
 p add_element(numbers, 4)
-# Expected Output: [1, 2, 3, 4]
+# Output: [1, 2, 3, 4]
 
 
 # Solution 2
@@ -23,7 +23,7 @@ end
 
 numbers = [1, 2, 3]
 p add_element(numbers, 4)
-# Expected Output: [1, 2, 3, 4]
+# Output: [1, 2, 3, 4]
 
 
 #------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ end
 nums1 = [1, 2]
 nums2 = [3, 4]
 p merge_arrays(nums1, nums2)
-# Expected Output: [1, 2, 3, 4]
+# Output: [1, 2, 3, 4]
 
 
 # Solution 2
@@ -51,7 +51,7 @@ end
 nums1 = [1, 2]
 nums2 = [3, 4]
 p merge_arrays(nums1, nums2)
-# Expected Output: [1, 2, 3, 4]
+# Output: [1, 2, 3, 4]
 
 
 
@@ -70,9 +70,9 @@ end
 
 numbers = [1, 2, 3]
 p remove_last(numbers)
-# Expected Output: 3
+# Output: 3
 p numbers
-# Expected Output: [1, 2]
+# Output: [1, 2]
 
 
 #------------------------------------------------------------------------------
@@ -86,7 +86,7 @@ end
 
 nums = [5, 6, 7]
 p pop_all(nums)
-# Expected Output: [7, 6, 5]
+# Output: [7, 6, 5]
 
 
 
@@ -105,7 +105,7 @@ end
 
 arr_words = ["Hello", "world", "from", "Ruby"]
 p words_to_sentence(arr_words)
-# Expected Output: "Hello world from Ruby"
+# Output: "Hello world from Ruby"
 
 
 #------------------------------------------------------------------------------
@@ -117,7 +117,7 @@ end
 
 letters = ["a", "b", "c"]
 p chars_to_string(letters)
-# Expected Output: "abc"
+# Output: "abc"
 
 
 
@@ -138,7 +138,7 @@ end
 
 nums = [5, 2, 8, 1, 3]
 p sort_ascending(nums)
-# Expected Output: [1, 2, 3, 5, 8]
+# Output: [1, 2, 3, 5, 8]
 
 
 # Solution 2
@@ -148,7 +148,7 @@ end
 
 nums = [5, 2, 8, 1, 3]
 p sort_ascending(nums)
-# Expected Output: [1, 2, 3, 5, 8]
+# Output: [1, 2, 3, 5, 8]
 
 
 #------------------------------------------------------------------------------
@@ -160,7 +160,7 @@ end
 
 word_list = ["banana", "apple", "cherry"]
 p sort_alphabetical(word_list)
-# Expected Output: ["apple", "banana", "cherry"]
+# Output: ["apple", "banana", "cherry"]
 
 
 
@@ -172,11 +172,12 @@ include?
 array.include?(item)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, then pushes the value to the end of the array.
-def push_element(arr, val)
-  arr.push(val)
+def nums_array(arr, val)
+  arr.include?(val)
 end
-numbers = [1, 2, 3] # Output: [1, 2, 3, 4]
-p push_element(numbers, 4)
+numbers = [1, 2, 3]
+p nums_array(numbers, 2)
+# Output: true
 
 
 
@@ -192,9 +193,9 @@ array.rindex(element)
 def find_first_and_last_index(arr, val)
   [arr.index(val), arr.rindex(val)]
 end
-example_arr = [4, 5, 6, 5, 7] # Output: [1, 3]
+example_arr = [4, 5, 6, 5, 7]
 p find_first_and_last_index(example_arr, 5)
-
+# Output: [1, 3]
 
 
 .find_index
@@ -210,9 +211,9 @@ end
 def index_of_first_odd(arr)
   arr.find_index { |num| num.odd? }
 end
-mixed_numbers = [2, 4, 6, 7, 9] # Output: 3 (index of 7)
+mixed_numbers = [2, 4, 6, 7, 9]
 p index_of_first_odd(mixed_numbers)
-
+# Output: 3 (index of 7)
 
 
 .max / .min
@@ -227,9 +228,9 @@ array.min
 def find_extremes(arr)
   [arr.max, arr.min]
 end
-range_array = [2, 8, 1, 10, 5] # Output: [10, 1]
+range_array = [2, 8, 1, 10, 5]
 p find_extremes(range_array)
-
+# Output: [10, 1]
 
 
 uniq
@@ -247,7 +248,7 @@ end
 
 nums = [1, 2, 2, 3, 3, 3]
 p remove_duplicates(nums)
-# Expected Output: [1, 2, 3]
+# Output: [1, 2, 3]
 
 
 #------------------------------------------------------------------------------
@@ -259,7 +260,7 @@ end
 
 arr = [1, 1, 2, 3, 2, 4]
 p count_unique_elements(arr)
-# Expected Output: 4
+# Output: 4
 
 
 
@@ -276,9 +277,9 @@ array.first(n)
 def first_element(arr)
   arr.first
 end
-sample_array = [10, 20, 30] # Output: 10
+sample_array = [10, 20, 30]
 p first_element(sample_array)
-
+# Output: 10
 
 
 last
@@ -293,9 +294,9 @@ array.last(n)
 def last_element(arr)
   arr.last
 end
-nums_array = [4, 5, 6] # Output: 6
+nums_array = [4, 5, 6]
 p last_element(nums_array)
-
+# Output: 6
 
 
 flatten
@@ -313,7 +314,7 @@ end
 
 arr_2d = [[1, 2], [3, 4]]
 p flatten_2d(arr_2d)
-# Expected Output: [1, 2, 3, 4]
+# Output: [1, 2, 3, 4]
 
 
 #------------------------------------------------------------------------------
@@ -325,7 +326,7 @@ end
 
 nested_array = [1, [2, [3, [4]]]]
 p flatten_any_depth(nested_array)
-# Expected Output: [1, 2, 3, 4]
+# Output: [1, 2, 3, 4]
 
 
 
@@ -341,9 +342,9 @@ array.sample(n)
 def random_element(arr)
   arr.sample
 end
-random_nums = [10, 20, 30, 40] # Output: (random element)
+random_nums = [10, 20, 30, 40]
 p random_element(random_nums)
-
+# Output: (random element)
 
 
 shift
@@ -357,9 +358,9 @@ removed_element = array.shift
 def shift_element(arr)
   arr.shift
 end
-shift_arr = [7, 8, 9] # Output: 7
-p shift_element(shift_arr)
-p shift_arr # Now [8, 9]
+shift_arr = [7, 8, 9]
+p shift_element(shift_arr) # Output: 7
+p shift_arr # Output Now: [8, 9]
 
 
 
@@ -374,8 +375,9 @@ array.unshift(element)
 def unshift_element(arr, val)
   arr.unshift(val)
 end
-unshift_arr = [2, 3] # Output: [1, 2, 3]
+unshift_arr = [2, 3]
 p unshift_element(unshift_arr, 1)
+
 
 
 compact
@@ -389,9 +391,9 @@ array.compact
 def remove_nil(arr)
   arr.compact
 end
-nil_array = [1, nil, 2, nil, 3] # Output: [1, 2, 3]
+nil_array = [1, nil, 2, nil, 3]
 p remove_nil(nil_array)
-
+# Output: [1, 2, 3]
 
 
 slice
@@ -406,8 +408,9 @@ array.slice(range)
 def slice_first_three(arr)
   arr.slice(0, 3)
 end
-slice_array = [4, 5, 6, 7, 8] # Output: [4, 5, 6]
+slice_array = [4, 5, 6, 7, 8]
 p slice_first_three(slice_array)
+# Output: [4, 5, 6]
 
 
 
@@ -424,9 +427,9 @@ end
 def partition_even_odd(arr)
   arr.partition { |num| num.even? }
 end
-part_arr = [1, 2, 3, 4, 5] # Output: [[2, 4], [1, 3, 5]]
+part_arr = [1, 2, 3, 4, 5]
 p partition_even_odd(part_arr)
-
+# Output: [[2, 4], [1, 3, 5]]
 
 
 combination
@@ -442,9 +445,9 @@ end
 def two_element_combinations(arr)
   arr.combination(2).to_a
 end
-combo_arr = [1, 2, 3] # Output: [[1, 2], [1, 3], [2, 3]]
+combo_arr = [1, 2, 3]
 p two_element_combinations(combo_arr)
-
+# Output: [[1, 2], [1, 3], [2, 3]]
 
 
 permutation
@@ -460,9 +463,9 @@ end
 def two_element_permutations(arr)
   arr.permutation(2).to_a
 end
-perm_arr = [1, 2, 3] # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
+perm_arr = [1, 2, 3]
 p two_element_permutations(perm_arr)
-
+# Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 
 
 rotate
@@ -477,8 +480,9 @@ array.rotate(n)  # n can be negative for right rotation
 def rotate_left_by_one(arr)
   arr.rotate(1)
 end
-rotate_arr = [1, 2, 3, 4] # Output: [2, 3, 4, 1]
+rotate_arr = [1, 2, 3, 4]
 p rotate_left_by_one(rotate_arr)
+# Output: [2, 3, 4, 1]
 
 
 
@@ -496,6 +500,6 @@ end
 def binary_search(arr, target)
   arr.bsearch { |x| x >= target }
 end
-sorted_array = [1, 3, 5, 7, 9] # Output: 5 (when target is 5)
+sorted_array = [1, 3, 5, 7, 9]
 p binary_search(sorted_array, 5)
-
+# Output: 5 (when target is 5)

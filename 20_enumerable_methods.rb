@@ -18,7 +18,7 @@ end
 
 numbers = [1, 2, 3]
 print_elements(numbers)
-# Expected Output:
+# Output:
 # 1
 # 2
 # 3
@@ -33,7 +33,7 @@ end
 
 numbers = [1, 2, 3]
 print_elements(numbers)
-# Expected Output:
+# Output:
 # 1
 # 2
 # 3
@@ -48,7 +48,7 @@ end
 
 person = { name: "Alice", age: 30 }
 print_hash(person)
-# Expected Output:
+# Output:
 # name: Alice
 # age: 30
 
@@ -62,7 +62,7 @@ end
 
 person = { name: "Alice", age: 30 }
 print_hash(person)
-# Expected Output:
+# Output:
 # "name => Alice"
 # "age => 30"
 
@@ -85,7 +85,7 @@ end
 
 numbers = [1, 2, 3]
 p increment_numbers(numbers)
-# Expected Output: [2, 3, 4]
+# Output: [2, 3, 4]
 
 
 # Solution 2
@@ -97,7 +97,7 @@ end
 
 numbers = [1, 2, 3]
 p increment_numbers(numbers)
-# Expected Output: [2, 3, 4]
+# Output: [2, 3, 4]
 
 
 
@@ -118,7 +118,7 @@ end
 
 numbers = [1, 2, 3, 4, 5]
 p evens_only(numbers)
-# Expected Output: [2, 4]
+# Output: [2, 4]
 
 
 # Solution 2
@@ -130,7 +130,7 @@ end
 
 numbers = [1, 2, 3, 4, 5]
 p evens_only(numbers)
-# Expected Output: [2, 4]
+# Output: [2, 4]
 
 
 #------------------------------------------------------------------------------
@@ -142,7 +142,7 @@ end
 
 words = ["apple", "car", "door"]
 p longer_than_three(words)
-# Expected Output: ["apple", "door"]
+# Output: ["apple", "door"]
 
 
 # Solution 2
@@ -154,7 +154,7 @@ end
 
 words = ["apple", "car", "door"]
 p longer_than_three(words)
-# Expected Output: ["apple", "door"]
+# Output: ["apple", "door"]
 
 
 
@@ -179,7 +179,7 @@ end
 
 numbers = [5, 12, 13, 8, 20]
 p count_greater_than_ten(numbers)
-# Expected Output: 3
+# Output: 3
 
 
 # Solution 2
@@ -191,7 +191,7 @@ end
 
 numbers = [5, 12, 13, 8, 20]
 p count_greater_than_ten(numbers)
-# Expected Output: 3
+# Output: 3
 
 
 
@@ -212,7 +212,7 @@ end
 
 numbers = [1, 2, 3, 4]
 p sum_array(numbers)
-# Expected Output: 10
+# Output: 10
 
 
 # Solution 2
@@ -224,7 +224,7 @@ end
 
 numbers = [1, 2, 3, 4]
 p sum_array(numbers)
-# Expected Output: 10
+# Output: 10
 
 
 #------------------------------------------------------------------------------
@@ -236,7 +236,7 @@ end
 
 numbers = [2, 3, 4]
 p product_of_array(numbers)
-# Expected Output: 24
+# Output: 24
 
 
 #------------------------------------------------------------------------------
@@ -248,7 +248,7 @@ end
 
 numbers = [1, 2, 3, 4]
 p total_sum(numbers)
-# Expected Output: 10
+# Output: 10
 
 
 #------------------------------------------------------------------------------
@@ -259,7 +259,7 @@ def sum_range(range)
 end
 
 p sum_range(1..5)
-# Expected Output: 15
+# Output: 15
 
 
 
@@ -315,7 +315,7 @@ end
 
 words = ["cat", "door", "apple", "hi"]
 p first_long_word(words)
-# Expected Output: "apple"
+# Output: "apple"
 
 
 # Solution 2
@@ -327,7 +327,7 @@ end
 
 words = ["cat", "door", "apple", "hi"]
 p first_long_word(words)
-# Expected Output: "apple"
+# Output: "apple"
 
 
 
@@ -359,7 +359,7 @@ def sum_range(range)
 end
 
 p sum_range(1..5)
-# Expected Output: 15
+# Output: 15
 
 
 

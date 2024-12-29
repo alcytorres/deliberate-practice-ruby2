@@ -13,7 +13,7 @@ end
 
 fruits = { apple: 1, banana: 2, cherry: 3 }
 p all_keys(fruits)
-# Expected Output: [:apple, :banana, :cherry]
+# Output: [:apple, :banana, :cherry]
 
 
 # Solution 2
@@ -25,7 +25,7 @@ end
 
 fruits = { apple: 1, banana: 2, cherry: 3 }
 p all_keys(fruits)
-# Expected Output: [:apple, :banana, :cherry]
+# Output: [:apple, :banana, :cherry]
 
 
 #------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ end
 
 person = { name: "Alice", age: 25, city: "NYC" }
 print_keys(person)
-# Expected Output (each key on its own line):
+# Output (each key on its own line):
 # name
 # age
 # city
@@ -59,7 +59,7 @@ end
 
 prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
 p all_values(prices)
-# Expected Output: [1.2, 0.5, 2.0]
+# Output: [1.2, 0.5, 2.0]
 
 
 # Solution 2
@@ -71,7 +71,7 @@ end
 
 prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
 p all_values(prices)
-# Expected Output: [1.2, 0.5, 2.0]
+# Output: [1.2, 0.5, 2.0]
 
 
 #------------------------------------------------------------------------------
@@ -85,7 +85,7 @@ end
 
 movie = { title: "Matrix", year: 1999, rating: 8.7 }
 print_values(movie)
-# Expected Output (each value on its own line):
+# Output (each value on its own line):
 # Matrix
 # 1999
 # 8.7
@@ -110,7 +110,7 @@ end
 hash_a = { name: "Alice", age: 25 }
 hash_b = { city: "NYC", occupation: "Engineer" }
 p merge_hashes(hash_a, hash_b)
-# Expected Output: { name: "Alice", age: 25, city: "NYC", occupation: "Engineer" }
+# Output: { name: "Alice", age: 25, city: "NYC", occupation: "Engineer" }
 
 
 # Solution 2
@@ -124,7 +124,7 @@ end
 hash_a = { name: "Bob", age: 30 }
 hash_b = { city: "LA", occupation: "Designer" }
 p merge_hashes(hash_a, hash_b)
-# Expected Output: { name: "Bob", age: 30, city: "LA", occupation: "Designer" }
+# Output: { name: "Bob", age: 30, city: "LA", occupation: "Designer" }
 
 
 #------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ end
 default_config = { timeout: 30, debug: false }
 user_config = { debug: true }
 p merge_override(default_config, user_config)
-# Expected Output: { timeout: 30, debug: true }
+# Output: { timeout: 30, debug: true }
 
 
 
@@ -158,7 +158,7 @@ end
 
 person = { name: "Alice", age: 25 }
 p fetch_value(person, :name)
-# Expected Output: "Alice"
+# Output: "Alice"
 
 
 #------------------------------------------------------------------------------
@@ -170,7 +170,7 @@ end
 
 settings = { theme: "dark" }
 p fetch_with_default(settings, :font_size, 14)
-# Expected Output: 14
+# Output: 14
 
 
 
