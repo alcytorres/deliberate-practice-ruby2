@@ -23,11 +23,11 @@ p sum_of_array(numbers)
 # 2. Write a function that takes in an array of strings and returns the smallest string.
 
 def smallest_string(strings)
-
+  strings.min_by { |string| string.length}
 end
 
 strings = ["apple", "banana", "kiwi"]
-# puts smallest_string(strings) # Output: "kiwi"
+puts smallest_string(strings) # Output: "kiwi"
 
 
 
@@ -40,17 +40,25 @@ strings = ["apple", "banana", "kiwi"]
 # puts smallest_string(strings) # Output: "kiwi"
 
 
+# def smallest_string(strings)
+#   strings.min_by do |string|
+#     string.length
+#   end
+# end
+
+# strings = ["apple", "banana", "kiwi"]
+# puts smallest_string(strings) # Output: "kiwi"
 
 
 
 # 3.  Write a function that takes in an array of numbers and returns a new array with the numbers in reverse order.
 
 def reverse_array(numbers)
-
+  numbers.reverse
 end
 
 numbers = [1, 2, 3, 4]
-# p reverse_array(numbers) # Output: [4, 3, 2, 1]
+p reverse_array(numbers) # Output: [4, 3, 2, 1]
 
 
 
@@ -67,11 +75,11 @@ numbers = [1, 2, 3, 4]
 # 4. Write a function that takes in an array of words and returns the number of words that begin with the letter “a”.
 
 def count_words_starting_with_a(words)
-
+  words.count {|word| word[0] == "a"}
 end
 
 words = ["apple", "banana", "avocado", "pear", "apricot"]
-# puts count_words_starting_with_a(words) # Output: 3
+puts count_words_starting_with_a(words) # Output: 3
 
 
 
