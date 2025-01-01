@@ -96,12 +96,11 @@ puts count_words_starting_with_a(words) # Output: 3
 # 5. Write a function that takes in an array of strings and joins them together to make a single string separated by commas.
 
 def array_of_strings(strings)
-
+  strings.join(", ")
 end
 
 strings = ["bat", "cat", "fly", "airplane"]
-# puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
-
+puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
 
 
 
@@ -119,11 +118,13 @@ strings = ["bat", "cat", "fly", "airplane"]
 # 6. Write a function that takes in an array of numbers and returns the product of all the numbers (each number multiplied by each other).
 
 def product_of_array(numbers)
-
+  product = 1
+  numbers.each {|num| product *= num}
+  return product
 end
 
 numbers = [1, 3, 4, 10]
-# puts product_of_array(numbers) # Output: 120
+puts product_of_array(numbers) # Output: 120
 
 
 
@@ -143,11 +144,11 @@ numbers = [1, 3, 4, 10]
 # 7. Write a function that takes in an array of numbers and returns the two smallest numbers.
 
 def two_smallest_numbers(numbers)
-
+  numbers.sort[0, 2]
 end
 
 numbers = [5, 1, 8, 3]
-# p two_smallest_numbers(numbers) # Output: [1, 3]
+p two_smallest_numbers(numbers) # Output: [1, 3]
 
 
 
@@ -165,11 +166,11 @@ numbers = [5, 1, 8, 3]
 # 8. Write a function that takes in an array of numbers and returns a count of how many zeros are in the array.
 
 def count_zeros(numbers)
-
+  numbers.count(0)
 end
 
 numbers = [0, 1, 0, 2, 3, 0]
-# p count_zeros(numbers)  # Output: 3
+p count_zeros(numbers)  # Output: 3
 
 
 
@@ -183,15 +184,14 @@ numbers = [0, 1, 0, 2, 3, 0]
 
 
 
-
 # 9. Write a function that takes in an array of numbers and returns true if all the numbers are bigger than 10, otherwise returns false.
 
 def all_numbers_bigger_than_ten(numbers)
-
+  numbers.all? {|num| num > 10}
 end
 
 numbers = [30, 40, 60]
-# puts all_numbers_bigger_than_ten(numbers) # Output: true
+puts all_numbers_bigger_than_ten(numbers) # Output: true
 
 
 
@@ -210,11 +210,11 @@ numbers = [30, 40, 60]
 # 10. Write a function that takes in an array of words and returns the number of times the letter “a” appeared in total.
 
 def count_a(words)
-
+  words.join.count("a")
 end
 
 words = ["bat", "cat", "hat", "car"]
-# puts count_a(words) # Output: 4
+puts count_a(words) # Output: 4
 
 
 
