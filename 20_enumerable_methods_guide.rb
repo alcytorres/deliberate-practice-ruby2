@@ -403,6 +403,28 @@ p sort_by_length(words)
 
 
 
+sort
+# What it does: Returns a new array with the elements sorted in ascending order.
+# Why use it: Organize elements in a specific order, such as numerical or alphabetical.
+
+# Syntax:
+collection.sort
+# Optionally, use a block to specify custom sorting criteria:
+collection.sort do |a, b|
+  # comparison logic
+  a <=> b # default comparison operator
+end
+#------------------------------------------------------------------------------
+# Problem: Write a function that takes an array of numbers and returns the array sorted in ascending order.
+def sort_array(numbers)
+  numbers.sort
+end
+
+numbers = [5, 3, 8, 1, 4] # Output: [1, 3, 4, 5, 8]
+p sort_array(numbers)
+
+
+
 reject
 # What it does: Returns an array of elements for which the block condition is false.
 # Why use it: Opposite of .select — filters out elements you don't want.
