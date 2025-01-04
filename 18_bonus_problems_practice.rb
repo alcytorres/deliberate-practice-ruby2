@@ -10,6 +10,7 @@ p sum_of_array(numbers)
 
 
 
+
 # def sum_of_array(numbers)
 #   numbers.sum
 # end
@@ -28,6 +29,7 @@ end
 
 strings = ["apple", "banana", "kiwi"]
 puts smallest_string(strings) # Output: "kiwi"
+
 
 
 
@@ -84,6 +86,7 @@ puts count_words_starting_with_a(words) # Output: 3
 
 
 
+
 # def count_words_starting_with_a(words)
 #   words.count { |word| word[0] == "a"}
 # end
@@ -101,6 +104,7 @@ end
 
 strings = ["bat", "cat", "fly", "airplane"]
 puts array_of_strings(strings) # Output: "bat, cat, fly, airplane"
+
 
 
 
@@ -123,6 +127,7 @@ end
 
 numbers = [1, 3, 4, 10]
 puts product_of_array(numbers) # Output: 120
+
 
 
 
@@ -199,7 +204,6 @@ puts all_numbers_bigger_than_ten(numbers) # Output: true
 
 # numbers = [30, 40, 60]
 # puts all_numbers_bigger_than_ten(numbers) # Output: true
-
 
 
 
