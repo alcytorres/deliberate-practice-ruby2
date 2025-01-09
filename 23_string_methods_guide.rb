@@ -1,6 +1,7 @@
 split
 # What it does: Divides a string into an array of substrings based on a delimiter (default is whitespace).
 # Why use it: Parsing text or handling user input (e.g., splitting a sentence into words).
+# A delimiter is a character or sequence of characters used to specify where to split a string into smaller parts.
 
 # Syntax:
 string.split("delimiter")
@@ -18,10 +19,10 @@ p sentence_to_words(sentence)
 
 # Solution 2
 def sentence_to_words(sentence)
-  sentence.split
+  sentence.split("-")
 end
 
-sentence = "Hello world from Ruby"
+sentence = "Hello-world-from-Ruby"
 p sentence_to_words(sentence)
 # Output: ["Hello", "world", "from", "Ruby"]
 
@@ -36,6 +37,35 @@ end
 greeting = "Hello"
 p split_into_chars(greeting)
 # Output: ["H", "e", "l", "l", "o"]
+
+#------------------------------------------------------------------------------
+# More split examples
+
+# Default Delimiter (Whitespace):
+"Hello world!".split
+# Output: ["Hello", "world!"]
+
+# Custom Delimiter (Comma):
+"apple,banana,cherry".split(",")
+# Output: ["apple", "banana", "cherry"]
+
+# Custom Delimiter (Dash):
+"ruby-is-fun".split("-")
+# Output: ["ruby", "is", "fun"]
+
+# Empty String Delimiter (Split by Characters):
+"abc".split("")
+# Output: ["a", "b", "c"]
+
+# No Matches (String Remains as is):
+"hello".split(",")
+# Output: ["hello"]
+
+# Handling Multiple Spaces:
+"  Hello   world  ".split
+# Output: ["Hello", "world"]
+
+
 
 
 
@@ -112,7 +142,7 @@ string.gsub(/pattern/, "replacement")
 string.gsub("old_text", "new_text")
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that replaces all spaces in a string with hyphens.
-# Solution 1
+# Solution
 def spaces_to_hyphens(str)
   str.gsub(" ", "-")
 end
@@ -122,18 +152,29 @@ p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
-# Solution 2
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that replaces all	spaces, tabs, newlines in a string with hyphens.
+# Solution
 def spaces_to_hyphens(str)
   str.gsub(/\s/, "-")
 end
 
-string = "hello world from ruby"
+string = "hello\tworld\nfrom ruby"
 p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
+# What does \s Match?
+# \s is shorthand for:
+Spaces (" ")
+Tabs ("\t")
+Newlines ("\n")
+Other less common whitespace characters.
+
+
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that removes all digits from a string.
+# Problem 3: Write a function that removes all digits from a string.
 # Solution 1
 def remove_digits(str)
   str.gsub(/\d/, "")
@@ -247,13 +288,28 @@ match
 # Syntax:
 string.match(/pattern/)
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that checks if a string matches a simple pattern (digits only) using .match.
+# Problem 1: Write a function that checks if a string contains a number
+def contains_number?(str)
+  str.match(/\d/)
+end
+
+# Example usage:
+p contains_number?("hello")
+# Output: nil (no match)
+p contains_number?("hello123")
+# Output: #<MatchData "1"> (match found)
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that checks if a string matches a simple pattern (digits only) using .match.
 def digits_only?(str)
   !!str.match(/^\d+$/)
 end
+
 num_str = "12345"
 p digits_only?(num_str)
 # Output: true
+
 
 
 chars

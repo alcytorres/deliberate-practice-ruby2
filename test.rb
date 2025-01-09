@@ -149,3 +149,13 @@ sum = add_numbers(10, 5)
 # Output on the console would show:
 # DEBUG: add_numbers called with a=10, b=5
 # DEBUG: result of add_numbers is 15
+
+
+def contains_number?(str)
+  str.match(/\s/)
+end
+
+p contains_number?("hello")
+# Output: nil (no match)
+p contains_number?("hello123")
+# Output: #<MatchData "1"> (match found)
