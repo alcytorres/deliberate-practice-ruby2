@@ -646,7 +646,7 @@ p none_start_with_z?(words)
 
 # Solution
 # def none_start_with_z?(words)
-#   words.none? { |w| w.start_with?("z") }
+#   words.none? {|word| word[0] == "z" }
 # end
 
 # words = ["apple", "cat", "banana"]
