@@ -159,3 +159,47 @@ p contains_number?("hello")
 # Output: nil (no match)
 p contains_number?("hello123")
 # Output: #<MatchData "1"> (match found)
+
+string = "hello\tworld\nfrom ruby"
+p string
+
+
+def spaces_to_hyphens(str)
+  str.gsub(/\s/, "-")
+end
+
+string = "hello world from ruby"
+p spaces_to_hyphens(string)
+# Output: "hello-world-from-ruby"
+
+
+
+
+def spaces_to_hyphens(string)
+  string
+end
+
+string = "hello\tworld\nfrom ruby"
+p spaces_to_hyphens(string)
+
+
+def spaces_to_hyphens(string)
+  string.gsub(/\s/, '-') # Replace whitespace with hyphens
+end
+
+string = "hello\tworld\nfrom ruby"
+result = spaces_to_hyphens(string)
+p result.inspect
+
+string = "hello\tworld\nfrom ruby"
+puts string
+
+
+
+# Problem 3.1:
+def print(string)
+  return string
+end
+
+string = "hello\tworld\nfrom ruby"
+puts string

@@ -119,7 +119,7 @@ p contains_ruby?(string2)
 # Output: false
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that checks if a name is in a list of guests (comma-separated string).
-# Solution 1
+# Solution
 def guest_in_list?(guest_list, name)
   guest_list.include?(name)
 end
@@ -152,9 +152,20 @@ p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that replaces all spaces in a string with hyphens.
+
+def spaces_to_hyphens(str)
+  str.gsub(/\s/, "-")
+end
+
+string = "hello world from ruby"
+p spaces_to_hyphens(string)
+# Output: "hello-world-from-ruby"
+
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that replaces all	spaces, tabs, newlines in a string with hyphens.
+# Problem 3: Write a function that replaces all	spaces, tabs, newlines in a string with hyphens.
 # Solution
 def spaces_to_hyphens(str)
   str.gsub(/\s/, "-")
@@ -174,7 +185,7 @@ Other less common whitespace characters.
 
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that removes all digits from a string.
+# Problem 4: Write a function that removes all digits from a string.
 # Solution 1
 def remove_digits(str)
   str.gsub(/\d/, "")

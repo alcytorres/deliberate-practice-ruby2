@@ -144,6 +144,7 @@ list = "Alice,Bob,Carol"
 
 
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # Problem 1: Write a function that replaces all spaces in a string with hyphens.
 
 def spaces_to_hyphens(str)
@@ -151,7 +152,7 @@ def spaces_to_hyphens(str)
 end
 
 string = "hello world from ruby"
-# p spaces_to_hyphens(string)
+p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
@@ -174,29 +175,6 @@ def spaces_to_hyphens(str)
 
 end
 
-string = "hello\tworld\nfrom ruby"
-# p spaces_to_hyphens(string)
-# Output: "hello-world-from-ruby"
-
-
-
-# # Solution
-# def spaces_to_hyphens(str)
-#   str.gsub(/\s/, "-")
-# end
-
-# string = "hello\tworld\nfrom ruby"
-# p spaces_to_hyphens(string)
-# # Output: "hello-world-from-ruby"
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that replaces all	spaces, tabs, newlines in a string with hyphens.
-# Solution
-
-def spaces_to_hyphens(str)
-
-end
-
 string = "hello world from ruby"
 # p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
@@ -212,9 +190,46 @@ string = "hello world from ruby"
 # p spaces_to_hyphens(string)
 # # Output: "hello-world-from-ruby"
 
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that replaces all	spaces, tabs, newlines in a string with hyphens.
+
+def spaces_to_hyphens(str)
+
+end
+
+string = "hello\tworld\nfrom ruby"
+# puts spaces_to_hyphens(string)
+# Output: "hello-world-from-ruby"
+
+
+
+# # Solution
+# def spaces_to_hyphens(str)
+#   str.gsub(/\s/, "-")
+# end
+
+# string = "hello\tworld\nfrom ruby"
+# p spaces_to_hyphens(string)
+# # Output: "hello-world-from-ruby"
+
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that removes all digits from a string.
+# Problem 3.1: Write a function that prints a string with	spaces, tabs, and newlines as a string.
+
+def print(string)
+  return string
+end
+
+string = "hello\tworld\nfrom ruby"
+# puts string
+
+# Output
+# hello   world
+# from ruby
+
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that removes all digits from a string.
 
 def remove_digits(str)
 
@@ -222,6 +237,7 @@ end
 
 test_str = "abc123def456"
 # p remove_digits(test_str)
+# Output: "abcdef"
 
 
 
