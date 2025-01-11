@@ -4,6 +4,7 @@ push
 
 # Syntax:
 array.push(element)
+array.push(element1, element2, ...)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that adds a single element to an array.
 # Solution 1
@@ -60,10 +61,11 @@ pop
 # Why use it: Retrieving an item from the end of the array while reducing its size.
 
 # Syntax:
-removed_element = array.pop
+array.pop                 # Removes the last element
+array.pop(n)              # Removes the last `n` elements
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that removes the last element from an array and returns it.
-# Solution 1
+# Solution
 def remove_last(arr)
   arr.pop
 end
@@ -76,8 +78,22 @@ p numbers
 
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that repeatedly pops elements from an array until it's empty, returning them in a new array.
-# Solution 1
+# Problem 2: Write a function that removes the last 4 elements from an array and returns it.
+# Solution
+def remove_last(arr)
+  arr.pop(4)
+end
+
+numbers = [1, 2, 3, 4, 5]
+p remove_last(numbers)
+# Output: [2, 3, 4, 5]
+p numbers
+# Output: [1]
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that repeatedly pops elements from an array until it's empty, returning them in a new array.
+# Solution
 def pop_all(arr)
   popped = []
   popped << arr.pop while arr.any?
@@ -94,11 +110,21 @@ join
 # What it does: Combines all elements of an array into a single string, optionally separated by a chosen delimiter (e.g., "-", ",", etc.).
 # Why use it: Ideal for creating strings from lists, such as generating a sentence or producing CSV data.
 
+# Delimeter: a character or set of characters used to separate elements in a string or data structure.
+# Ex:
+# Space (" ")
+# Comma (",")
+# Hyphen ("-")
+# No Delimiter ("")
+# Pipe ("|")
+# Newline ("\n")
+
 # Syntax:
 array.join("delimiter")
+# 'delimiter' is optional. By default, it joins without any space or character.
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that converts an array of words into a single string separated by spaces.
-# Solution 1
+# Solution
 def words_to_sentence(words)
   words.join(" ")
 end
@@ -110,7 +136,7 @@ p words_to_sentence(arr_words)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that converts an array of characters into a single string without spaces.
-# Solution 1
+# Solution
 def chars_to_string(chars)
   chars.join
 end
@@ -120,6 +146,18 @@ p chars_to_string(letters)
 # Output: "abc"
 
 
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that joins an array of dates with a hyphen.
+# Solution
+def join_with_hyphen(dates)
+  dates.join("-")
+end
+
+dates = ["2023", "01", "10"]
+puts join_with_hyphen(dates)
+# Output: "2023-01-10"
+
+
 
 sort
 # What it does: Returns a new array with the elements sorted in ascending order by default.
@@ -127,11 +165,14 @@ sort
 
 # Syntax:
 array.sort
-# or
-array.sort { |a, b| b <=> a }  # for descending order
+
+# For descending order:
+array.sort.reverse
+# Or use
+array.sort { |a, b| b <=> a }
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
-# Solution 1
+# Solution
 def sort_ascending(numbers)
   numbers.sort
 end
@@ -153,7 +194,7 @@ p sort_ascending(nums)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that sorts an array of strings in alphabetical order.
-# Solution 1
+# Solution
 def sort_alphabetical(words)
   words.sort
 end
@@ -162,6 +203,28 @@ word_list = ["banana", "apple", "cherry"]
 p sort_alphabetical(word_list)
 # Output: ["apple", "banana", "cherry"]
 
+#------------------------------------------------------------------------------
+# Problem 3: Sort an array of numbers in descending order.
+# Solution
+def sort_descending(numbers)
+  numbers.sort.reverse
+end
+
+nums = [5, 2, 8, 1]
+p sort_descending(nums)
+# Output: [8, 5, 2, 1]
+
+#------------------------------------------------------------------------------
+# Problem 4: Sort an array of numbers in descending order using this syntax `{ |a, b| b <=> a }`
+# Solution
+def sort_descending(numbers)
+  numbers.sort { |a, b| b <=> a }
+end
+
+nums = [5, 2, 8, 1]
+p sort_descending(nums)
+# Output: [8, 5, 2, 1]
+
 
 
 include?
@@ -169,19 +232,35 @@ include?
 # Why use it: Quickly verify membership before performing an action or returning a result.
 
 # Syntax:
-array.include?(item)
+array.include?(value)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, then pushes the value to the end of the array.
-def nums_array(arr, val)
-  arr.include?(val)
+def nums_array(arr, value)
+  arr.include?(value)
 end
+
 numbers = [1, 2, 3]
 p nums_array(numbers, 2)
 # Output: true
 
 
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that checks if a hash includes a specific key.
+def includes_key?(hash, key)
+  hash.include?(key)
+end
 
-.index / .rindex
+data = { name: "Alice", age: 25 }
+p includes_key?(data, :name)
+# Output: true
+
+p includes_key?(data, :height)
+# Output: false
+
+
+
+.index
+.rindex
 # What it does: .index returns the first index where the element is found; .rindex returns the last.
 # Why use it: Find the position(s) of an element to locate or manipulate it.
 
@@ -190,22 +269,22 @@ array.index(element)
 array.rindex(element)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, returning [first_index, last_index] of that value.
-def find_first_and_last_index(arr, val)
-  [arr.index(val), arr.rindex(val)]
+def find_first_and_last_index(array, value)
+  [array.index(value), array.rindex(value)]
 end
-example_arr = [4, 5, 6, 5, 7]
-p find_first_and_last_index(example_arr, 5)
+
+numbers = [4, 5, 6, 5, 7]
+p find_first_and_last_index(numbers, 5)
 # Output: [1, 3]
 
 
+
 find_index
-# What it does: Returns the index of the first element for which the block condition is true.
-# Why use it: More flexible than .index by allowing a condition rather than a direct element match.
+# What it does: Finds the index of the first element in an array that matches a given condition (based on a block).
+# Why use it: To locate the position of the first element that satisfies a specific condition.
 
 # Syntax:
-array.find_index do |element|
-  # condition that returns true or false
-end
+array.find_index { |element| condition }
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the index of the first odd number in an array.
 def index_of_first_odd(arr)
@@ -214,6 +293,7 @@ end
 mixed_numbers = [2, 4, 6, 7, 9]
 p index_of_first_odd(mixed_numbers)
 # Output: 3 (index of 7)
+
 
 
 .max / .min
@@ -228,9 +308,11 @@ array.min
 def find_extremes(arr)
   [arr.max, arr.min]
 end
+
 range_array = [2, 8, 1, 10, 5]
 p find_extremes(range_array)
 # Output: [10, 1]
+
 
 
 uniq
@@ -274,8 +356,8 @@ array.first
 array.first(n)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns its first element.
-def first_element(arr)
-  arr.first
+def first_element(array)
+  array.first
 end
 sample_array = [10, 20, 30]
 p first_element(sample_array)
@@ -291,12 +373,13 @@ array.last
 array.last(n)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns its last element.
-def last_element(arr)
-  arr.last
+def last_element(array)
+  array.last
 end
 nums_array = [4, 5, 6]
 p last_element(nums_array)
 # Output: 6
+
 
 
 flatten
@@ -347,36 +430,59 @@ p random_element(random_nums)
 # Output: (random element)
 
 
+
 shift
 # What it does: Removes the first element from an array and returns it.
-# Why use it: Dequeue-like functionality, often for sequential processing.
+# Why use it: To remove and retrieve the first element(s) of a collection, often for sequential processing.
+
 
 # Syntax:
-removed_element = array.shift
+array.shift           # Removes and returns the first element
+array.shift(n)        # Removes and returns the first `n` elements as a new array
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and removes its first element, returning the removed element.
-def shift_element(arr)
-  arr.shift
+def shift_element(array)
+  array.shift
 end
-shift_arr = [7, 8, 9]
-p shift_element(shift_arr) # Output: 7
-p shift_arr # Output Now: [8, 9]
+
+shift_array = [7, 8, 9]
+p shift_element(shift_array)
+# Output: 7
+p shift_array
+# Output Now: [8, 9]
 
 
 
 unshift
 # What it does: Adds one or more elements to the front of an array.
-# Why use it: Opposite of .push — useful for prepending data.
+# Why use it: To add element(s) at the start of an array. Opposite of .push
 
 # Syntax:
-array.unshift(element)
+array.unshift(value)
+array.unshift(value1, value2, ...)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, and unshifts the value to the front of the array.
-def unshift_element(arr, val)
-  arr.unshift(val)
+
+def unshift_element(array, value)
+  array.unshift(value)
 end
-unshift_arr = [2, 3]
-p unshift_element(unshift_arr, 1)
+
+unshift_array = [2, 3]
+p unshift_element(unshift_array, 1)
+# Output Now: [1, 2, 3]
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes in an array and 3 values, and unshifts the 3 values to the front of the array.
+
+def unshift_element(array, value1, value2, value3)
+  array.unshift(value1, value2, value3)
+end
+
+unshift_array = [4, 5]
+p unshift_element(unshift_array, 1, 2, 3)
+# Output Now: [1, 2, 3, 4, 5]
+
 
 
 
@@ -388,12 +494,14 @@ compact
 array.compact
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns a new array without nil values.
-def remove_nil(arr)
-  arr.compact
+def remove_nil(array)
+  array.compact
 end
+
 nil_array = [1, nil, 2, nil, 3]
 p remove_nil(nil_array)
 # Output: [1, 2, 3]
+
 
 
 slice
@@ -401,16 +509,36 @@ slice
 # Why use it: Extract specific segments of an array without modifying the original.
 
 # Syntax:
-array.slice(index, length)
-array.slice(range)
+# For Arrays:
+array.slice(index)          # Returns the element at the given index
+array.slice(start, length)  # Returns a subarray starting at 'start' with 'length' elements
+
+# For Strings:
+string.slice(index)         # Returns the character at the given index
+string.slice(start, length) # Returns a substring starting at 'start' with 'length' characters
+
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that slices the first 3 elements from an array.
-def slice_first_three(arr)
-  arr.slice(0, 3)
+# Problem 1: Get the element at a specific index in an array.
+
+def get_element_at(array, index)
+  array.slice(index)
+end
+
+nums = [10, 20, 30, 40]
+p get_element_at(nums, 2)
+# Output: 30
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that slices the first 3 elements from an array.
+
+def slice_first_three(array)
+  array.slice(1, 3)
+
 end
 slice_array = [4, 5, 6, 7, 8]
 p slice_first_three(slice_array)
-# Output: [4, 5, 6]
+# Output: [5, 6, 7]
 
 
 
@@ -419,17 +547,41 @@ partition
 # Why use it: Separate elements that meet a criterion from those that don't.
 
 # Syntax:
-true_arr, false_arr = array.partition do |element|
-  # condition
-end
+array.partition { |element| condition }
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that partitions an array of numbers into even and odd arrays.
-def partition_even_odd(arr)
-  arr.partition { |num| num.even? }
+def partition_even_odd(array)
+  array.partition { |num| num.even? }
 end
-part_arr = [1, 2, 3, 4, 5]
-p partition_even_odd(part_arr)
-# Output: [[2, 4], [1, 3, 5]]
+
+part_array = [1, 2, 3, 4, 5, 6]
+p partition_even_odd(part_array)
+# Output: [[2, 4, 6], [1, 3, 5]]
+
+
+#------------------------------------------------------------------------------
+# Alternative solution to Partition problem 1
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Partition numbers into even and odd
+even, odd = numbers.partition { |num| num.even? }
+
+# puts even.inspect
+# # Output: [2, 4, 6]
+# puts odd.inspect
+# # Output: [1, 3, 5]
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that partitions an array into numbers greater than 10 from others.
+def partition_greater_than_10(numbers)
+  numbers.partition { |num| num > 10 }
+end
+
+nums = [5, 15, 8, 20, 3]
+p partition_greater_than_10(nums)
+# Output: [[15, 20], [5, 8, 3]]
+
 
 
 combination
@@ -437,17 +589,20 @@ combination
 # Why use it: Useful in combinatorial tasks or finding subsets.
 
 # Syntax:
-array.combination(2) do |combo|
-  # combo is an array of 2 elements
-end
+array.combination(n).to_a
+# Returns an enumerator of all combinations of length `n`.
+
+# Key Tip: you can call `.to_a` to convert the enumerator into an array of combinations.
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns all 2-element combinations.
-def two_element_combinations(arr)
-  arr.combination(2).to_a
+def two_element_combinations(array)
+  array.combination(2).to_a
 end
-combo_arr = [1, 2, 3]
-p two_element_combinations(combo_arr)
-# Output: [[1, 2], [1, 3], [2, 3]]
+
+combo_array = ['a', 'b', 'c']
+p two_element_combinations(combo_array)
+# Output: [["a", "b"], ["a", "c"], ["b", "c"]]
+
 
 
 permutation
@@ -455,17 +610,19 @@ permutation
 # Why use it: Essential for problems requiring every arrangement (e.g., permutations of letters).
 
 # Syntax:
-array.permutation(2) do |perm|
-  # perm is an array of 2 elements
-end
+array.permutation(n).to_a
+
+# Key Tip: you can call `.to_a` to convert the enumerator into an array of combinations.
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns all permutations of length 2.
-def two_element_permutations(arr)
-  arr.permutation(2).to_a
+def two_element_permutations(array)
+  array.permutation(2).to_a
 end
+
 perm_arr = [1, 2, 3]
 p two_element_permutations(perm_arr)
 # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
+
 
 
 rotate
@@ -473,33 +630,54 @@ rotate
 # Why use it: Cyclically shift items without manual loops.
 
 # Syntax:
-array.rotate
-array.rotate(n)  # n can be negative for right rotation
+array.rotate          # Rotates once (default is by 1 position)
+array.rotate(n)       # Rotates by `n` positions (positive for left, negative for right)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that rotates an array by 1 position to the left.
 def rotate_left_by_one(arr)
   arr.rotate(1)
 end
+
 rotate_arr = [1, 2, 3, 4]
 p rotate_left_by_one(rotate_arr)
 # Output: [2, 3, 4, 1]
 
 
 
-bsearch
-# What it does: Performs a binary search on a sorted array, returning an element if found (or nil).
-# Why use it: Efficient lookup in sorted data (O(log n) complexity).
 
-# Syntax:
-array.bsearch do |element|
-  # block returns -1, 0, or 1 in older Ruby;
-  # more commonly, a boolean for "find minimum/maximum" usage
-end
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in a sorted array and a target, and returns the element if found.
-def binary_search(arr, target)
-  arr.bsearch { |x| x >= target }
-end
-sorted_array = [1, 3, 5, 7, 9]
-p binary_search(sorted_array, 5)
-# Output: 5 (when target is 5)
+
+# SKIP THIS... .FIND INSTEAD OF BSEARCH
+bsearch
+# # What it does: Performs a binary search on a sorted array, returning an element if found (or nil).
+# # Why use it: Efficient lookup in sorted data (O(log n) complexity).
+
+# # To us bsearch the array must be SORTED
+
+# # How bsearch Works:
+# # bsearch assumes the array is sorted. It splits the array into halves, checks the block condition ({ |x| x >= target }) at the middle element, and decides to search in the left or right half based on the result (true or false).
+
+# # Syntax:
+# array.bsearch { |element| condition }
+# #------------------------------------------------------------------------------
+# # Problem 1: Write a function that takes in a sorted array and a target, and returns the element if found.
+# def binary_search(array, target)
+#   array.bsearch { |x| x >= target }
+# end
+
+# sorted_array = [1, 3, 5, 7, 9]
+# p binary_search(sorted_array, 5)
+# # Output: 5 (when target is 5)
+
+
+# #------------------------------------------------------------------------------
+# # Problem 2: Write a function that takes in a sorted array and a target, and returns the element if found.
+# def binary_search(array, target)
+#   array.bsearch { |x| x == target }
+# end
+
+# sorted_array = [1, 3, 5, 7, 9]
+# p binary_search(sorted_array, 7)
+# # Output: 7 (when target is 7)
+
+
+

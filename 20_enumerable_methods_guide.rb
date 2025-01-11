@@ -3,12 +3,21 @@ each
 # Why use it: Performing an action on each item (e.g., printing values, modifying data in place).
 
 # Syntax:
-collection.each do |element|
-  # iterate over each element
+# For Arrays:
+array.each { |element| block }
+
+array.each do |element|
+  block
 end
 
-# single-line form:
-collection.each { |element| puts element }
+# For Hashes:
+hash.each { |key, value| block }
+
+hash.each do |key, value|
+  block
+end
+
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that prints each number of an array.
 # Solution 1

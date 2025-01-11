@@ -100,7 +100,33 @@ p numbers
 
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that repeatedly pops elements from an array until it's empty, returning them in a new array.
+# Problem 2: Write a function that removes the last 4 elements from an array and returns it.
+
+def remove_last(arr)
+
+end
+
+numbers = [1, 2, 3, 4, 5]
+p remove_last(numbers)
+# Output: [2, 3, 4, 5]
+p numbers
+# Output: [1]
+
+
+# # Solution
+# def remove_last(arr)
+#   arr.pop(4)
+# end
+
+# numbers = [1, 2, 3, 4, 5]
+# p remove_last(numbers)
+# # Output: [2, 3, 4, 5]
+# p numbers
+# # Output: [1]
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that repeatedly pops elements from an array until it's empty, returning them in a new array.
 
 def pop_all(arr)
 
@@ -170,6 +196,27 @@ p chars_to_string(letters)
 # p chars_to_string(letters)
 # # Output: "abc"
 
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that joins an array of dates with a hyphen.
+
+# Solution
+def join_with_hyphen(dates)
+
+end
+
+dates = ["2023", "01", "10"]
+puts join_with_hyphen(dates)
+# Output: "2023-01-10"
+
+
+# # Solution
+# def join_with_hyphen(dates)
+#   dates.join("-")
+# end
+
+# dates = ["2023", "01", "10"]
+# puts join_with_hyphen(dates)
+# # Output: "2023-01-10"
 
 
 #------------------------------------------------------------------------------
@@ -180,7 +227,7 @@ def sort_ascending(numbers)
 end
 
 nums = [5, 2, 8, 1, 3]
-p sort_ascending(nums)
+# p sort_ascending(nums)
 # Output: [1, 2, 3, 5, 8]
 
 
@@ -213,7 +260,7 @@ def sort_alphabetical(words)
 end
 
 word_list = ["banana", "apple", "cherry"]
-p sort_alphabetical(word_list)
+# p sort_alphabetical(word_list)
 # Output: ["apple", "banana", "cherry"]
 
 
@@ -227,6 +274,50 @@ p sort_alphabetical(word_list)
 # p sort_alphabetical(word_list)
 # # Output: ["apple", "banana", "cherry"]
 
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Sort an array of numbers in descending order.
+
+def sort_descending(numbers)
+
+end
+
+nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# Output: [8, 5, 2, 1]
+
+
+# # Solution
+# def sort_descending(numbers)
+#   numbers.sort.reverse
+# end
+
+# nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# # Output: [8, 5, 2, 1]
+
+
+#------------------------------------------------------------------------------
+# Problem 4: Sort an array of numbers in descending order using this syntax `{ |a, b| b <=> a }`
+
+def sort_descending(numbers)
+
+end
+
+nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# Output: [8, 5, 2, 1]
+
+
+# # Solution
+# def sort_descending(numbers)
+#   numbers.sort { |a, b| b <=> a }
+# end
+
+# nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# # Output: [8, 5, 2, 1]
 
 
 #------------------------------------------------------------------------------
@@ -250,6 +341,33 @@ p nums_array(numbers, 2)
 # # Output: true
 
 
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that checks if a hash includes a specific key.
+def includes_key?(hash, key)
+
+end
+
+data = { name: "Alice", age: 25 }
+# p includes_key?(data, :name)
+# Output: true
+
+# p includes_key?(data, :height)
+# Output: false
+
+
+
+# # Solution
+# def includes_key?(hash, key)
+#   hash.include?(key)
+# end
+
+# data = { name: "Alice", age: 25 }
+# p includes_key?(data, :name)
+# # Output: true
+
+# p includes_key?(data, :height)
+# # Output: false
+
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, returning [first_index, last_index] of that value.
@@ -264,11 +382,12 @@ p find_first_and_last_index(example_arr, 5)
 
 
 # # Solution
-# def find_first_and_last_index(arr, val)
-#   [arr.index(val), arr.rindex(val)]
+# def find_first_and_last_index(array, value)
+#   [array.index(value), array.rindex(value)]
 # end
-# example_arr = [4, 5, 6, 5, 7]
-# p find_first_and_last_index(example_arr, 5)
+
+# numbers = [4, 5, 6, 5, 7]
+# p find_first_and_last_index(numbers, 5)
 # # Output: [1, 3]
 
 
@@ -311,6 +430,7 @@ p find_extremes(range_array)
 # def find_extremes(arr)
 #   [arr.max, arr.min]
 # end
+
 # range_array = [2, 8, 1, 10, 5]
 # p find_extremes(range_array)
 # # Output: [10, 1]
@@ -519,6 +639,29 @@ p unshift_element(unshift_arr, 1)
 # p unshift_element(unshift_arr, 1)
 
 
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes in an array and 3 values, and unshifts the 3 values to the front of the array.
+# Solution
+
+def unshift_element(array, value1, value2, value3)
+
+end
+
+unshift_array = [4, 5]
+# p unshift_element(unshift_array, 1, 2, 3)
+# Output Now: [1, 2, 3, 4, 5]
+
+
+
+# # Solution
+# def unshift_element(array, value1, value2, value3)
+#   array.unshift(value1, value2, value3)
+# end
+
+# unshift_array = [4, 5]
+# p unshift_element(unshift_array, 1, 2, 3)
+# # Output Now: [1, 2, 3, 4, 5]
+
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns a new array without nil values.
@@ -543,24 +686,47 @@ p remove_nil(nil_array)
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that slices the first 3 elements from an array.
+# Problem 1: Get the element at a specific index in an array.
 
-def slice_first_three(arr)
+def get_element_at(array, index)
 
 end
-slice_array = [4, 5, 6, 7, 8]
-p slice_first_three(slice_array)
-# Output: [4, 5, 6]
 
+nums = [10, 20, 30, 40]
+# p get_element_at(nums, 2)
+# Output: 30
 
 
 # # Solution
-# def slice_first_three(arr)
-#   arr.slice(0, 3)
+# def get_element_at(array, index)
+#   array.slice(index)
 # end
+
+# nums = [10, 20, 30, 40]
+# p get_element_at(nums, 2)
+# # Output: 30
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that slices the first 3 elements from an array.
+
+def slice_first_three(array)
+
+end
+
+slice_array = [4, 5, 6, 7, 8]
+# p slice_first_three(slice_array)
+# Output: [5, 6, 7]
+
+
+# # Solution
+# def slice_first_three(array)
+#   array.slice(1, 3)
+# end
+
 # slice_array = [4, 5, 6, 7, 8]
 # p slice_first_three(slice_array)
-# # Output: [4, 5, 6]
+# # Output: [5, 6, 7]
 
 
 
@@ -570,50 +736,88 @@ p slice_first_three(slice_array)
 def partition_even_odd(arr)
 
 end
-part_arr = [1, 2, 3, 4, 5]
-p partition_even_odd(part_arr)
-# Output: [[2, 4], [1, 3, 5]]
 
-
+part_arr = [1, 2, 3, 4, 5, 6]
+# p partition_even_odd(part_arr)
+# Output: [[2, 4, 6], [1, 3, 5]]
 
 # # Solution
 # def partition_even_odd(arr)
 #   arr.partition { |num| num.even? }
 # end
-# part_arr = [1, 2, 3, 4, 5]
+
+# part_arr = [1, 2, 3, 4, 5, 6]
 # p partition_even_odd(part_arr)
-# # Output: [[2, 4], [1, 3, 5]]
+# # Output: [[2, 4, 6], [1, 3, 5]]
+
+
+#------------------------------------------------------------------------------
+# Alternative solution to Partition problem 1
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Partition numbers into even and odd
+even, odd = numbers.partition { |num| num.even? }
+
+# puts even.inspect
+# # Output: [2, 4, 6]
+# puts odd.inspect
+# # Output: [1, 3, 5]
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that partitions an array into numbers greater than 10 from others.
+
+def partition_greater_than_10(numbers)
+  numbers.partition { |num| num > 10 }
+end
+
+nums = [5, 15, 8, 20, 3]
+# p partition_greater_than_10(nums)
+# Output: [[15, 20], [5, 8, 3]]
+
+
+# # Solution
+# def partition_greater_than_10(numbers)
+#   numbers.partition { |num| num > 10 }
+# end
+
+# nums = [5, 15, 8, 20, 3]
+# p partition_greater_than_10(nums)
+# # Output: [[15, 20], [5, 8, 3]]
 
 
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns all 2-element combinations.
 
-def two_element_combinations(arr)
+def two_element_combinations(array)
 
 end
-combo_arr = [1, 2, 3]
-p two_element_combinations(combo_arr)
-# Output: [[1, 2], [1, 3], [2, 3]]
+
+combo_array = ['a', 'b', 'c']
+p two_element_combinations(combo_array)
+# Output: [["a", "b"], ["a", "c"], ["b", "c"]]
 
 
 
 # # Solution
-# def two_element_combinations(arr)
-#   arr.combination(2).to_a
+# def two_element_combinations(array)
+#   array.combination(2).to_a
 # end
-# combo_arr = [1, 2, 3]
-# p two_element_combinations(combo_arr)
-# # Output: [[1, 2], [1, 3], [2, 3]]
+
+# combo_array = ['a', 'b', 'c']
+# p two_element_combinations(combo_array)
+# # Output: [["a", "b"], ["a", "c"], ["b", "c"]]
 
 
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns all permutations of length 2.
 
-def two_element_permutations(arr)
+def two_element_permutations(array)
 
 end
+
 perm_arr = [1, 2, 3]
 p two_element_permutations(perm_arr)
 # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
@@ -621,13 +825,13 @@ p two_element_permutations(perm_arr)
 
 
 # # Solution
-# def two_element_permutations(arr)
-#   arr.permutation(2).to_a
+# def two_element_permutations(array)
+#   array.permutation(2).to_a
 # end
+
 # perm_arr = [1, 2, 3]
 # p two_element_permutations(perm_arr)
 # # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
-
 
 
 #------------------------------------------------------------------------------
@@ -636,38 +840,20 @@ p two_element_permutations(perm_arr)
 def rotate_left_by_one(arr)
 
 end
+
 rotate_arr = [1, 2, 3, 4]
 p rotate_left_by_one(rotate_arr)
 # Output: [2, 3, 4, 1]
-
 
 
 # # Solution
 # def rotate_left_by_one(arr)
 #   arr.rotate(1)
 # end
+
 # rotate_arr = [1, 2, 3, 4]
 # p rotate_left_by_one(rotate_arr)
 # # Output: [2, 3, 4, 1]
 
 
 
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in a sorted array and a target, and returns the element if found.
-
-def binary_search(arr, target)
-
-end
-sorted_array = [1, 3, 5, 7, 9]
-p binary_search(sorted_array, 5)
-# Output: 5 (when target is 5)
-
-
-
-# # Solution
-# def binary_search(arr, target)
-#   arr.bsearch { |x| x >= target }
-# end
-# sorted_array = [1, 3, 5, 7, 9]
-# p binary_search(sorted_array, 5)
-# # Output: 5 (when target is 5)
