@@ -1,3 +1,5 @@
+General Methods
+
 puts
 # Used for general output.
 # It prints the given data followed by a newline, making it ideal for displaying readable text.
@@ -9,6 +11,11 @@ p
 pp
 # Short for "pretty print."
 # It's used for displaying complex data structures (like arrays and hashes) in a more readable format.
+
+inspect
+# What it does: Returns a string representation of an object, often used for debugging purposes.
+# Why use it: It provides a detailed look at an object, including its structure and values, making it helpful for troubleshooting.
+
 
 
 Big O Notation

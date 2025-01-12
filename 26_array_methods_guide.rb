@@ -5,6 +5,7 @@ push
 # Syntax:
 array.push(element)
 array.push(element1, element2, ...)
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that adds a single element to an array.
 # Solution 1
@@ -63,6 +64,7 @@ pop
 # Syntax:
 array.pop                 # Removes the last element
 array.pop(n)              # Removes the last `n` elements
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that removes the last element from an array and returns it.
 
@@ -228,21 +230,30 @@ p sort_descending(nums)
 
 
 include?
-# What it does: Checks if an array contains a specific element.
-# Why use it: Quickly verify membership before performing an action or returning a result.
+# What it does: Checks if a specific element exists in a collection (array or string).
+# Why use it: To quickly verify if a value or substring is present.
 
 # Syntax:
-array.include?(value)
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array and a value, then pushes the value to the end of the array.
 
-def nums_array(arr, value)
-  arr.include?(value)
+# For arrays
+array.include?(element)
+
+# For strings
+string.include?(substring)
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that checks if a number exists in an array.
+
+def array_includes_number?(array, number)
+  array.include?(number)
 end
 
-numbers = [1, 2, 3]
-p nums_array(numbers, 2)
+nums = [1, 2, 3, 4, 5]
+p array_includes_number?(nums, 3)
 # Output: true
+
+p array_includes_number?(nums, 6)
+# Output: false
 
 
 #------------------------------------------------------------------------------
