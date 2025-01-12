@@ -291,6 +291,7 @@ greeting = "Hello"
 def start_hello_end_bye?(str)
 
 end
+
 test_str = "hello something bye"
 # p start_hello_end_bye?(test_str)
 
@@ -312,6 +313,7 @@ test_str = "hello something bye"
 def shout(str)
 
 end
+
 phrase = "hello world"
 # p shout(phrase)
 
@@ -334,6 +336,7 @@ phrase = "hello world"
 def whisper(str)
 
 end
+
 loud_phrase = "HELLO WORLD"
 # p whisper(loud_phrase)
 # Output: "hello world"
@@ -357,6 +360,7 @@ loud_phrase = "HELLO WORLD"
 def capitalize_first(str)
 
 end
+
 title = "hello"
 # p capitalize_first(title)
 
@@ -427,6 +431,7 @@ num_str = "12345"
 def string_to_chars(str)
 
 end
+
 greeting = "hi"
 # p string_to_chars(greeting)
 # Output: ["h", "i"]
@@ -449,6 +454,7 @@ greeting = "hi"
 def remove_vowels(str)
 
 end
+
 vowel_string = "banana"
 # p remove_vowels(vowel_string)
 # Output: "bnn"
@@ -472,6 +478,7 @@ vowel_string = "banana"
 def swap_a_for_z(str)
 
 end
+
 text = "banana"
 # p swap_a_for_z(text)
 # Output: "bznznz"
@@ -501,6 +508,7 @@ text = "banana"
 def words_starting_with_b(str)
 
 end
+
 sentence = "banana and berry are both fruits"
 # p words_starting_with_b(sentence)
 # Output: ["banana", "berry", "both"]
@@ -524,6 +532,7 @@ sentence = "banana and berry are both fruits"
 def string_length(str)
 
 end
+
 long_word = "supercalifragilistic"
 # p string_length(long_word)
 # Output: 20
@@ -548,6 +557,7 @@ long_word = "supercalifragilistic"
 def first_char_ord_and_chr(str)
 
 end
+
 example_str = "Hello"
 # p first_char_ord_and_chr(example_str)
 # Output: [72, "H"]
@@ -572,6 +582,7 @@ example_str = "Hello"
 def next_string_value(str)
 
 end
+
 alpha = "abc"
 # p next_string_value(alpha)
 # Output: "abd"

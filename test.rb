@@ -62,26 +62,13 @@
 
 
 
-
-
-
-# Problem 1: Write a function that takes in an array and returns all 2-element combinations.
-def two_element_combinations(array)
-  array.combination(2)
+def print_values(hash)
+  hash.values.each {|value| puts value}
 end
 
-combo_array = ['a', 'b', 'c']
-p two_element_combinations(combo_array)
-# Output: [["a", "b"], ["a", "c"], ["b", "c"]]
-
-
-
-# Problem 4: Handle edge case where combination length exceeds array size.
-def oversized_combination(array, n)
-  array.combination(n).to_a
-end
-
-nums = [1, 2]
-p oversized_combination(nums, 3)
-# Output: [] (no combinations possible)
-
+movie = { title: "Matrix", year: 1999, rating: 8.7 }
+print_values(movie)
+# Output (each value on its own line):
+# Matrix
+# 1999
+# 8.7

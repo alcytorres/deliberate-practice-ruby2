@@ -1,7 +1,7 @@
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that adds a single element to an array.
 
-def add_element(arr, element)
+def add_element(array, element)
 
 end
 
@@ -12,8 +12,8 @@ p add_element(numbers, 4)
 
 
 # # Solution 1
-# def add_element(arr, element)
-#   arr.push(element)
+# def add_element(array, element)
+#   array.push(element)
 # end
 
 # numbers = [1, 2, 3]
@@ -22,8 +22,8 @@ p add_element(numbers, 4)
 
 
 # # Solution 2
-# def add_element(arr, element)
-#   arr << element
+# def add_element(array, element)
+#   array << element
 # end
 
 # numbers = [1, 2, 3]
@@ -88,8 +88,8 @@ p numbers
 
 
 # # Solution
-# def remove_last(arr)
-#   arr.pop
+# def remove_last(array)
+#   array.pop
 # end
 
 # numbers = [1, 2, 3]
@@ -114,8 +114,8 @@ p numbers
 
 
 # # Solution
-# def remove_last(arr)
-#   arr.pop(4)
+# def remove_last(array)
+#   array.pop(4)
 # end
 
 # numbers = [1, 2, 3, 4, 5]
@@ -139,9 +139,9 @@ p pop_all(nums)
 
 
 # # Solution
-# def pop_all(arr)
+# def pop_all(array)
 #   popped = []
-#   popped << arr.pop while arr.any?
+#   popped << array.pop while array.any?
 #   popped
 # end
 
@@ -158,8 +158,8 @@ def words_to_sentence(words)
 
 end
 
-arr_words = ["Hello", "world", "from", "Ruby"]
-p words_to_sentence(arr_words)
+array_words = ["Hello", "world", "from", "Ruby"]
+p words_to_sentence(array_words)
 # Output: "Hello world from Ruby"
 
 
@@ -169,8 +169,8 @@ p words_to_sentence(arr_words)
 #   words.join(" ")
 # end
 
-# arr_words = ["Hello", "world", "from", "Ruby"]
-# p words_to_sentence(arr_words)
+# array_words = ["Hello", "world", "from", "Ruby"]
+# p words_to_sentence(array_words)
 # # Output: "Hello world from Ruby"
 
 
@@ -187,7 +187,7 @@ p chars_to_string(letters)
 
 
 
-# # Solution 1
+# # Solution
 # def chars_to_string(chars)
 #   chars.join
 # end
@@ -196,10 +196,10 @@ p chars_to_string(letters)
 # p chars_to_string(letters)
 # # Output: "abc"
 
+
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that joins an array of dates with a hyphen.
 
-# Solution
 def join_with_hyphen(dates)
 
 end
@@ -333,9 +333,10 @@ p nums_array(numbers, 2)
 
 
 # # Solution
-# def nums_array(arr, val)
-#   arr.include?(val)
+# def nums_array(array, val)
+#   array.include?(val)
 # end
+
 # numbers = [1, 2, 3]
 # p nums_array(numbers, 2)
 # # Output: true
@@ -372,11 +373,12 @@ data = { name: "Alice", age: 25 }
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, returning [first_index, last_index] of that value.
 
-def find_first_and_last_index(arr, val)
+def find_first_and_last_index(array, value)
 
 end
-example_arr = [4, 5, 6, 5, 7]
-p find_first_and_last_index(example_arr, 5)
+
+numbers = [4, 5, 6, 5, 7]
+# p find_first_and_last_index(numbers, 5)
 # Output: [1, 3]
 
 
@@ -391,23 +393,24 @@ p find_first_and_last_index(example_arr, 5)
 # # Output: [1, 3]
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the index of the first odd number in an array.
 
-def index_of_first_odd(arr)
+def index_of_first_odd(array)
 
 end
+
 mixed_numbers = [2, 4, 6, 7, 9]
-p index_of_first_odd(mixed_numbers)
+# p index_of_first_odd(mixed_numbers)
 # Output: 3 (index of 7)
 
 
 
 # # Solution
-# def index_of_first_odd(arr)
-#   arr.find_index { |num| num.odd? }
+# def index_of_first_odd(array)
+#   array.find_index { |num| num.odd? }
 # end
+
 # mixed_numbers = [2, 4, 6, 7, 9]
 # p index_of_first_odd(mixed_numbers)
 # # Output: 3 (index of 7)
@@ -417,18 +420,19 @@ p index_of_first_odd(mixed_numbers)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns both the max and min values from an array.
 
-def find_extremes(arr)
+def find_extremes(array)
 
 end
+
 range_array = [2, 8, 1, 10, 5]
-p find_extremes(range_array)
+# p find_extremes(range_array)
 # Output: [10, 1]
 
 
 
 # # Solution
-# def find_extremes(arr)
-#   [arr.max, arr.min]
+# def find_extremes(array)
+#   [array.max, array.min]
 # end
 
 # range_array = [2, 8, 1, 10, 5]
@@ -445,7 +449,7 @@ def remove_duplicates(numbers)
 end
 
 nums = [1, 2, 2, 3, 3, 3]
-p remove_duplicates(nums)
+# p remove_duplicates(nums)
 # Output: [1, 2, 3]
 
 
@@ -467,8 +471,8 @@ def count_unique_elements(array)
 
 end
 
-arr = [1, 1, 2, 3, 2, 4]
-p count_unique_elements(arr)
+numbers = [1, 1, 2, 3, 2, 4]
+# p count_unique_elements(numbers)
 # Output: 4
 
 
@@ -478,8 +482,8 @@ p count_unique_elements(arr)
 #   array.uniq.size
 # end
 
-# arr = [1, 1, 2, 3, 2, 4]
-# p count_unique_elements(arr)
+# numbers = [1, 1, 2, 3, 2, 4]
+# p count_unique_elements(numbers)
 # # Output: 4
 
 
@@ -487,21 +491,23 @@ p count_unique_elements(arr)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns its first element.
 
-def first_element(arr)
+def first_element(array)
 
 end
-sample_array = [10, 20, 30]
-p first_element(sample_array)
+
+numbers = [10, 20, 30]
+# p first_element(numbers)
 # Output: 10
 
 
 
 # # Solution
-# def first_element(arr)
-#   arr.first
+# def first_element(array)
+#   array.first
 # end
-# sample_array = [10, 20, 30]
-# p first_element(sample_array)
+
+# numbers = [10, 20, 30]
+# p first_element(numbers)
 # # Output: 10
 
 
@@ -509,22 +515,23 @@ p first_element(sample_array)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns its last element.
 
-# Solution
-def last_element(arr)
+def last_element(array)
 
 end
-nums_array = [4, 5, 6]
-p last_element(nums_array)
+
+numbers = [4, 5, 6]
+# p last_element(numbers)
 # Output: 6
 
 
 
 # # Solution
-# def last_element(arr)
-#   arr.last
+# def last_element(array)
+#   array.last
 # end
-# nums_array = [4, 5, 6]
-# p last_element(nums_array)
+
+# numbers = [4, 5, 6]
+# p last_element(numbers)
 # # Output: 6
 
 
@@ -536,8 +543,8 @@ def flatten_2d(array)
 
 end
 
-arr_2d = [[1, 2], [3, 4]]
-p flatten_2d(arr_2d)
+array_2d = [[1, 2], [3, 4]]
+# p flatten_2d(array_2d)
 # Output: [1, 2, 3, 4]
 
 
@@ -547,8 +554,8 @@ p flatten_2d(arr_2d)
 #   array.flatten
 # end
 
-# arr_2d = [[1, 2], [3, 4]]
-# p flatten_2d(arr_2d)
+# array_2d = [[1, 2], [3, 4]]
+# p flatten_2d(array_2d)
 # # Output: [1, 2, 3, 4]
 
 
@@ -560,7 +567,7 @@ def flatten_any_depth(array)
 end
 
 nested_array = [1, [2, [3, [4]]]]
-p flatten_any_depth(nested_array)
+# p flatten_any_depth(nested_array)
 # Output: [1, 2, 3, 4]
 
 
@@ -579,19 +586,21 @@ p flatten_any_depth(nested_array)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns a random element from an array.
 
-def random_element(arr)
+def random_element(array)
 
 end
+
 random_nums = [10, 20, 30, 40]
-p random_element(random_nums)
+# p random_element(random_nums)
 # Output: (random element)
 
 
 
 # # Solution
-# def random_element(arr)
-#   arr.sample
+# def random_element(array)
+#   array.sample
 # end
+
 # random_nums = [10, 20, 30, 40]
 # p random_element(random_nums)
 # # Output: (random element)
@@ -601,42 +610,49 @@ p random_element(random_nums)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and removes its first element, returning the removed element.
 
-def shift_element(arr)
+def shift_element(array)
 
 end
-shift_arr = [7, 8, 9]
-p shift_element(shift_arr) # Output: 7
-p shift_arr # Output Now: [8, 9]
+
+shift_array = [7, 8, 9]
+# p shift_element(shift_array)
+# Output: 7
+# p shift_array
+# Output Now: [8, 9]
 
 
 
 # # Solution
-# def shift_element(arr)
-#   arr.shift
+# def shift_element(array)
+#   array.shift
 # end
-# shift_arr = [7, 8, 9]
-# p shift_element(shift_arr) # Output: 7
-# p shift_arr # Output Now: [8, 9]
 
+# shift_array = [7, 8, 9]
+# p shift_element(shift_array)
+# # Output: 7
+# p shift_array
+# # Output Now: [8, 9]
 
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, and unshifts the value to the front of the array.
 
-def unshift_element(arr, val)
+def unshift_element(array, value)
 
 end
-unshift_arr = [2, 3]
-p unshift_element(unshift_arr, 1)
+
+unshift_array = [2, 3]
+# p unshift_element(unshift_array, 1)
 
 
 
 # # Solution
-# def unshift_element(arr, val)
-#   arr.unshift(val)
+# def unshift_element(array, value)
+#   array.unshift(value)
 # end
-# unshift_arr = [2, 3]
-# p unshift_element(unshift_arr, 1)
+
+# unshift_array = [2, 3]
+# p unshift_element(unshift_array, 1)
 
 
 #------------------------------------------------------------------------------
@@ -666,19 +682,21 @@ unshift_array = [4, 5]
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and returns a new array without nil values.
 
-def remove_nil(arr)
+def remove_nil(array)
 
 end
+
 nil_array = [1, nil, 2, nil, 3]
-p remove_nil(nil_array)
+# p remove_nil(nil_array)
 # Output: [1, 2, 3]
 
 
 
 # # Solution
-# def remove_nil(arr)
-#   arr.compact
+# def remove_nil(array)
+#   array.compact
 # end
+
 # nil_array = [1, nil, 2, nil, 3]
 # p remove_nil(nil_array)
 # # Output: [1, 2, 3]
@@ -737,17 +755,19 @@ def partition_even_odd(arr)
 
 end
 
-part_arr = [1, 2, 3, 4, 5, 6]
-# p partition_even_odd(part_arr)
+part_array = [1, 2, 3, 4, 5, 6]
+# p partition_even_odd(part_array)
 # Output: [[2, 4, 6], [1, 3, 5]]
 
+
+
 # # Solution
-# def partition_even_odd(arr)
-#   arr.partition { |num| num.even? }
+# def partition_even_odd(array)
+#   array.partition { |num| num.even? }
 # end
 
-# part_arr = [1, 2, 3, 4, 5, 6]
-# p partition_even_odd(part_arr)
+# part_array = [1, 2, 3, 4, 5, 6]
+# p partition_even_odd(part_array)
 # # Output: [[2, 4, 6], [1, 3, 5]]
 
 
@@ -795,7 +815,7 @@ def two_element_combinations(array)
 end
 
 combo_array = ['a', 'b', 'c']
-p two_element_combinations(combo_array)
+# p two_element_combinations(combo_array)
 # Output: [["a", "b"], ["a", "c"], ["b", "c"]]
 
 
@@ -818,8 +838,8 @@ def two_element_permutations(array)
 
 end
 
-perm_arr = [1, 2, 3]
-p two_element_permutations(perm_arr)
+perm_array = [1, 2, 3]
+# p two_element_permutations(perm_array)
 # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 
 
@@ -829,30 +849,31 @@ p two_element_permutations(perm_arr)
 #   array.permutation(2).to_a
 # end
 
-# perm_arr = [1, 2, 3]
-# p two_element_permutations(perm_arr)
+# perm_array = [1, 2, 3]
+# p two_element_permutations(perm_array)
 # # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that rotates an array by 1 position to the left.
 
-def rotate_left_by_one(arr)
+def rotate_left_by_one(array)
 
 end
 
-rotate_arr = [1, 2, 3, 4]
-p rotate_left_by_one(rotate_arr)
+rotate_array = [1, 2, 3, 4]
+# p rotate_left_by_one(rotate_array)
 # Output: [2, 3, 4, 1]
 
 
+
 # # Solution
-# def rotate_left_by_one(arr)
-#   arr.rotate(1)
+# def rotate_left_by_one(array)
+#   array.rotate(1)
 # end
 
-# rotate_arr = [1, 2, 3, 4]
-# p rotate_left_by_one(rotate_arr)
+# rotate_array = [1, 2, 3, 4]
+# p rotate_left_by_one(rotate_array)
 # # Output: [2, 3, 4, 1]
 
 

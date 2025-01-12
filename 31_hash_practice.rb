@@ -11,7 +11,7 @@ p all_keys(fruits)
 
 
 
-# # Solution 1
+# # Solution
 # def all_keys(hash)
 #   hash.keys
 # end
@@ -20,17 +20,6 @@ p all_keys(fruits)
 # p all_keys(fruits)
 # # Output: [:apple, :banana, :cherry]
 
-
-# # Solution 2
-# def all_keys(hash)
-#   keys_array = []
-#   hash.each_key { |k| keys_array << k }
-#   keys_array
-# end
-
-# fruits = { apple: 1, banana: 2, cherry: 3 }
-# p all_keys(fruits)
-# # Output: [:apple, :banana, :cherry]
 
 
 #------------------------------------------------------------------------------
@@ -49,7 +38,7 @@ print_keys(person)
 
 
 
-# # Solution 1
+# # Solution
 # def print_keys(hash)
 #   hash.keys.each { |key| puts key }
 # end
@@ -76,21 +65,9 @@ p all_values(prices)
 
 
 
-# # Solution 1
+# # Solution
 # def all_values(hash)
 #   hash.values
-# end
-
-# prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
-# p all_values(prices)
-# # Output: [1.2, 0.5, 2.0]
-
-
-# # Solution 2
-# def all_values(hash)
-#   values_array = []
-#   hash.each_value { |v| values_array << v }
-#   values_array
 # end
 
 # prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
@@ -104,7 +81,6 @@ p all_values(prices)
 # Solution 1
 def print_values(hash)
 
-
 end
 
 movie = { title: "Matrix", year: 1999, rating: 8.7 }
@@ -116,11 +92,9 @@ print_values(movie)
 
 
 
-# # Solution 1
+# # Solution
 # def print_values(hash)
-#   hash.each_value do |value|
-#     puts value
-#   end
+#   hash.values.each {|value| puts value}
 # end
 
 # movie = { title: "Matrix", year: 1999, rating: 8.7 }
@@ -146,7 +120,7 @@ p merge_hashes(hash_a, hash_b)
 
 
 
-# # Solution 1
+# # Solution
 # def merge_hashes(hash1, hash2)
 #   hash1.merge(hash2)
 # end
@@ -155,20 +129,6 @@ p merge_hashes(hash_a, hash_b)
 # hash_b = { city: "NYC", occupation: "Engineer" }
 # p merge_hashes(hash_a, hash_b)
 # # Output: { name: "Alice", age: 25, city: "NYC", occupation: "Engineer" }
-
-
-# # Solution 2
-# def merge_hashes(hash1, hash2)
-#   result = {}
-#   hash1.each { |k, v| result[k] = v }
-#   hash2.each { |k, v| result[k] = v }
-#   result
-# end
-
-# hash_a = { name: "Bob", age: 30 }
-# hash_b = { city: "LA", occupation: "Designer" }
-# p merge_hashes(hash_a, hash_b)
-# # Output: { name: "Bob", age: 30, city: "LA", occupation: "Designer" }
 
 
 #------------------------------------------------------------------------------
@@ -195,6 +155,30 @@ p merge_override(default_config, user_config)
 # p merge_override(default_config, user_config)
 # # Output: { timeout: 30, debug: true }
 
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that merges hashes with a custom block for duplicate keys.
+
+def merge_with_custom_logic(hash1, hash2)
+
+end
+
+hash1 = { a: 1, b: 2 }
+hash2 = { b: 3, c: 4 }
+p merge_with_custom_logic(hash1, hash2)
+# Output: { a: 1, b: 5, c: 4 }
+
+
+
+# # Solution
+# def merge_with_custom_logic(hash1, hash2)
+
+# end
+
+# hash1 = { a: 1, b: 2 }
+# hash2 = { b: 3, c: 4 }
+# p merge_with_custom_logic(hash1, hash2)
+# # Output: { a: 1, b: 5, c: 4 }
 
 
 #------------------------------------------------------------------------------
@@ -223,14 +207,13 @@ p fetch_value(person, :name)
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that fetches a value from a hash or returns a default if the key is missing.
 
-# Solution
 def fetch_with_default(hash, key, default)
 
 end
 
-settings = { theme: "dark" }
-p fetch_with_default(settings, :font_size, 14)
-# Output: 14
+data = { name: "Alice", age: 30 }
+# p fetch_with_default(data, :height, 170)
+# Output: 170
 
 
 
@@ -239,54 +222,176 @@ p fetch_with_default(settings, :font_size, 14)
 #   hash.fetch(key, default)
 # end
 
-# settings = { theme: "dark" }
-# p fetch_with_default(settings, :font_size, 14)
+# data = { name: "Alice", age: 30 }
+# p fetch_with_default(data, :height, 170)
 # # Output: 14
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that handle a missing key with a block.
+
+def fetch_with_block(hash, key)
+
+end
+
+data = { name: "Alice", age: 30 }
+# p fetch_with_block(data, :height)
+# Output: "height not found"
+
+
+# # Solution
+# def fetch_with_block(hash, key)
+#   hash.fetch(key) { |missing_key| "#{missing_key} not found" }
+# end
+
+# data = { name: "Alice", age: 30 }
+# p fetch_with_block(data, :height)
+# # Output: "height not found"
 
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that safely digs for a nested value within a hash.
+# Problem 1: Write a function that retrieve a nested value from a hash.
 
-def safe_dig(hash, *keys)
+def fetch_nested_value(hash, key1, key2)
 
 end
-nested_hash = { user: { info: { name: "Bob" } } }
-p safe_dig(nested_hash, :user, :info, :name)
-# Output: "Bob"
 
+data = { user: { name: "Alice", age: 30 } }
+p fetch_nested_value(data, :user, :name)
+# Output: "Alice"
+
+p fetch_nested_value(data, :user, :height)
+# Output: nil (key :height does not exist)
 
 
 # # Solution
-# def safe_dig(hash, *keys)
-#   hash.dig(*keys)
+# def fetch_nested_value(hash, key1, key2)
+#   hash.dig(key1, key2)
 # end
-# nested_hash = { user: { info: { name: "Bob" } } }
-# p safe_dig(nested_hash, :user, :info, :name)
-# # Output: "Bob"
+
+# data = { user: { name: "Alice", age: 30 } }
+# p fetch_nested_value(data, :user, :name)
+# # Output: "Alice"
+
+# p fetch_nested_value(data, :user, :height)
+# # Output: nil (key :height does not exist)
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that retrieve a nested value from an array.
+
+def fetch_nested_array_value(array, index1, index2)
+
+end
+
+data = [[1, 2, 3], [4, 5, 6]]
+p fetch_nested_array_value(data, 1, 2)
+# Output: 6
+
+p fetch_nested_array_value(data, 2, 0)
+# Output: nil (index 2 does not exist)
+
+
+# # Solution
+# def fetch_nested_array_value(array, index1, index2)
+#   array.dig(index1, index2)
+# end
+
+# data = [[1, 2, 3], [4, 5, 6]]
+# p fetch_nested_array_value(data, 1, 2)
+# # Output: 6
+
+# p fetch_nested_array_value(data, 2, 0)
+# # Output: nil (index 2 does not exist)
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that retrieve a value from a mix of hash and array.
+
+def fetch_mixed_nested_value(data, key1, index2)
+
+end
+
+data = { users: [{ name: "Alice" }, { name: "Bob" }] }
+p fetch_mixed_nested_value(data, :users, 1)
+# Output: { name: "Bob" }
+
+p fetch_mixed_nested_value(data, :users, 2)
+# Output: nil (index 2 does not exist)
+
+
+# # Solution
+# def fetch_mixed_nested_value(data, key1, index2)
+#   data.dig(key1, index2)
+# end
+
+# data = { users: [{ name: "Alice" }, { name: "Bob" }] }
+# p fetch_mixed_nested_value(data, :users, 1)
+# # Output: { name: "Bob" }
+
+# p fetch_mixed_nested_value(data, :users, 2)
+# # Output: nil (index 2 does not exist)
 
 
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns true if the hash contains the given key.
 
-def contains_key?(hash, key)
+def hash_has_key?(hash, key)
 
 end
-key_hash = { a: 1, b: 2 }
-p contains_key?(key_hash, :b) # Output: true
-p contains_key?(key_hash, :c) # Output: false
 
+data = { name: "Alice", age: 30 }
+p hash_has_key?(data, :name)
+# Output: true
+
+p hash_has_key?(data, :height)
+# Output: false
 
 
 # # Solution
-# def contains_key?(hash, key)
+# def hash_has_key?(hash, key)
 #   hash.has_key?(key)
 # end
-# key_hash = { a: 1, b: 2 }
-# p contains_key?(key_hash, :b) # Output: true
-# p contains_key?(key_hash, :c) # Output: false
 
+# data = { name: "Alice", age: 30 }
+# p hash_has_key?(data, :name)
+# # Output: true
+
+# p hash_has_key?(data, :height)
+# # Output: false
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that uses .has_key? before fetching a value to avoid errors.
+
+def fetch_value_if_key_exists(hash, key)
+  if hash.has_key?(key)
+    hash[key]
+  else
+    "Key not found"
+  end
+end
+
+data = { name: "Alice", age: 30 }
+p fetch_value_if_key_exists(data, :age)
+# Output: 30
+
+p fetch_value_if_key_exists(data, :height)
+# Output: "Key not found"
+
+
+# # Solution
+# def hash_has_key?(hash, key)
+#   hash.has_key?(key)
+# end
+
+# data = { name: "Alice", age: 30 }
+# p hash_has_key?(data, :name)
+# # Output: true
+
+# p hash_has_key?(data, :height)
+# # Output: false
 
 
 #------------------------------------------------------------------------------
@@ -305,6 +410,7 @@ p invert_hash(invert_example)
 # def invert_hash(hash)
 #   hash.invert
 # end
+
 # invert_example = { a: 1, b: 2 }
 # p invert_hash(invert_example)
 # # Output: { 1 => :a, 2 => :b }
@@ -312,115 +418,472 @@ p invert_hash(invert_example)
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that selects key-value pairs where the value is greater than 10.
+# Problem 1: Write a function that selects all even numbers from an array.
 
-def select_greater_than_ten(hash)
+def select_even_numbers(array)
 
 end
-select_hash = { apple: 5, banana: 12, cherry: 20 }
-p select_greater_than_ten(select_hash)
-# Output: { banana: 12, cherry: 20 }
+
+nums = [1, 2, 3, 4, 5, 6]
+p select_even_numbers(nums)
+# Output: [2, 4, 6]
+
+
+# # Solution
+# def select_even_numbers(array)
+#   array.select { |num| num.even? }
+# end
+
+# nums = [1, 2, 3, 4, 5, 6]
+# p select_even_numbers(nums)
+# # Output: [2, 4, 6]
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that selects all words that start with "a".
+
+def select_words_starting_with_a(words)
+
+end
+
+words = ["apple", "banana", "apricot", "cherry"]
+p select_words_starting_with_a(words)
+# Output: ["apple", "apricot"]
 
 
 
 # # Solution
-# def select_greater_than_ten(hash)
-#   hash.select { |_, value| value > 10 }
+# def select_words_starting_with_a(words)
+#   words.select { |word| word.start_with?("a") }
 # end
-# select_hash = { apple: 5, banana: 12, cherry: 20 }
-# p select_greater_than_ten(select_hash)
-# # Output: { banana: 12, cherry: 20 }
+
+# words = ["apple", "banana", "apricot", "cherry"]
+# p select_words_starting_with_a(words)
+# # Output: ["apple", "apricot"]
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that selects key-value pairs where the value is greater than 10.
+
+def select_values_greater_than_10(hash)
+
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+p select_values_greater_than_10(data)
+# Output: { b: 15, d: 20 }
+
+
+# # Solution
+# def select_values_greater_than_10(hash)
+#   hash.select { |key, value| value > 10 }
+# end
+
+# data = { a: 5, b: 15, c: 8, d: 20 }
+# p select_values_greater_than_10(data)
+# # Output: { b: 15, d: 20 }
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that selects all positive numbers from an array.
+
+def select_positive_numbers(array)
+
+end
+
+nums = [-3, 0, 5, -1, 2]
+p select_positive_numbers(nums)
+# Output: [5, 2]
+
+
+# # Solution
+# def select_positive_numbers(array)
+#   array.select { |num| num > 0 }
+# end
+
+# nums = [-3, 0, 5, -1, 2]
+# p select_positive_numbers(nums)
+# # Output: [5, 2]
 
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that rejects key-value pairs where the value is even.
+# Problem 1: Write a function that removes all even numbers from an array.
 
-def reject_even_values(hash)
+def reject_even_numbers(array)
 
 end
-reject_hash = { a: 1, b: 2, c: 3, d: 4 }
-p reject_even_values(reject_hash)
-# Output: { a: 1, c: 3 }
 
+nums = [1, 2, 3, 4, 5, 6]
+p reject_even_numbers(nums)
+# Output: [1, 3, 5]
 
 
 # # Solution
-# def reject_even_values(hash)
-#   hash.reject { |_, value| value.even? }
+# def reject_even_numbers(array)
+#   array.reject { |num| num.even? }
 # end
-# reject_hash = { a: 1, b: 2, c: 3, d: 4 }
-# p reject_even_values(reject_hash)
-# # Output: { a: 1, c: 3 }
+
+# nums = [1, 2, 3, 4, 5, 6]
+# p reject_even_numbers(nums)
+# # Output: [1, 3, 5]
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that exclude key-value pairs from a hash where the value is less than 10.
+
+def reject_values_less_than_10(hash)
+
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+p reject_values_less_than_10(data)
+# Output: { b: 15, d: 20 }
+
+
+# # Solution
+# def reject_values_less_than_10(hash)
+#   hash.reject { |key, value| value < 10 }
+# end
+
+# data = { a: 5, b: 15, c: 8, d: 20 }
+# p reject_values_less_than_10(data)
+# # Output: { b: 15, d: 20 }
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that exclude empty strings from an array.
+
+def reject_empty_strings(strings)
+
+end
+
+words = ["hello", "", "world", "", "ruby"]
+p reject_empty_strings(words)
+# Output: ["hello", "world", "ruby"]
+
+
+# # Solution
+# def reject_empty_strings(strings)
+#   strings.reject { |str| str.empty? }
+# end
+
+# words = ["hello", "", "world", "", "ruby"]
+# p reject_empty_strings(words)
+# # Output: ["hello", "world", "ruby"]
 
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that converts a hash to an array of [key, value] pairs and back to a hash.
+# Problem 1: Write a function that converts a range to an array.
 
-# Solution
-def hash_to_array_and_back(hash)
+def range_to_array(range)
 
 end
-convert_hash = { x: 1, y: 2 }
-p hash_to_array_and_back(convert_hash)
-# Output: { x: 1, y: 2 }
+
+range = (1..5)
+p range_to_array(range)
+# Output: [1, 2, 3, 4, 5]
+
+
+# # Solution
+# def range_to_array(range)
+#   range.to_a
+# end
+
+# range = (1..5)
+# p range_to_array(range)
+# # Output: [1, 2, 3, 4, 5]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that converts a hash to an array of key-value pairs.
+
+def hash_to_array(hash)
+
+end
+
+hash = { a: 1, b: 2, c: 3 }
+p hash_to_array(hash)
+# Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+
+# # Solution
+# def hash_to_array(hash)
+#   hash.to_a
+# end
+
+# hash = { a: 1, b: 2, c: 3 }
+# p hash_to_array(hash)
+# # Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that converts an enumerator to an array.
+
+def enumerator_to_array(enum)
+
+end
+
+enum = (1..3).each
+p enumerator_to_array(enum)
+# Output: [1, 2, 3]
 
 
 
 # # Solution
-# def hash_to_array_and_back(hash)
-#   array_form = hash.to_a
-#   array_form.to_h
+# def hash_to_array(hash)
+#   hash.to_a
 # end
-# convert_hash = { x: 1, y: 2 }
-# p hash_to_array_and_back(convert_hash)
-# # Output: { x: 1, y: 2 }
+
+# hash = { a: 1, b: 2, c: 3 }
+# p hash_to_array(hash)
+# # Output: [[:a, 1], [:b, 2], [:c, 3]]
 
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that deletes all pairs where the value is less than 5.
+# Problem 1: Write a function that converts an array of key-value pairs into a hash.
 
-def delete_if_less_than_five(hash)
+def array_to_hash(array)
 
 end
-delete_hash = { one: 1, two: 2, five: 5, six: 6 }
-p delete_if_less_than_five(delete_hash)
-# Output: { five: 5, six: 6 }
 
+array = [[:a, 1], [:b, 2], [:c, 3]]
+p array_to_hash(array)
+# Output: { a: 1, b: 2, c: 3 }
 
 
 # # Solution
-# def delete_if_less_than_five(hash)
-#   hash.delete_if { |_, value| value < 5 }
+# def array_to_hash(array)
+#   array.to_h
 # end
-# delete_hash = { one: 1, two: 2, five: 5, six: 6 }
-# p delete_if_less_than_five(delete_hash)
-# # Output: { five: 5, six: 6 }
+
+# array = [[:a, 1], [:b, 2], [:c, 3]]
+# p array_to_hash(array)
+# # Output: { a: 1, b: 2, c: 3 }
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that converts an array of key-value pairs with duplicates (last one wins).
+
+def array_with_duplicates_to_hash(array)
+
+end
+
+array = [[:a, 1], [:b, 2], [:a, 3]]
+p array_with_duplicates_to_hash(array)
+# Output: { a: 3, b: 2 } (last :a pair wins)
+
+
+# # Solution
+# def array_with_duplicates_to_hash(array)
+#   array.to_h
+# end
+
+# array = [[:a, 1], [:b, 2], [:a, 3]]
+# p array_with_duplicates_to_hash(array)
+# # Output: { a: 3, b: 2 } (last :a pair wins)
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that converts an enumerator of pairs to a hash.
+
+def enumerator_to_hash(enum)
+
+end
+
+enum = [[:x, 10], [:y, 20]].each
+p enumerator_to_hash(enum)
+# Output: { x: 10, y: 20 }
+
+
+# # Solution
+# def enumerator_to_hash(enum)
+#   enum.to_h
+# end
+
+# enum = [[:x, 10], [:y, 20]].each
+# p enumerator_to_hash(enum)
+# # Output: { x: 10, y: 20 }
 
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that prints all keys and all values in separate iterations.
+# Problem 1: Remove all even numbers from an array.
 
-def print_keys_and_values(hash)
+def remove_even_numbers!(array)
 
 end
-kv_hash = { a: 100, b: 200, c: 300 }
-print_keys_and_values(kv_hash)
-# Output (printed to console): :a, :b, :c then 100, 200, 300
+
+nums = [1, 2, 3, 4, 5, 6]
+remove_even_numbers!(nums)
+p nums
+# Output: [1, 3, 5]
 
 
 
 # # Solution
-# def print_keys_and_values(hash)
-#   hash.each_key { |key| p key }    # prints each key
-#   hash.each_value { |value| p value }  # prints each value
+# def remove_even_numbers!(array)
+#   array.delete_if { |num| num.even? }
 # end
-# kv_hash = { a: 100, b: 200, c: 300 }
-# print_keys_and_values(kv_hash)
-# # Output (printed to console): :a, :b, :c then 100, 200, 300
+
+# nums = [1, 2, 3, 4, 5, 6]
+# remove_even_numbers!(nums)
+# p nums
+# # Output: [1, 3, 5]
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Remove all words longer than 3 characters from an array.
+
+def remove_long_words!(words)
+
+end
+
+words = ["cat", "dog", "elephant", "ant"]
+remove_long_words!(words)
+p words
+# Output: ["cat", "dog", "ant"]
+
+
+
+# # Solution
+# def remove_long_words!(words)
+#   words.delete_if { |word| word.length > 3 }
+# end
+
+# words = ["cat", "dog", "elephant", "ant"]
+# remove_long_words!(words)
+# p words
+# # Output: ["cat", "dog", "ant"]
+#------------------------------------------------------------------------------
+# Problem 3: Remove key-value pairs where the value is less than 10.
+
+def remove_low_values!(hash)
+
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+remove_low_values!(data)
+p data
+# Output: { b: 15, d: 20 }
+
+
+
+# def remove_low_values!(hash)
+#   hash.delete_if { |key, value| value < 10 }
+# end
+
+# data = { a: 5, b: 15, c: 8, d: 20 }
+# remove_low_values!(data)
+# p data
+# # Output: { b: 15, d: 20 }
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that prints all keys in a hash.
+
+def print_keys(hash)
+
+end
+
+data = { name: "Alice", age: 30, city: "New York" }
+print_keys(data)
+# Output:
+# name
+# age
+# city
+
+
+# # Solution
+# def print_keys(hash)
+#   hash.each_key { |key| puts key }
+# end
+
+# data = { name: "Alice", age: 30, city: "New York" }
+# print_keys(data)
+# # Output:
+# # name
+# # age
+# # city
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that collects all keys into an array.
+
+def collect_keys(hash)
+  keys = []
+  hash.each_key { |key| keys << key }
+  keys
+end
+
+data = { name: "Alice", age: 30, city: "New York" }
+p collect_keys(data)
+# Output: [:name, :age, :city]
+
+
+
+# # Solution
+# def collect_keys(hash)
+#   keys = []
+#   hash.each_key { |key| keys << key }
+#   keys
+# end
+
+# data = { name: "Alice", age: 30, city: "New York" }
+# p collect_keys(data)
+# # Output: [:name, :age, :city]
+
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that prints all values in a hash.
+
+def print_values(hash)
+
+end
+
+data = { name: "Alice", age: 30, city: "New York" }
+print_values(data)
+# Output:
+# Alice
+# 30
+# New York
+
+
+# # Solution
+# def print_values(hash)
+#   hash.each_value { |value| puts value }
+# end
+
+# data = { name: "Alice", age: 30, city: "New York" }
+# print_values(data)
+# # Output:
+# # Alice
+# # 30
+# # New York
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that collect all values into an array.
+
+def collect_values(hash)
+  values = []
+  hash.each_value { |value| values << value }
+  values
+end
+
+data = { name: "Alice", age: 30, city: "New York" }
+p collect_values(data)
+# Output: ["Alice", 30, "New York"]
+
+
+
+# # Solution
+# def collect_values(hash)
+#   values = []
+#   hash.each_value { |value| values << value }
+#   values
+# end
+
+# data = { name: "Alice", age: 30, city: "New York" }
+# p collect_values(data)
+# # Output: ["Alice", 30, "New York"]
 
 
 
@@ -430,40 +893,214 @@ print_keys_and_values(kv_hash)
 def transform_keys_to_strings(hash)
 
 end
+
 transform_hash = { one: 1, two: 2 }
 p transform_keys_to_strings(transform_hash)
 # Output: { "one" => 1, "two" => 2 }
 
 
-
-# # Solution
+# Solution
 # def transform_keys_to_strings(hash)
 #   hash.transform_keys { |key| key.to_s }
 # end
+
 # transform_hash = { one: 1, two: 2 }
 # p transform_keys_to_strings(transform_hash)
 # # Output: { "one" => 1, "two" => 2 }
 
 
-
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that doubles each value in the hash.
+# Problem 2: Write a function that converts all keys to uppercase.
 
-def double_hash_values(hash)
+def keys_to_uppercase(hash)
 
 end
-values_hash = { a: 2, b: 4, c: 6 }
-p double_hash_values(values_hash)
-# Output: { a: 4, b: 8, c: 12 }
+
+data = { name: "Alice", age: 30, city: "New York" }
+p keys_to_uppercase(data)
+# Output: { NAME: "Alice", AGE: 30, CITY: "New York" }
 
 
 
 # # Solution
-# def double_hash_values(hash)
+# def keys_to_uppercase(hash)
+#   hash.transform_keys { |key| key.to_s.upcase.to_sym }
+# end
+
+# data = { name: "Alice", age: 30, city: "New York" }
+# p keys_to_uppercase(data)
+# # Output: { NAME: "Alice", AGE: 30, CITY: "New York" }
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that prefixs all keys with "user_".
+
+def prefix_keys(hash, prefix)
+
+end
+
+data = { name: "Alice", age: 30 }
+p prefix_keys(data, "user_")
+# Output: { user_name: "Alice", user_age: 30 }
+
+
+
+# # Solution
+# def prefix_keys(hash, prefix)
+#   hash.transform_keys { |key| "#{prefix}#{key}".to_sym }
+# end
+
+# data = { name: "Alice", age: 30 }
+# p prefix_keys(data, "user_")
+# # Output: { user_name: "Alice", user_age: 30 }
+
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that modifies the original hash in place.
+
+def keys_to_symbols_in_place!(hash)
+
+end
+
+data = { "name" => "Alice", "age" => 30 }
+keys_to_symbols_in_place!(data)
+p data
+# Output: { name: "Alice", age: 30 }
+
+
+# # Solution
+# def keys_to_symbols_in_place!(hash)
+#   hash.transform_keys! { |key| key.to_sym }
+# end
+
+# data = { "name" => "Alice", "age" => 30 }
+# keys_to_symbols_in_place!(data)
+# p data
+# # Output: { name: "Alice", age: 30 }
+
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that doubles all values in a hash.
+
+def double_values(hash)
+
+end
+
+data = { a: 1, b: 2, c: 3 }
+p double_values(data)
+# Output: { a: 2, b: 4, c: 6 }
+
+
+
+# # Solution
+# def double_values(hash)
 #   hash.transform_values { |value| value * 2 }
 # end
-# values_hash = { a: 2, b: 4, c: 6 }
-# p double_hash_values(values_hash)
-# # Output: { a: 4, b: 8, c: 12 }
 
+# data = { a: 1, b: 2, c: 3 }
+# p double_values(data)
+# # Output: { a: 2, b: 4, c: 6 }
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that converts all values to strings.
+
+def values_to_strings(hash)
+
+end
+
+data = { a: 1, b: 2, c: 3 }
+p values_to_strings(data)
+# Output: { a: "1", b: "2", c: "3" }
+
+
+
+# # Solution
+# def values_to_strings(hash)
+#   hash.transform_values { |value| value.to_s }
+# end
+
+# data = { a: 1, b: 2, c: 3 }
+# p values_to_strings(data)
+# # Output: { a: "1", b: "2", c: "3" }
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that appends a string to all values.
+
+def append_to_values(hash, suffix)
+
+end
+
+data = { name: "Alice", city: "New York" }
+# p append_to_values(data, "!")
+# Output: { name: "Alice!", city: "New York!" }
+
+
+
+# # Solution
+# def append_to_values(hash, suffix)
+#   hash.transform_values { |value| "#{value}#{suffix}" }
+# end
+
+# data = { name: "Alice", city: "New York" }
+# p append_to_values(data, "!")
+# # Output: { name: "Alice!", city: "New York!" }
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that handles a hash with mixed data types.
+
+def modify_mixed_values(hash)
+  hash.transform_values do |value|
+    case value
+    when String then value.upcase
+    when Numeric then value + 10
+    else value
+    end
+  end
+end
+
+data = { name: "Alice", age: 30, city: "new york" }
+p modify_mixed_values(data)
+# Output: { name: "ALICE", age: 40, city: "NEW YORK" }
+
+
+
+# # Solution
+# def modify_mixed_values(hash)
+#   hash.transform_values do |value|
+#     case value
+#     when String then value.upcase
+#     when Numeric then value + 10
+#     else value
+#     end
+#   end
+# end
+
+# data = { name: "Alice", age: 30, city: "new york" }
+# p modify_mixed_values(data)
+# # Output: { name: "ALICE", age: 40, city: "NEW YORK" }
+
+
+#------------------------------------------------------------------------------
+# Problem 5: Write a function that modifies the original hash in place.
+
+def double_values_in_place!(hash)
+
+end
+
+data = { a: 1, b: 2, c: 3 }
+double_values_in_place!(data)
+p data
+# Output: { a: 2, b: 4, c: 6 }
+
+
+
+# # Solution
+# def double_values_in_place!(hash)
+#   hash.transform_values! { |value| value * 2 }
+# end
+
+# data = { a: 1, b: 2, c: 3 }
+# double_values_in_place!(data)
+# p data
+# # Output: { a: 2, b: 4, c: 6 }
 

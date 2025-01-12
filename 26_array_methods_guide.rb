@@ -8,8 +8,8 @@ array.push(element1, element2, ...)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that adds a single element to an array.
 # Solution 1
-def add_element(arr, element)
-  arr.push(element)
+def add_element(array, element)
+  array.push(element)
 end
 
 numbers = [1, 2, 3]
@@ -18,8 +18,8 @@ p add_element(numbers, 4)
 
 
 # Solution 2
-def add_element(arr, element)
-  arr << element
+def add_element(array, element)
+  array << element
 end
 
 numbers = [1, 2, 3]
@@ -65,9 +65,9 @@ array.pop                 # Removes the last element
 array.pop(n)              # Removes the last `n` elements
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that removes the last element from an array and returns it.
-# Solution
-def remove_last(arr)
-  arr.pop
+
+def remove_last(array)
+  array.pop
 end
 
 numbers = [1, 2, 3]
@@ -79,9 +79,9 @@ p numbers
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that removes the last 4 elements from an array and returns it.
-# Solution
-def remove_last(arr)
-  arr.pop(4)
+
+def remove_last(array)
+  array.pop(4)
 end
 
 numbers = [1, 2, 3, 4, 5]
@@ -93,10 +93,10 @@ p numbers
 
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that repeatedly pops elements from an array until it's empty, returning them in a new array.
-# Solution
-def pop_all(arr)
+
+def pop_all(array)
   popped = []
-  popped << arr.pop while arr.any?
+  popped << array.pop while array.any?
   popped
 end
 
@@ -124,7 +124,7 @@ array.join("delimiter")
 # 'delimiter' is optional. By default, it joins without any space or character.
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that converts an array of words into a single string separated by spaces.
-# Solution
+
 def words_to_sentence(words)
   words.join(" ")
 end
@@ -136,7 +136,7 @@ p words_to_sentence(arr_words)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that converts an array of characters into a single string without spaces.
-# Solution
+
 def chars_to_string(chars)
   chars.join
 end
@@ -148,7 +148,7 @@ p chars_to_string(letters)
 
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that joins an array of dates with a hyphen.
-# Solution
+
 def join_with_hyphen(dates)
   dates.join("-")
 end
@@ -172,7 +172,7 @@ array.sort.reverse
 array.sort { |a, b| b <=> a }
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
-# Solution
+# Solution 1
 def sort_ascending(numbers)
   numbers.sort
 end
@@ -194,7 +194,7 @@ p sort_ascending(nums)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that sorts an array of strings in alphabetical order.
-# Solution
+
 def sort_alphabetical(words)
   words.sort
 end
@@ -205,7 +205,7 @@ p sort_alphabetical(word_list)
 
 #------------------------------------------------------------------------------
 # Problem 3: Sort an array of numbers in descending order.
-# Solution
+
 def sort_descending(numbers)
   numbers.sort.reverse
 end
@@ -216,7 +216,7 @@ p sort_descending(nums)
 
 #------------------------------------------------------------------------------
 # Problem 4: Sort an array of numbers in descending order using this syntax `{ |a, b| b <=> a }`
-# Solution
+
 def sort_descending(numbers)
   numbers.sort { |a, b| b <=> a }
 end
@@ -235,6 +235,7 @@ include?
 array.include?(value)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, then pushes the value to the end of the array.
+
 def nums_array(arr, value)
   arr.include?(value)
 end
@@ -246,6 +247,7 @@ p nums_array(numbers, 2)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that checks if a hash includes a specific key.
+
 def includes_key?(hash, key)
   hash.include?(key)
 end
@@ -269,6 +271,7 @@ array.index(element)
 array.rindex(element)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, returning [first_index, last_index] of that value.
+
 def find_first_and_last_index(array, value)
   [array.index(value), array.rindex(value)]
 end
@@ -287,9 +290,11 @@ find_index
 array.find_index { |element| condition }
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the index of the first odd number in an array.
-def index_of_first_odd(arr)
-  arr.find_index { |num| num.odd? }
+
+def index_of_first_odd(array)
+  array.find_index { |num| num.odd? }
 end
+
 mixed_numbers = [2, 4, 6, 7, 9]
 p index_of_first_odd(mixed_numbers)
 # Output: 3 (index of 7)
@@ -305,8 +310,8 @@ array.max
 array.min
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns both the max and min values from an array.
-def find_extremes(arr)
-  [arr.max, arr.min]
+def find_extremes(array)
+  [array.max, array.min]
 end
 
 range_array = [2, 8, 1, 10, 5]
@@ -340,8 +345,8 @@ def count_unique_elements(array)
   array.uniq.size
 end
 
-arr = [1, 1, 2, 3, 2, 4]
-p count_unique_elements(arr)
+numbers = [1, 1, 2, 3, 2, 4]
+p count_unique_elements(numbers)
 # Output: 4
 
 
@@ -422,9 +427,10 @@ array.sample
 array.sample(n)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns a random element from an array.
-def random_element(arr)
-  arr.sample
+def random_element(array)
+  array.sample
 end
+
 random_nums = [10, 20, 30, 40]
 p random_element(random_nums)
 # Output: (random element)
@@ -619,8 +625,8 @@ def two_element_permutations(array)
   array.permutation(2).to_a
 end
 
-perm_arr = [1, 2, 3]
-p two_element_permutations(perm_arr)
+perm_array = [1, 2, 3]
+p two_element_permutations(perm_array)
 # Output: [[1, 2], [1, 3], [2, 1], [2, 3], [3, 1], [3, 2]]
 
 
@@ -634,12 +640,12 @@ array.rotate          # Rotates once (default is by 1 position)
 array.rotate(n)       # Rotates by `n` positions (positive for left, negative for right)
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that rotates an array by 1 position to the left.
-def rotate_left_by_one(arr)
-  arr.rotate(1)
+def rotate_left_by_one(array)
+  array.rotate(1)
 end
 
-rotate_arr = [1, 2, 3, 4]
-p rotate_left_by_one(rotate_arr)
+rotate_array = [1, 2, 3, 4]
+p rotate_left_by_one(rotate_array)
 # Output: [2, 3, 4, 1]
 
 

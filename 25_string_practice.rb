@@ -481,6 +481,7 @@ p remove_vowels(vowel_string)
 def swap_a_for_z(str)
   str.tr("a", "z")
 end
+
 text = "banana"
 p swap_a_for_z(text)
 # Output: "bznznz"
@@ -490,6 +491,7 @@ p swap_a_for_z(text)
 # def swap_a_for_z(str)
 #   str.tr("a", "z")
 # end
+
 # text = "banana"
 # p swap_a_for_z(text)
 # # Output: "bznznz"
@@ -498,6 +500,7 @@ p swap_a_for_z(text)
 # def swap_a_for_z(str)
 #   str.gsub("a", "z")
 # end
+
 # text = "banana"
 # p swap_a_for_z(text)
 # # Output: "bznznz"
@@ -509,6 +512,7 @@ p swap_a_for_z(text)
 def words_starting_with_b(str)
   str.scan(/\bb\w*/)
 end
+
 sentence = "banana and berry are both fruits"
 p words_starting_with_b(sentence)
 # Output: ["banana", "berry", "both"]
@@ -531,6 +535,7 @@ p words_starting_with_b(sentence)
 def string_length(str)
   str.length
 end
+
 long_word = "supercalifragilistic"
 p string_length(long_word)
 # Output: 20

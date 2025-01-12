@@ -123,76 +123,91 @@ numbers = [1, 2, 3]
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that filters out odd numbers, returning only even numbers.
+# Problem 1: Write a function that selects all even numbers from an array.
 
-def evens_only(numbers)
+def select_even_numbers(array)
 
 end
 
-numbers = [1, 2, 3, 4, 5]
-# p evens_only(numbers)
-# Output: [2, 4]
+nums = [1, 2, 3, 4, 5, 6]
+p select_even_numbers(nums)
+# Output: [2, 4, 6]
 
 
-
-# # Solution 1
-# def evens_only(numbers)
-#   numbers.select { |num| num.even? }
+# # Solution
+# def select_even_numbers(array)
+#   array.select { |num| num.even? }
 # end
 
-# numbers = [1, 2, 3, 4, 5]
-# p evens_only(numbers)
-# # Output: [2, 4]
-
-
-# # Solution 2
-# def evens_only(numbers)
-#   numbers.select do |num|
-#     num % 2 == 0
-#   end
-# end
-
-# numbers = [1, 2, 3, 4, 5]
-# p evens_only(numbers)
-# # Output: [2, 4]
-
+# nums = [1, 2, 3, 4, 5, 6]
+# p select_even_numbers(nums)
+# # Output: [2, 4, 6]
 
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that returns words longer than 3 letters.
+# Problem 2: Write a function that selects all words that start with "a".
 
-def longer_than_three(words)
+def select_words_starting_with_a(words)
 
 end
 
-words = ["apple", "car", "door"]
-# p longer_than_three(words)
-# Output: ["apple", "door"]
+words = ["apple", "banana", "apricot", "cherry"]
+p select_words_starting_with_a(words)
+# Output: ["apple", "apricot"]
 
 
 
-
-# # Solution 1
-# def longer_than_three(words)
-#   words.select { |word| word.length > 3 }
+# # Solution
+# def select_words_starting_with_a(words)
+#   words.select { |word| word.start_with?("a") }
 # end
 
-# words = ["apple", "car", "door"]
-# p longer_than_three(words)
-# # Output: ["apple", "door"]
+# words = ["apple", "banana", "apricot", "cherry"]
+# p select_words_starting_with_a(words)
+# # Output: ["apple", "apricot"]
 
 
-# # Solution 2
-# def longer_than_three(words)
-#   words.select do |word|
-#     word.size > 3
-#   end
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that selects key-value pairs where the value is greater than 10.
+
+def select_values_greater_than_10(hash)
+
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+p select_values_greater_than_10(data)
+# Output: { b: 15, d: 20 }
+
+
+# # Solution
+# def select_values_greater_than_10(hash)
+#   hash.select { |key, value| value > 10 }
 # end
 
-# words = ["apple", "car", "door"]
-# p longer_than_three(words)
-# # Output: ["apple", "door"]
+# data = { a: 5, b: 15, c: 8, d: 20 }
+# p select_values_greater_than_10(data)
+# # Output: { b: 15, d: 20 }
 
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that selects all positive numbers from an array.
+
+def select_positive_numbers(array)
+
+end
+
+nums = [-3, 0, 5, -1, 2]
+p select_positive_numbers(nums)
+# Output: [5, 2]
+
+
+# # Solution
+# def select_positive_numbers(array)
+#   array.select { |num| num > 0 }
+# end
+
+# nums = [-3, 0, 5, -1, 2]
+# p select_positive_numbers(nums)
+# # Output: [5, 2]
 
 
 
