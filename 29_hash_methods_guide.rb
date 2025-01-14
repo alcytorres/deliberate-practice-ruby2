@@ -70,6 +70,8 @@ merge
 # What it does: Combines two hashes into a new hash, overwriting duplicates with the second hash’s values.
 # Why use it: Ideal for creating a single hash from multiple sources, especially when you want to control which values take precedence.
 
+# Note: Values from the second hash override duplicates in the first hash because merge prioritizes the newer values.
+
 # Syntax:
 # Returns a new hash with combined key-value pairs
 hash1.merge(hash2)
@@ -175,7 +177,12 @@ dig
 # Why use it: Simplifies accessing deeply nested data structures by avoiding nil checks or exceptions.
 
 # Syntax:
-nested_hash.dig(:level1, :level2, :level3)
+
+# For Hashes:
+hash.dig(key1, key2, ...)           # Accesses nested keys in a hash.
+
+# For Arrays
+array.dig(index1, index2, ...)      # Accesses nested indices in an array.
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that retrieve a nested value from a hash.
@@ -611,6 +618,8 @@ p collect_values(data)
 transform_keys
 # What it does: Creates a new hash by applying a block to each key, transforming the keys based on the block's result.
 # Why use it: To modify the keys of a hash without changing its values.
+
+# Ruby's transform_keys automatically converts symbol keys to strings for methods like upcase and then converts them back to symbols, ensuring the code doesn't break.
 
 # Syntax:
 hash.transform_keys { |key| block }

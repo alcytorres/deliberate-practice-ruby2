@@ -880,14 +880,14 @@ p rotate_left_by_one(rotate_array)
 
 
 
-# Solution
-def rotate_left_by_one(array)
-  array.rotate(1)
-end
+# # Solution
+# def rotate_left_by_one(array)
+#   array.rotate(1)
+# end
 
-rotate_array = [1, 2, 3, 4]
-p rotate_left_by_one(rotate_array)
-# Output: [2, 3, 4, 1]
+# rotate_array = [1, 2, 3, 4]
+# p rotate_left_by_one(rotate_array)
+# # Output: [2, 3, 4, 1]
 
 
 
