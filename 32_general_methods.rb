@@ -85,8 +85,6 @@ p range_enum.map { |n| n * 2 } # Output: [2, 4, 6, 8, 10]
 
 
 
-
-
 Keys as Symbols
 data = { :name => "Alice", :age => 30, :city => "New York" }
 or
@@ -100,3 +98,7 @@ data = { "name" => "Alice", "age" => 30, "city" => "New York" }
 
 Case
 # is a conditional statement that matches the value against multiple conditions.
+
+
+String Interpolation
+# #{}

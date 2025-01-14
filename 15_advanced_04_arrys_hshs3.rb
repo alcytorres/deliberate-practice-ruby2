@@ -5,15 +5,11 @@
 # 1. Convert an array of arrays into a hash.
 #     For example, [[1, 3], [8, 9], [2, 16]] becomes {1 => 3, 8 => 9, 2 => 16}.
 
-
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
 # numbers_hash =
 
-
-
-
-
+# p numbers_hash
 
 
 
@@ -61,9 +57,7 @@ items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 # hash =
 
-
-
-
+# p hash
 
 
 
@@ -136,7 +130,7 @@ word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 # letter_frequencies =
 
-
+# p letter_frequencies
 
 
 
@@ -190,10 +184,6 @@ items = {"chair" => 100, "book" => 14}
 
 
 
-
-
-
-
 items = {"chair" => 100, "book" => 14}
 items_hash = []
 items.each do |key, value|
@@ -211,11 +201,7 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # persons_array =
 
-
-
-
-
-
+# p persons_array
 
 
 
@@ -284,9 +270,7 @@ strings = ["do", "or", "do", "not"]
 # strings_hash =
 
 
-
-
-
+# p strings_hash
 
 
 
@@ -325,9 +309,7 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 #      ["a", 1, "b", 2, "c", 3, "d", 4]
 # flattened_array =
 
-
-
-
+# p flattened_array
 
 
 
@@ -364,7 +346,7 @@ items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
 
-
+# p combined_hash
 
 
 
@@ -405,9 +387,7 @@ books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", tit
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
 
-
-
-
+# p books_hash
 
 
 
@@ -467,10 +447,7 @@ original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
 # flipped_hash =
 
-
-
-
-
+# p flipped_hash
 
 
 
