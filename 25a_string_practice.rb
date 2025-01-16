@@ -1,4 +1,8 @@
 #------------------------------------------------------------------------------
+# High-importance methods appear frequently in typical string manipulation, searching, and checking.
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
 # Problem 1: Write a function that takes a sentence and returns an array of words.
 
 def sentence_to_words(sentence)
@@ -6,11 +10,12 @@ def sentence_to_words(sentence)
 end
 
 sentence = "Hello world from Ruby"
-p sentence_to_words(sentence)
+# p sentence_to_words(sentence)
+# Output: ["Hello", "world", "from", "Ruby"]
 
 
 
-# # Solution 1
+# # Solution
 # def sentence_to_words(sentence)
 #   sentence.split(" ")
 # end
@@ -19,8 +24,19 @@ p sentence_to_words(sentence)
 # p sentence_to_words(sentence)
 # # Output: ["Hello", "world", "from", "Ruby"]
 
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes a sentence with dash as the delimiter and returns an array of words.
 
-# # Solution 2
+def sentence_to_words(sentence)
+  sentence.split("-")
+end
+
+sentence = "Hello-world-from-Ruby"
+# p sentence_to_words(sentence)
+# Output: ["Hello", "world", "from", "Ruby"]
+
+
+# # Solution
 # def sentence_to_words(sentence)
 #   sentence.split("-")
 # end
@@ -30,7 +46,7 @@ p sentence_to_words(sentence)
 # # Output: ["Hello", "world", "from", "Ruby"]
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that splits a string into characters.
+# Problem 3: Write a function that splits a string into characters.
 
 def split_into_chars(greeting)
 
@@ -38,6 +54,7 @@ end
 
 greeting = "Hello"
 # p split_into_chars(greeting)
+# Output: ["H", "e", "l", "l", "o"]
 
 
 
@@ -52,52 +69,45 @@ greeting = "Hello"
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that removes leading and trailing whitespace from a given string.
+# Problem 1: Write a function that returns the length of a given string using .length (or .size).
 
-def remove_whitespace(input)
+def string_length(str)
 
 end
 
-input = "   hello world   "
-# p remove_whitespace(input)
-# Output: "hello world"
+long_word = "supercalifragilistic"
+# p string_length(long_word)
+# Output: 20
 
 
 
 # # Solution 1
-# def remove_whitespace(input)
-#   input.strip
+# def string_length(str)
+#   str.length
 # end
 
-# input = "   hello world   "
-# p remove_whitespace(input)
-# # Output: "hello world"
-
-
-# # Solution 2
-# def remove_whitespace(input)
-#   input.lstrip.rstrip
-# end
-
-# input = "   hello world   "
-# p remove_whitespace(input)
-# # Output: "hello world"
+# long_word = "supercalifragilistic"
+# p string_length(long_word)
+# # Output: 20
 
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that checks if a string contains the substring "ruby".
 
-def remove_whitespace(input)
+def contains_ruby?(str)
 
 end
 
-input = "   hello world   "
-# p remove_whitespace(input)
-# Output: "hello world"
+string1 = "I love ruby programming"
+string2 = "I love python programming"
+# p contains_ruby?(string1)
+# # Output: true
+# p contains_ruby?(string2)
+# # Output: false
 
 
 
-# # Solution 1
+# # Solution
 # def contains_ruby?(str)
 #   str.include?("ruby")
 # end
@@ -118,13 +128,13 @@ end
 
 list = "Alice,Bob,Carol"
 # p guest_in_list?(list, "Bob")
-# Output: true
+# # Output: true
 # p guest_in_list?(list, "David")
-# Output: false
+# # Output: false
 
 
 
-# # Solution 1
+# # Solution
 # def guest_in_list?(guest_list, name)
 #   guest_list.include?(name)
 # end
@@ -137,6 +147,27 @@ list = "Alice,Bob,Carol"
 
 
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that reverses a given string.
+
+def reverse_string(str)
+
+end
+
+greeting = "Hello"
+# p reverse_string(greeting)
+# Output: "olleH"
+
+
+# # Solution 1
+# def reverse_string(str)
+#   str.reverse
+# end
+
+# greeting = "Hello"
+# p reverse_string(greeting)
+# # Output: "olleH"
+
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that replaces all spaces in a string with hyphens.
 
@@ -145,7 +176,7 @@ def spaces_to_hyphens(str)
 end
 
 string = "hello world from ruby"
-p spaces_to_hyphens(string)
+# p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
@@ -160,26 +191,25 @@ p spaces_to_hyphens(string)
 # # Output: "hello-world-from-ruby"
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that replaces all spaces in a string with hyphens.
+# Problem 2: Write a function that replaces all occurrences of a word with another word.
 
-def spaces_to_hyphens(str)
+def replace_word(string, old_word, new_word)
 
 end
 
-string = "hello world from ruby"
-# p spaces_to_hyphens(string)
-# Output: "hello-world-from-ruby"
-
+sentence = "I love programming in Ruby. Ruby is great!"
+# p replace_word(sentence, "Ruby", "Python")
+# Output: "I love programming in Python. Python is great!"
 
 
 # # Solution
-# def spaces_to_hyphens(str)
-#   str.gsub(/\s/, "-")
+# def replace_word(string, old_word, new_word)
+#   string.gsub(old_word, new_word)
 # end
 
-# string = "hello world from ruby"
-# p spaces_to_hyphens(string)
-# # Output: "hello-world-from-ruby"
+# sentence = "I love programming in Ruby. Ruby is great!"
+# p replace_word(sentence, "Ruby", "Python")
+# # Output: "I love programming in Python. Python is great!"
 
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that replaces all	spaces, tabs, newlines in a string with hyphens.
@@ -189,7 +219,7 @@ def spaces_to_hyphens(str)
 end
 
 string = "hello\tworld\nfrom ruby"
-# puts spaces_to_hyphens(string)
+# p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
@@ -250,27 +280,145 @@ test_str = "abc123def456"
 # # Output: "abcdef"
 
 
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that reverses a given string.
 
-def reverse_string(str)
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in a string and returns an array of its characters using .chars.
+
+def string_to_chars(str)
 
 end
 
-greeting = "Hello"
-# p reverse_string(greeting)
+greeting = "hi"
+# p string_to_chars(greeting)
+# Output: ["h", "i"]
 
 
-
-# # Solution 1
-# def reverse_string(str)
-#   str.reverse
+# # Solution
+# def string_to_chars(str)
+#   str.chars
 # end
 
-# greeting = "Hello"
-# p reverse_string(greeting)
-# # Output: "olleH"
+# greeting = "hi"
+# p string_to_chars(greeting)
+# # Output: ["h", "i"]
 
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that checks if a string is empty.
+
+def string_empty?(str)
+
+end
+
+greeting = ""
+# p string_empty?(greeting)     # Output: true
+
+greeting = "Hello"
+# p string_empty?(greeting)     # Output: false
+
+
+
+# # Solution
+# def string_empty?(str)
+#   str.empty?
+# end
+
+# greeting = ""
+# p string_empty?(greeting)     # Output: true
+
+# greeting = "Hello"
+# p string_empty?(greeting)     # Output: false
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that checks if an array is empty.
+
+def array_empty?(arr)
+
+end
+
+numbers = []
+# p array_empty?(numbers)     # Output: true
+
+numbers = [1, 2, 3]
+# p array_empty?(numbers)     # Output: false
+
+
+
+# # Solution
+# def array_empty?(arr)
+#   arr.empty?
+# end
+
+# numbers = []
+# p array_empty?(numbers)     # Output: true
+
+# numbers = [1, 2, 3]
+# p array_empty?(numbers)     # Output: false
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that checks if a hash is empty.
+
+def hash_empty?(hash)
+
+end
+
+data = {}
+# p hash_empty?(data)     # Output: true
+
+data = { a: 1, b: 2 }
+# p hash_empty?(data)     # Output: false
+
+
+
+# # Solution
+# def hash_empty?(hash)
+#   hash.empty?
+# end
+
+# data = {}
+# p hash_empty?(data)     # Output: true
+
+# data = { a: 1, b: 2 }
+# p hash_empty?(data)     # Output: false
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that safely checks if a value is empty, handling nil values.
+
+def safe_empty?(value)
+
+end
+
+value = nil
+# p safe_empty?(value)     # Output: true
+
+value = ""
+# p safe_empty?(value)     # Output: true
+
+value = [1, 2, 3]
+# p safe_empty?(value)     # Output: false
+
+
+
+# # Solution
+# def safe_empty?(value)
+#   value.nil? || value.empty?
+# end
+
+# value = nil
+# p safe_empty?(value)     # Output: true
+
+# value = ""
+# p safe_empty?(value)     # Output: true
+
+# value = [1, 2, 3]
+# p safe_empty?(value)     # Output: false
+
+
+
+
+#------------------------------------------------------------------------------
+# Medium-importance methods are situationally useful, especially for trimming, normalization, or quick boundary checks.
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that checks if a string starts with "hello" and ends with "bye" using .start_with? / .end_with?.
@@ -281,6 +429,7 @@ end
 
 test_str = "hello something bye"
 # p start_hello_end_bye?(test_str)
+# Output: true
 
 
 
@@ -292,6 +441,39 @@ test_str = "hello something bye"
 # test_str = "hello something bye"
 # p start_hello_end_bye?(test_str)
 # # Output: true
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that removes leading and trailing whitespace from a given string.
+
+def remove_whitespace(input)
+
+end
+
+input = "   hello world   "
+# p remove_whitespace(input)
+# Output: "hello world"
+
+
+
+# # Solution 1
+# def remove_whitespace(input)
+#   input.strip
+# end
+
+# input = "   hello world   "
+# p remove_whitespace(input)
+# # Output: "hello world"
+
+
+# # Solution 2
+# def remove_whitespace(input)
+#   input.lstrip.rstrip
+# end
+
+# input = "   hello world   "
+# p remove_whitespace(input)
+# # Output: "hello world"
 
 
 #------------------------------------------------------------------------------
@@ -348,7 +530,7 @@ end
 
 title = "hello"
 # p capitalize_first(title)
-
+# Output: "Hello"
 
 
 # # Solution
@@ -360,6 +542,12 @@ title = "hello"
 # p capitalize_first(title)
 # # Output: "Hello"
 
+
+
+
+#------------------------------------------------------------------------------
+# Lower-importance methods are powerful for specific or advanced string manipulations but come up less often in standard easy/medium algorithmic problems.
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that checks if a string contains a number
@@ -386,6 +574,7 @@ end
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that checks if a string matches a simple pattern (digits only) using .match.
+
 def digits_only?(str)
 
 end
@@ -398,7 +587,7 @@ num_str = "12345"
 
 # # Solution
 # def digits_only?(str)
-#   !!str.match(/^\d+$/)
+  # !!str.match(/\A\d+\z/)
 # end
 
 # num_str = "12345"
@@ -407,25 +596,26 @@ num_str = "12345"
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in a string and returns an array of its characters using .chars.
+# Problem 1: Write a function that extracts all digits from a string using .scan.
 
-def string_to_chars(str)
+def extract_digits(string)
 
 end
 
-greeting = "hi"
-# p string_to_chars(greeting)
-# Output: ["h", "i"]
+numbers_text = "Phone: 123-456-7890, Code: 42"
+p extract_digits(numbers_text)
+# Output: ["123", "456", "7890", "42"]
+
 
 
 # # Solution 1
-# def string_to_chars(str)
-#   str.chars
+# def extract_digits(string)
+#   string.scan(/\d+/) # Matches one or more digits.
 # end
 
-# greeting = "hi"
-# p string_to_chars(greeting)
-# # Output: ["h", "i"]
+# numbers_text = "Phone: 123-456-7890, Code: 42"
+# p extract_digits(numbers_text)
+# # Output: ["123", "456", "7890", "42"]
 
 
 #------------------------------------------------------------------------------
@@ -471,61 +661,6 @@ text = "banana"
 # text = "banana"
 # p swap_a_for_z(text)
 # # Output: "bznznz"
-
-
-# # Solution 2
-# def swap_a_for_z(str)
-#   str.gsub("a", "z")
-# end
-# text = "banana"
-# p swap_a_for_z(text)
-# # Output: "bznznz"
-
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that finds all words in a string that start with "b" using .scan.
-
-def words_starting_with_b(str)
-
-end
-
-sentence = "banana and berry are both fruits"
-# p words_starting_with_b(sentence)
-# Output: ["banana", "berry", "both"]
-
-
-
-# # Solution 1
-# def words_starting_with_b(str)
-#   str.scan(/\bb\w*/)
-# end
-
-# sentence = "banana and berry are both fruits"
-# p words_starting_with_b(sentence)
-# # Output: ["banana", "berry", "both"]
-
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that returns the length of a given string using .length (or .size).
-
-def string_length(str)
-
-end
-
-long_word = "supercalifragilistic"
-# p string_length(long_word)
-# Output: 20
-
-
-
-# # Solution 1
-# def string_length(str)
-#   str.length
-# end
-
-# long_word = "supercalifragilistic"
-# p string_length(long_word)
-# # Output: 20
 
 
 #------------------------------------------------------------------------------

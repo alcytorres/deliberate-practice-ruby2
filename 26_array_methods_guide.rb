@@ -663,7 +663,9 @@ p rotate_left_by_one(rotate_array)
 
 
 
+#------------------------------------------------------------------------------
 # SKIP THIS... .FIND INSTEAD OF BSEARCH
+
 bsearch
 # # What it does: Performs a binary search on a sorted array, returning an element if found (or nil).
 # # Why use it: Efficient lookup in sorted data (O(log n) complexity).
