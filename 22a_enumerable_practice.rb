@@ -6,7 +6,7 @@ def print_elements(numbers)
 end
 
 numbers = [1, 2, 3]
-print_elements(numbers)
+# print_elements(numbers)
 # Output:
 # 1
 # 2
@@ -130,7 +130,7 @@ def select_even_numbers(array)
 end
 
 nums = [1, 2, 3, 4, 5, 6]
-p select_even_numbers(nums)
+# p select_even_numbers(nums)
 # Output: [2, 4, 6]
 
 
@@ -152,7 +152,7 @@ def select_words_starting_with_a(words)
 end
 
 words = ["apple", "banana", "apricot", "cherry"]
-p select_words_starting_with_a(words)
+# p select_words_starting_with_a(words)
 # Output: ["apple", "apricot"]
 
 
@@ -175,7 +175,7 @@ def select_values_greater_than_10(hash)
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
-p select_values_greater_than_10(data)
+# p select_values_greater_than_10(data)
 # Output: { b: 15, d: 20 }
 
 
@@ -196,7 +196,7 @@ def select_positive_numbers(array)
 end
 
 nums = [-3, 0, 5, -1, 2]
-p select_positive_numbers(nums)
+# p select_positive_numbers(nums)
 # Output: [5, 2]
 
 
@@ -256,6 +256,7 @@ end
 
 numbers = [1, 2, 3, 4]
 # p sum_array(numbers)
+# Output: 10
 
 
 
@@ -306,7 +307,7 @@ numbers = [2, 3, 4]
 
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that returns the total sum of an array of integers.
+# Problem 3: Write a function that returns the total sum of an array of integers using this (:+) syntax inside the method.
 
 def total_sum(numbers)
 
@@ -328,7 +329,7 @@ numbers = [1, 2, 3, 4]
 # # Output: 10
 
 #------------------------------------------------------------------------------
-# Problem 4: Write a function that returns the total sum of a range of numbers.
+# Problem 4: Write a function that returns the total sum of a range of numbers using this (:+) syntax inside the method.
 
 def sum_range(range)
 
@@ -346,9 +347,6 @@ end
 
 # p sum_range(1..5)
 # # Output: 15
-
-
-
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
@@ -386,6 +384,27 @@ words = ["cat", "bird"]
 
 
 
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes a hash and returns a new hash with keys and values swapped.
+
+def reverse_hash(hash)
+
+end
+
+original = { a: 1, b: 2, c: 3 }
+# p reverse_hash(original)
+# Output: {1=>:a, 2=>:b, 3=>:c}
+
+
+
+# # Solution
+# def reverse_hash(hash)
+#   hash.each_with_object({}) { |(key, value), reversed| reversed[value] = key }
+# end
+
+# original = { a: 1, b: 2, c: 3 }
+# p reverse_hash(original)
+# # Output: {1=>:a, 2=>:b, 3=>:c}
 
 
 #------------------------------------------------------------------------------
@@ -541,7 +560,27 @@ words = ["apple", "cat", "banana"]
 # p sort_by_length(words)
 # # Output: ["cat", "apple", "banana"]
 
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes an array of numbers and returns the array sorted in ascending order.
 
+def sort_array(numbers)
+
+end
+
+numbers = [5, 3, 8, 1, 4]
+p sort_array(numbers)
+# Output: [1, 3, 4, 5, 8]
+
+
+
+# # Solution
+# def sort_array(numbers)
+#   numbers.sort
+# end
+
+# numbers = [5, 3, 8, 1, 4]
+# p sort_array(numbers)
+# # Output: [1, 3, 4, 5, 8]
 
 
 #------------------------------------------------------------------------------
@@ -631,7 +670,7 @@ end
 
 nums = [1, 3, 5]
 # p all_positive?(nums)
-
+# Output: true
 
 
 
@@ -643,7 +682,6 @@ nums = [1, 3, 5]
 # nums = [1, 3, 5]
 # p all_positive?(nums)
 # # Output: true
-
 
 
 #------------------------------------------------------------------------------
@@ -669,9 +707,31 @@ words = ["apple", "cat", "banana"]
 # # Output: true
 
 
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that groups an array of words by their length.
+
+def group_words_by_length(words)
+
+end
+
+words = ["cat", "dog", "apple", "bat", "pear"]
+# p group_words_by_length(words)
+# Output: {3=>["cat", "dog", "bat"], 5=>["apple"], 4=>["pear"]}
+
+
+
+# # Solution
+# def group_words_by_length(words)
+#   words.group_by { |word| word.length }
+# end
+
+# words = ["cat", "dog", "apple", "bat", "pear"]
+# p group_words_by_length(words)
+# # Output: {3=>["cat", "dog", "bat"], 5=>["apple"], 4=>["pear"]}
+
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of numbers and groups them by even/odd?
+# Problem 2: Write a function that takes in an array of numbers and groups them by even/odd?
 
 def group_by_parity(numbers)
 
@@ -693,6 +753,35 @@ nums = [1, 2, 3, 4]
 # # Output: {"odd"=>[1, 3], "even"=>[2, 4]}
 
 
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that groups an array of hashes by the value of a specified key.
+
+def group_by_key(objects, key)
+
+end
+
+people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 25 }
+]
+# p group_by_key(people, :age)
+# Output: {25=>[{:name=>"Alice", :age=>25}, {:name=>"Charlie", :age=>25}], 30=>[{:name=>"Bob", :age=>30}]}
+
+
+
+# # Solution
+# def group_by_key(objects, key)
+#   objects.group_by { |obj| obj[key] }
+# end
+
+# people = [
+#   { name: "Alice", age: 25 },
+#   { name: "Bob", age: 30 },
+#   { name: "Charlie", age: 25 }
+# ]
+# p group_by_key(people, :age)
+# # Output: {25=>[{:name=>"Alice", :age=>25}, {:name=>"Charlie", :age=>25}], 30=>[{:name=>"Bob", :age=>30}]}
 
 
 #------------------------------------------------------------------------------
@@ -710,6 +799,8 @@ arrays = [[1, 2], [3, 4]]
 # # Solution
 # def double_flatten(array_of_arrays)
 #   array_of_arrays.flat_map { |arr| arr.map { |n| n * 2 } }
+#   # The outer flat_map combines and flattens the nested array into a new single flat array: [1, 2, 3, 4]
+#   # The inner map doubles each element in the new single flat array: [2, 4, 6, 8]
 # end
 
 # arrays = [[1, 2], [3, 4]]
@@ -760,8 +851,11 @@ nums = (1..10_000).to_a
 # # Solution
 # def first_three_squares(numbers)
 #   numbers.lazy.map { |n| n * n }.first(3)
+#   # .lazy creates a lazy enumerator to defer calculations.
+#   # .map { |n| n * n } squares each number in the array.
+#   # .first(3) stops processing after finding the first 3 squares.
 # end
 
-# nums = (1..10_000).to_a
+# nums = (1..10_000).to_a         # Creates a large array of numbers.
 # p first_three_squares(nums)
 # # Output: [1, 4, 9]

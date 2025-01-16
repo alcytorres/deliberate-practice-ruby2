@@ -578,6 +578,7 @@ p collect_keys(data)
 # Output: [:name, :age, :city]
 
 
+
 each_value
 # What it does: Iterates over each value in a hash, allowing you to perform an operation on the values.
 # Why use it: To work with the values of a hash without worrying about their keys.

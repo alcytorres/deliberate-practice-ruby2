@@ -3,6 +3,7 @@ each
 # Why use it: Performing an action on each item (e.g., printing values, modifying data in place).
 
 # Syntax:
+
 # For Arrays:
 array.each { |element| block }
 
@@ -238,7 +239,7 @@ p sum_array(numbers)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that finds the product of all elements in an array.
-# Solution 1
+
 def product_of_array(numbers)
   numbers.reduce(1) { |accumulator, num| accumulator * num }
 end
@@ -250,7 +251,7 @@ p product_of_array(numbers)
 
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that returns the total sum of an array of integers.
-# Solution 1
+
 def total_sum(numbers)
   numbers.reduce(:+)
 end
@@ -262,7 +263,7 @@ p total_sum(numbers)
 
 #------------------------------------------------------------------------------
 # Problem 4: Write a function that returns the total sum of a range of numbers.
-# Solution 1
+
 def sum_range(range)
   range.reduce(:+)
 end
@@ -281,7 +282,7 @@ collection.each_with_object(initial_object) { |element, obj| block }
 # `initial_object` is the object being built or modified (e.g., a hash or array).
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
-# Solution
+
 def word_lengths(words)
   words.each_with_object({}) do |word, hash|
     hash[word] = word.length
@@ -291,6 +292,18 @@ end
 words = ["cat", "bird"]
 p word_lengths(words)
 # Output: {"cat"=>3, "bird"=>4}
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes a hash and returns a new hash with keys and values swapped.
+
+def reverse_hash(hash)
+  hash.each_with_object({}) { |(key, value), reversed| reversed[value] = key }
+end
+
+original = { a: 1, b: 2, c: 3 }
+p reverse_hash(original)
+# Output: {1=>:a, 2=>:b, 3=>:c}
 
 
 
@@ -537,8 +550,23 @@ group_by
 # Syntax:
 collection.group_by { |element| block }
 # return grouping criterion
+# collection: The array, range, or enumerable to group.
+# block: Code that determines the key for each group.
+
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of numbers and groups them by even/odd?
+# Problem 1: Write a function that groups an array of words by their length.
+
+def group_words_by_length(words)
+  words.group_by { |word| word.length }
+end
+
+words = ["cat", "dog", "apple", "bat", "pear"]
+p group_words_by_length(words)
+# Output: {3=>["cat", "dog", "bat"], 5=>["apple"], 4=>["pear"]}
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes in an array of numbers and groups them by even/odd?
 
 def group_by_parity(numbers)
   numbers.group_by { |n| n.even? ? "even" : "odd" }
@@ -547,6 +575,22 @@ end
 nums = [1, 2, 3, 4]
 p group_by_parity(nums)
 # Output: {"odd"=>[1, 3], "even"=>[2, 4]}
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that groups an array of hashes by the value of a specified key.
+
+def group_by_key(objects, key)
+  objects.group_by { |obj| obj[key] }
+end
+
+people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 25 }
+]
+p group_by_key(people, :age)
+# Output: {25=>[{:name=>"Alice", :age=>25}, {:name=>"Charlie", :age=>25}], 30=>[{:name=>"Bob", :age=>30}]}
 
 
 
@@ -562,6 +606,8 @@ collection.flat_map { |element| block }
 
 def double_flatten(array_of_arrays)
   array_of_arrays.flat_map { |arr| arr.map { |n| n * 2 } }
+  # The outer flat_map combines and flattens the nested array into a new single flat array: [1, 2, 3, 4]
+  # The inner map doubles each element in the new single flat array: [2, 4, 6, 8]
 end
 
 arrays = [[1, 2], [3, 4]]
@@ -590,9 +636,8 @@ p pair_arrays(arr1, arr2)
 # Output: [[1, "a"], [2, "b"]]
 
 
-
 lazy
-# What it does: Creates a lazy enumerator, which processes elements on-demand.
+# What it does: Creates a lazy enumerator that defers computations until elements are actually needed.
 # Why use it: Useful for very large collections, as it avoids building large intermediate arrays.
 
 # Syntax:
@@ -600,13 +645,19 @@ collection.lazy
   .map { |x| x * 2 }
   .select { |x| x > 10 }
   .first(5)
+
+# You can chain other enumerator methods (e.g., map, select, etc.) after .lazy and finalize with a method like first or to_a to process the data.
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in a large array of numbers, squares them lazily, and returns the first 3 squares?
 
 def first_three_squares(numbers)
   numbers.lazy.map { |n| n * n }.first(3)
+  # .lazy creates a lazy enumerator to defer calculations.
+  # .map { |n| n * n } squares each number in the array.
+  # .first(3) stops processing after finding the first 3 squares.
 end
 
-nums = (1..10_000).to_a
+nums = (1..10_000).to_a         # Creates a large array of numbers.
 p first_three_squares(nums)
 # Output: [1, 4, 9]
