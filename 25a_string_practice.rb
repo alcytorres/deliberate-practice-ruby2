@@ -29,8 +29,6 @@ p sentence_to_words(sentence)
 # p sentence_to_words(sentence)
 # # Output: ["Hello", "world", "from", "Ruby"]
 
-
-
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that splits a string into characters.
 
@@ -51,7 +49,6 @@ greeting = "Hello"
 # greeting = "Hello"
 # p split_into_chars(greeting)
 # # Output: ["H", "e", "l", "l", "o"]
-
 
 
 #------------------------------------------------------------------------------
@@ -87,7 +84,6 @@ input = "   hello world   "
 # # Output: "hello world"
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that checks if a string contains the substring "ruby".
 
@@ -112,8 +108,6 @@ input = "   hello world   "
 # # Output: true
 # p contains_ruby?(string2)
 # # Output: false
-
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that checks if a name is in a list of guests (comma-separated string).
@@ -142,7 +136,6 @@ list = "Alice,Bob,Carol"
 # # Output: false
 
 
-
 #------------------------------------------------------------------------------
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that replaces all spaces in a string with hyphens.
@@ -165,8 +158,6 @@ p spaces_to_hyphens(string)
 # string = "hello world from ruby"
 # p spaces_to_hyphens(string)
 # # Output: "hello-world-from-ruby"
-
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that replaces all spaces in a string with hyphens.
@@ -212,7 +203,6 @@ string = "hello\tworld\nfrom ruby"
 # p spaces_to_hyphens(string)
 # # Output: "hello-world-from-ruby"
 
-
 #------------------------------------------------------------------------------
 # Problem 3.1: Write a function that prints a string with	spaces, tabs, and newlines as a string.
 
@@ -226,7 +216,6 @@ string = "hello\tworld\nfrom ruby"
 # Output
 # hello   world
 # from ruby
-
 
 #------------------------------------------------------------------------------
 # Problem 4: Write a function that removes all digits from a string.
@@ -261,7 +250,6 @@ test_str = "abc123def456"
 # # Output: "abcdef"
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that reverses a given string.
 
@@ -284,7 +272,6 @@ greeting = "Hello"
 # # Output: "olleH"
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that checks if a string starts with "hello" and ends with "bye" using .start_with? / .end_with?.
 
@@ -297,7 +284,7 @@ test_str = "hello something bye"
 
 
 
-# # Solution 1
+# # Solution
 # def start_hello_end_bye?(str)
 #   str.start_with?("hello") && str.end_with?("bye")
 # end
@@ -329,7 +316,6 @@ phrase = "hello world"
 # # Output: "HELLO WORLD"
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that converts a string to lowercase using .downcase.
 
@@ -351,7 +337,6 @@ loud_phrase = "HELLO WORLD"
 # loud_phrase = "HELLO WORLD"
 # p whisper(loud_phrase)
 # # Output: "hello world"
-
 
 
 #------------------------------------------------------------------------------
@@ -399,8 +384,6 @@ end
 # p contains_number?("hello123")
 # # Output: #<MatchData "1"> (match found)
 
-
-
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that checks if a string matches a simple pattern (digits only) using .match.
 def digits_only?(str)
@@ -421,8 +404,6 @@ num_str = "12345"
 # num_str = "12345"
 # p digits_only?(num_str)
 # # Output: true
-
-
 
 
 #------------------------------------------------------------------------------
@@ -447,7 +428,6 @@ greeting = "hi"
 # # Output: ["h", "i"]
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that removes all vowels from a string using .delete.
 
@@ -469,7 +449,6 @@ vowel_string = "banana"
 # vowel_string = "banana"
 # p remove_vowels(vowel_string)
 # # Output: "bnn"
-
 
 
 #------------------------------------------------------------------------------
@@ -502,6 +481,7 @@ text = "banana"
 # p swap_a_for_z(text)
 # # Output: "bznznz"
 
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that finds all words in a string that start with "b" using .scan.
 
@@ -523,7 +503,6 @@ sentence = "banana and berry are both fruits"
 # sentence = "banana and berry are both fruits"
 # p words_starting_with_b(sentence)
 # # Output: ["banana", "berry", "both"]
-
 
 
 #------------------------------------------------------------------------------
@@ -549,7 +528,6 @@ long_word = "supercalifragilistic"
 # # Output: 20
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the ASCII value of the first character in a string using .ord,
 # and then returns that character again using .chr.
@@ -573,7 +551,6 @@ example_str = "Hello"
 # example_str = "Hello"
 # p first_char_ord_and_chr(example_str)
 # # Output: [72, "H"]
-
 
 
 #------------------------------------------------------------------------------
