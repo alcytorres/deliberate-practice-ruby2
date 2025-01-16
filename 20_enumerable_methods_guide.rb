@@ -1,3 +1,7 @@
+#------------------------------------------------------------------------------
+# High-importance methods (.each, .map, .select, .sort, .reduce) appear in countless patterns—knowing them well drastically simplifies your solutions.
+#------------------------------------------------------------------------------
+
 each
 # What it does: Iterates through every element in a collection (array, hash, etc.).
 # Why use it: Performing an action on each item (e.g., printing values, modifying data in place).
@@ -84,6 +88,7 @@ map
 
 # Syntax:
 array.map { |element| block }
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes an array of numbers and returns a new array where each number is incremented by 1.
 # Solution 1
@@ -172,37 +177,28 @@ p select_positive_numbers(nums)
 
 
 
-count
-# What it does: Returns the number of elements in a collection, or the count of elements matching a condition if a block is given.
-# Why use it: Determining the total number of items (e.g., array.count) or those meeting specific criteria (e.g., array.count { |x| x > 10 }).
+sort
+# What it does: Returns a new array with the elements sorted in ascending order.
+# Why use it: Organize elements in a specific order, such as numerical or alphabetical.
 
 # Syntax:
-array.count                  # Returns the total number of elements
-array.count(value)           # Counts how many elements equal `value`
-array.count { |element| condition }
-# Counts how many elements satisfy the condition
+# Sorts in ascending order
+array.sort
+
+# Allows custom sorting logic
+array.sort { |a, b| custom_block }
+
+# comparison logic
+a <=> b # default comparison operator
+
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that counts how many numbers are greater than 10.
-# Solution 1
-def count_greater_than_ten(numbers)
-  numbers.count { |num| num > 10 }
+# Problem: Write a function that takes an array of numbers and returns the array sorted in ascending order.
+def sort_array(numbers)
+  numbers.sort
 end
 
-numbers = [5, 12, 13, 8, 20]
-p count_greater_than_ten(numbers)
-# Output: 3
-
-
-# Solution 2
-def count_greater_than_ten(numbers)
-  numbers.count do |num|
-    num > 10
-  end
-end
-
-numbers = [5, 12, 13, 8, 20]
-p count_greater_than_ten(numbers)
-# Output: 3
+numbers = [5, 3, 8, 1, 4] # Output: [1, 3, 4, 5, 8]
+p sort_array(numbers)
 
 
 
@@ -273,39 +269,9 @@ p sum_range(1..5)
 
 
 
-each_with_object
-# What it does: Iterates through a collection and builds or updates an external object in the process.
-# Why use it: Creating or populating a data structure (like a hash) while iterating.
-
-# Syntax:
-collection.each_with_object(initial_object) { |element, obj| block }
-# `initial_object` is the object being built or modified (e.g., a hash or array).
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
-
-def word_lengths(words)
-  words.each_with_object({}) do |word, hash|
-    hash[word] = word.length
-  end
-end
-
-words = ["cat", "bird"]
-p word_lengths(words)
-# Output: {"cat"=>3, "bird"=>4}
-
-
+# Medium-importance methods (.find, .count, .reject, .any?, .all?, .none?, .sum, .sort_by, .min_by, .each_with_index, .each_with_object) come up often enough that they should be part of your everyday toolkit.
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that takes a hash and returns a new hash with keys and values swapped.
-
-def reverse_hash(hash)
-  hash.each_with_object({}) { |(key, value), reversed| reversed[value] = key }
-end
-
-original = { a: 1, b: 2, c: 3 }
-p reverse_hash(original)
-# Output: {1=>:a, 2=>:b, 3=>:c}
-
-
 
 find
 # What it does: Returns the first element in a collection that matches a given condition, or nil if no element matches.
@@ -314,9 +280,10 @@ find
 # Syntax:
 collection.find { |element| condition }
 # Returns the first element that satisfies the condition, or `nil` if no match is found.
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the first even number in an array.
-# Solution 1
+
 def first_even(numbers)
   numbers.find { |num| num.even? }
 end
@@ -324,7 +291,6 @@ end
 numbers = [1, 3, 5, 6, 7]
 p first_even(numbers)
 # Output: 6
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that returns the first word longer than 4 letters.
@@ -351,6 +317,121 @@ p first_long_word(words)
 
 
 
+count
+# What it does: Returns the number of elements in a collection, or the count of elements matching a condition if a block is given.
+# Why use it: Determining the total number of items (e.g., array.count) or those meeting specific criteria (e.g., array.count { |x| x > 10 }).
+
+# Syntax:
+array.count                  # Returns the total number of elements
+array.count(value)           # Counts how many elements equal `value`
+array.count { |element| condition }
+# Counts how many elements satisfy the condition
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that counts how many numbers are greater than 10.
+# Solution 1
+def count_greater_than_ten(numbers)
+  numbers.count { |num| num > 10 }
+end
+
+numbers = [5, 12, 13, 8, 20]
+p count_greater_than_ten(numbers)
+# Output: 3
+
+
+# Solution 2
+def count_greater_than_ten(numbers)
+  numbers.count do |num|
+    num > 10
+  end
+end
+
+numbers = [5, 12, 13, 8, 20]
+p count_greater_than_ten(numbers)
+# Output: 3
+
+
+
+reject
+# What it does: Returns an array of elements for which the block condition is false.
+# Why use it: Opposite of .select — filters out elements you don't want.
+
+# Syntax:
+collection.reject { |element| condition }
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
+def remove_negatives(numbers)
+  numbers.reject { |n| n < 0 }
+end
+
+nums = [-1, 2, -3, 4]
+p remove_negatives(nums)
+# Output: [2, 4]
+
+
+
+any?
+# What it does: Checks if at least one element meets the condition in the block.
+# Why use it: Quick way to see if there’s a match for a given criterion.
+
+# Syntax:
+collection.any? { |element| condition }
+# condition that returns true or false
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns true if there is at least one negative number?
+def any_negative?(numbers)
+  numbers.any? { |n| n < 0 }
+end
+
+nums = [1, -2, 3]
+p any_negative?(nums)
+# Output: true
+
+
+
+all?
+# What it does: Checks if all elements meet the condition in the block.
+# Why use it: Validates that every item in the collection satisfies a requirement.
+
+# Syntax:
+collection.all? { |element| condition }
+# condition that returns true or false
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns true if all numbers are positive?
+
+def all_positive?(numbers)
+  numbers.all? { |n| n > 0 }
+end
+
+nums = [1, 3, 5]
+p all_positive?(nums)
+# Output: true
+
+
+
+none?
+# What it does: Checks if no elements in the collection meet the condition in the block.
+# Why use it: Confirm that a certain condition does not apply to any element.
+
+# Syntax:
+collection.none? { |element| condition }
+# condition that returns true or false
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of words and returns true if none of them start with "z"?
+
+def none_start_with_z?(words)
+  words.none? { |w| w.start_with?("z") }
+end
+
+words = ["apple", "cat", "banana"]
+p none_start_with_z?(words)
+# Output: true
+
+
+
 sum
 # What it does: Quickly calculates the sum of elements in an array or other Enumerable object.
 # Why use it: Simplifies the process of adding up numbers (e.g., total points scored by a team).
@@ -359,9 +440,10 @@ sum
 array.sum                        # Returns the sum of all elements
 array.sum(initial_value)         # Adds the elements to the initial value
 array.sum { |element| block }    # Sums the result of applying a block to each element
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the total sum of an array of integers.
-# Solution 1
+
 def total_sum(numbers)
   numbers.sum
 end
@@ -373,13 +455,32 @@ p total_sum(numbers)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that returns the total sum of a range of numbers.
-# Solution 1
+
 def sum_range(range)
   range.sum
 end
 
 p sum_range(1..5)
 # Output: 15
+
+
+
+sort_by
+# What it does: Sorts a collection according to values computed in the given block.
+# Why use it: Great for custom sorting based on a specific property of each element.
+
+# Syntax:
+collection.sort_by { |element| block }
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and returns them sorted by length?
+def sort_by_length(strings)
+  strings.sort_by { |s| s.length }
+end
+
+words = ["apple", "cat", "banana"]
+p sort_by_length(words)
+# Output: ["cat", "apple", "banana"]
 
 
 
@@ -401,73 +502,13 @@ p shortest_string(words)
 
 
 
-sort_by
-# What it does: Sorts a collection according to values computed in the given block.
-# Why use it: Great for custom sorting based on a specific property of each element.
-
-# Syntax:
-collection.sort_by { |element| block }
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and returns them sorted by length?
-def sort_by_length(strings)
-  strings.sort_by { |s| s.length }
-end
-
-words = ["apple", "cat", "banana"]
-p sort_by_length(words)
-# Output: ["cat", "apple", "banana"]
-
-
-
-sort
-# What it does: Returns a new array with the elements sorted in ascending order.
-# Why use it: Organize elements in a specific order, such as numerical or alphabetical.
-
-# Syntax:
-# Sorts in ascending order
-array.sort
-
-# Allows custom sorting logic
-array.sort { |a, b| custom_block }
-
-# comparison logic
-a <=> b # default comparison operator
-
-#------------------------------------------------------------------------------
-# Problem: Write a function that takes an array of numbers and returns the array sorted in ascending order.
-def sort_array(numbers)
-  numbers.sort
-end
-
-numbers = [5, 3, 8, 1, 4] # Output: [1, 3, 4, 5, 8]
-p sort_array(numbers)
-
-
-
-reject
-# What it does: Returns an array of elements for which the block condition is false.
-# Why use it: Opposite of .select — filters out elements you don't want.
-
-# Syntax:
-collection.reject { |element| condition }
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
-def remove_negatives(numbers)
-  numbers.reject { |n| n < 0 }
-end
-
-nums = [-1, 2, -3, 4]
-p remove_negatives(nums)
-# Output: [2, 4]
-
-
-
 each_with_index
 # What it does: Iterates through each element, providing both element and index.
 # Why use it: Needed when you must access or use the index during iteration.
 
 # Syntax:
 collection.each_with_index { |element, index| block }
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of strings and prints each string with its index?
 def print_with_index(strings)
@@ -484,64 +525,44 @@ print_with_index(words)
 
 
 
-any?
-# What it does: Checks if at least one element meets the condition in the block.
-# Why use it: Quick way to see if there’s a match for a given criterion.
+each_with_object
+# What it does: Iterates through a collection and builds or updates an external object in the process.
+# Why use it: Creating or populating a data structure (like a hash) while iterating.
 
 # Syntax:
-collection.any? { |element| condition }
-# condition that returns true or false
+collection.each_with_object(initial_object) { |element, obj| block }
+# `initial_object` is the object being built or modified (e.g., a hash or array).
+
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of numbers and returns true if there is at least one negative number?
-def any_negative?(numbers)
-  numbers.any? { |n| n < 0 }
+# Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
+
+def word_lengths(words)
+  words.each_with_object({}) do |word, hash|
+    hash[word] = word.length
+  end
 end
 
-nums = [1, -2, 3]
-p any_negative?(nums)
-# Output: true
+words = ["cat", "bird"]
+p word_lengths(words)
+# Output: {"cat"=>3, "bird"=>4}
 
-
-
-all?
-# What it does: Checks if all elements meet the condition in the block.
-# Why use it: Validates that every item in the collection satisfies a requirement.
-
-# Syntax:
-collection.all? { |element| condition }
-# condition that returns true or false
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of numbers and returns true if all numbers are positive?
+# Problem 2: Write a function that takes a hash and returns a new hash with keys and values swapped.
 
-def all_positive?(numbers)
-  numbers.all? { |n| n > 0 }
+def reverse_hash(hash)
+  hash.each_with_object({}) { |(key, value), reversed| reversed[value] = key }
 end
 
-nums = [1, 3, 5]
-p all_positive?(nums)
-# Output: true
+original = { a: 1, b: 2, c: 3 }
+p reverse_hash(original)
+# Output: {1=>:a, 2=>:b, 3=>:c}
 
 
 
-none?
-# What it does: Checks if no elements in the collection meet the condition in the block.
-# Why use it: Confirm that a certain condition does not apply to any element.
 
-# Syntax:
-collection.none? { |element| condition }
-# condition that returns true or false
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of words and returns true if none of them start with "z"?
-
-def none_start_with_z?(words)
-  words.none? { |w| w.start_with?("z") }
-end
-
-words = ["apple", "cat", "banana"]
-p none_start_with_z?(words)
-# Output: true
-
-
+# Low-importance methods (.group_by, .flat_map, .zip, .lazy) can be life-savers in specific scenarios but aren’t as frequent in standard easy/medium algorithm problems. Still, they’re good to have in your back pocket.
+#------------------------------------------------------------------------------
 
 group_by
 # What it does: Groups collection elements into a hash, keyed by the result of the block.
@@ -634,6 +655,7 @@ arr1 = [1, 2]
 arr2 = ["a", "b"]
 p pair_arrays(arr1, arr2)
 # Output: [[1, "a"], [2, "b"]]
+
 
 
 lazy

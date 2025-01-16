@@ -1,4 +1,8 @@
 #------------------------------------------------------------------------------
+# High-importance methods (.each, .map, .select, .sort, .reduce) appear in countless patterns—knowing them well drastically simplifies your solutions.
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
 # Problem 1: Write a function that prints each number of an array.
 
 def print_elements(numbers)
@@ -203,39 +207,29 @@ nums = [-3, 0, 5, -1, 2]
 # # Output: [5, 2]
 
 
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that counts how many numbers are greater than 10.
 
-def count_greater_than_ten(numbers)
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes an array of numbers and returns the array sorted in ascending order.
+
+def sort_array(numbers)
 
 end
 
-numbers = [5, 12, 13, 8, 20]
-# p count_greater_than_ten(numbers)
-# Output: 3
+numbers = [5, 3, 8, 1, 4]
+p sort_array(numbers)
+# Output: [1, 3, 4, 5, 8]
 
 
 
-# # Solution 1
-# def count_greater_than_ten(numbers)
-#   numbers.count { |num| num > 10 }
+# # Solution
+# def sort_array(numbers)
+#   numbers.sort
 # end
 
-# numbers = [5, 12, 13, 8, 20]
-# p count_greater_than_ten(numbers)
-# # Output: 3
+# numbers = [5, 3, 8, 1, 4]
+# p sort_array(numbers)
+# # Output: [1, 3, 4, 5, 8]
 
-
-# # Solution 2
-# def count_greater_than_ten(numbers)
-#   numbers.count do |num|
-#     num > 10
-#   end
-# end
-
-# numbers = [5, 12, 13, 8, 20]
-# p count_greater_than_ten(numbers)
-# # Output: 3
 
 
 #------------------------------------------------------------------------------
@@ -337,62 +331,11 @@ end
 # # Output: 15
 
 
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
 
-def word_lengths(words)
-
-end
-
-words = ["cat", "bird"]
-# p word_lengths(words)
-# Output: {"cat"=>3, "bird"=>4}
-
-
-
-# # Solution 1
-# def word_lengths(words)
-#   words.each_with_object({}) do |word, hash|
-#     hash[word] = word.length
-#   end
-# end
-
-# words = ["cat", "bird"]
-# p word_lengths(words)
-# # Output: {"cat"=>3, "bird"=>4}
-
-
-# # Solution 2
-# def words_to_lengths(words)
-#   words.each_with_object({}) { |word, hash| hash[word] = word.length }
-# end
-
-# words = ["cat", "bird"]
-# puts words_to_lengths(words)
-# # Output: {"cat"=>3, "bird"=>4}
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that takes a hash and returns a new hash with keys and values swapped.
-
-def reverse_hash(hash)
-
-end
-
-original = { a: 1, b: 2, c: 3 }
-# p reverse_hash(original)
-# Output: {1=>:a, 2=>:b, 3=>:c}
-
-
-
-# # Solution
-# def reverse_hash(hash)
-#   hash.each_with_object({}) { |(key, value), reversed| reversed[value] = key }
-# end
-
-# original = { a: 1, b: 2, c: 3 }
-# p reverse_hash(original)
-# # Output: {1=>:a, 2=>:b, 3=>:c}
-
+# Medium-importance methods (.find, .count, .reject, .any?, .all?, .none?, .sum, .sort_by, .min_by, .each_with_index, .each_with_object) come up often enough that they should be part of your everyday toolkit.
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the first even number in an array.
@@ -452,114 +395,41 @@ words = ["cat", "door", "apple", "hi"]
 # # Output: "apple"
 
 
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that returns the total sum of an array of integers.
 
-def total_sum(numbers)
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that counts how many numbers are greater than 10.
+
+def count_greater_than_ten(numbers)
 
 end
 
-numbers = [1, 2, 3]
-# p total_sum(numbers)
-# Output: 6
+numbers = [5, 12, 13, 8, 20]
+# p count_greater_than_ten(numbers)
+# Output: 3
 
 
-# # Solution
-# def total_sum(numbers)
-#   numbers.sum
+
+# # Solution 1
+# def count_greater_than_ten(numbers)
+#   numbers.count { |num| num > 10 }
 # end
 
-# numbers = [1, 2, 3]
-# p total_sum(numbers)
-# # Output: 6
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that returns the total sum of a range of numbers.
-
-def sum_range(range)
-
-end
-
-# p sum_range(1..5)
-# Output: 15
+# numbers = [5, 12, 13, 8, 20]
+# p count_greater_than_ten(numbers)
+# # Output: 3
 
 
-
-# # Solution
-# def sum_range(range)
-#   range.sum
+# # Solution 2
+# def count_greater_than_ten(numbers)
+#   numbers.count do |num|
+#     num > 10
+#   end
 # end
 
-# p sum_range(1..5)
-# # Output: 15
+# numbers = [5, 12, 13, 8, 20]
+# p count_greater_than_ten(numbers)
+# # Output: 3
 
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and returns the string with the fewest characters?
-
-def shortest_string(strings)
-
-end
-
-words = ["apple", "cat", "banana"]
-# p shortest_string(words)
-# Output: "cat"
-
-
-
-# # Solution
-# def shortest_string(strings)
-#   strings.min_by { |s| s.length }
-# end
-
-# words = ["apple", "cat", "banana"]
-# p shortest_string(words)
-# # Output: "cat"
-
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and returns them sorted by length?
-
-def sort_by_length(strings)
-
-end
-
-words = ["apple", "cat", "banana"]
-# p sort_by_length(words)
-# Output: ["cat", "apple", "banana"]
-
-
-
-# # Solution
-# def sort_by_length(strings)
-#   strings.sort_by { |s| s.length }
-# end
-
-# words = ["apple", "cat", "banana"]
-# p sort_by_length(words)
-# # Output: ["cat", "apple", "banana"]
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes an array of numbers and returns the array sorted in ascending order.
-
-def sort_array(numbers)
-
-end
-
-numbers = [5, 3, 8, 1, 4]
-p sort_array(numbers)
-# Output: [1, 3, 4, 5, 8]
-
-
-
-# # Solution
-# def sort_array(numbers)
-#   numbers.sort
-# end
-
-# numbers = [5, 3, 8, 1, 4]
-# p sort_array(numbers)
-# # Output: [1, 3, 4, 5, 8]
 
 
 #------------------------------------------------------------------------------
@@ -583,34 +453,6 @@ nums = [-1, 2, -3, 4]
 # p remove_negatives(nums)
 # # Output: [2, 4]
 
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
-
-def print_with_index(strings)
-
-end
-
-words = ["apple", "banana"]
-# print_with_index(words)
-# Output:
-# 0: apple
-# 1: banana
-
-
-
-# # Solution
-# def print_with_index(strings)
-#   strings.each_with_index do |str, i|
-#     puts "#{i}: #{str}"
-#   end
-# end
-
-# words = ["apple", "banana"]
-# print_with_index(words)
-# # Output:
-# # 0: apple
-# # 1: banana
 
 
 #------------------------------------------------------------------------------
@@ -681,6 +523,191 @@ words = ["apple", "cat", "banana"]
 # p none_start_with_z?(words)
 # # Output: true
 
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that returns the total sum of an array of integers.
+
+def total_sum(numbers)
+
+end
+
+numbers = [1, 2, 3]
+# p total_sum(numbers)
+# Output: 6
+
+
+# # Solution
+# def total_sum(numbers)
+#   numbers.sum
+# end
+
+# numbers = [1, 2, 3]
+# p total_sum(numbers)
+# # Output: 6
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that returns the total sum of a range of numbers.
+
+def sum_range(range)
+
+end
+
+# p sum_range(1..5)
+# Output: 15
+
+
+
+# # Solution
+# def sum_range(range)
+#   range.sum
+# end
+
+# p sum_range(1..5)
+# # Output: 15
+
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and returns them sorted by length?
+
+def sort_by_length(strings)
+
+end
+
+words = ["apple", "cat", "banana"]
+# p sort_by_length(words)
+# Output: ["cat", "apple", "banana"]
+
+
+
+# # Solution
+# def sort_by_length(strings)
+#   strings.sort_by { |s| s.length }
+# end
+
+# words = ["apple", "cat", "banana"]
+# p sort_by_length(words)
+# # Output: ["cat", "apple", "banana"]
+
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and returns the string with the fewest characters?
+
+def shortest_string(strings)
+
+end
+
+words = ["apple", "cat", "banana"]
+# p shortest_string(words)
+# Output: "cat"
+
+
+
+# # Solution
+# def shortest_string(strings)
+#   strings.min_by { |s| s.length }
+# end
+
+# words = ["apple", "cat", "banana"]
+# p shortest_string(words)
+# # Output: "cat"
+
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
+
+def print_with_index(strings)
+
+end
+
+words = ["apple", "banana"]
+# print_with_index(words)
+# Output:
+# 0: apple
+# 1: banana
+
+
+
+# # Solution
+# def print_with_index(strings)
+#   strings.each_with_index do |str, i|
+#     puts "#{i}: #{str}"
+#   end
+# end
+
+# words = ["apple", "banana"]
+# print_with_index(words)
+# # Output:
+# # 0: apple
+# # 1: banana
+
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
+
+def word_lengths(words)
+
+end
+
+words = ["cat", "bird"]
+# p word_lengths(words)
+# Output: {"cat"=>3, "bird"=>4}
+
+
+
+# # Solution 1
+# def word_lengths(words)
+#   words.each_with_object({}) do |word, hash|
+#     hash[word] = word.length
+#   end
+# end
+
+# words = ["cat", "bird"]
+# p word_lengths(words)
+# # Output: {"cat"=>3, "bird"=>4}
+
+
+# # Solution 2
+# def words_to_lengths(words)
+#   words.each_with_object({}) { |word, hash| hash[word] = word.length }
+# end
+
+# words = ["cat", "bird"]
+# puts words_to_lengths(words)
+# # Output: {"cat"=>3, "bird"=>4}
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes a hash and returns a new hash with keys and values swapped.
+
+def reverse_hash(hash)
+
+end
+
+original = { a: 1, b: 2, c: 3 }
+# p reverse_hash(original)
+# Output: {1=>:a, 2=>:b, 3=>:c}
+
+
+
+# # Solution
+# def reverse_hash(hash)
+#   hash.each_with_object({}) { |(key, value), reversed| reversed[value] = key }
+# end
+
+# original = { a: 1, b: 2, c: 3 }
+# p reverse_hash(original)
+# # Output: {1=>:a, 2=>:b, 3=>:c}
+
+
+
+
+#------------------------------------------------------------------------------
+# Low-importance methods (.group_by, .flat_map, .zip, .lazy) can be life-savers in specific scenarios but aren’t as frequent in standard easy/medium algorithm problems. Still, they’re good to have in your back pocket.
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that groups an array of words by their length.
