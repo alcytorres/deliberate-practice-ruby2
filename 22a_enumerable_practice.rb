@@ -41,8 +41,6 @@ numbers = [1, 2, 3]
 # # 2
 # # 3
 
-
-
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that prints each key-value pair in a hash.
 
@@ -55,7 +53,6 @@ person = { name: "Alice", age: 30 }
 # Output:
 # name: Alice
 # age: 30
-
 
 
 
@@ -83,7 +80,6 @@ person = { name: "Alice", age: 30 }
 # # Output:
 # # "name => Alice"
 # # "age => 30"
-
 
 
 #------------------------------------------------------------------------------
@@ -121,7 +117,6 @@ numbers = [1, 2, 3]
 # # Output: [2, 3, 4]
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that selects all even numbers from an array.
 
@@ -142,7 +137,6 @@ nums = [1, 2, 3, 4, 5, 6]
 # nums = [1, 2, 3, 4, 5, 6]
 # p select_even_numbers(nums)
 # # Output: [2, 4, 6]
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that selects all words that start with "a".
@@ -165,7 +159,6 @@ words = ["apple", "banana", "apricot", "cherry"]
 # words = ["apple", "banana", "apricot", "cherry"]
 # p select_words_starting_with_a(words)
 # # Output: ["apple", "apricot"]
-
 
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that selects key-value pairs where the value is greater than 10.
@@ -210,7 +203,6 @@ nums = [-3, 0, 5, -1, 2]
 # # Output: [5, 2]
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that counts how many numbers are greater than 10.
 
@@ -244,7 +236,6 @@ numbers = [5, 12, 13, 8, 20]
 # numbers = [5, 12, 13, 8, 20]
 # p count_greater_than_ten(numbers)
 # # Output: 3
-
 
 
 #------------------------------------------------------------------------------
@@ -281,7 +272,6 @@ numbers = [1, 2, 3, 4]
 # p sum_array(numbers)
 # # Output: 10
 
-
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that finds the product of all elements in an array.
 
@@ -303,8 +293,6 @@ numbers = [2, 3, 4]
 # numbers = [2, 3, 4]
 # p product_of_array(numbers)
 # # Output: 24
-
-
 
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that returns the total sum of an array of integers using this (:+) syntax inside the method.
@@ -348,6 +336,7 @@ end
 # p sum_range(1..5)
 # # Output: 15
 
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
 
@@ -381,8 +370,6 @@ words = ["cat", "bird"]
 # words = ["cat", "bird"]
 # puts words_to_lengths(words)
 # # Output: {"cat"=>3, "bird"=>4}
-
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that takes a hash and returns a new hash with keys and values swapped.
@@ -443,7 +430,6 @@ words = ["cat", "door", "apple", "hi"]
 
 
 
-
 # # Solution 1
 # def first_long_word(words)
 #   words.find { |word| word.length > 4 }
@@ -464,8 +450,6 @@ words = ["cat", "door", "apple", "hi"]
 # words = ["cat", "door", "apple", "hi"]
 # p first_long_word(words)
 # # Output: "apple"
-
-
 
 
 #------------------------------------------------------------------------------
@@ -489,7 +473,6 @@ numbers = [1, 2, 3]
 # p total_sum(numbers)
 # # Output: 6
 
-
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that returns the total sum of a range of numbers.
 
@@ -509,8 +492,6 @@ end
 
 # p sum_range(1..5)
 # # Output: 15
-
-
 
 
 #------------------------------------------------------------------------------
@@ -534,8 +515,6 @@ words = ["apple", "cat", "banana"]
 # words = ["apple", "cat", "banana"]
 # p shortest_string(words)
 # # Output: "cat"
-
-
 
 
 #------------------------------------------------------------------------------
@@ -605,7 +584,6 @@ nums = [-1, 2, -3, 4]
 # # Output: [2, 4]
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of strings and prints each string with its index?
 
@@ -635,8 +613,6 @@ words = ["apple", "banana"]
 # # 1: banana
 
 
-
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of numbers and returns true if there is at least one negative number?
 
@@ -658,7 +634,6 @@ nums = [1, -2, 3]
 # nums = [1, -2, 3]
 # p any_negative?(nums)
 # # Output: true
-
 
 
 #------------------------------------------------------------------------------
@@ -729,7 +704,6 @@ words = ["cat", "dog", "apple", "bat", "pear"]
 # p group_words_by_length(words)
 # # Output: {3=>["cat", "dog", "bat"], 5=>["apple"], 4=>["pear"]}
 
-
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that takes in an array of numbers and groups them by even/odd?
 
@@ -751,7 +725,6 @@ nums = [1, 2, 3, 4]
 # nums = [1, 2, 3, 4]
 # p group_by_parity(nums)
 # # Output: {"odd"=>[1, 3], "even"=>[2, 4]}
-
 
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that groups an array of hashes by the value of a specified key.
@@ -808,7 +781,6 @@ arrays = [[1, 2], [3, 4]]
 # # Output: [2, 4, 6, 8]
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in two arrays and returns a combined array of pairs?
 
@@ -832,7 +804,6 @@ arr2 = ["a", "b"]
 # arr2 = ["a", "b"]
 # p pair_arrays(arr1, arr2)
 # # Output: [[1, "a"], [2, "b"]]
-
 
 
 #------------------------------------------------------------------------------
