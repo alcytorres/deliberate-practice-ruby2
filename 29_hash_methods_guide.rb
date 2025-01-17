@@ -4,6 +4,7 @@ keys
 
 # Syntax:
 hash.keys
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns an array of all keys in a given hash.
 

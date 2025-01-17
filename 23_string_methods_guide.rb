@@ -72,7 +72,7 @@ p split_into_chars(greeting)
 
 
 
-.length / .size
+length    size
 # What they do: Return the number of characters in a string.
 # Why use them: Quickly determine a string's length for validation or looping.
 
@@ -353,7 +353,7 @@ p safe_empty?(value)
 # Medium-importance methods are situationally useful, especially for trimming, normalization, or quick boundary checks.
 #------------------------------------------------------------------------------
 
-.start_with? / .end_with?
+start_with?   end_with?
 # What they do: Check if a string begins (start_with?) or ends (end_with?) with a specified substring.
 # Why use them: Useful for validating string prefixes or suffixes.
 
@@ -374,7 +374,7 @@ p start_hello_end_bye?(test_str)
 
 
 
-strip or lstrip.rstrip
+strip  or  lstrip.rstrip
 # What it does: Removes leading and trailing whitespace (including \n and \t) from a string.
 # Why use it: Cleaning up data, such as user inputs or file reads.
 

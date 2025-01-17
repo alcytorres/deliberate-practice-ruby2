@@ -3,6 +3,7 @@
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
 
 def sort_ascending(numbers)
@@ -87,6 +88,48 @@ nums = [5, 2, 8, 1]
 # nums = [5, 2, 8, 1]
 # p sort_descending(nums)
 # # Output: [8, 5, 2, 1]
+
+#------------------------------------------------------------------------------
+# Problem 5: Write a function that sorts a hash by its keys.
+
+def sort_hash_by_keys(hash)
+
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_keys(example_hash)
+# Output: { a: 1, b: 2, c: 3 }
+
+# # Solution
+# def sort_hash_by_keys(hash)
+#   hash.sort.to_h # Sorts key-value pairs by keys and converts the result back to a hash.
+# end
+#
+# example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_keys(example_hash)
+# # Output: { a: 1, b: 2, c: 3 }
+
+#------------------------------------------------------------------------------
+# Problem 6: Write a function that sorts a hash by its values.
+
+def sort_hash_by_values(hash)
+
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_values(example_hash)
+# Output: { a: 1, b: 2, c: 3 }
+
+
+
+# # Solution
+# def sort_hash_by_values(hash)
+#   hash.sort { |(_, value1), (_, value2)| value1 <=> value2 }.to_h # Sorts key-value pairs by values.
+# end
+#
+# example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_values(example_hash)
+# # Output: { a: 1, b: 2, c: 3 }
 
 
 #------------------------------------------------------------------------------
