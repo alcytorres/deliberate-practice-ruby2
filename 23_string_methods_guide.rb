@@ -347,6 +347,8 @@ p safe_empty?(value)
 # Output: false
 
 
+
+
 #------------------------------------------------------------------------------
 # Medium-importance methods are situationally useful, especially for trimming, normalization, or quick boundary checks.
 #------------------------------------------------------------------------------
@@ -449,6 +451,8 @@ end
 title = "hello"
 p capitalize_first(title)
 # Output: "Hello"
+
+
 
 
 #------------------------------------------------------------------------------

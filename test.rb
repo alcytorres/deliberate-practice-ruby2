@@ -1,58 +1,75 @@
-# .sort_by
-# What it does: Sorts elements based on a transformation applied in the block.
-# Returns a new array with the elements sorted according to the block's result.
-# Why use it: For clean and simple sorting by specific criteria.
-
 #------------------------------------------------------------------------------
-# Array Example
-# Syntax:
-# array.sort_by { |element| block }
-
-# Problem 1: Sort an array of numbers in ascending order.
-def sort_numbers(array)
-  array.sort_by { |num| num } # Sorts by the numbers themselves.
+# Problem 2: Write a function that sorts an array of numbers in descending order.
+def sort_numbers_desc(array)
+  array.sort { |a, b| b <=> a } # Sorts the numbers in descending order.
 end
 
 numbers = [5, 3, 8, 1]
-p sort_numbers(numbers)
-# Output: [1, 3, 5, 8]
+p sort_numbers_desc(numbers)
+# Output: [8, 5, 3, 1]
 
-# Problem 2: Sort an array of strings by their length.
-def sort_by_length(array)
-  array.sort_by { |str| str.length } # Sorts by string length.
-end
-
-words = ["apple", "cat", "banana"]
-p sort_by_length(words)
-# Output: ["cat", "apple", "banana"]
+# # Solution
+# def sort_numbers_desc(array)
+#   array.sort { |a, b| b <=> a } # Sorts the numbers in descending order.
+# end
+#
+# numbers = [5, 3, 8, 1]
+# p sort_numbers_desc(numbers)
+# # Output: [8, 5, 3, 1]
 
 #------------------------------------------------------------------------------
-# Hash Example
-# Syntax:
-# hash.sort_by { |key, value| block }
+# Problem 3: Write a function that sorts an array of strings alphabetically.
+def sort_strings(array)
+  array.sort # Sorts strings alphabetically by default.
+end
 
-# Problem 3: Sort a hash by its keys.
+words = ["banana", "apple", "cherry"]
+p sort_strings(words)
+# Output: ["apple", "banana", "cherry"]
+
+# # Solution
+# def sort_strings(array)
+#   array.sort # Sorts strings alphabetically by default.
+# end
+#
+# words = ["banana", "apple", "cherry"]
+# p sort_strings(words)
+# # Output: ["apple", "banana", "cherry"]
+
+#------------------------------------------------------------------------------
+# Problem 5: Write a function that sorts a hash by its keys.
 def sort_hash_by_keys(hash)
-  hash.sort_by { |key, _| key } # Sorts by keys (alphabetical order).
+  hash.sort.to_h # Sorts key-value pairs by keys and converts the result back to a hash.
 end
 
 example_hash = { c: 3, a: 1, b: 2 }
 p sort_hash_by_keys(example_hash)
-# Output: [[:a, 1], [:b, 2], [:c, 3]]
+# Output: { a: 1, b: 2, c: 3 }
 
-# Problem 4: Sort a hash by its values.
+# # Solution
+# def sort_hash_by_keys(hash)
+#   hash.sort.to_h # Sorts key-value pairs by keys and converts the result back to a hash.
+# end
+#
+# example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_keys(example_hash)
+# # Output: { a: 1, b: 2, c: 3 }
+
+#------------------------------------------------------------------------------
+# Problem 6: Write a function that sorts a hash by its values.
 def sort_hash_by_values(hash)
-  hash.sort_by { |_, value| value } # Sorts by values (numerical order).
+  hash.sort { |(_, value1), (_, value2)| value1 <=> value2 }.to_h # Sorts key-value pairs by values.
 end
 
 example_hash = { c: 3, a: 1, b: 2 }
 p sort_hash_by_values(example_hash)
-# Output: [[:a, 1], [:b, 2], [:c, 3]]
+# Output: { a: 1, b: 2, c: 3 }
 
-#------------------------------------------------------------------------------
-# Key Notes:
-# 1. `sort_by` is ideal when you want to sort based on a specific attribute or transformation.
-# 2. **Arrays**: Each element is passed to the block for sorting.
-# 3. **Hashes**: The block receives `|key, value|`, and it returns a sorted array of key-value pairs.
-# 4. To convert a sorted hash back to a hash, use `to_h`:
-#    sorted_hash = hash.sort_by { |key, value| value }.to_h
+# # Solution
+# def sort_hash_by_values(hash)
+#   hash.sort { |(_, value1), (_, value2)| value1 <=> value2 }.to_h # Sorts key-value pairs by values.
+# end
+#
+# example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_values(example_hash)
+# # Output: { a: 1, b: 2, c: 3 }

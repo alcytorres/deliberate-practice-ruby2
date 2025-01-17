@@ -262,16 +262,19 @@ sort
 # What it does: Returns a new array with the elements sorted in ascending order by default.
 # Why use it: Organizing data in a meaningful order, such as numerically or alphabetically.
 
-# Syntax:
+# Syntax:     Sorts elements based on their natural order.
 
 # Arrays
 array.sort
-array.sort { |a, b| custom_block }   # Allows custom sorting logic
+array.sort { |a, b| custom_block }   # Custom sorting logic.
 
 # For descending order:
-array.sort.reverse
-# Or use
+array.sort.reverse               # Or use
 array.sort { |a, b| b <=> a }
+
+# Hash:
+# Hashes cannot be directly sorted. Use .sort to return a sorted array of key-value pairs.
+hash.sort { |(key1, value1), (key2, value2)| block }
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
@@ -283,7 +286,6 @@ end
 nums = [5, 2, 8, 1, 3]
 p sort_ascending(nums)
 # Output: [1, 2, 3, 5, 8]
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that sorts an array of strings in alphabetical order.
@@ -317,6 +319,28 @@ end
 nums = [5, 2, 8, 1]
 p sort_descending(nums)
 # Output: [8, 5, 2, 1]
+
+#------------------------------------------------------------------------------
+# Problem 5: Write a function that sorts a hash by its keys.
+
+def sort_hash_by_keys(hash)
+  hash.sort.to_h # Sorts key-value pairs by keys and converts the result back to a hash.
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+p sort_hash_by_keys(example_hash)
+# Output: { a: 1, b: 2, c: 3 }
+
+#------------------------------------------------------------------------------
+# Problem 6: Write a function that sorts a hash by its values.
+
+def sort_hash_by_values(hash)
+  hash.sort { |(_, value1), (_, value2)| value1 <=> value2 }.to_h # Sorts key-value pairs by values.
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+p sort_hash_by_values(example_hash)
+# Output: { a: 1, b: 2, c: 3 }
 
 
 
