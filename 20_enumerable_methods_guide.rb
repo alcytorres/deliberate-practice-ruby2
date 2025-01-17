@@ -43,14 +43,14 @@ each
 
 # Syntax:
 
-# For Arrays:
+# Arrays:
 array.each { |element| block }
 
 array.each do |element|
   block
 end
 
-# For Hashes:
+# Hashes:
 hash.each { |key, value| block }
 
 hash.each_key { |key| block }   # Iterates over keys only.
@@ -126,13 +126,13 @@ map
 
 # Syntax:
 
-# For arrays
+# Arrays
 array.map { |element| block }
 array.map! { |element| block } # Modifies in place.
 
 collection.map(&:method_name)  # Shortcut for calling a single method on each element.
 
-# For hashes
+# Hashes
 hash.map { |key, value| block } # Returns an array of results.
 hash.transform_values { |value| block } # Modifies values only.
 
@@ -201,11 +201,11 @@ select
 
 # Syntax:
 
-# For Arrays:
+# Arrays:
 array.select { |element| condition }
 # Returns a new array with elements that satisfy the condition.
 
-# For Hashes:
+# Hashes:
 hash.select { |key, value| condition }
 # Returns a new hash with key-value pairs that satisfy the condition.
 
@@ -264,7 +264,7 @@ sort
 
 # Syntax:
 
-# For arrays
+# Arrays
 array.sort
 array.sort { |a, b| custom_block }   # Allows custom sorting logic
 
@@ -326,13 +326,13 @@ reduce or inject
 
 # Syntax:
 
-# For arrays
+# Arrays
 array.reduce(initial_value) { |accumulator, element| block }
 # `initial_value` is optional. If omitted, the first element is used as the starting value.
 
 array.reduce { |accumulator, element| block }   # Without initial value.
 
-# For hashes
+# Hashes
 hash.reduce(initial_value) { |accumulator, (key, value)| block }
 
 #------------------------------------------------------------------------------
@@ -418,10 +418,10 @@ find
 
 # Syntax:
 
-# For arrays
+# Arrays
 array.find { |element| condition }
 
-# For hashes
+# Hashes
 hash.find { |key, value| condition }
 
 # Returns the first element that satisfies the condition, or `nil` if no match is found.
@@ -469,12 +469,12 @@ count
 
 # Syntax:
 
-# For Arrays:
+# Arrays:
 array.count                            # Counts all elements.
 array.count { |element| condition }    # Counts elements matching a condition.
 array.count(value)                     # Counts elements equal to the value.
 
-# For Hashes:
+# Hashes:
 hash.count                             # Counts the total number of key-value pairs.
 hash.count { |key, value| condition }  # Counts key-value pairs matching a condition.
 
@@ -526,11 +526,11 @@ reject
 
 # Syntax:
 
-# For Arrays:
+# Arrays:
 array.reject { |element| condition }
 # Returns a new array with elements that do NOT satisfy the condition.
 
-# For Hashes:
+# Hashes:
 hash.reject { |key, value| condition }
 # Returns a new hash with key-value pairs that do NOT satisfy the condition.
 

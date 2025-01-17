@@ -125,12 +125,12 @@ fetch
 
 # Syntax:
 
-# For hashes:
+# Hashes:
 hash.fetch(key)                          # Raises KeyError if the key is not found
 hash.fetch(key, default_value)           # Returns default_value if the key is not found
 hash.fetch(key) { |key| block }          # Executes the block if the key is not found
 
-# For arrays:
+# Arrays:
 array.fetch(index)                       # Raises IndexError if the index is out of bounds
 array.fetch(index, default_value)        # Returns default_value if the index is out of bounds
 array.fetch(index) { |index| block }     # Executes the block if the index is out of bounds
@@ -178,10 +178,10 @@ dig
 
 # Syntax:
 
-# For Hashes:
+# Hashes:
 hash.dig(key1, key2, ...)           # Accesses nested keys in a hash.
 
-# For Arrays
+# Arrays
 array.dig(index1, index2, ...)      # Accesses nested indices in an array.
 
 #------------------------------------------------------------------------------
@@ -297,11 +297,11 @@ select
 
 # Syntax:
 
-# For Arrays:
+# Arrays:
 array.select { |element| condition }
 # Returns a new array with elements that satisfy the condition.
 
-# For Hashes:
+# Hashes:
 hash.select { |key, value| condition }
 # Returns a new hash with key-value pairs that satisfy the condition.
 
@@ -360,11 +360,11 @@ reject
 
 # Syntax:
 
-# For Arrays:
+# Arrays:
 array.reject { |element| condition }
 # Returns a new array with elements that do NOT satisfy the condition.
 
-# For Hashes:
+# Hashes:
 hash.reject { |key, value| condition }
 # Returns a new hash with key-value pairs that do NOT satisfy the condition.
 
@@ -507,11 +507,11 @@ delete_if
 
 # Syntax:
 
-# For Arrays:
+# Arrays:
 array.delete_if { |element| condition }
 # Removes elements that satisfy the condition.
 
-# For Hashes:
+# Hashes:
 hash.delete_if { |key, value| condition }
 # Removes key-value pairs that satisfy the condition.
 
