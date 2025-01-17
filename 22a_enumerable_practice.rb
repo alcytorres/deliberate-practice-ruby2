@@ -120,6 +120,72 @@ numbers = [1, 2, 3]
 # p increment_numbers(numbers)
 # # Output: [2, 3, 4]
 
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that extracts all keys from a hash.
+
+def extract_keys(hash)
+
+end
+
+data = { a: 1, b: 2, c: 3 }
+# p extract_keys(data)
+# Output: [:a, :b, :c]
+
+
+
+# # Solution
+# def extract_keys(hash)
+#   hash.map { |key, value| key }
+# end
+
+# data = { a: 1, b: 2, c: 3 }
+# p extract_keys(data)
+# # Output: [:a, :b, :c]
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that converts all strings in an array to uppercase.
+
+def uppercase_strings(array)
+
+end
+
+words = ["hello", "world"]
+# p uppercase_strings(words)
+# Output: ["HELLO", "WORLD"]
+
+
+
+# # Solution
+# def uppercase_strings(array)
+#   array.map(&:upcase) # Shortcut for array.map { |str| str.upcase }
+# end
+
+# words = ["hello", "world"]
+# p uppercase_strings(words)
+# # Output: ["HELLO", "WORLD"]
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that squares all numbers in a nested array.
+
+def square_nested(array_of_arrays)
+
+end
+
+nested = [[1, 2], [3, 4]]
+# p square_nested(nested)
+# Output: [[1, 4], [9, 16]]
+
+
+
+# # Solution
+# def square_nested(array_of_arrays)
+#   array_of_arrays.map { |arr| arr.map { |n| n * n } }
+# end
+
+# nested = [[1, 2], [3, 4]]
+# p square_nested(nested)
+# # Output: [[1, 4], [9, 16]]
+
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that selects all even numbers from an array.
@@ -392,6 +458,31 @@ end
 # p sum_range(1..5)
 # # Output: 15
 
+#------------------------------------------------------------------------------
+# Problem 5: Write a function that sums all the values in a hash.
+
+def sum_hash_values(hash)
+
+end
+
+data = { a: 1, b: 2, c: 3 }
+# p sum_hash_values(data)
+# Output: 6
+
+
+
+# # Solution
+# def sum_hash_values(hash)
+#   hash.reduce(0) { |sum, (_, value)| sum + value }
+#   # reduce(0): Starts with an initial value of 0 for the sum.
+#   # |sum, (_, value)|: Iterates through each key-value pair; ignores the key (_), uses the value.
+#   # sum + value: Adds the current value to the running total (sum).
+# end
+
+# data = { a: 1, b: 2, c: 3 }
+# p sum_hash_values(data)
+# # Output: 6
+
 
 
 
@@ -435,27 +526,35 @@ words = ["cat", "door", "apple", "hi"]
 
 
 
-# # Solution 1
+# # Solution
 # def first_long_word(words)
-#   words.find { |word| word.length > 4 }
+#   words.find { |word| word.size > 4 }
 # end
 
 # words = ["cat", "door", "apple", "hi"]
 # p first_long_word(words)
 # # Output: "apple"
 
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that finds the First Key-Value Pair with a Specific Value
 
-# # Solution 2
-# def first_long_word(words)
-#   words.find do |word|
-#     word.size > 4
-#   end
+def find_value_in_hash(hash, target)
+
+end
+
+data = { a: 1, b: 2, c: 3 }
+# p find_value_in_hash(data, 2)
+# Output: [:b, 2]
+
+
+# # Solution
+# def find_value_in_hash(hash, target)
+#   hash.find { |_, value| value == target }
 # end
 
-# words = ["cat", "door", "apple", "hi"]
-# p first_long_word(words)
-# # Output: "apple"
-
+# data = { a: 1, b: 2, c: 3 }
+# p find_value_in_hash(data, 2)
+# # Output: [:b, 2]
 
 
 #------------------------------------------------------------------------------
@@ -471,7 +570,7 @@ numbers = [5, 12, 13, 8, 20]
 
 
 
-# # Solution 1
+# # Solution
 # def count_greater_than_ten(numbers)
 #   numbers.count { |num| num > 10 }
 # end
@@ -481,17 +580,61 @@ numbers = [5, 12, 13, 8, 20]
 # # Output: 3
 
 
-# # Solution 2
-# def count_greater_than_ten(numbers)
-#   numbers.count do |num|
-#     num > 10
-#   end
+#------------------------------------------------------------------------------
+# Problem 2: Count occurrences of a specific element in an array.
+
+def count_specific_element(array, target)
+
+end
+
+values = [1, 2, 2, 3, 3, 3]
+# p count_specific_element(values, 3)
+# Output: 3
+
+
+# # Solution
+# def count_specific_element(array, target)
+#   array.count(target)
 # end
 
-# numbers = [5, 12, 13, 8, 20]
-# p count_greater_than_ten(numbers)
+# values = [1, 2, 2, 3, 3, 3]
+# p count_specific_element(values, 3)
 # # Output: 3
 
+#------------------------------------------------------------------------------
+# Problem 3: Count the total number of key-value pairs in a hash.
+
+data = { a: 1, b: 2, c: 3 }
+# p data.count
+# Output: 3
+
+
+# # Solution
+# data = { a: 1, b: 2, c: 3 }
+# p data.count
+# # Output: 3
+
+#------------------------------------------------------------------------------
+# Problem 4: Count key-value pairs in a hash matching a condition.
+
+def count_matching_pairs(hash)
+
+end
+
+hash = { a: 1, b: 2, c: 3 }
+# p count_matching_pairs(hash)
+# Output: 2
+
+
+
+# # Solution
+# def count_matching_pairs(hash)
+#   hash.count { |key, value| value > 1 }
+# end
+
+# hash = { a: 1, b: 2, c: 3 }
+# p count_matching_pairs(hash)
+# # Output: 2
 
 
 #------------------------------------------------------------------------------
@@ -693,11 +836,32 @@ end
 # # Output: 15
 
 
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that sort an array of numbers in ascending order.
+
+def sort_numbers(array)
+
+end
+
+numbers = [5, 3, 8, 1]
+# p sort_numbers(numbers)
+# Output: [1, 3, 5, 8]
+
+
+
+# # Solution
+# def sort_numbers(array)
+#   array.sort_by { |num| num } # Sorts by the numbers themselves.
+# end
+
+# numbers = [5, 3, 8, 1]
+# p sort_numbers(numbers)
+# # Output: [1, 3, 5, 8]
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and returns them sorted by length?
+# Problem 2: Sort an array of strings by their length.
 
-def sort_by_length(strings)
+def sort_by_length(array)
 
 end
 
@@ -708,38 +872,146 @@ words = ["apple", "cat", "banana"]
 
 
 # # Solution
-# def sort_by_length(strings)
-#   strings.sort_by { |s| s.length }
+# def sort_by_length(array)
+#   array.sort_by { |str| str.length } # Sorts by string length.
 # end
 
 # words = ["apple", "cat", "banana"]
 # p sort_by_length(words)
 # # Output: ["cat", "apple", "banana"]
 
+#------------------------------------------------------------------------------
+# Problem 3: Sort a hash by its keys.
+
+def sort_hash_by_keys(hash)
+
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_keys(example_hash)
+# Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+
+
+# # Solution
+# def sort_hash_by_keys(hash)
+#   hash.sort_by { |key, _| key } # Sorts by keys (alphabetical order).
+# end
+
+# example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_keys(example_hash)
+# # Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+#------------------------------------------------------------------------------
+# Problem 4: Sort a hash by its values.
+
+def sort_hash_by_values(hash)
+
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_values(example_hash)
+# Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+
+
+# # Solution
+# def sort_hash_by_values(hash)
+#   hash.sort_by { |_, value| value } # Sorts by values (numerical order).
+# end
+
+# example_hash = { c: 3, a: 1, b: 2 }
+# p sort_hash_by_values(example_hash)
+# # Output: [[:a, 1], [:b, 2], [:c, 3]]
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and returns the string with the fewest characters?
+# Problem 1: Write a function that finds the minimum number in an array.
 
-def shortest_string(strings)
+def find_min_number(array)
+  array.min_by { |num| num } # Finds the element with the smallest value.
+end
+
+numbers = [5, 3, 8, 1]
+p find_min_number(numbers)
+# Output: 1
+
+
+
+# # Solution
+# def find_min_number(array)
+#   array.min_by { |num| num } # Finds the element with the smallest value.
+# end
+#
+# numbers = [5, 3, 8, 1]
+# p find_min_number(numbers)
+# # Output: 1
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that finds the shortest string in an array.
+
+def find_shortest_string(array)
 
 end
 
 words = ["apple", "cat", "banana"]
-# p shortest_string(words)
+# p find_shortest_string(words)
 # Output: "cat"
 
 
 
 # # Solution
-# def shortest_string(strings)
-#   strings.min_by { |s| s.length }
+# def find_shortest_string(array)
+#   array.min_by { |str| str.length } # Finds the string with the smallest length.
 # end
-
+#
 # words = ["apple", "cat", "banana"]
-# p shortest_string(words)
+# p find_shortest_string(words)
 # # Output: "cat"
 
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that finds the key-value pair in a hash with the smallest value.
+
+def find_min_value(hash)
+
+end
+
+example_hash = { a: 10, b: 5, c: 8 }
+# p find_min_value(example_hash)
+# Output: [:b, 5]
+
+
+
+# # Solution
+# def find_min_value(hash)
+#   hash.min_by { |_, value| value } # Finds the pair with the smallest value.
+# end
+#
+# example_hash = { a: 10, b: 5, c: 8 }
+# p find_min_value(example_hash)
+# # Output: [:b, 5]
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that finds the key-value pair in a hash where the key is alphabetically smallest.
+
+def find_min_key(hash)
+
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+# p find_min_key(example_hash)
+# Output: [:a, 1]
+
+
+
+# # Solution
+# def find_min_key(hash)
+#   hash.min_by { |key, _| key } # Finds the pair with the smallest key alphabetically.
+# end
+#
+# example_hash = { c: 3, a: 1, b: 2 }
+# p find_min_key(example_hash)
+# # Output: [:a, 1]
 
 
 #------------------------------------------------------------------------------

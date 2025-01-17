@@ -1,3 +1,38 @@
+enumerator
+
+# What it does: Object that lets you step through a collection (like an array or range) one item at a time or process it later when you're ready. It "remembers" the method you called (e.g., each, map) and the collection so you can use it flexibly.
+
+# Why use it:
+   # Deferred Execution: It allows you to delay processing a collection until you’re ready to specify what to do.
+   # Custom Control: It lets you manually control iteration with methods like next or rewind.
+   # Chaining: You can chain additional methods or logic to customize how the iteration happens.
+   # Flexibility: It provides a way to work with collections without immediately executing the iteration logic.
+
+# Problem 1: Write a function that creates an enumerator for an array.
+
+def create_enumerator(array)
+  array.each
+end
+
+numbers = [1, 2, 3]
+enum = create_enumerator(numbers)
+# enum is the enumerator bc its an object that lets you iterate over each number in the array.
+
+p enum # Output: #<Enumerator: [1, 2, 3]:each>
+p enum.next # Output: 1 (first element)
+p enum.next # Output: 2 (next element)
+
+
+# Key Notes:
+   # An Enumerator is created implicitly by methods like .each, .map, or .select when no block is provided.
+   # Enumerators are lazy, meaning they do not evaluate until explicitly iterated (e.g., with .next or .each).
+   # Useful for generating or processing infinite sequences, chaining operations, or handling large data efficiently.
+
+# Practical Use Case:
+   # Infinite generators (e.g., Fibonacci series).
+   # Flexible iteration over large or complex collections.
+   # Deferred execution in pipelines with chained transformations.
+
 #------------------------------------------------------------------------------
 # High-importance methods (.each, .map, .select, .sort, .reduce) appear in countless patterns—knowing them well drastically simplifies your solutions.
 #------------------------------------------------------------------------------
@@ -17,6 +52,9 @@ end
 
 # For Hashes:
 hash.each { |key, value| block }
+
+hash.each_key { |key| block }   # Iterates over keys only.
+hash.each_value { |value| block } # Iterates over values only.
 
 hash.each do |key, value|
   block
@@ -84,13 +122,23 @@ print_hash(person)
 
 map
 # What it does: Returns a new array (or collection) where each element is transformed based on the provided block.
-# Why use it: Create a modified version of your original data (e.g., incrementing numbers).
+# Why use it: To apply a transformation to every element in a collection without modifying the original collection (e.g., incrementing numbers).
 
 # Syntax:
+
+# For arrays
 array.map { |element| block }
+array.map! { |element| block } # Modifies in place.
+
+collection.map(&:method_name)  # Shortcut for calling a single method on each element.
+
+# For hashes
+hash.map { |key, value| block } # Returns an array of results.
+hash.transform_values { |value| block } # Modifies values only.
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes an array of numbers and returns a new array where each number is incremented by 1.
+
 # Solution 1
 def increment_numbers(numbers)
   numbers.map { |num| num + 1 }
@@ -111,6 +159,39 @@ end
 numbers = [1, 2, 3]
 p increment_numbers(numbers)
 # Output: [2, 3, 4]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that extracts all keys from a hash.
+
+def extract_keys(hash)
+  hash.map { |key, value| key }
+end
+
+data = { a: 1, b: 2, c: 3 }
+p extract_keys(data)
+# Output: [:a, :b, :c]
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that converts all strings in an array to uppercase.
+
+def uppercase_strings(array)
+  array.map(&:upcase) # Shortcut for array.map { |str| str.upcase }
+end
+
+words = ["hello", "world"]
+p uppercase_strings(words)
+# Output: ["HELLO", "WORLD"]
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that squares all numbers in a nested array.
+
+def square_nested(array_of_arrays)
+  array_of_arrays.map { |arr| arr.map { |n| n * n } }
+end
+
+nested = [[1, 2], [3, 4]]
+p square_nested(nested)
+# Output: [[1, 4], [9, 16]]
 
 
 
@@ -182,15 +263,15 @@ sort
 # Why use it: Organizing data in a meaningful order, such as numerically or alphabetically.
 
 # Syntax:
+
+# For arrays
 array.sort
+array.sort { |a, b| custom_block }   # Allows custom sorting logic
 
 # For descending order:
 array.sort.reverse
 # Or use
 array.sort { |a, b| b <=> a }
-
-# Allows custom sorting logic
-array.sort { |a, b| custom_block }
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
@@ -244,10 +325,19 @@ reduce or inject
 # Why use it: To condense a collection into a single value by repeatedly applying an operation (e.g., summing up all prices in a cart).
 
 # Syntax:
+
+# For arrays
 array.reduce(initial_value) { |accumulator, element| block }
 # `initial_value` is optional. If omitted, the first element is used as the starting value.
+
+array.reduce { |accumulator, element| block }   # Without initial value.
+
+# For hashes
+hash.reduce(initial_value) { |accumulator, (key, value)| block }
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that sums all elements in an array.
+
 # Solution 1
 def sum_array(numbers)
   numbers.reduce(0) { |accumulator, num| accumulator + num }
@@ -269,7 +359,6 @@ numbers = [1, 2, 3, 4]
 p sum_array(numbers)
 # Output: 10
 
-
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that finds the product of all elements in an array.
 
@@ -281,9 +370,8 @@ numbers = [2, 3, 4]
 p product_of_array(numbers)
 # Output: 24
 
-
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that returns the total sum of an array of integers.
+# Problem 3: Write a function that returns the total sum of an array of integers using this (:+) syntax inside the method.
 
 def total_sum(numbers)
   numbers.reduce(:+)
@@ -293,9 +381,8 @@ numbers = [1, 2, 3, 4]
 p total_sum(numbers)
 # Output: 10
 
-
 #------------------------------------------------------------------------------
-# Problem 4: Write a function that returns the total sum of a range of numbers.
+# Problem 4: Write a function that returns the total sum of a range of numbers using this (:+) syntax inside the method.
 
 def sum_range(range)
   range.reduce(:+)
@@ -303,6 +390,21 @@ end
 
 p sum_range(1..5)
 # Output: 15
+
+#------------------------------------------------------------------------------
+# Problem 5: Write a function that sums all the values in a hash.
+
+def sum_hash_values(hash)
+  hash.reduce(0) { |sum, (_, value)| sum + value }
+  # reduce(0): Starts with an initial value of 0 for the sum.
+  # |sum, (_, value)|: Iterates through each key-value pair; ignores the key (_), uses the value.
+  # sum + value: Adds the current value to the running total (sum).
+end
+
+data = { a: 1, b: 2, c: 3 }
+p sum_hash_values(data)
+# Output: 6
+
 
 
 
@@ -315,7 +417,13 @@ find
 # Why use it: Searching through data to get the initial match (e.g., finding the first user over age 18).
 
 # Syntax:
-collection.find { |element| condition }
+
+# For arrays
+array.find { |element| condition }
+
+# For hashes
+hash.find { |key, value| condition }
+
 # Returns the first element that satisfies the condition, or `nil` if no match is found.
 
 #------------------------------------------------------------------------------
@@ -331,9 +439,10 @@ p first_even(numbers)
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that returns the first word longer than 4 letters.
-# Solution 1
+
+# Solution
 def first_long_word(words)
-  words.find { |word| word.length > 4 }
+  words.find { |word| word.size > 4 }
 end
 
 words = ["cat", "door", "apple", "hi"]
@@ -341,16 +450,16 @@ p first_long_word(words)
 # Output: "apple"
 
 
-# Solution 2
-def first_long_word(words)
-  words.find do |word|
-    word.size > 4
-  end
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that finds the First Key-Value Pair with a Specific Value
+
+def find_value_in_hash(hash, target)
+  hash.find { |_, value| value == target }
 end
 
-words = ["cat", "door", "apple", "hi"]
-p first_long_word(words)
-# Output: "apple"
+data = { a: 1, b: 2, c: 3 }
+p find_value_in_hash(data, 2)
+# Output: [:b, 2]
 
 
 
@@ -359,13 +468,19 @@ count
 # Why use it: Determining the total number of items (e.g., array.count) or those meeting specific criteria (e.g., array.count { |x| x > 10 }).
 
 # Syntax:
-array.count                  # Returns the total number of elements
-array.count(value)           # Counts how many elements equal `value`
-array.count { |element| condition }
-# Counts how many elements satisfy the condition
+
+# For Arrays:
+array.count                            # Counts all elements.
+array.count { |element| condition }    # Counts elements matching a condition.
+array.count(value)                     # Counts elements equal to the value.
+
+# For Hashes:
+hash.count                             # Counts the total number of key-value pairs.
+hash.count { |key, value| condition }  # Counts key-value pairs matching a condition.
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that counts how many numbers are greater than 10.
-# Solution 1
+
 def count_greater_than_ten(numbers)
   numbers.count { |num| num > 10 }
 end
@@ -374,17 +489,34 @@ numbers = [5, 12, 13, 8, 20]
 p count_greater_than_ten(numbers)
 # Output: 3
 
+#------------------------------------------------------------------------------
+# Problem 2: Count occurrences of a specific element in an array.
 
-# Solution 2
-def count_greater_than_ten(numbers)
-  numbers.count do |num|
-    num > 10
-  end
+def count_specific_element(array, target)
+  array.count(target)
 end
 
-numbers = [5, 12, 13, 8, 20]
-p count_greater_than_ten(numbers)
+values = [1, 2, 2, 3, 3, 3]
+p count_specific_element(values, 3)
 # Output: 3
+
+#------------------------------------------------------------------------------
+# Problem 3: Count the total number of key-value pairs in a hash.
+
+data = { a: 1, b: 2, c: 3 }
+p data.count
+# Output: 3
+
+#------------------------------------------------------------------------------
+# Problem 4: Count key-value pairs in a hash matching a condition.
+
+def count_matching_pairs(hash)
+  hash.count { |key, value| value > 1 }
+end
+
+hash = { a: 1, b: 2, c: 3 }
+p count_matching_pairs(hash)
+# Output: 2
 
 
 
@@ -452,12 +584,17 @@ any?
 # What it does: Checks if at least one element meets the condition in the block.
 # Why use it: Quick way to see if there’s a match for a given criterion.
 
-# Syntax:
-collection.any? { |element| condition }
-# condition that returns true or false
+# Syntax:      # Returns true if at least one element matches a condition.
+
+# Array:
+array.any? { |element| condition }
+
+# Hash:
+hash.any? { |key, value| condition }
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of numbers and returns true if there is at least one negative number?
+
 def any_negative?(numbers)
   numbers.any? { |n| n < 0 }
 end
@@ -472,9 +609,13 @@ all?
 # What it does: Checks if all elements meet the condition in the block.
 # Why use it: Validates that every item in the collection satisfies a requirement.
 
-# Syntax:
-collection.all? { |element| condition }
-# condition that returns true or false
+# Syntax:     # Returns true if all elements match a condition.
+
+# Array:
+array.all? { |element| condition }
+
+# Hash:
+hash.all? { |key, value| condition }
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of numbers and returns true if all numbers are positive?
@@ -493,9 +634,13 @@ none?
 # What it does: Checks if no elements in the collection meet the condition in the block.
 # Why use it: Confirm that a certain condition does not apply to any element.
 
-# Syntax:
-collection.none? { |element| condition }
-# condition that returns true or false
+# Syntax:     # Returns true if no elements match a condition.
+
+# Array:
+array.none? { |element| condition }
+
+# Hash:
+hash.none? { |key, value| condition }
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of words and returns true if none of them start with "z"?
@@ -515,9 +660,14 @@ sum
 # Why use it: Simplifies the process of adding up numbers (e.g., total points scored by a team).
 
 # Syntax:
+
+# Array:
 array.sum                        # Returns the sum of all elements
+array.sum { |element| block }    # Applies a transformation before summing.
 array.sum(initial_value)         # Adds the elements to the initial value
-array.sum { |element| block }    # Sums the result of applying a block to each element
+
+# Hash:
+hash.sum { |key, value| block } # Applies a transformation before summing key-value pairs.
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the total sum of an array of integers.
@@ -550,15 +700,55 @@ sort_by
 # Syntax:
 collection.sort_by { |element| block }
 
+# Array:
+array.sort_by { |element| block }
+
+# Hash:
+hash.sort_by { |key, value| block }
+
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and returns them sorted by length?
-def sort_by_length(strings)
-  strings.sort_by { |s| s.length }
+# Problem 1: Write a function that sort an array of numbers in ascending order.
+
+def sort_numbers(array)
+  array.sort_by { |num| num } # Sorts by the numbers themselves.
+end
+
+numbers = [5, 3, 8, 1]
+p sort_numbers(numbers)
+# Output: [1, 3, 5, 8]
+
+#------------------------------------------------------------------------------
+# Problem 2: Sort an array of strings by their length.
+
+def sort_by_length(array)
+  array.sort_by { |str| str.length } # Sorts by string length.
 end
 
 words = ["apple", "cat", "banana"]
 p sort_by_length(words)
 # Output: ["cat", "apple", "banana"]
+
+#------------------------------------------------------------------------------
+# Problem 3: Sort a hash by its keys.
+
+def sort_hash_by_keys(hash)
+  hash.sort_by { |key, _| key } # Sorts by keys (alphabetical order).
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+p sort_hash_by_keys(example_hash)
+# Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+#------------------------------------------------------------------------------
+# Problem 4: Sort a hash by its values.
+
+def sort_hash_by_values(hash)
+  hash.sort_by { |_, value| value } # Sorts by values (numerical order).
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+p sort_hash_by_values(example_hash)
+# Output: [[:a, 1], [:b, 2], [:c, 3]]
 
 
 
@@ -567,16 +757,56 @@ min_by
 # Why use it: Useful for retrieving the "smallest" item based on a custom comparison.
 
 # Syntax:
-collection.min_by { |element| block }
+
+# Array:
+array.min_by { |element| block }
+
+# Hash:
+hash.min_by { |key, value| block }
+
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and returns the string with the fewest characters?
-def shortest_string(strings)
-  strings.min_by { |s| s.length }
+# Problem 1: Write a function that finds the minimum number in an array.
+
+def find_min_number(array)
+  array.min_by { |num| num } # Finds the element with the smallest value.
+end
+
+numbers = [5, 3, 8, 1]
+p find_min_number(numbers)
+# Output: 1
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that finds the shortest string in an array.
+
+def find_shortest_string(array)
+  array.min_by { |str| str.length } # Finds the string with the smallest length.
 end
 
 words = ["apple", "cat", "banana"]
-p shortest_string(words)
+p find_shortest_string(words)
 # Output: "cat"
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that finds the key-value pair in a hash with the smallest value.
+
+def find_min_value(hash)
+  hash.min_by { |_, value| value } # Finds the pair with the smallest value.
+end
+
+example_hash = { a: 10, b: 5, c: 8 }
+p find_min_value(example_hash)
+# Output: [:b, 5]
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that finds the key-value pair in a hash where the key is alphabetically smallest.
+
+def find_min_key(hash)
+  hash.min_by { |key, _| key } # Finds the pair with the smallest key alphabetically.
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+p find_min_key(example_hash)
+# Output: [:a, 1]
 
 
 
@@ -585,10 +815,16 @@ each_with_index
 # Why use it: Needed when you must access or use the index during iteration.
 
 # Syntax:
-collection.each_with_index { |element, index| block }
+
+# Array:
+array.each_with_index { |element, index| block }
+
+# Hash:
+# (Hashes don't inherently support indexing, so this is rarely applicable.)
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of strings and prints each string with its index?
+
 def print_with_index(strings)
   strings.each_with_index do |str, i|
     puts "#{i}: #{str}"
@@ -608,8 +844,13 @@ each_with_object
 # Why use it: Creating or populating a data structure (like a hash) while iterating.
 
 # Syntax:
-collection.each_with_object(initial_object) { |element, obj| block }
+
+# Array:
+array.each_with_object(initial_object) { |element, obj| block }
 # `initial_object` is the object being built or modified (e.g., a hash or array).
+
+# Hash:
+hash.each_with_object(initial_object) { |(key, value), obj| block }
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of words and returns a hash mapping each word to its length?
