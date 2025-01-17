@@ -791,7 +791,7 @@ even, odd = numbers.partition { |num| num.even? }
 # Problem 2: Write a function that partitions an array into numbers greater than 10 from others.
 
 def partition_greater_than_10(numbers)
-  numbers.partition { |num| num > 10 }
+
 end
 
 nums = [5, 15, 8, 20, 3]
