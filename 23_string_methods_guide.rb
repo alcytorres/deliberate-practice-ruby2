@@ -82,8 +82,10 @@ string.size
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the length of a given string using .length (or .size).
+
 def string_length(str)
   str.length
+
 end
 long_word = "supercalifragilistic"
 p string_length(long_word)
@@ -92,14 +94,33 @@ p string_length(long_word)
 
 
 include?
-# What it does: Checks if a given substring exists within a string.
-# Why use it: Substring searches, such as detecting if "error" appears in a log message.
+# What it does: Checks if a specific element exists in a collection (array or string).
+# Why use it: To quickly verify if a value or substring is present.
 
 # Syntax:
-string.include?("substring")
+
+# For arrays
+array.include?(element)
+
+# For strings
+string.include?(substring)
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that checks if a string contains the substring "ruby".
+# Problem 1: Write a function that checks if a number exists in an array.
+
+def array_includes_number?(array, number)
+  array.include?(number)
+end
+
+nums = [1, 2, 3, 4, 5]
+p array_includes_number?(nums, 3)
+# Output: true
+
+p array_includes_number?(nums, 6)
+# Output: false
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that checks if a string contains the substring "ruby".
 
 def contains_ruby?(str)
   str.include?("ruby")
@@ -113,7 +134,7 @@ p contains_ruby?(string2)
 # Output: false
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that checks if a name is in a list of guests (comma-separated string).
+# Problem 3: Write a function that checks if a name is in a list of guests (comma-separated string).
 
 def guest_in_list?(guest_list, name)
   guest_list.include?(name)
@@ -123,6 +144,20 @@ list = "Alice,Bob,Carol"
 p guest_in_list?(list, "Bob")
 # Output: true
 p guest_in_list?(list, "David")
+# Output: false
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that checks if a hash includes a specific key.
+
+def includes_key?(hash, key)
+  hash.include?(key)
+end
+
+data = { name: "Alice", age: 25 }
+p includes_key?(data, :name)
+# Output: true
+
+p includes_key?(data, :height)
 # Output: false
 
 

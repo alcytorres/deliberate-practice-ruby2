@@ -520,8 +520,30 @@ nums = [-3, 0, 5, -1, 2]
 
 
 
+
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that removes all even numbers from an array.
+# Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
+
+def remove_negatives(numbers)
+
+end
+
+nums = [-1, 2, -3, 4]
+# p remove_negatives(nums)
+
+
+
+# # Solution
+# def remove_negatives(numbers)
+#   numbers.reject { |n| n < 0 }
+# end
+
+# nums = [-1, 2, -3, 4]
+# p remove_negatives(nums)
+# # Output: [2, 4]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that removes all even numbers from an array.
 
 def reject_even_numbers(array)
 
@@ -543,7 +565,7 @@ nums = [1, 2, 3, 4, 5, 6]
 
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that exclude key-value pairs from a hash where the value is less than 10.
+# Problem 3: Write a function that exclude key-value pairs from a hash where the value is less than 10.
 
 def reject_values_less_than_10(hash)
 
@@ -564,7 +586,7 @@ data = { a: 5, b: 15, c: 8, d: 20 }
 # # Output: { b: 15, d: 20 }
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that exclude empty strings from an array.
+# Problem 4: Write a function that exclude empty strings from an array.
 
 def reject_empty_strings(strings)
 
@@ -583,7 +605,6 @@ words = ["hello", "", "world", "", "ruby"]
 # words = ["hello", "", "world", "", "ruby"]
 # p reject_empty_strings(words)
 # # Output: ["hello", "world", "ruby"]
-
 
 
 #------------------------------------------------------------------------------

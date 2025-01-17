@@ -178,27 +178,64 @@ p select_positive_numbers(nums)
 
 
 sort
-# What it does: Returns a new array with the elements sorted in ascending order.
-# Why use it: Organize elements in a specific order, such as numerical or alphabetical.
+# What it does: Returns a new array with the elements sorted in ascending order by default.
+# Why use it: Organizing data in a meaningful order, such as numerically or alphabetically.
 
 # Syntax:
-# Sorts in ascending order
 array.sort
+
+# For descending order:
+array.sort.reverse
+# Or use
+array.sort { |a, b| b <=> a }
 
 # Allows custom sorting logic
 array.sort { |a, b| custom_block }
 
-# comparison logic
-a <=> b # default comparison operator
-
 #------------------------------------------------------------------------------
-# Problem: Write a function that takes an array of numbers and returns the array sorted in ascending order.
-def sort_array(numbers)
+# Problem 1: Write a function that sorts an array of numbers in ascending order.
+
+def sort_ascending(numbers)
   numbers.sort
 end
 
-numbers = [5, 3, 8, 1, 4] # Output: [1, 3, 4, 5, 8]
-p sort_array(numbers)
+nums = [5, 2, 8, 1, 3]
+p sort_ascending(nums)
+# Output: [1, 2, 3, 5, 8]
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that sorts an array of strings in alphabetical order.
+
+def sort_alphabetical(words)
+  words.sort
+end
+
+word_list = ["banana", "apple", "cherry"]
+p sort_alphabetical(word_list)
+# Output: ["apple", "banana", "cherry"]
+
+#------------------------------------------------------------------------------
+# Problem 3: Sort an array of numbers in descending order.
+
+def sort_descending(numbers)
+  numbers.sort.reverse
+end
+
+nums = [5, 2, 8, 1]
+p sort_descending(nums)
+# Output: [8, 5, 2, 1]
+
+#------------------------------------------------------------------------------
+# Problem 4: Sort an array of numbers in descending order using this syntax `{ |a, b| b <=> a }`
+
+def sort_descending(numbers)
+  numbers.sort { |a, b| b <=> a }
+end
+
+nums = [5, 2, 8, 1]
+p sort_descending(nums)
+# Output: [8, 5, 2, 1]
 
 
 
@@ -353,13 +390,21 @@ p count_greater_than_ten(numbers)
 
 reject
 # What it does: Returns an array of elements for which the block condition is false.
-# Why use it: Opposite of .select — filters out elements you don't want.
+# Why use it: To create a new collection without certain elements based on a condition. The opposite of .select
 
 # Syntax:
-collection.reject { |element| condition }
+
+# For Arrays:
+array.reject { |element| condition }
+# Returns a new array with elements that do NOT satisfy the condition.
+
+# For Hashes:
+hash.reject { |key, value| condition }
+# Returns a new hash with key-value pairs that do NOT satisfy the condition.
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
+
 def remove_negatives(numbers)
   numbers.reject { |n| n < 0 }
 end
@@ -367,6 +412,39 @@ end
 nums = [-1, 2, -3, 4]
 p remove_negatives(nums)
 # Output: [2, 4]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that removes all even numbers from an array.
+
+def reject_even_numbers(array)
+  array.reject { |num| num.even? }
+end
+
+nums = [1, 2, 3, 4, 5, 6]
+p reject_even_numbers(nums)
+# Output: [1, 3, 5]
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that exclude key-value pairs from a hash where the value is less than 10.
+
+def reject_values_less_than_10(hash)
+  hash.reject { |key, value| value < 10 }
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+p reject_values_less_than_10(data)
+# Output: { b: 15, d: 20 }
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that exclude empty strings from an array.
+
+def reject_empty_strings(strings)
+  strings.reject { |str| str.empty? }
+end
+
+words = ["hello", "", "world", "", "ruby"]
+p reject_empty_strings(words)
+# Output: ["hello", "world", "ruby"]
 
 
 

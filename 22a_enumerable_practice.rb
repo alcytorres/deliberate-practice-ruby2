@@ -207,29 +207,91 @@ nums = [-3, 0, 5, -1, 2]
 # # Output: [5, 2]
 
 
-
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes an array of numbers and returns the array sorted in ascending order.
+# Problem 1: Write a function that sorts an array of numbers in ascending order.
 
-def sort_array(numbers)
+def sort_ascending(numbers)
 
 end
 
-numbers = [5, 3, 8, 1, 4]
-p sort_array(numbers)
-# Output: [1, 3, 4, 5, 8]
+nums = [5, 2, 8, 1, 3]
+# p sort_ascending(nums)
+# Output: [1, 2, 3, 5, 8]
+
+
+# # Solution
+# def sort_ascending(numbers)
+#   numbers.sort
+# end
+
+# nums = [5, 2, 8, 1, 3]
+# p sort_ascending(nums)
+# # Output: [1, 2, 3, 5, 8]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that sorts an array of strings in alphabetical order.
+
+def sort_alphabetical(words)
+
+end
+
+word_list = ["banana", "apple", "cherry"]
+# p sort_alphabetical(word_list)
+# Output: ["apple", "banana", "cherry"]
 
 
 
 # # Solution
-# def sort_array(numbers)
-#   numbers.sort
+# def sort_alphabetical(words)
+#   words.sort
 # end
 
-# numbers = [5, 3, 8, 1, 4]
-# p sort_array(numbers)
-# # Output: [1, 3, 4, 5, 8]
+# word_list = ["banana", "apple", "cherry"]
+# p sort_alphabetical(word_list)
+# # Output: ["apple", "banana", "cherry"]
 
+#------------------------------------------------------------------------------
+# Problem 3: Sort an array of numbers in descending order.
+
+def sort_descending(numbers)
+
+end
+
+nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# Output: [8, 5, 2, 1]
+
+
+# # Solution
+# def sort_descending(numbers)
+#   numbers.sort.reverse
+# end
+
+# nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# # Output: [8, 5, 2, 1]
+
+#------------------------------------------------------------------------------
+# Problem 4: Sort an array of numbers in descending order using this syntax `{ |a, b| b <=> a }`
+
+def sort_descending(numbers)
+
+end
+
+nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# Output: [8, 5, 2, 1]
+
+
+
+# # Solution
+# def sort_descending(numbers)
+#   numbers.sort { |a, b| b <=> a }
+# end
+
+# nums = [5, 2, 8, 1]
+# p sort_descending(nums)
+# # Output: [8, 5, 2, 1]
 
 
 #------------------------------------------------------------------------------
@@ -452,6 +514,70 @@ nums = [-1, 2, -3, 4]
 # nums = [-1, 2, -3, 4]
 # p remove_negatives(nums)
 # # Output: [2, 4]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that removes all even numbers from an array.
+
+def reject_even_numbers(array)
+
+end
+
+nums = [1, 2, 3, 4, 5, 6]
+# p reject_even_numbers(nums)
+# Output: [1, 3, 5]
+
+
+# # Solution
+# def reject_even_numbers(array)
+#   array.reject { |num| num.even? }
+# end
+
+# nums = [1, 2, 3, 4, 5, 6]
+# p reject_even_numbers(nums)
+# # Output: [1, 3, 5]
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that exclude key-value pairs from a hash where the value is less than 10.
+
+def reject_values_less_than_10(hash)
+
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+# p reject_values_less_than_10(data)
+# Output: { b: 15, d: 20 }
+
+
+# # Solution
+# def reject_values_less_than_10(hash)
+#   hash.reject { |key, value| value < 10 }
+# end
+
+# data = { a: 5, b: 15, c: 8, d: 20 }
+# p reject_values_less_than_10(data)
+# # Output: { b: 15, d: 20 }
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that exclude empty strings from an array.
+
+def reject_empty_strings(strings)
+
+end
+
+words = ["hello", "", "world", "", "ruby"]
+# p reject_empty_strings(words)
+# Output: ["hello", "world", "ruby"]
+
+
+# # Solution
+# def reject_empty_strings(strings)
+#   strings.reject { |str| str.empty? }
+# end
+
+# words = ["hello", "", "world", "", "ruby"]
+# p reject_empty_strings(words)
+# # Output: ["hello", "world", "ruby"]
 
 
 

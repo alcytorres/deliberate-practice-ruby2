@@ -355,7 +355,7 @@ p select_positive_numbers(nums)
 
 
 reject
-# What it does: Returns a new hash excluding the key-value pairs that meet the condition in the block.
+# What it does: Returns an array of elements for which the block condition is false.
 # Why use it: To create a new collection without certain elements based on a condition. The opposite of .select
 
 # Syntax:
@@ -369,7 +369,18 @@ hash.reject { |key, value| condition }
 # Returns a new hash with key-value pairs that do NOT satisfy the condition.
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that removes all even numbers from an array.
+# Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
+
+def remove_negatives(numbers)
+  numbers.reject { |n| n < 0 }
+end
+
+nums = [-1, 2, -3, 4]
+p remove_negatives(nums)
+# Output: [2, 4]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that removes all even numbers from an array.
 
 def reject_even_numbers(array)
   array.reject { |num| num.even? }
@@ -380,7 +391,7 @@ p reject_even_numbers(nums)
 # Output: [1, 3, 5]
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that exclude key-value pairs from a hash where the value is less than 10.
+# Problem 3: Write a function that exclude key-value pairs from a hash where the value is less than 10.
 
 def reject_values_less_than_10(hash)
   hash.reject { |key, value| value < 10 }
@@ -391,7 +402,7 @@ p reject_values_less_than_10(data)
 # Output: { b: 15, d: 20 }
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that exclude empty strings from an array.
+# Problem 4: Write a function that exclude empty strings from an array.
 
 def reject_empty_strings(strings)
   strings.reject { |str| str.empty? }
