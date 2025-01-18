@@ -473,9 +473,9 @@ def shift_element(array)
 end
 
 shift_array = [7, 8, 9]
+
 # p shift_element(shift_array)
 # Output: 7
-
 # p shift_array
 # Output Now: [8, 9]
 
@@ -487,9 +487,9 @@ shift_array = [7, 8, 9]
 # end
 
 # shift_array = [7, 8, 9]
+
 # p shift_element(shift_array)
 # # Output: 7
-
 # p shift_array
 # # Output Now: [8, 9]
 
@@ -503,7 +503,7 @@ end
 
 unshift_array = [2, 3]
 # p unshift_element(unshift_array, 1)
-
+# Output: [1, 2, 3]
 
 
 # # Solution
@@ -513,6 +513,7 @@ unshift_array = [2, 3]
 
 # unshift_array = [2, 3]
 # p unshift_element(unshift_array, 1)
+# # Output: [1, 2, 3]
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that takes in an array and 3 values, and unshifts the 3 values to the front of the array.

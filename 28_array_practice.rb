@@ -3,15 +3,14 @@
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
 
 def sort_ascending(numbers)
-
+  numbers.sort
 end
 
 nums = [5, 2, 8, 1, 3]
-# p sort_ascending(nums)
+p sort_ascending(nums)
 # Output: [1, 2, 3, 5, 8]
 
 
@@ -28,11 +27,11 @@ nums = [5, 2, 8, 1, 3]
 # Problem 2: Write a function that sorts an array of strings in alphabetical order.
 
 def sort_alphabetical(words)
-
+  words.sort
 end
 
 word_list = ["banana", "apple", "cherry"]
-# p sort_alphabetical(word_list)
+p sort_alphabetical(word_list)
 # Output: ["apple", "banana", "cherry"]
 
 
@@ -50,11 +49,11 @@ word_list = ["banana", "apple", "cherry"]
 # Problem 3: Sort an array of numbers in descending order.
 
 def sort_descending(numbers)
-
+  numbers.sort.reverse
 end
 
 nums = [5, 2, 8, 1]
-# p sort_descending(nums)
+p sort_descending(nums)
 # Output: [8, 5, 2, 1]
 
 
@@ -71,11 +70,11 @@ nums = [5, 2, 8, 1]
 # Problem 4: Sort an array of numbers in descending order using this syntax `{ |a, b| b <=> a }`
 
 def sort_descending(numbers)
-
+  numbers.sort {|a, b| b <=> a }
 end
 
 nums = [5, 2, 8, 1]
-# p sort_descending(nums)
+p sort_descending(nums)
 # Output: [8, 5, 2, 1]
 
 
@@ -93,18 +92,20 @@ nums = [5, 2, 8, 1]
 # Problem 5: Write a function that sorts a hash by its keys.
 
 def sort_hash_by_keys(hash)
-
+  hash.sort.to_h
 end
 
 example_hash = { c: 3, a: 1, b: 2 }
-# p sort_hash_by_keys(example_hash)
+p sort_hash_by_keys(example_hash)
 # Output: { a: 1, b: 2, c: 3 }
+
 
 # # Solution
 # def sort_hash_by_keys(hash)
 #   hash.sort.to_h # Sorts key-value pairs by keys and converts the result back to a hash.
+#   # .sort converts a hash into a sorted array of key-value pairs, so .to_h is needed to convert it back into a hash.
 # end
-#
+
 # example_hash = { c: 3, a: 1, b: 2 }
 # p sort_hash_by_keys(example_hash)
 # # Output: { a: 1, b: 2, c: 3 }
@@ -113,11 +114,11 @@ example_hash = { c: 3, a: 1, b: 2 }
 # Problem 6: Write a function that sorts a hash by its values.
 
 def sort_hash_by_values(hash)
-
+  hash.sort {|(_, value1), (_, value2)| value1 <=> value2 }.to_h
 end
 
 example_hash = { c: 3, a: 1, b: 2 }
-# p sort_hash_by_values(example_hash)
+p sort_hash_by_values(example_hash)
 # Output: { a: 1, b: 2, c: 3 }
 
 
@@ -136,11 +137,11 @@ example_hash = { c: 3, a: 1, b: 2 }
 # Problem 1: Write a function that adds a single element to an array.
 
 def add_element(array, element)
-
+  array.push(element)
 end
 
 numbers = [1, 2, 3]
-# p add_element(numbers, 4)
+p add_element(numbers, 4)
 # Output: [1, 2, 3, 4]
 
 
@@ -168,12 +169,13 @@ numbers = [1, 2, 3]
 # Problem 2: Write a function that adds all elements of one array to another array.
 
 def merge_arrays(arr1, arr2)
-
+  arr2.each {|elem| arr1.push(elem)}
+  arr1
 end
 
 nums1 = [1, 2]
 nums2 = [3, 4]
-# p merge_arrays(nums1, nums2)
+p merge_arrays(nums1, nums2)
 # Output: [1, 2, 3, 4]
 
 
@@ -182,7 +184,8 @@ nums2 = [3, 4]
 # def merge_arrays(arr1, arr2)
 #   arr2.each { |elem| arr1.push(elem) }
 #   # Iterates through arr2 and pushes each element into arr1
-#   arr1
+#   arr2
+#   # The explicit arr1 is required because .each returns the original array (arr2), not the updated arr1, so explicitly returning arr1 ensures the method outputs the merged array.
 # end
 
 # nums1 = [1, 2]
@@ -210,14 +213,14 @@ nums2 = [3, 4]
 # Problem 1: Write a function that removes the last element from an array and returns it.
 
 def remove_last(array)
-
+  array.pop
 end
 
 numbers = [1, 2, 3]
-# p remove_last(numbers)
-# # Output: 3
-# p numbers
-# # Output: [1, 2]
+p remove_last(numbers)
+# Output: 3
+p numbers
+# Output: [1, 2]
 
 
 
@@ -237,14 +240,14 @@ numbers = [1, 2, 3]
 # Problem 2: Write a function that removes the last 4 elements from an array and returns it.
 
 def remove_last(array)
-
+  array.pop(4)
 end
 
 numbers = [1, 2, 3, 4, 5]
-# p remove_last(numbers)
-# # Output: [2, 3, 4, 5]
-# p numbers
-# # Output: [1]
+p remove_last(numbers)
+# Output: [2, 3, 4, 5]
+p numbers
+# Output: [1]
 
 
 # # Solution
@@ -263,11 +266,13 @@ numbers = [1, 2, 3, 4, 5]
 # Problem 3: Write a function that repeatedly pops elements from an array until it's empty, returning them in a new array.
 
 def pop_all(array)
-
+  popped = []
+  popped << array.pop while array.any?
+  popped
 end
 
 nums = [5, 6, 7]
-# p pop_all(nums)
+p pop_all(nums)
 # Output: [7, 6, 5]
 
 
@@ -289,12 +294,12 @@ nums = [5, 6, 7]
 # Problem 1: Write a function that checks if a number exists in an array.
 
 def array_includes_number?(array, number)
-
+  array.include?(number)
 end
 
 nums = [1, 2, 3, 4, 5]
-# p array_includes_number?(nums, 3)     # Output: true
-# p array_includes_number?(nums, 6)     # Output: false
+p array_includes_number?(nums, 3)     # Output: true
+p array_includes_number?(nums, 6)     # Output: false
 
 
 # # Solution
@@ -310,13 +315,13 @@ nums = [1, 2, 3, 4, 5]
 # Problem 2: Write a function that checks if a string contains the substring "ruby".
 
 def contains_ruby?(str)
-
+  str.include?("ruby")
 end
 
 string1 = "I love ruby programming"
 string2 = "I love python programming"
-# p contains_ruby?(string1)             # Output: true
-# p contains_ruby?(string2)             # Output: false
+p contains_ruby?(string1)             # Output: true
+p contains_ruby?(string2)             # Output: false
 
 
 
@@ -334,12 +339,12 @@ string2 = "I love python programming"
 # Problem 3: Write a function that checks if a name is in a list of guests (comma-separated string).
 
 def guest_in_list?(guest_list, name)
-
+  guest_list.include?(name)
 end
 
 list = "Alice,Bob,Carol"
-# p guest_in_list?(list, "Bob")         # Output: true
-# p guest_in_list?(list, "David")       # Output: false
+p guest_in_list?(list, "Bob")         # Output: true
+p guest_in_list?(list, "David")       # Output: false
 
 
 
@@ -356,12 +361,12 @@ list = "Alice,Bob,Carol"
 # Problem 4: Write a function that checks if a hash includes a specific key.
 
 def includes_key?(hash, key)
-
+  hash.include?(key)
 end
 
 data = { name: "Alice", age: 25 }
-# p includes_key?(data, :name)           # Output: true
-# p includes_key?(data, :height)         # Output: false
+p includes_key?(data, :name)           # Output: true
+p includes_key?(data, :height)         # Output: false
 
 
 # # Solution
@@ -377,11 +382,11 @@ data = { name: "Alice", age: 25 }
 # Problem 1: Write a function that removes duplicates from an array of numbers.
 
 def remove_duplicates(numbers)
-
+  numbers.uniq
 end
 
 nums = [1, 2, 2, 3, 3, 3]
-# p remove_duplicates(nums)
+p remove_duplicates(nums)
 # Output: [1, 2, 3]
 
 
@@ -400,13 +405,12 @@ nums = [1, 2, 2, 3, 3, 3]
 # Problem 2: Write a function that returns the count of unique elements in an array.
 
 def count_unique_elements(array)
-
+  array.uniq.size
 end
 
 numbers = [1, 1, 2, 3, 2, 4]
-# p count_unique_elements(numbers)
+p count_unique_elements(numbers)
 # Output: 4
-
 
 
 # # Solution
@@ -423,11 +427,11 @@ numbers = [1, 1, 2, 3, 2, 4]
 # Problem 1: Write a function that takes in an array and returns its first element.
 
 def first_element(array)
-
+  array.first
 end
 
 numbers = [10, 20, 30]
-# p first_element(numbers)
+p first_element(numbers)
 # Output: 10
 
 
@@ -446,11 +450,11 @@ numbers = [10, 20, 30]
 # Problem 1: Write a function that takes in an array and returns its last element.
 
 def last_element(array)
-
+  array.last
 end
 
 numbers = [4, 5, 6]
-# p last_element(numbers)
+p last_element(numbers)
 # Output: 6
 
 
@@ -469,14 +473,14 @@ numbers = [4, 5, 6]
 # Problem 1: Write a function that takes in an array and removes its first element, returning the removed element.
 
 def shift_element(array)
-
+  array.shift
 end
 
 shift_array = [7, 8, 9]
-# p shift_element(shift_array)
-# Output: 7
 
-# p shift_array
+p shift_element(shift_array)
+# Output: 7
+p shift_array
 # Output Now: [8, 9]
 
 
@@ -491,18 +495,19 @@ shift_array = [7, 8, 9]
 # # Output: 7
 
 # p shift_array
-# # Output Now: [8, 9]
+# # Output: [8, 9]
 
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array and a value, and unshifts the value to the front of the array.
 
 def unshift_element(array, value)
-
+  array.unshift(value)
 end
 
 unshift_array = [2, 3]
-# p unshift_element(unshift_array, 1)
+p unshift_element(unshift_array, 1)
+# Output: [1, 2, 3]
 
 
 
@@ -513,16 +518,17 @@ unshift_array = [2, 3]
 
 # unshift_array = [2, 3]
 # p unshift_element(unshift_array, 1)
+# # Output: [1, 2, 3]
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that takes in an array and 3 values, and unshifts the 3 values to the front of the array.
 
 def unshift_element(array, value1, value2, value3)
-
+  array.unshift(value1, value2, value3)
 end
 
 unshift_array = [4, 5]
-# p unshift_element(unshift_array, 1, 2, 3)
+p unshift_element(unshift_array, 1, 2, 3)
 # Output Now: [1, 2, 3, 4, 5]
 
 
