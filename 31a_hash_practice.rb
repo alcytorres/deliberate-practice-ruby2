@@ -1,4 +1,8 @@
 #------------------------------------------------------------------------------
+# Highest-importance methods ( .keys, .values, .has_key?, .merge, .fetch, .select, .reject) appear regularly in typical hashing or dictionary tasks and are crucial for many solutions in easy/medium algorithmic problems.
+#------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
 # Problem 1: Write a function that returns an array of all keys in a given hash.
 
 def all_keys(hash)
@@ -106,6 +110,72 @@ movie = { title: "Matrix", year: 1999, rating: 8.7 }
 # # 8.7
 
 
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that returns true if the hash contains the given key.
+
+def hash_has_key?(hash, key)
+
+end
+
+data = { name: "Alice", age: 30 }
+
+# p hash_has_key?(data, :name)
+# # Output: true
+# p hash_has_key?(data, :height)
+# # Output: false
+
+
+# # Solution
+# def hash_has_key?(hash, key)
+#   hash.has_key?(key)
+# end
+
+# data = { name: "Alice", age: 30 }
+
+# p hash_has_key?(data, :name)
+# # Output: true
+# p hash_has_key?(data, :height)
+# # Output: false
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that takes a hash and a key as input and returns the value associated with the key if it exists; otherwise, return the string "Key not found".
+
+def fetch_value_if_key_exists(hash, key)
+  if hash.has_key?(key)
+    hash[key]
+    # Return the value associated with the key.
+  else
+    "Key not found"
+  end
+end
+
+data = { name: "Alice", age: 30 }
+
+# p fetch_value_if_key_exists(data, :age)
+# # Output: 30
+# p fetch_value_if_key_exists(data, :height)
+# # Output: "Key not found"
+
+
+
+# # Solution
+# def fetch_value_if_key_exists(hash, key)
+#   if hash.has_key?(key)
+#     hash[key]
+#     # Return the value associated with the key.
+#   else
+#     "Key not found"
+#   end
+# end
+
+# data = { name: "Alice", age: 30 }
+
+# p fetch_value_if_key_exists(data, :age)
+# # Output: 30
+# p fetch_value_if_key_exists(data, :height)
+# # Output: "Key not found"
+
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that merges two hashes, returning a new hash without modifying the originals.
@@ -174,7 +244,7 @@ hash2 = { b: 3, c: 4 }
 
 # # Solution
 # def merge_with_custom_logic(hash1, hash2)
-
+# hash1.merge(hash2) { |key, old_val, new_val| old_val + new_val }
 # end
 
 # hash1 = { a: 1, b: 2 }
@@ -249,185 +319,6 @@ data = { name: "Alice", age: 30 }
 # data = { name: "Alice", age: 30 }
 # p fetch_with_block(data, :height)
 # # Output: "height not found"
-
-
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that retrieve a nested value from a hash.
-
-def fetch_nested_value(hash, key1, key2)
-
-end
-
-data = { user: { name: "Alice", age: 30 } }
-
-# p fetch_nested_value(data, :user, :name)
-# # Output: "Alice"
-# p fetch_nested_value(data, :user, :height)
-# # Output: nil (key :height does not exist)
-
-
-
-# # Solution
-# def fetch_nested_value(hash, key1, key2)
-#   hash.dig(key1, key2)
-# end
-
-# data = { user: { name: "Alice", age: 30 } }
-
-# p fetch_nested_value(data, :user, :name)
-# # Output: "Alice"
-# p fetch_nested_value(data, :user, :height)
-# # Output: nil (key :height does not exist)
-
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that retrieve a nested value from an array.
-
-def fetch_nested_array_value(array, index1, index2)
-
-end
-
-data = [[1, 2, 3], [4, 5, 6]]
-
-# p fetch_nested_array_value(data, 1, 2)
-# # Output: 6
-# p fetch_nested_array_value(data, 2, 0)
-# # Output: nil (index 2 does not exist)
-
-
-# # Solution
-# def fetch_nested_array_value(array, index1, index2)
-#   array.dig(index1, index2)
-# end
-
-# data = [[1, 2, 3], [4, 5, 6]]
-
-# p fetch_nested_array_value(data, 1, 2)
-# # Output: 6
-# p fetch_nested_array_value(data, 2, 0)
-# # Output: nil (index 2 does not exist)
-
-
-#------------------------------------------------------------------------------
-# Problem 3: Write a function that retrieve a value from a mix of hash and array.
-
-def fetch_mixed_nested_value(data, key1, index2)
-
-end
-
-data = { users: [{ name: "Alice" }, { name: "Bob" }] }
-
-# p fetch_mixed_nested_value(data, :users, 1)
-# # Output: { name: "Bob" }
-# p fetch_mixed_nested_value(data, :users, 2)
-# # Output: nil (index 2 does not exist)
-
-
-# # Solution
-# def fetch_mixed_nested_value(data, key1, index2)
-#   data.dig(key1, index2)
-# end
-
-# data = { users: [{ name: "Alice" }, { name: "Bob" }] }
-
-# p fetch_mixed_nested_value(data, :users, 1)
-# # Output: { name: "Bob" }
-# p fetch_mixed_nested_value(data, :users, 2)
-# # Output: nil (index 2 does not exist)
-
-
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that returns true if the hash contains the given key.
-
-def hash_has_key?(hash, key)
-
-end
-
-data = { name: "Alice", age: 30 }
-
-# p hash_has_key?(data, :name)
-# # Output: true
-# p hash_has_key?(data, :height)
-# # Output: false
-
-
-# # Solution
-# def hash_has_key?(hash, key)
-#   hash.has_key?(key)
-# end
-
-# data = { name: "Alice", age: 30 }
-
-# p hash_has_key?(data, :name)
-# # Output: true
-# p hash_has_key?(data, :height)
-# # Output: false
-
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that takes a hash and a key as input and returns the value associated with the key if it exists; otherwise, return the string "Key not found".
-
-def fetch_value_if_key_exists(hash, key)
-  if hash.has_key?(key)
-    hash[key]
-    # Return the value associated with the key.
-  else
-    "Key not found"
-  end
-end
-
-data = { name: "Alice", age: 30 }
-
-# p fetch_value_if_key_exists(data, :age)
-# # Output: 30
-# p fetch_value_if_key_exists(data, :height)
-# # Output: "Key not found"
-
-
-
-# # Solution
-# def fetch_value_if_key_exists(hash, key)
-#   if hash.has_key?(key)
-#     hash[key]
-#     # Return the value associated with the key.
-#   else
-#     "Key not found"
-#   end
-# end
-
-# data = { name: "Alice", age: 30 }
-
-# p fetch_value_if_key_exists(data, :age)
-# # Output: 30
-# p fetch_value_if_key_exists(data, :height)
-# # Output: "Key not found"
-
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in a hash and returns a new hash with inverted keys and values.
-
-def invert_hash(hash)
-
-end
-
-invert_example = { a: 1, b: 2 }
-
-# p invert_hash(invert_example)
-# Output: { 1 => :a, 2 => :b }
-
-
-
-# # Solution
-# def invert_hash(hash)
-#   hash.invert
-# end
-
-# invert_example = { a: 1, b: 2 }
-
-# p invert_hash(invert_example)
-# # Output: { 1 => :a, 2 => :b }
 
 
 
@@ -607,137 +498,95 @@ words = ["hello", "", "world", "", "ruby"]
 # # Output: ["hello", "world", "ruby"]
 
 
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that converts a range to an array.
-
-def range_to_array(range)
-
-end
-
-range = (1..5)
-# p range_to_array(range)
-# Output: [1, 2, 3, 4, 5]
-
-
-# # Solution
-# def range_to_array(range)
-#   range.to_a
-# end
-
-# range = (1..5)
-# p range_to_array(range)
-# # Output: [1, 2, 3, 4, 5]
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that converts a hash to an array of key-value pairs.
-
-def hash_to_array(hash)
-
-end
-
-hash = { a: 1, b: 2, c: 3 }
-# p hash_to_array(hash)
-# Output: [[:a, 1], [:b, 2], [:c, 3]]
-
-
-# # Solution
-# def hash_to_array(hash)
-#   hash.to_a
-# end
-
-# hash = { a: 1, b: 2, c: 3 }
-# p hash_to_array(hash)
-# # Output: [[:a, 1], [:b, 2], [:c, 3]]
 
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that converts an enumerator to an array.
+# Medium-importance methods (.dig, .delete_if, .to_a, .to_h, .each_key, .each_value) fill more specific needs—safe nested access, destructive cleanup, or iterating in specialized ways.
+#------------------------------------------------------------------------------
 
-def enumerator_to_array(enum)
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that retrieve a nested value from a hash.
+
+def fetch_nested_value(hash, key1, key2)
 
 end
 
-enum = (1..3).each
-# p enumerator_to_array(enum)
-# Output: [1, 2, 3]
+data = { user: { name: "Alice", age: 30 } }
+
+# p fetch_nested_value(data, :user, :name)
+# # Output: "Alice"
+# p fetch_nested_value(data, :user, :height)
+# # Output: nil (key :height does not exist)
 
 
 
 # # Solution
-# def enumerator_to_array(enum)
-#   enum.to_a
+# def fetch_nested_value(hash, key1, key2)
+#   hash.dig(key1, key2)
 # end
 
-# enum = (1..3).each
-# p enumerator_to_array(enum)
-# # Output: [1, 2, 3]
+# data = { user: { name: "Alice", age: 30 } }
 
+# p fetch_nested_value(data, :user, :name)
+# # Output: "Alice"
+# p fetch_nested_value(data, :user, :height)
+# # Output: nil (key :height does not exist)
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that converts an array of key-value pairs into a hash.
+# Problem 2: Write a function that retrieve a nested value from an array.
 
-def array_to_hash(array)
+def fetch_nested_array_value(array, index1, index2)
 
 end
 
-array = [[:a, 1], [:b, 2], [:c, 3]]
-# p array_to_hash(array)
-# Output: { a: 1, b: 2, c: 3 }
+data = [[1, 2, 3], [4, 5, 6]]
+
+# p fetch_nested_array_value(data, 1, 2)
+# # Output: 6
+# p fetch_nested_array_value(data, 2, 0)
+# # Output: nil (index 2 does not exist)
 
 
 # # Solution
-# def array_to_hash(array)
-#   array.to_h
+# def fetch_nested_array_value(array, index1, index2)
+#   array.dig(index1, index2)
 # end
 
-# array = [[:a, 1], [:b, 2], [:c, 3]]
-# p array_to_hash(array)
-# # Output: { a: 1, b: 2, c: 3 }
+# data = [[1, 2, 3], [4, 5, 6]]
+
+# p fetch_nested_array_value(data, 1, 2)
+# # Output: 6
+# p fetch_nested_array_value(data, 2, 0)
+# # Output: nil (index 2 does not exist)
+
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that converts an array of key-value pairs with duplicates (last one wins).
+# Problem 3: Write a function that retrieve a value from a mix of hash and array.
 
-def array_with_duplicates_to_hash(array)
-
-end
-
-array = [[:a, 1], [:b, 2], [:a, 3]]
-# p array_with_duplicates_to_hash(array)
-# Output: { a: 3, b: 2 } (last :a pair wins)
-
-
-# # Solution
-# def array_with_duplicates_to_hash(array)
-#   array.to_h
-#   # If there are duplicate keys, the last key-value pair wins.
-# end
-
-# array = [[:a, 1], [:b, 2], [:a, 3]]
-# p array_with_duplicates_to_hash(array)
-# # Output: { a: 3, b: 2 } (last :a pair wins)
-
-#------------------------------------------------------------------------------
-# Problem 3: Write a function that converts an enumerator of pairs to a hash.
-
-def enumerator_to_hash(enum)
+def fetch_mixed_nested_value(data, key1, index2)
 
 end
 
-enum = [[:x, 10], [:y, 20]].each
-# p enumerator_to_hash(enum)
-# Output: { x: 10, y: 20 }
+data = { users: [{ name: "Alice" }, { name: "Bob" }] }
+
+# p fetch_mixed_nested_value(data, :users, 1)
+# # Output: { name: "Bob" }
+# p fetch_mixed_nested_value(data, :users, 2)
+# # Output: nil (index 2 does not exist)
 
 
 # # Solution
-# def enumerator_to_hash(enum)
-#   enum.to_h
+# def fetch_mixed_nested_value(data, key1, index2)
+#   data.dig(key1, index2)
 # end
 
-# enum = [[:x, 10], [:y, 20]].each
-# p enumerator_to_hash(enum)
-# # Output: { x: 10, y: 20 }
+# data = { users: [{ name: "Alice" }, { name: "Bob" }] }
 
+# p fetch_mixed_nested_value(data, :users, 1)
+# # Output: { name: "Bob" }
+# p fetch_mixed_nested_value(data, :users, 2)
+# # Output: nil (index 2 does not exist)
 
 
 #------------------------------------------------------------------------------
@@ -814,6 +663,138 @@ remove_low_values!(data)
 # # Output: { b: 15, d: 20 }
 
 
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that converts a range to an array.
+
+def range_to_array(range)
+
+end
+
+range = (1..5)
+# p range_to_array(range)
+# Output: [1, 2, 3, 4, 5]
+
+
+# # Solution
+# def range_to_array(range)
+#   range.to_a
+# end
+
+# range = (1..5)
+# p range_to_array(range)
+# # Output: [1, 2, 3, 4, 5]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that converts a hash to an array of key-value pairs.
+
+def hash_to_array(hash)
+
+end
+
+hash = { a: 1, b: 2, c: 3 }
+# p hash_to_array(hash)
+# Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+
+# # Solution
+# def hash_to_array(hash)
+#   hash.to_a
+# end
+
+# hash = { a: 1, b: 2, c: 3 }
+# p hash_to_array(hash)
+# # Output: [[:a, 1], [:b, 2], [:c, 3]]
+
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that converts an enumerator to an array.
+
+def enumerator_to_array(enum)
+
+end
+
+enum = (1..3).each
+# p enumerator_to_array(enum)
+# Output: [1, 2, 3]
+
+
+
+# # Solution
+# def enumerator_to_array(enum)
+#   enum.to_a
+# end
+
+# enum = (1..3).each
+# p enumerator_to_array(enum)
+# # Output: [1, 2, 3]
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that converts an array of key-value pairs into a hash.
+
+def array_to_hash(array)
+
+end
+
+array = [[:a, 1], [:b, 2], [:c, 3]]
+# p array_to_hash(array)
+# Output: { a: 1, b: 2, c: 3 }
+
+
+# # Solution
+# def array_to_hash(array)
+#   array.to_h
+# end
+
+# array = [[:a, 1], [:b, 2], [:c, 3]]
+# p array_to_hash(array)
+# # Output: { a: 1, b: 2, c: 3 }
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that converts an array of key-value pairs with duplicates (last one wins).
+
+def array_with_duplicates_to_hash(array)
+
+end
+
+array = [[:a, 1], [:b, 2], [:a, 3]]
+# p array_with_duplicates_to_hash(array)
+# Output: { a: 3, b: 2 } (last :a pair wins)
+
+
+# # Solution
+# def array_with_duplicates_to_hash(array)
+#   array.to_h
+#   # If there are duplicate keys, the last key-value pair wins.
+# end
+
+# array = [[:a, 1], [:b, 2], [:a, 3]]
+# p array_with_duplicates_to_hash(array)
+# # Output: { a: 3, b: 2 } (last :a pair wins)
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that converts an enumerator of pairs to a hash.
+
+def enumerator_to_hash(enum)
+
+end
+
+enum = [[:x, 10], [:y, 20]].each
+# p enumerator_to_hash(enum)
+# Output: { x: 10, y: 20 }
+
+
+# # Solution
+# def enumerator_to_hash(enum)
+#   enum.to_h
+# end
+
+# enum = [[:x, 10], [:y, 20]].each
+# p enumerator_to_hash(enum)
+# # Output: { x: 10, y: 20 }
+
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that prints all keys in a hash.
 
@@ -868,7 +849,6 @@ data = { name: "Alice", age: 30, city: "New York" }
 # # Output: [:name, :age, :city]
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that prints all values in a hash.
 
@@ -895,7 +875,6 @@ data = { name: "Alice", age: 30, city: "New York" }
 # # Alice
 # # 30
 # # New York
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that collect all values into an array.
@@ -924,6 +903,11 @@ data = { name: "Alice", age: 30, city: "New York" }
 # # Output: ["Alice", 30, "New York"]
 
 
+
+
+#------------------------------------------------------------------------------
+# Lower-importance methods (.transform_keys, .transform_values, .invert) are more specialized, helping handle unique transformations or reversed lookups.
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that converts all symbol keys to strings.
@@ -1018,7 +1002,6 @@ keys_to_symbols_in_place!(data)
 # # Output: { name: "Alice", age: 30 }
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that doubles all values in a hash.
 
@@ -1040,7 +1023,6 @@ data = { a: 1, b: 2, c: 3 }
 # data = { a: 1, b: 2, c: 3 }
 # p double_values(data)
 # # Output: { a: 2, b: 4, c: 6 }
-
 
 #------------------------------------------------------------------------------
 # Problem 2: Write a function that converts all values to strings.
@@ -1064,7 +1046,6 @@ data = { a: 1, b: 2, c: 3 }
 # p values_to_strings(data)
 # # Output: { a: "1", b: "2", c: "3" }
 
-
 #------------------------------------------------------------------------------
 # Problem 3: Write a function that takes a hash and a suffix string as input, and returns a new hash where the suffix is appended to each value in the hash.
 
@@ -1086,7 +1067,6 @@ data = { name: "Alice", city: "New York" }
 # data = { name: "Alice", city: "New York" }
 # p append_to_values(data, "!")
 # # Output: { name: "Alice!", city: "New York!" }
-
 
 #------------------------------------------------------------------------------
 # Problem 4: Write a function that takes a hash with mixed value types (e.g., strings, numbers) and returns a new hash where string values are converted to uppercase, numeric values are incremented by 10, and other values remain unchanged.
@@ -1122,7 +1102,6 @@ data = { name: "Alice", age: 30, city: "new york" }
 # p modify_mixed_values(data)
 # # Output: { name: "ALICE", age: 40, city: "NEW YORK" }
 
-
 #------------------------------------------------------------------------------
 # Problem 5: Write a function that takes a hash and doubles all its values in place, modifying the original hash.
 
@@ -1147,3 +1126,27 @@ double_values_in_place!(data)
 # p data
 # # Output: { a: 2, b: 4, c: 6 }
 
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in a hash and returns a new hash with inverted keys and values.
+
+def invert_hash(hash)
+
+end
+
+invert_example = { a: 1, b: 2 }
+
+# p invert_hash(invert_example)
+# Output: { 1 => :a, 2 => :b }
+
+
+
+# # Solution
+# def invert_hash(hash)
+#   hash.invert
+# end
+
+# invert_example = { a: 1, b: 2 }
+
+# p invert_hash(invert_example)
+# # Output: { 1 => :a, 2 => :b }

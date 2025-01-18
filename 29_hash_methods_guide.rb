@@ -1,3 +1,7 @@
+#------------------------------------------------------------------------------
+# Highest-importance methods ( .keys, .values, .has_key?, .merge, .fetch, .select, .reject) appear regularly in typical hashing or dictionary tasks and are crucial for many solutions in easy/medium algorithmic problems.
+#------------------------------------------------------------------------------
+
 keys
 # What it does: Returns an array of all the keys in a hash.
 # Why use it: Quickly iterating over or verifying the existence of specific keys.
@@ -67,6 +71,48 @@ print_values(movie)
 
 
 
+has_key?
+# What it does: Checks if the hash contains a given key (returns true or false).
+# Why use it: Quickly verify the presence of a key before accessing or modifying it.
+
+# Syntax:
+hash.has_key?(key)
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that returns true if the hash contains the given key.
+
+def hash_has_key?(hash, key)
+  hash.has_key?(key)
+end
+
+data = { name: "Alice", age: 30 }
+p hash_has_key?(data, :name)
+# Output: true
+
+p hash_has_key?(data, :height)
+# Output: false
+
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that uses .has_key? before fetching a value to avoid errors.
+
+def fetch_value_if_key_exists(hash, key)
+  if hash.has_key?(key)
+    hash[key]
+  else
+    "Key not found"
+  end
+end
+
+data = { name: "Alice", age: 30 }
+p fetch_value_if_key_exists(data, :age)
+# Output: 30
+
+p fetch_value_if_key_exists(data, :height)
+# Output: "Key not found"
+
+
+
 merge
 # What it does: Combines two hashes into a new hash, overwriting duplicates with the second hash’s values.
 # Why use it: Ideal for creating a single hash from multiple sources, especially when you want to control which values take precedence.
@@ -107,7 +153,7 @@ p merge_override(default_config, user_config)
 
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that merges hashes with a custom block for duplicate keys.
+# Problem 3: Write a function that merges two hashes, adding the values together for any duplicate keys.
 
 def merge_with_custom_logic(hash1, hash2)
   hash1.merge(hash2) { |key, old_val, new_val| old_val + new_val }
@@ -169,126 +215,6 @@ end
 data = { name: "Alice", age: 30 }
 p fetch_with_block(data, :height)
 # Output: "height not found"
-
-
-
-
-dig
-# What it does: Safely accesses nested hash values without causing an error if a key is missing.
-# Why use it: Simplifies accessing deeply nested data structures by avoiding nil checks or exceptions.
-
-# Syntax:
-
-# Hashes:
-hash.dig(key1, key2, ...)           # Accesses nested keys in a hash.
-
-# Arrays
-array.dig(index1, index2, ...)      # Accesses nested indices in an array.
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that retrieve a nested value from a hash.
-
-def fetch_nested_value(hash, key1, key2)
-  hash.dig(key1, key2)
-end
-
-data = { user: { name: "Alice", age: 30 } }
-p fetch_nested_value(data, :user, :name)
-# Output: "Alice"
-
-p fetch_nested_value(data, :user, :height)
-# Output: nil (key :height does not exist)
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that retrieve a nested value from an array.
-
-def fetch_nested_array_value(array, index1, index2)
-  array.dig(index1, index2)
-end
-
-data = [[1, 2, 3], [4, 5, 6]]
-p fetch_nested_array_value(data, 1, 2)
-# Output: 6
-
-p fetch_nested_array_value(data, 2, 0)
-# Output: nil (index 2 does not exist)
-
-#------------------------------------------------------------------------------
-# Problem 3: Write a function that retrieve a value from a mix of hash and array.
-
-def fetch_mixed_nested_value(data, key1, index2)
-  data.dig(key1, index2)
-end
-
-data = { users: [{ name: "Alice" }, { name: "Bob" }] }
-p fetch_mixed_nested_value(data, :users, 1)
-# Output: { name: "Bob" }
-
-p fetch_mixed_nested_value(data, :users, 2)
-# Output: nil (index 2 does not exist)
-
-
-
-has_key?
-# What it does: Checks if the hash contains a given key (returns true or false).
-# Why use it: Quickly verify the presence of a key before accessing or modifying it.
-
-# Syntax:
-hash.has_key?(key)
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that returns true if the hash contains the given key.
-
-def hash_has_key?(hash, key)
-  hash.has_key?(key)
-end
-
-data = { name: "Alice", age: 30 }
-p hash_has_key?(data, :name)
-# Output: true
-
-p hash_has_key?(data, :height)
-# Output: false
-
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that uses .has_key? before fetching a value to avoid errors.
-
-def fetch_value_if_key_exists(hash, key)
-  if hash.has_key?(key)
-    hash[key]
-  else
-    "Key not found"
-  end
-end
-
-data = { name: "Alice", age: 30 }
-p fetch_value_if_key_exists(data, :age)
-# Output: 30
-
-p fetch_value_if_key_exists(data, :height)
-# Output: "Key not found"
-
-
-
-
-invert
-# What it does: Returns a new hash with keys and values swapped.
-# Why use it: Invert mappings, such as for lookups by value instead of key.
-
-# Syntax:
-hash.invert
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in a hash and returns a new hash with inverted keys and values.
-
-def invert_hash(hash)
-  hash.invert
-end
-
-invert_example = { a: 1, b: 2 }
-p invert_hash(invert_example)
-# Output: { 1 => :a, 2 => :b }
 
 
 
@@ -415,6 +341,119 @@ p reject_empty_strings(words)
 
 
 
+
+#------------------------------------------------------------------------------
+# Medium-importance methods (.dig, .delete_if, .to_a, .to_h, .each_key, .each_value) fill more specific needs—safe nested access, destructive cleanup, or iterating in specialized ways.
+#------------------------------------------------------------------------------
+
+dig
+# What it does: Safely accesses nested hash values without causing an error if a key is missing.
+# Why use it: Simplifies accessing deeply nested data structures by avoiding nil checks or exceptions.
+
+# Syntax:
+
+# Hashes:
+hash.dig(key1, key2, ...)           # Accesses nested keys in a hash.
+
+# Arrays
+array.dig(index1, index2, ...)      # Accesses nested indices in an array.
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that retrieve a nested value from a hash.
+
+def fetch_nested_value(hash, key1, key2)
+  hash.dig(key1, key2)
+end
+
+data = { user: { name: "Alice", age: 30 } }
+p fetch_nested_value(data, :user, :name)
+# Output: "Alice"
+
+p fetch_nested_value(data, :user, :height)
+# Output: nil (key :height does not exist)
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that retrieve a nested value from an array.
+
+def fetch_nested_array_value(array, index1, index2)
+  array.dig(index1, index2)
+end
+
+data = [[1, 2, 3], [4, 5, 6]]
+p fetch_nested_array_value(data, 1, 2)
+# Output: 6
+
+p fetch_nested_array_value(data, 2, 0)
+# Output: nil (index 2 does not exist)
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that retrieve a value from a mix of hash and array.
+
+def fetch_mixed_nested_value(data, key1, index2)
+  data.dig(key1, index2)
+end
+
+data = { users: [{ name: "Alice" }, { name: "Bob" }] }
+p fetch_mixed_nested_value(data, :users, 1)
+# Output: { name: "Bob" }
+
+p fetch_mixed_nested_value(data, :users, 2)
+# Output: nil (index 2 does not exist)
+
+
+
+delete_if
+# What it does: Removes elements from a collection (array or hash) if they match a given condition.
+# Why use it: To modify a collection by deleting unwanted elements in place.
+
+# Syntax:
+
+# Arrays:
+array.delete_if { |element| condition }
+# Removes elements that satisfy the condition.
+
+# Hashes:
+hash.delete_if { |key, value| condition }
+# Removes key-value pairs that satisfy the condition.
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that remove all even numbers from an array.
+
+def remove_even_numbers!(array)
+  array.delete_if { |num| num.even? }
+end
+
+nums = [1, 2, 3, 4, 5, 6]
+remove_even_numbers!(nums)
+p nums
+# Output: [1, 3, 5]
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that remove all words longer than 3 characters from an array.
+
+def remove_long_words!(words)
+  words.delete_if { |word| word.length > 3 }
+end
+
+words = ["cat", "dog", "elephant", "ant"]
+remove_long_words!(words)
+p words
+# Output: ["cat", "dog", "ant"]
+
+#------------------------------------------------------------------------------
+# Problem 3: Write a function that remove key-value pairs where the value is less than 10.
+
+def remove_low_values!(hash)
+  hash.delete_if { |key, value| value < 10 }
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+remove_low_values!(data)
+p data
+# Output: { b: 15, d: 20 }
+
+
+
 to_a
 # What it does: Converts a collection into an array.
 # Why use it: To transform other data structures like hashes, ranges, or enumerators into an array.
@@ -501,59 +540,6 @@ p enumerator_to_hash(enum)
 
 
 
-
-delete_if
-# What it does: Removes elements from a collection (array or hash) if they match a given condition.
-# Why use it: To modify a collection by deleting unwanted elements in place.
-
-# Syntax:
-
-# Arrays:
-array.delete_if { |element| condition }
-# Removes elements that satisfy the condition.
-
-# Hashes:
-hash.delete_if { |key, value| condition }
-# Removes key-value pairs that satisfy the condition.
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that remove all even numbers from an array.
-
-def remove_even_numbers!(array)
-  array.delete_if { |num| num.even? }
-end
-
-nums = [1, 2, 3, 4, 5, 6]
-remove_even_numbers!(nums)
-p nums
-# Output: [1, 3, 5]
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that remove all words longer than 3 characters from an array.
-
-def remove_long_words!(words)
-  words.delete_if { |word| word.length > 3 }
-end
-
-words = ["cat", "dog", "elephant", "ant"]
-remove_long_words!(words)
-p words
-# Output: ["cat", "dog", "ant"]
-
-#------------------------------------------------------------------------------
-# Problem 3: Write a function that remove key-value pairs where the value is less than 10.
-
-def remove_low_values!(hash)
-  hash.delete_if { |key, value| value < 10 }
-end
-
-data = { a: 5, b: 15, c: 8, d: 20 }
-remove_low_values!(data)
-p data
-# Output: { b: 15, d: 20 }
-
-
-
 each_key
 # What it does: Iterates over each key in a hash, allowing you to perform an operation on the keys.
 # Why use it: To work with the keys of a hash without worrying about their values.
@@ -627,6 +613,11 @@ p collect_values(data)
 # Output: ["Alice", 30, "New York"]
 
 
+
+
+#------------------------------------------------------------------------------
+# Lower-importance methods (.transform_keys, .transform_values, .invert) are more specialized, helping handle unique transformations or reversed lookups.
+#------------------------------------------------------------------------------
 
 transform_keys
 # What it does: Creates a new hash by applying a block to each key, transforming the keys based on the block's result.
@@ -764,3 +755,23 @@ data = { a: 1, b: 2, c: 3 }
 double_values_in_place!(data)
 p data
 # Output: { a: 2, b: 4, c: 6 }
+
+
+
+invert
+# What it does: Returns a new hash with keys and values swapped.
+# Why use it: Invert mappings, such as for lookups by value instead of key.
+
+# Syntax:
+hash.invert
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in a hash and returns a new hash with inverted keys and values.
+
+def invert_hash(hash)
+  hash.invert
+end
+
+invert_example = { a: 1, b: 2 }
+p invert_hash(invert_example)
+# Output: { 1 => :a, 2 => :b }

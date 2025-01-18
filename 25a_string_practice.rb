@@ -637,7 +637,7 @@ def extract_digits(string)
 end
 
 numbers_text = "Phone: 123-456-7890, Code: 42"
-p extract_digits(numbers_text)
+# p extract_digits(numbers_text)
 # Output: ["123", "456", "7890", "42"]
 
 

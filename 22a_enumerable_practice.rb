@@ -975,7 +975,7 @@ def find_min_number(array)
 end
 
 numbers = [5, 3, 8, 1]
-p find_min_number(numbers)
+# p find_min_number(numbers)
 # Output: 1
 
 
