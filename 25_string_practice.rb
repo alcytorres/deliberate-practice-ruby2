@@ -92,7 +92,28 @@ long_word = "supercalifragilistic"
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that checks if a string contains the substring "ruby".
+# Problem 1: Write a function that checks if a number exists in an array.
+
+def array_includes_number?(array, number)
+
+end
+
+nums = [1, 2, 3, 4, 5]
+# p array_includes_number?(nums, 3)     # Output: true
+# p array_includes_number?(nums, 6)     # Output: false
+
+
+# # Solution
+# def array_includes_number?(array, number)
+#   array.include?(number)
+# end
+
+# nums = [1, 2, 3, 4, 5]
+# p array_includes_number?(nums, 3)   # Output: true
+# p array_includes_number?(nums, 6)   # Output: false
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that checks if a string contains the substring "ruby".
 
 def contains_ruby?(str)
 
@@ -100,10 +121,8 @@ end
 
 string1 = "I love ruby programming"
 string2 = "I love python programming"
-# p contains_ruby?(string1)
-# # Output: true
-# p contains_ruby?(string2)
-# # Output: false
+# p contains_ruby?(string1)             # Output: true
+# p contains_ruby?(string2)             # Output: false
 
 
 
@@ -114,23 +133,19 @@ string2 = "I love python programming"
 
 # string1 = "I love ruby programming"
 # string2 = "I love python programming"
-# p contains_ruby?(string1)
-# # Output: true
-# p contains_ruby?(string2)
-# # Output: false
+# p contains_ruby?(string1)             # Output: true
+# p contains_ruby?(string2)             # Output: false
 
 #------------------------------------------------------------------------------
-# Problem 2: Write a function that checks if a name is in a list of guests (comma-separated string).
+# Problem 3: Write a function that checks if a name is in a list of guests (comma-separated string).
 
 def guest_in_list?(guest_list, name)
 
 end
 
 list = "Alice,Bob,Carol"
-# p guest_in_list?(list, "Bob")
-# # Output: true
-# p guest_in_list?(list, "David")
-# # Output: false
+# p guest_in_list?(list, "Bob")         # Output: true
+# p guest_in_list?(list, "David")       # Output: false
 
 
 
@@ -140,10 +155,29 @@ list = "Alice,Bob,Carol"
 # end
 
 # list = "Alice,Bob,Carol"
-# p guest_in_list?(list, "Bob")
-# # Output: true
-# p guest_in_list?(list, "David")
-# # Output: false
+# p guest_in_list?(list, "Bob")         # Output: true
+# p guest_in_list?(list, "David")       # Output: false
+
+#------------------------------------------------------------------------------
+# Problem 4: Write a function that checks if a hash includes a specific key.
+
+def includes_key?(hash, key)
+
+end
+
+data = { name: "Alice", age: 25 }
+# p includes_key?(data, :name)           # Output: true
+# p includes_key?(data, :height)         # Output: false
+
+
+# # Solution
+# def includes_key?(hash, key)
+#   hash.include?(key)
+# end
+
+# data = { name: "Alice", age: 25 }
+# p includes_key?(data, :name)           # Output: true
+# p includes_key?(data, :height)         # Output: false
 
 
 #------------------------------------------------------------------------------
@@ -603,7 +637,7 @@ def extract_digits(string)
 end
 
 numbers_text = "Phone: 123-456-7890, Code: 42"
-p extract_digits(numbers_text)
+# p extract_digits(numbers_text)
 # Output: ["123", "456", "7890", "42"]
 
 
