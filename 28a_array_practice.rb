@@ -612,7 +612,7 @@ range_array = [2, 8, 1, 10, 5]
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array and a value, returning [first_index, last_index] of that value.
+# Problem 1: Write a function that takes an array and a value as input, and returns an array containing the first and last index of the value in the array.
 
 def find_first_and_last_index(array, value)
 

@@ -553,11 +553,11 @@ p unshift_element(unshift_array, 1, 2, 3)
 # Problem 1: Get the element at a specific index in an array.
 
 def get_element_at(array, index)
-
+  array.slice(index)
 end
 
 nums = [10, 20, 30, 40]
-# p get_element_at(nums, 2)
+p get_element_at(nums, 2)
 # Output: 30
 
 
@@ -575,11 +575,11 @@ nums = [10, 20, 30, 40]
 # Problem 2: Write a function that slices the first 3 elements from an array.
 
 def slice_first_three(array)
-
+  array.slice(0, 3)
 end
 
 slice_array = [4, 5, 6, 7, 8]
-# p slice_first_three(slice_array)
+p slice_first_three(slice_array)
 # Output: [4, 5, 6]
 
 
@@ -597,11 +597,11 @@ slice_array = [4, 5, 6, 7, 8]
 # Problem 1: Write a function that returns both the max and min values from an array.
 
 def find_extremes(array)
-
+  [array.max, array.min]
 end
 
 range_array = [2, 8, 1, 10, 5]
-# p find_extremes(range_array)
+p find_extremes(range_array)
 # Output: [10, 1]
 
 
@@ -617,14 +617,14 @@ range_array = [2, 8, 1, 10, 5]
 
 
 #------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array and a value, returning [first_index, last_index] of that value.
+# Problem 1: Write a function that takes an array and a value as input, and returns an array containing the first and last index of the value in the array.
 
 def find_first_and_last_index(array, value)
-
+  [array.index(value), array.rindex(value)]
 end
 
 numbers = [4, 5, 6, 5, 7]
-# p find_first_and_last_index(numbers, 5)
+p find_first_and_last_index(numbers, 5)
 # Output: [1, 3]
 
 
@@ -644,18 +644,18 @@ numbers = [4, 5, 6, 5, 7]
 # Problem 1: Write a function that returns the index of the first odd number in an array.
 
 def index_of_first_odd(array)
-
+  array.find_index {|elem| elem.odd?}
 end
 
 mixed_numbers = [2, 4, 6, 7, 9]
-# p index_of_first_odd(mixed_numbers)
+p index_of_first_odd(mixed_numbers)
 # Output: 3 (index of 7)
 
 
 
 # # Solution
 # def index_of_first_odd(array)
-#   array.find_index { |num| num.odd? }
+# array.find_index { |num| num.odd? }
 # end
 
 # mixed_numbers = [2, 4, 6, 7, 9]
@@ -667,11 +667,11 @@ mixed_numbers = [2, 4, 6, 7, 9]
 # Problem 1: Write a function that converts an array of words into a single string separated by spaces.
 
 def words_to_sentence(words)
-
+  words.join(" ")
 end
 
 array_words = ["Hello", "world", "from", "Ruby"]
-# p words_to_sentence(array_words)
+p words_to_sentence(array_words)
 # Output: "Hello world from Ruby"
 
 
@@ -690,11 +690,11 @@ array_words = ["Hello", "world", "from", "Ruby"]
 # Problem 2: Write a function that converts an array of characters into a single string without spaces.
 
 def chars_to_string(chars)
-
+  chars.join("")
 end
 
 letters = ["a", "b", "c"]
-# p chars_to_string(letters)
+p chars_to_string(letters)
 # Output: "abc"
 
 
@@ -713,11 +713,11 @@ letters = ["a", "b", "c"]
 # Problem 3: Write a function that joins an array of dates with a hyphen.
 
 def join_with_hyphen(dates)
-
+  dates.join("-")
 end
 
 dates = ["2023", "01", "10"]
-# puts join_with_hyphen(dates)
+puts join_with_hyphen(dates)
 # Output: "2023-01-10"
 
 
@@ -735,11 +735,11 @@ dates = ["2023", "01", "10"]
 # Problem 1: Write a function that flattens a 2D array into a 1D array.
 
 def flatten_2d(array)
-
+  array.flatten
 end
 
 array_2d = [[1, 2], [3, 4]]
-# p flatten_2d(array_2d)
+p flatten_2d(array_2d)
 # Output: [1, 2, 3, 4]
 
 
@@ -758,11 +758,11 @@ array_2d = [[1, 2], [3, 4]]
 # Problem 2: Write a function that flattens a nested array of any depth.
 
 def flatten_any_depth(array)
-
+  array.flatten
 end
 
 nested_array = [1, [2, [3, [4]]]]
-# p flatten_any_depth(nested_array)
+p flatten_any_depth(nested_array)
 # Output: [1, 2, 3, 4]
 
 
@@ -781,11 +781,11 @@ nested_array = [1, [2, [3, [4]]]]
 # Problem 1: Write a function that takes in an array and returns a new array without nil values.
 
 def remove_nil(array)
-
+  array.compact
 end
 
 nil_array = [1, nil, 2, nil, 3]
-# p remove_nil(nil_array)
+p remove_nil(nil_array)
 # Output: [1, 2, 3]
 
 
@@ -804,11 +804,11 @@ nil_array = [1, nil, 2, nil, 3]
 # Problem 1: Write a function that partitions an array of numbers into even and odd arrays.
 
 def partition_even_odd(array)
-
+  array.partition {|num| num.even?}
 end
 
 part_array = [1, 2, 3, 4, 5, 6]
-# p partition_even_odd(part_array)
+p partition_even_odd(part_array)
 # Output: [[2, 4, 6], [1, 3, 5]]
 
 
@@ -840,11 +840,11 @@ even, odd = numbers.partition { |num| num.even? }
 # Problem 2: Write a function that partitions an array into numbers greater than 10 from others.
 
 def partition_greater_than_10(numbers)
-
+  numbers.partition {|num| num > 10}
 end
 
 nums = [5, 15, 8, 20, 3]
-# p partition_greater_than_10(nums)
+p partition_greater_than_10(nums)
 # Output: [[15, 20], [5, 8, 3]]
 
 

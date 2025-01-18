@@ -162,6 +162,7 @@ data = { name: "Alice", age: 30 }
 # # Solution
 # def fetch_value_if_key_exists(hash, key)
 #   if hash.has_key?(key)
+#   # Checks if the key is present in the hash
 #     hash[key]
 #     # Return the value associated with the key.
 #   else
@@ -300,7 +301,7 @@ data = { name: "Alice", age: 30 }
 
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that handle a missing key with a block.
+# Problem 3: Write a function that fetches the value for a given key from a hash. If the key is not present, the function should return a custom message using a block.
 
 def fetch_with_block(hash, key)
 
@@ -421,6 +422,7 @@ end
 
 nums = [-1, 2, -3, 4]
 # p remove_negatives(nums)
+# Output: [2, 4]
 
 
 
@@ -491,6 +493,7 @@ words = ["hello", "", "world", "", "ruby"]
 # # Solution
 # def reject_empty_strings(strings)
 #   strings.reject { |str| str.empty? }
+#   # str.empty? = str == ""
 # end
 
 # words = ["hello", "", "world", "", "ruby"]

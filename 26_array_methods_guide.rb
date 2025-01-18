@@ -484,6 +484,7 @@ find_index
 
 # Syntax:
 array.find_index { |element| condition }
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns the index of the first odd number in an array.
 
@@ -605,6 +606,7 @@ partition
 
 # Syntax:
 array.partition { |element| condition }
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that partitions an array of numbers into even and odd arrays.
 def partition_even_odd(array)

@@ -6,11 +6,11 @@
 # Problem 1: Write a function that returns an array of all keys in a given hash.
 
 def all_keys(hash)
-
+  hash.keys
 end
 
 fruits = { apple: 1, banana: 2, cherry: 3 }
-# p all_keys(fruits)
+p all_keys(fruits)
 # Output: [:apple, :banana, :cherry]
 
 
@@ -30,11 +30,11 @@ fruits = { apple: 1, banana: 2, cherry: 3 }
 # Problem 2: Write a function that prints the keys in a hash, one per line.
 
 def print_keys(hash)
-
+  hash.keys.each {|key| puts key}
 end
 
 person = { name: "Alice", age: 25, city: "NYC" }
-# print_keys(person)
+print_keys(person)
 # Output (each key on its own line):
 # name
 # age
@@ -62,11 +62,11 @@ person = { name: "Alice", age: 25, city: "NYC" }
 # Problem 1: Write a function that returns all the values in a given hash.
 
 def all_values(hash)
-
+  hash.values
 end
 
 prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
-# p all_values(prices)
+p all_values(prices)
 # Output: [1.2, 0.5, 2.0]
 
 
@@ -85,11 +85,11 @@ prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
 # Problem 2: Write a function that prints all values in a hash, one per line.
 
 def print_values(hash)
-
+  hash.values.each {|value| puts value}
 end
 
 movie = { title: "Matrix", year: 1999, rating: 8.7 }
-# print_values(movie)
+print_values(movie)
 # Output (each value on its own line):
 # Matrix
 # 1999
@@ -114,15 +114,15 @@ movie = { title: "Matrix", year: 1999, rating: 8.7 }
 # Problem 1: Write a function that returns true if the hash contains the given key.
 
 def hash_has_key?(hash, key)
-
+  hash.has_key?(key)
 end
 
 data = { name: "Alice", age: 30 }
 
-# p hash_has_key?(data, :name)
-# # Output: true
-# p hash_has_key?(data, :height)
-# # Output: false
+p hash_has_key?(data, :name)
+# Output: true
+p hash_has_key?(data, :height)
+# Output: false
 
 
 # # Solution
@@ -144,7 +144,6 @@ data = { name: "Alice", age: 30 }
 def fetch_value_if_key_exists(hash, key)
   if hash.has_key?(key)
     hash[key]
-    # Return the value associated with the key.
   else
     "Key not found"
   end
@@ -152,16 +151,17 @@ end
 
 data = { name: "Alice", age: 30 }
 
-# p fetch_value_if_key_exists(data, :age)
-# # Output: 30
-# p fetch_value_if_key_exists(data, :height)
-# # Output: "Key not found"
+p fetch_value_if_key_exists(data, :age)
+# Output: 30
+p fetch_value_if_key_exists(data, :height)
+# Output: "Key not found"
 
 
 
 # # Solution
 # def fetch_value_if_key_exists(hash, key)
 #   if hash.has_key?(key)
+#   # Checks if the key is present in the hash
 #     hash[key]
 #     # Return the value associated with the key.
 #   else
@@ -181,12 +181,12 @@ data = { name: "Alice", age: 30 }
 # Problem 1: Write a function that merges two hashes, returning a new hash without modifying the originals.
 
 def merge_hashes(hash1, hash2)
-
+  hash1.merge(hash2)
 end
 
 hash_a = { name: "Alice", age: 25 }
 hash_b = { city: "NYC", occupation: "Engineer" }
-# p merge_hashes(hash_a, hash_b)
+p merge_hashes(hash_a, hash_b)
 # Output: { name: "Alice", age: 25, city: "NYC", occupation: "Engineer" }
 
 
@@ -206,12 +206,12 @@ hash_b = { city: "NYC", occupation: "Engineer" }
 # Problem 2: Write a function that merges two hashes, with values from the second hash overriding duplicates in the first.
 
 def merge_override(hash1, hash2)
-
+  hash1.merge(hash2)
 end
 
 default_config = { timeout: 30, debug: false }
 user_config = { debug: true }
-# p merge_override(default_config, user_config)
+p merge_override(default_config, user_config)
 # Output: { timeout: 30, debug: true }
 
 
@@ -232,19 +232,19 @@ user_config = { debug: true }
 # Problem 3: Write a function that merges two hashes, adding the values together for any duplicate keys.
 
 def merge_with_custom_logic(hash1, hash2)
-
+  hash1.merge(hash2) {|key, old_vaue, new_value| old_vaue + new_value}
 end
 
 hash1 = { a: 1, b: 2 }
 hash2 = { b: 3, c: 4 }
-# p merge_with_custom_logic(hash1, hash2)
+p merge_with_custom_logic(hash1, hash2)
 # Output: { a: 1, b: 5, c: 4 }
 
 
 
 # # Solution
 # def merge_with_custom_logic(hash1, hash2)
-# hash1.merge(hash2) { |key, old_val, new_val| old_val + new_val }
+#   hash1.merge(hash2) { |key, old_val, new_val| old_val + new_val }
 # end
 
 # hash1 = { a: 1, b: 2 }
@@ -257,11 +257,11 @@ hash2 = { b: 3, c: 4 }
 # Problem 1: Write a function that fetches a value from a hash given a key.
 
 def fetch_value(hash, key)
-
+  hash.fetch(key)
 end
 
 person = { name: "Alice", age: 25 }
-# p fetch_value(person, :name)
+p fetch_value(person, :name)
 # Output: "Alice"
 
 
@@ -280,11 +280,11 @@ person = { name: "Alice", age: 25 }
 # Problem 2: Write a function that fetches a value from a hash or returns a default if the key is missing.
 
 def fetch_with_default(hash, key, default)
-
+  hash.fetch(key, default)
 end
 
 data = { name: "Alice", age: 30 }
-# p fetch_with_default(data, :height, 170)
+p fetch_with_default(data, :height, 170)
 # Output: 170
 
 
@@ -300,15 +300,16 @@ data = { name: "Alice", age: 30 }
 
 
 #------------------------------------------------------------------------------
-# Problem 3: Write a function that handle a missing key with a block.
+# Problem 3: Write a function that fetches the value for a given key from a hash. If the key is not present, the function should return a custom message using a block.
 
 def fetch_with_block(hash, key)
-
+  hash.fetch(key) {|missing_key| "#{missing_key} not found" }
 end
 
 data = { name: "Alice", age: 30 }
-# p fetch_with_block(data, :height)
+p fetch_with_block(data, :height)
 # Output: "height not found"
+
 
 
 # # Solution
@@ -321,16 +322,15 @@ data = { name: "Alice", age: 30 }
 # # Output: "height not found"
 
 
-
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that selects all even numbers from an array.
 
 def select_even_numbers(array)
-
+  array.select {|num| num.even?}
 end
 
 nums = [1, 2, 3, 4, 5, 6]
-# p select_even_numbers(nums)
+p select_even_numbers(nums)
 # Output: [2, 4, 6]
 
 
@@ -348,11 +348,11 @@ nums = [1, 2, 3, 4, 5, 6]
 # Problem 2: Write a function that selects all words that start with "a".
 
 def select_words_starting_with_a(words)
-
+  words.select {|word| word[0] == "a"}
 end
 
 words = ["apple", "banana", "apricot", "cherry"]
-# p select_words_starting_with_a(words)
+p select_words_starting_with_a(words)
 # Output: ["apple", "apricot"]
 
 
@@ -371,11 +371,11 @@ words = ["apple", "banana", "apricot", "cherry"]
 # Problem 3: Write a function that selects key-value pairs where the value is greater than 10.
 
 def select_values_greater_than_10(hash)
-
+  hash.select {|key, value| value > 10}
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
-# p select_values_greater_than_10(data)
+p select_values_greater_than_10(data)
 # Output: { b: 15, d: 20 }
 
 
@@ -392,11 +392,11 @@ data = { a: 5, b: 15, c: 8, d: 20 }
 # Problem 4: Write a function that selects all positive numbers from an array.
 
 def select_positive_numbers(array)
-
+  array.select {|num| num > 0}
 end
 
 nums = [-3, 0, 5, -1, 2]
-# p select_positive_numbers(nums)
+p select_positive_numbers(nums)
 # Output: [5, 2]
 
 
@@ -416,11 +416,12 @@ nums = [-3, 0, 5, -1, 2]
 # Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
 
 def remove_negatives(numbers)
-
+  numbers.reject {|num| num < 0}
 end
 
 nums = [-1, 2, -3, 4]
-# p remove_negatives(nums)
+p remove_negatives(nums)
+# Output: [2, 4]
 
 
 
@@ -437,11 +438,11 @@ nums = [-1, 2, -3, 4]
 # Problem 2: Write a function that removes all even numbers from an array.
 
 def reject_even_numbers(array)
-
+  array.reject {|num| num.even?}
 end
 
 nums = [1, 2, 3, 4, 5, 6]
-# p reject_even_numbers(nums)
+p reject_even_numbers(nums)
 # Output: [1, 3, 5]
 
 
@@ -459,11 +460,11 @@ nums = [1, 2, 3, 4, 5, 6]
 # Problem 3: Write a function that exclude key-value pairs from a hash where the value is less than 10.
 
 def reject_values_less_than_10(hash)
-
+  hash.reject {|key, value| value < 10}
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
-# p reject_values_less_than_10(data)
+p reject_values_less_than_10(data)
 # Output: { b: 15, d: 20 }
 
 
@@ -480,11 +481,11 @@ data = { a: 5, b: 15, c: 8, d: 20 }
 # Problem 4: Write a function that exclude empty strings from an array.
 
 def reject_empty_strings(strings)
-
+  strings.reject {|str| str == ""}
 end
 
 words = ["hello", "", "world", "", "ruby"]
-# p reject_empty_strings(words)
+p reject_empty_strings(words)
 # Output: ["hello", "world", "ruby"]
 
 
