@@ -829,9 +829,7 @@ data = { name: "Alice", age: 30, city: "New York" }
 # Problem 2: Write a function that collects all keys into an array.
 
 def collect_keys(hash)
-  keys = []
-  hash.each_key { |key| keys << key }
-  keys
+
 end
 
 data = { name: "Alice", age: 30, city: "New York" }

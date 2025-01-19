@@ -509,15 +509,15 @@ p reject_empty_strings(words)
 # Problem 1: Write a function that retrieve a nested value from a hash.
 
 def fetch_nested_value(hash, key1, key2)
-
+  hash.dig(key1, key2)
 end
 
 data = { user: { name: "Alice", age: 30 } }
 
-# p fetch_nested_value(data, :user, :name)
-# # Output: "Alice"
-# p fetch_nested_value(data, :user, :height)
-# # Output: nil (key :height does not exist)
+p fetch_nested_value(data, :user, :name)
+# Output: "Alice"
+p fetch_nested_value(data, :user, :height)
+# Output: nil (key :height does not exist)
 
 
 
@@ -538,15 +538,15 @@ data = { user: { name: "Alice", age: 30 } }
 # Problem 2: Write a function that retrieve a nested value from an array.
 
 def fetch_nested_array_value(array, index1, index2)
-
+  array.dig(index1, index2)
 end
 
 data = [[1, 2, 3], [4, 5, 6]]
 
-# p fetch_nested_array_value(data, 1, 2)
-# # Output: 6
-# p fetch_nested_array_value(data, 2, 0)
-# # Output: nil (index 2 does not exist)
+p fetch_nested_array_value(data, 1, 2)
+# Output: 6
+p fetch_nested_array_value(data, 2, 0)
+# Output: nil (index 2 does not exist)
 
 
 # # Solution
@@ -566,15 +566,15 @@ data = [[1, 2, 3], [4, 5, 6]]
 # Problem 3: Write a function that retrieve a value from a mix of hash and array.
 
 def fetch_mixed_nested_value(data, key1, index2)
-
+  data.dig(key1, index2)
 end
 
 data = { users: [{ name: "Alice" }, { name: "Bob" }] }
 
-# p fetch_mixed_nested_value(data, :users, 1)
-# # Output: { name: "Bob" }
-# p fetch_mixed_nested_value(data, :users, 2)
-# # Output: nil (index 2 does not exist)
+p fetch_mixed_nested_value(data, :users, 1)
+# Output: { name: "Bob" }
+p fetch_mixed_nested_value(data, :users, 2)
+# Output: nil (index 2 does not exist)
 
 
 # # Solution
@@ -594,12 +594,12 @@ data = { users: [{ name: "Alice" }, { name: "Bob" }] }
 # Problem 1: Remove all even numbers from an array.
 
 def remove_even_numbers!(array)
-
+  array.delete_if {|num| num.even?}
 end
 
 nums = [1, 2, 3, 4, 5, 6]
 remove_even_numbers!(nums)
-# p nums
+p nums
 # Output: [1, 3, 5]
 
 
@@ -619,12 +619,12 @@ remove_even_numbers!(nums)
 # Problem 2: Remove all words longer than 3 characters from an array.
 
 def remove_long_words!(words)
-
+  words.delete_if {|word| word.size > 3}
 end
 
 words = ["cat", "dog", "elephant", "ant"]
 remove_long_words!(words)
-# p words
+p words
 # Output: ["cat", "dog", "ant"]
 
 
@@ -644,12 +644,12 @@ remove_long_words!(words)
 # Problem 3: Remove key-value pairs where the value is less than 10.
 
 def remove_low_values!(hash)
-
+  hash.delete_if {|key, value| value < 10}
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
 remove_low_values!(data)
-# p data
+p data
 # Output: { b: 15, d: 20 }
 
 
@@ -669,11 +669,11 @@ remove_low_values!(data)
 # Problem 1: Write a function that converts a range to an array.
 
 def range_to_array(range)
-
+  range.to_a
 end
 
 range = (1..5)
-# p range_to_array(range)
+p range_to_array(range)
 # Output: [1, 2, 3, 4, 5]
 
 
@@ -690,11 +690,11 @@ range = (1..5)
 # Problem 2: Write a function that converts a hash to an array of key-value pairs.
 
 def hash_to_array(hash)
-
+  hash.to_a
 end
 
 hash = { a: 1, b: 2, c: 3 }
-# p hash_to_array(hash)
+p hash_to_array(hash)
 # Output: [[:a, 1], [:b, 2], [:c, 3]]
 
 
@@ -712,11 +712,11 @@ hash = { a: 1, b: 2, c: 3 }
 # Problem 3: Write a function that converts an enumerator to an array.
 
 def enumerator_to_array(enum)
-
+  enum.to_a
 end
 
 enum = (1..3).each
-# p enumerator_to_array(enum)
+p enumerator_to_array(enum)
 # Output: [1, 2, 3]
 
 
@@ -735,11 +735,11 @@ enum = (1..3).each
 # Problem 1: Write a function that converts an array of key-value pairs into a hash.
 
 def array_to_hash(array)
-
+  array.to_h
 end
 
 array = [[:a, 1], [:b, 2], [:c, 3]]
-# p array_to_hash(array)
+p array_to_hash(array)
 # Output: { a: 1, b: 2, c: 3 }
 
 
@@ -756,11 +756,11 @@ array = [[:a, 1], [:b, 2], [:c, 3]]
 # Problem 2: Write a function that converts an array of key-value pairs with duplicates (last one wins).
 
 def array_with_duplicates_to_hash(array)
-
+  array.to_h
 end
 
 array = [[:a, 1], [:b, 2], [:a, 3]]
-# p array_with_duplicates_to_hash(array)
+p array_with_duplicates_to_hash(array)
 # Output: { a: 3, b: 2 } (last :a pair wins)
 
 
@@ -778,11 +778,11 @@ array = [[:a, 1], [:b, 2], [:a, 3]]
 # Problem 3: Write a function that converts an enumerator of pairs to a hash.
 
 def enumerator_to_hash(enum)
-
+  enum.to_h
 end
 
 enum = [[:x, 10], [:y, 20]].each
-# p enumerator_to_hash(enum)
+p enumerator_to_hash(enum)
 # Output: { x: 10, y: 20 }
 
 
@@ -800,11 +800,11 @@ enum = [[:x, 10], [:y, 20]].each
 # Problem 1: Write a function that prints all keys in a hash.
 
 def print_keys(hash)
-
+  hash.each_key {|key| puts key}
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-# print_keys(data)
+print_keys(data)
 # Output:
 # name
 # age
@@ -828,12 +828,12 @@ data = { name: "Alice", age: 30, city: "New York" }
 
 def collect_keys(hash)
   keys = []
-  hash.each_key { |key| keys << key }
+  hash.each_key {|key| keys << key}
   keys
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-# p collect_keys(data)
+p collect_keys(data)
 # Output: [:name, :age, :city]
 
 
@@ -854,11 +854,11 @@ data = { name: "Alice", age: 30, city: "New York" }
 # Problem 1: Write a function that prints all values in a hash.
 
 def print_values(hash)
-
+  hash.each_value {|value| puts value}
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-# print_values(data)
+print_values(data)
 # Output:
 # Alice
 # 30
@@ -882,12 +882,12 @@ data = { name: "Alice", age: 30, city: "New York" }
 
 def collect_values(hash)
   values = []
-  hash.each_value { |value| values << value }
+  hash.each_value {|value| values << value}
   values
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-# p collect_values(data)
+p collect_values(data)
 # Output: ["Alice", 30, "New York"]
 
 
