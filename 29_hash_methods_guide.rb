@@ -71,18 +71,20 @@ print_values(movie)
 
 
 
-has_key?
+key?
 # What it does: Checks if the hash contains a given key (returns true or false).
 # Why use it: Quickly verify the presence of a key before accessing or modifying it.
 
+# .key? is the preferred method in modern Ruby over .has_key?.
+
 # Syntax:
-hash.has_key?(key)
+hash.key?(key)
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns true if the hash contains the given key.
 
 def hash_has_key?(hash, key)
-  hash.has_key?(key)
+  hash.key?(key)
 end
 
 data = { name: "Alice", age: 30 }
@@ -97,7 +99,7 @@ p hash_has_key?(data, :height)
 # Problem 2: Write a function that uses .has_key? before fetching a value to avoid errors.
 
 def fetch_value_if_key_exists(hash, key)
-  if hash.has_key?(key)
+  if hash.key?(key)
     hash[key]
   else
     "Key not found"

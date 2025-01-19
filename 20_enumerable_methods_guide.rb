@@ -844,22 +844,33 @@ each_with_index
 array.each_with_index { |element, index| block }
 
 # Hash:
-# (Hashes don't inherently support indexing, so this is rarely applicable.)
+# (Hashes inherently do not have numerical indices, but you can emulate them using .each_with_index:
+hash.each_with_index { |(key, value), index| block }
 
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that takes in an array of strings and prints each string with its index?
 
-def print_with_index(strings)
-  strings.each_with_index do |str, i|
-    puts "#{i}: #{str}"
-  end
+def print_elements_with_index(array)
+  array.each_with_index { |element, index| puts "Index #{index}: #{element}" }
 end
 
-words = ["apple", "banana"]
-print_with_index(words)
+nums = [10, 20, 30]
+print_elements_with_index(nums)
 # Output:
-# 0: apple
-# 1: banana
+# Index 0: 10
+# Index 1: 20
+# Index 2: 30
+
+#------------------------------------------------------------------------------
+# Problem 2: Write a function that multiplies each element in an array by its index.
+
+def multiply_by_index(array)
+  array.map.with_index { |element, index| element * index }
+end
+
+nums = [2, 3, 4]
+p multiply_by_index(nums)
+# Output: [0, 3, 8]
 
 
 

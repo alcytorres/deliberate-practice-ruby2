@@ -127,7 +127,7 @@ data = { name: "Alice", age: 30 }
 
 # # Solution
 # def hash_has_key?(hash, key)
-#   hash.has_key?(key)
+#   hash.key?(key)
 # end
 
 # data = { name: "Alice", age: 30 }
@@ -142,7 +142,7 @@ data = { name: "Alice", age: 30 }
 # Problem 2: Write a function that takes a hash and a key as input and returns the value associated with the key if it exists; otherwise, return the string "Key not found".
 
 def fetch_value_if_key_exists(hash, key)
-  if hash.has_key?(key)
+  if hash.key?(key)
     hash[key]
     # Return the value associated with the key.
   else
