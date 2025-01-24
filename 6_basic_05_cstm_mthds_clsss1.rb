@@ -66,13 +66,25 @@ num = 10
 p convert_to_string(num)
 
 # 8. Write a method that takes in a string and returns the string repeated 5 times. Then run the method and print the result.
+def repeat_strings(strings)
+  strings * 5
+end
 
-
+p repeat_strings("sky")
 
 # 9. Write a method that takes in 3 numbers and returns the average (the sum divided by 3.0). Then run the method and print the result.
+def average(num1, num2, num3)
+  return (num1 + num2 + num3) / 3
+end
 
-
+p average(5, 10, 15)
 
 # 10. Write a method that takes in a number and returns the number times 10 plus 30. Then run the method and print the result.
+def convert_number(number)
+  number * 10 + 30
+end
+
+p convert_number(3)
+
 
 
