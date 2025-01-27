@@ -45,7 +45,7 @@ values
 hash.values
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that returns all the values in a given hash.
-# Solution 1
+# Solution
 def all_values(hash)
   hash.values
 end

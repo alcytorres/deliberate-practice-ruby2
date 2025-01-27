@@ -1,7 +1,7 @@
 # A Complete Guide to String Interpolation, String Concatenation, Conditionals, and Comparison Operators in Ruby
 
 # --------------------------------------------------------------------------
-# String Interpolation
+String Interpolation
 # --------------------------------------------------------------------------
 
 # What it does:
@@ -25,7 +25,7 @@ puts "In 5 years, I will be #{age + 5} years old."
 # Output: In 5 years, I will be 30 years old.
 
 # --------------------------------------------------------------------------
-# String Concatenation
+String Concatenation
 # --------------------------------------------------------------------------
 
 # What it does:
@@ -61,7 +61,7 @@ puts greeting
 # Output: Hello, Alice!
 
 # --------------------------------------------------------------------------
-# Conditionals
+Conditionals
 # --------------------------------------------------------------------------
 
 # What it does:
@@ -109,7 +109,7 @@ end
 # Output: You are not an adult.
 
 # --------------------------------------------------------------------------
-# Comparison Operators
+Comparison Operators
 # --------------------------------------------------------------------------
 
 # What they do:
@@ -135,7 +135,7 @@ puts 10 > 5  # true
 puts 10 >= 15 # false
 
 # --------------------------------------------------------------------------
-# Logical Operators
+Logical Operators
 # --------------------------------------------------------------------------
 
 # What they do:
@@ -156,7 +156,7 @@ puts age > 18 || age > 30  # true (one condition is true)
 puts !(age > 30)           # true (negates false to true)
 
 # --------------------------------------------------------------------------
-# Looping and Flow Control
+Looping and Flow Control
 # --------------------------------------------------------------------------
 
 # while
