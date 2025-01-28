@@ -244,7 +244,6 @@ puts person.password # This will raise an error because there is no getter metho
 
 
 #------------------------------------------------------------------------------
-#------------------------------------------------------------------------------
 # Basic Example Breakdown
 # 1. Write a Song class with attributes for name, artist, and duration.
 class Song
@@ -351,7 +350,6 @@ pp song
 
 # These points should help you grasp why Ruby’s syntax is the way it is,
 # making it easier to remember and apply in future projects.
-
 
 
 

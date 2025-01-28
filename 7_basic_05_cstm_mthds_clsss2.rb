@@ -1,6 +1,5 @@
 # Write a custom class with valid syntax
 
-
 # 1. Write a Song class with attributes for name, artist, and duration.
 class Song
   def initialize (name, artist, duration)
