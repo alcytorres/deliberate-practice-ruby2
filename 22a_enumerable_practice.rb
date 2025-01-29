@@ -1091,7 +1091,7 @@ def multiply_by_index(array)
 end
 
 nums = [2, 3, 4]
-p multiply_by_index(nums)
+# p multiply_by_index(nums)
 # Output: [0, 3, 8]
 
 

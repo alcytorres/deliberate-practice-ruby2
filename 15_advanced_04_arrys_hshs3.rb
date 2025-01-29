@@ -135,32 +135,22 @@ word = "bookkeeper"
 
 
 
+# This code counts how many times each letter appears in the string "bookkeeper".
 
+word = "bookkeeper"                      # Define the string to analyze.
+letter_frequencies = {}                  # Create an empty hash to store each letter and its frequency.
+index = 0                                # Initialize a loop counter.
 
-
-
-
-
-
-
-
-
-
-
-
-
-word = "bookkeeper"
-letter_frequencies = {}
-index = 0
-while index < word.length
-  letter = word[index]
-  if letter_frequencies[letter] == nil
-    letter_frequencies[letter] = 0
+while index < word.length                # Loop over each character by index.
+  letter = word[index]                   # Retrieve the current character.
+  if letter_frequencies[letter].nil?
+    letter_frequencies[letter] = 0       # If this letter hasn't been seen, start its count at 0.
   end
-  letter_frequencies[letter] += 1
-  index += 1
+  letter_frequencies[letter] += 1        # Increment the count for this letter.
+  index += 1                             # Move to the next character.
 end
-p letter_frequencies
+
+p letter_frequencies                     # Print the resulting hash of letters and their counts.
 
 
 
@@ -200,6 +190,7 @@ p items_hash
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # persons_array =
+
 
 # p persons_array
 
@@ -263,7 +254,6 @@ p persons_array
 
 # 6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
 #    For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
-
 
 strings = ["do", "or", "do", "not"]
 #         {"do" => 2, "or" => 1, "not" => 1}
@@ -334,7 +324,6 @@ p flattened_array
 
 
 
-
 # 8. Combine data from a hash with names and prices and an array of hashes with names, colors, and weights to make a new hash.
 #    For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
 
@@ -381,7 +370,6 @@ p combined_hash
 
 # 9. Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
 #    For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
-
 
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
@@ -441,7 +429,6 @@ p books_hash
 
 # 10. Given a hash, create a new hash that has the keys and values switched.
 #     For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
-
 
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}

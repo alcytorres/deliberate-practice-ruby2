@@ -27,8 +27,6 @@ Grows quickly or exponentially, making it inefficient for large inputs.
 
 
 
-
-
 Key Terms
 
 Enumerator
