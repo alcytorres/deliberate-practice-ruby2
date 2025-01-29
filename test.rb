@@ -23,45 +23,23 @@
 
 
 
-# Syntax:
-(1..5).to_a    # Output: [1, 2, 3, 4, 5]  # Inclusive range
-(1...5).to_a   # Output: [1, 2, 3, 4]    # Exclusive range
 
+# Problem 2: Write a function that multiplies each element in an array by its index.
 
+def multiply_by_index(array)
+  array.map.with_index { |element, index| element * index }
+end
 
-# 3.times { |_| puts "Hello" }  # `_` is used for an unused block variable
+nums = [2, 3, 4]
+p multiply_by_index(nums)
+# Output: [0, 3, 8]
 
+# Problem 2: Write a function that multiplies each element in an array by its index.
 
+def multiply_by_index(array)
+  array.each_with_index { |element, index| element * index }
+end
 
-# def select_values_greater_than_10(hash)
-#   hash.select{|_, value| value > 10}
-# end
-
-# data = { a: 5, b: 15, c: 8, d: 20 }
-# p select_values_greater_than_10(data)
-# # Output: { b: 15, d: 20 }
-
-
-
-
-# #------------------------------------------------------------------------------
-# # Problem 1: Print "Hello" 3 times using `times`
-# 3.times { puts "Hello" }
-
-# # Output:
-# # Hello
-# # Hello
-# # Hello
-
-# #------------------------------------------------------------------------------
-# # Problem 2: Use `times` with an index
-# 3.times do ||
-#   puts "Iteration ##{i}"
-# end
-
-# # Output:
-# # Iteration #0
-# # Iteration #1
-# # Iteration #2
-
-
+nums = [2, 3, 4]
+p multiply_by_index(nums)
+# Output: [0, 3, 8]

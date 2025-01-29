@@ -528,6 +528,42 @@ data = { a: 1, b: 2, c: 3 }
 
 
 
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
+
+def print_elements_with_index(array)
+
+end
+
+nums = [10, 20, 30]
+print_elements_with_index(nums)
+# Output:
+# Index 0: 10
+# Index 1: 20
+# Index 2: 30
+
+
+# # Solution
+# def print_elements_with_index(array)
+#   array.each_with_index { |element, index| puts "Index #{index}: #{element}" }
+# end
+
+# nums = [10, 20, 30]
+# print_elements_with_index(nums)
+# # Output:
+# # Index 0: 10
+# # Index 1: 20
+# # Index 2: 30
+
+
+
+
+
+
+
+
+
 #------------------------------------------------------------------------------
 # Medium-importance methods (.find, .count, .reject, .any?, .all?, .none?, .sum, .sort_by, .min_by, .each_with_index, .each_with_object) come up often enough that they should be part of your everyday toolkit.
 #------------------------------------------------------------------------------
@@ -1055,54 +1091,6 @@ example_hash = { c: 3, a: 1, b: 2 }
 # p find_min_key(example_hash)
 # # Output: [:a, 1]
 
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
-
-def print_elements_with_index(array)
-
-end
-
-nums = [10, 20, 30]
-print_elements_with_index(nums)
-# Output:
-# Index 0: 10
-# Index 1: 20
-# Index 2: 30
-
-
-# # Solution
-# def print_elements_with_index(array)
-#   array.each_with_index { |element, index| puts "Index #{index}: #{element}" }
-# end
-
-# nums = [10, 20, 30]
-# print_elements_with_index(nums)
-# # Output:
-# # Index 0: 10
-# # Index 1: 20
-# # Index 2: 30
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that multiplies each element in an array by its index.
-
-def multiply_by_index(array)
-  array.map.with_index { |element, index| element * index }
-end
-
-nums = [2, 3, 4]
-# p multiply_by_index(nums)
-# Output: [0, 3, 8]
-
-
-# # Solution
-# def multiply_by_index(array)
-#   array.map.with_index { |element, index| element * index }
-# end
-
-# nums = [2, 3, 4]
-# p multiply_by_index(nums)
-# # Output: [0, 3, 8]
 
 
 #------------------------------------------------------------------------------

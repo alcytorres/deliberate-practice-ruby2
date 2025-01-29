@@ -81,3 +81,22 @@ data = { "name" => "Alice", "age" => 30, "city" => "New York" }
 Case
 # is a conditional statement that matches the value against multiple conditions.
 
+
+#------------------------------------------------------------------------------
+Ternary Operator (? :)
+#------------------------------------------------------------------------------
+# What it does: Shorthand for if-else conditions.
+# Why use it: Makes conditional statements more concise.
+
+# Syntax:
+condition ? value_if_true : value_if_false
+
+#------------------------------------------------------------------------------
+# Problem 1: Check if a number is even or odd.
+
+def even_or_odd(num)
+  num.even? ? "Even" : "Odd"
+end
+
+p even_or_odd(5)  # Output: "Odd"
+p even_or_odd(8)  # Output: "Even"

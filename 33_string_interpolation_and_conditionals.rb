@@ -274,3 +274,49 @@ puts "Substring (1..3): #{str[1..3]}"   # Output: "ell"
 puts "Substring (1...3): #{str[1...3]}" # Output: "el"
 
 
+
+#------------------------------------------------------------------------------
+Hash Default Values (Hash.new(0))
+#------------------------------------------------------------------------------
+# What it does: Prevents nil errors when accessing non-existent keys in a hash.
+# Why use it: Useful for counting occurrences in an array or string.
+
+# Syntax:
+hash = Hash.new(default_value)
+counts = Hash.new(0)
+
+arr = [1, 2, 2, 3, 3, 3]
+arr.each { |num| counts[num] += 1 }
+puts counts  # Output: {1=>1, 2=>2, 3=>3}
+#------------------------------------------------------------------------------
+# Problem 1: Count the frequency of elements in an array.
+
+def frequency_count(array)
+  counts = Hash.new(0)
+  # Creates a new hash with a default value of 0 for missing keys
+  array.each { |num| counts[num] += 1 }
+  # Loops through each number in the array, increasing the count for each number. If `num` is not yet in `counts`, it starts at 0 (because of Hash.new(0))
+end
+  counts  # Returns the hash containing the frequency of each number
+end
+
+numbers = [1, 2, 3, 3, 3]
+p frequency_count(numbers)
+# Output: {1=>1, 2=>1, 3=>3}
+# Explanation:
+# - 1 appears once → {1=>1}
+# - 2 appears once → {1=>1, 2=>1}
+# - 3 appears three times → {1=>1, 2=>1, 3=>3}
+
+#------------------------------------------------------------------------------
+# Problem 1.1: Count the frequency of elements in an array (without using Hash.new(0) this will result in error).
+def frequency_count(arr)
+  counts = {} # Empty hash, no default value
+  arr.each { |num| counts[num] += 1 } # This will cause an error!
+  counts
+end
+
+numbers = [1, 2, 2, 3, 3, 3]
+p frequency_count(numbers)
+
+

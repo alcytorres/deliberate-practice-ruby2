@@ -529,6 +529,60 @@ data = { a: 1, b: 2, c: 3 }
 
 
 #------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
+
+def print_elements_with_index(array)
+
+end
+
+nums = [10, 20, 30]
+# print_elements_with_index(nums)
+# Output:
+# Index 0: 10
+# Index 1: 20
+# Index 2: 30
+
+
+# # Solution
+# def print_elements_with_index(array)
+#   array.each_with_index { |element, index| puts "Index #{index}: #{element}" }
+# end
+
+# nums = [10, 20, 30]
+# print_elements_with_index(nums)
+# # Output:
+# # Index 0: 10
+# # Index 1: 20
+# # Index 2: 30
+
+
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns a new array where each number is multiplied by its index using with_index. (with map)
+
+def multiply_by_index(array)
+
+end
+
+numbers = [10, 20, 30]
+# p multiply_by_index(numbers)
+# Output:
+# [0, 20, 60]
+
+
+# Solution
+# def multiply_by_index(array)
+#   array.map.with_index { |num, index| num * index }
+# end
+
+# numbers = [10, 20, 30]
+# p multiply_by_index(numbers)
+# # Output:
+# # [0, 20, 60]
+
+
+
+#------------------------------------------------------------------------------
 # Medium-importance methods (.find, .count, .reject, .any?, .all?, .none?, .sum, .sort_by, .min_by, .each_with_index, .each_with_object) come up often enough that they should be part of your everyday toolkit.
 #------------------------------------------------------------------------------
 

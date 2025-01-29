@@ -450,6 +450,69 @@ p sum_hash_values(data)
 
 
 
+each_with_index
+# What it does: Iterates through each element, providing both element and index.
+# Why use it: Needed when you must access or use the index during iteration.
+
+# Syntax:
+
+# Array:
+array.each_with_index { |element, index| block }
+
+# Hash:
+# (Hashes inherently do not have numerical indices, but you can emulate them using .each_with_index:
+hash.each_with_index { |(key, value), index| block }
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
+
+def print_elements_with_index(array)
+  array.each_with_index { |element, index| puts "Index #{index}: #{element}" }
+end
+
+nums = [10, 20, 30]
+print_elements_with_index(nums)
+# Output:
+# Index 0: 10
+# Index 1: 20
+# Index 2: 30
+
+
+with_index   vs   each_with_index
+# What it does: Adds an index to each element when using an Enumerable method.
+# Why use it: Needed when chaining methods and requiring an index without modifying the original data.
+
+# Syntax:
+each_with_index vs with_index
+
+each_with_index
+# - Works directly on an Enumerable (like an array or hash).
+# - Iterates through elements while providing their index.
+# - Typically used with iterating methods like .each.
+
+with_index
+# - Used when chaining with another enumerable method (e.g., map, select).
+# - It doesn’t modify the method itself but adds an index while performing the operation.
+
+#------------------------------------------------------------------------------
+# Problem 1: Write a function that takes in an array of numbers and returns a new array where each number is multiplied by its index using with_index. (with map)
+
+def multiply_by_index(array)
+  array.map.with_index { |num, index| num * index }
+end
+
+numbers = [10, 20, 30]
+p multiply_by_index(numbers)
+# Output:
+# [0, 20, 60]
+
+#------------------------------------------------------------------------------
+# Key Differences:
+# - `each_with_index` is used directly with iterators like `.each`, `.map`, etc.
+# - `with_index` is useful when you want to chain another enumerable method before adding an index.
+
+
+
 
 #------------------------------------------------------------------------------
 # Medium-importance methods (.find, .count, .reject, .any?, .all?, .none?, .sum, .sort_by, .min_by, .each_with_index, .each_with_object) come up often enough that they should be part of your everyday toolkit.
@@ -850,46 +913,6 @@ end
 example_hash = { c: 3, a: 1, b: 2 }
 p find_min_key(example_hash)
 # Output: [:a, 1]
-
-
-
-each_with_index
-# What it does: Iterates through each element, providing both element and index.
-# Why use it: Needed when you must access or use the index during iteration.
-
-# Syntax:
-
-# Array:
-array.each_with_index { |element, index| block }
-
-# Hash:
-# (Hashes inherently do not have numerical indices, but you can emulate them using .each_with_index:
-hash.each_with_index { |(key, value), index| block }
-
-#------------------------------------------------------------------------------
-# Problem 1: Write a function that takes in an array of strings and prints each string with its index?
-
-def print_elements_with_index(array)
-  array.each_with_index { |element, index| puts "Index #{index}: #{element}" }
-end
-
-nums = [10, 20, 30]
-print_elements_with_index(nums)
-# Output:
-# Index 0: 10
-# Index 1: 20
-# Index 2: 30
-
-#------------------------------------------------------------------------------
-# Problem 2: Write a function that multiplies each element in an array by its index.
-
-def multiply_by_index(array)
-  array.map.with_index { |element, index| element * index }
-end
-
-nums = [2, 3, 4]
-p multiply_by_index(nums)
-# Output: [0, 3, 8]
 
 
 
