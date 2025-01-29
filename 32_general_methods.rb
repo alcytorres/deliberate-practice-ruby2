@@ -18,10 +18,39 @@ inspect
 
 
 #------------------------------------------------------------------------------
+.times
+#------------------------------------------------------------------------------
+# What it does: Iterates a given number of times, executing the provided block.
+    # Starts from 0 and incrementing by 1.
+# Why use it: Simplifies loops without needing a manual counter.
+    # Repeat an action a specific number of times.
 
+# Syntax:
+n.times {|i| puts "Iteration ##{i}"}
+# `i` starts at 0 and increments by 1 each time
 
+# Syntax:
+n.times { puts "Hello" }  # Runs the block `n` times
 
+#------------------------------------------------------------------------------
+# Problem 1: Print "Hello" 3 times using `times`
+3.times { puts "Hello" }
 
+# Output:
+# Hello
+# Hello
+# Hello
+
+#------------------------------------------------------------------------------
+# Problem 2: Run `times` for 3 iterations with an index
+3.times do |i|
+  puts "Iteration ##{i}"
+end
+
+# Output:
+# Iteration #0
+# Iteration #1
+# Iteration #2
 
 
 #------------------------------------------------------------------------------

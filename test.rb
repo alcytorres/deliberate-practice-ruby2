@@ -23,23 +23,45 @@
 
 
 
-# # Syntax:
-# (1..5).to_a    # Output: [1, 2, 3, 4, 5]  # Inclusive range
-# (1...5).to_a   # Output: [1, 2, 3, 4]    # Exclusive range
+# Syntax:
+(1..5).to_a    # Output: [1, 2, 3, 4, 5]  # Inclusive range
+(1...5).to_a   # Output: [1, 2, 3, 4]    # Exclusive range
 
 
 
-3.times { |_| puts "Hello" }  # `_` is used for an unused block variable
+# 3.times { |_| puts "Hello" }  # `_` is used for an unused block variable
 
 
 
-def select_values_greater_than_10(hash)
-  hash.select{|_, value| value > 10}
-end
+# def select_values_greater_than_10(hash)
+#   hash.select{|_, value| value > 10}
+# end
 
-data = { a: 5, b: 15, c: 8, d: 20 }
-p select_values_greater_than_10(data)
-# Output: { b: 15, d: 20 }
+# data = { a: 5, b: 15, c: 8, d: 20 }
+# p select_values_greater_than_10(data)
+# # Output: { b: 15, d: 20 }
 
+
+
+
+# #------------------------------------------------------------------------------
+# # Problem 1: Print "Hello" 3 times using `times`
+# 3.times { puts "Hello" }
+
+# # Output:
+# # Hello
+# # Hello
+# # Hello
+
+# #------------------------------------------------------------------------------
+# # Problem 2: Use `times` with an index
+# 3.times do ||
+#   puts "Iteration ##{i}"
+# end
+
+# # Output:
+# # Iteration #0
+# # Iteration #1
+# # Iteration #2
 
 

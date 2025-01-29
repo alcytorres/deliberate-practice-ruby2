@@ -221,3 +221,56 @@ end
 data = { a: 5, b: 15, c: 8, d: 20 }
 p select_values_greater_than_10(data)
 # Output: { b: 15, d: 20 }
+
+
+#------------------------------------------------------------------------------
+(..) and (...)
+# Double Dots (..) and Triple Dots (...)
+#------------------------------------------------------------------------------
+# Double Dots (..) - Inclusive Range
+# Creates a range that includes the last value
+
+# Syntax
+puts (1..5).to_a  # Output: [1, 2, 3, 4, 5]
+
+
+# Triple Dots (...) - Exclusive Range
+# Creates a range that excludes the last value
+
+# Syntax
+puts (1...5).to_a  # Output: [1, 2, 3, 4]
+#------------------------------------------------------------------------------
+# Exercises
+
+# Double Dots (..) - Inclusive Range
+range_inclusive = (1..5).to_a
+puts "Inclusive Range (1..10): #{range_inclusive}"
+# Output: [1, 2, 3, 4, 5]
+
+# Triple Dots (...) - Exclusive Range
+range_exclusive = (1...5).to_a
+puts "Exclusive Range (1...10): #{range_exclusive}"
+# Output: [1, 2, 3, 4]
+
+#------------------------------------------------------------------------------
+# Looping through numbers using ranges
+puts "Looping with inclusive range:"
+(1..5).each { |num| print "#{num} " }  # Prints: 1 2 3 4 5
+puts
+
+puts "Looping with exclusive range:"
+(1...5).each { |num| print "#{num} " }  # Prints: 1 2 3 4
+puts
+
+#------------------------------------------------------------------------------
+# Using Ranges in Conditions
+grade = 85
+puts "Passed!" if (70..100).include?(grade)  # Output: Passed!
+
+#------------------------------------------------------------------------------
+# Substring Extraction
+str = "Hello"
+puts "Substring (1..3): #{str[1..3]}"   # Output: "ell"
+puts "Substring (1...3): #{str[1...3]}" # Output: "el"
+
+
