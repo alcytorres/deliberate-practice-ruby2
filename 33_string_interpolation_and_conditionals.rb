@@ -186,3 +186,38 @@ age = 20
 puts "You are an adult." if age >= 18 then puts "You are young." if age < 30
 # Output: You are an adult.
 #         You are young.
+
+
+# --------------------------------------------------------------------------
+Miscellaneous
+# --------------------------------------------------------------------------
+_
+# Underscore (_) in Ruby
+#------------------------------------------------------------------------------
+# What it does: Represents an ignored or throwaway variable in loops, block
+#            parameters, and multiple assignment.
+# Why use it:  Improves readability by indicating unused values and prevents
+#              unused variable warnings.
+
+# Syntax:
+3.times { |_| puts "Hello" }  # `_` is used for an unused block variable
+
+# Mainly used as a throwaway variable to indicate that a value is intentionally inored.
+
+# --------------------------------------------------------------------------
+# Problem 1: Use `_` to ignore an unused variable in a loop.
+
+3.times { |_| puts "Hello" }  # `_` is used for an unused block variable
+# It is a convention to show that the variable won't be used in the code.
+
+# --------------------------------------------------------------------------
+# Problem 2: Write a function that filters a hash to return only the key-value pairs where the value is greater than 10.
+
+def select_values_greater_than_10(hash)
+  hash.select {|_, value| value > 10}
+  # `_` is used to ignore the hash key
+end
+
+data = { a: 5, b: 15, c: 8, d: 20 }
+p select_values_greater_than_10(data)
+# Output: { b: 15, d: 20 }

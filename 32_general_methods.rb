@@ -17,6 +17,12 @@ inspect
 # Why use it: It provides a detailed look at an object, including its structure and values, making it helpful for troubleshooting.
 
 
+#------------------------------------------------------------------------------
+
+
+
+
+
 
 #------------------------------------------------------------------------------
 initialize

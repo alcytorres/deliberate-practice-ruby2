@@ -276,6 +276,25 @@ array.sort { |a, b| b <=> a }
 # Hashes cannot be directly sorted. Use .sort to return a sorted array of key-value pairs.
 hash.sort { |(key1, value1), (key2, value2)| block }
 
+# Hash continued:
+# Ruby's .sort method, when called on a hash, converts it into an array of [key, value] pairs.
+
+# When you call .sort on a hash, it converts the hash into an array of key-value pairs. That means:
+example_hash = { c: 3, a: 1, b: 2 }
+p example_hash.sort
+
+# produces:
+[[:a, 1], [:b, 2], [:c, 3]]
+
+# By default, .sort orders based on the first element of each pair—the keys. Since symbols (:a, :b, :c) are naturally ordered alphabetically, the hash gets sorted by keys.
+
+# Finally, .to_h converts the sorted array back into a hash.
+
+
+# If you wanted to sort by values instead, you'd use:
+hash.sort_by { |_, value| value }.to_h
+
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
 

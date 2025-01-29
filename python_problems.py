@@ -1,4 +1,9 @@
-# 1. 
+# 1: Balanced Sum Problem
+
+# Given an array of integers, find the index where the sum of the elements on the left is equal to the sum of the elements on the right. Return this pivot index. How would you implement this efficiently in Python? 
+
+# Make sure to only add your code to the "# Write your code here" section
+
 
 #!/bin/python3
 
@@ -51,7 +56,12 @@ if __name__ == '__main__':
     fptr.close()
 
 
+#------------------------------------------------------------------------------
+# 2. Has Vowels Problem:
 
+# Given an array of strings and a set of queries in the form of index ranges, write a function that determines how many strings in each range both start and end with a vowel. How would you implement this using efficient range-sum techniques? 
+
+# Make sure to only add your code to the "# Write your code here" section
 
 
 #!/bin/python3

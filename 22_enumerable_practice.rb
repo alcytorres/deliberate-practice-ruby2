@@ -191,11 +191,11 @@ p square_nested(nested)
 # Problem 1: Write a function that selects all even numbers from an array.
 
 def select_even_numbers(array)
-
+  array.select {|num| num.even?}
 end
 
 nums = [1, 2, 3, 4, 5, 6]
-# p select_even_numbers(nums)
+p select_even_numbers(nums)
 # Output: [2, 4, 6]
 
 
@@ -212,11 +212,11 @@ nums = [1, 2, 3, 4, 5, 6]
 # Problem 2: Write a function that selects all words that start with "a".
 
 def select_words_starting_with_a(words)
-
+  words.select {|word| word[0] == "a"}
 end
 
 words = ["apple", "banana", "apricot", "cherry"]
-# p select_words_starting_with_a(words)
+p select_words_starting_with_a(words)
 # Output: ["apple", "apricot"]
 
 
@@ -234,11 +234,11 @@ words = ["apple", "banana", "apricot", "cherry"]
 # Problem 3: Write a function that selects key-value pairs where the value is greater than 10.
 
 def select_values_greater_than_10(hash)
-
+  hash.select{|key, value| value > 10}
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
-# p select_values_greater_than_10(data)
+p select_values_greater_than_10(data)
 # Output: { b: 15, d: 20 }
 
 
@@ -255,11 +255,11 @@ data = { a: 5, b: 15, c: 8, d: 20 }
 # Problem 4: Write a function that selects all positive numbers from an array.
 
 def select_positive_numbers(array)
-
+  array.select {|num| num > 0}
 end
 
 nums = [-3, 0, 5, -1, 2]
-# p select_positive_numbers(nums)
+p select_positive_numbers(nums)
 # Output: [5, 2]
 
 
@@ -277,11 +277,11 @@ nums = [-3, 0, 5, -1, 2]
 # Problem 1: Write a function that sorts an array of numbers in ascending order.
 
 def sort_ascending(numbers)
-
+  numbers.sort
 end
 
 nums = [5, 2, 8, 1, 3]
-# p sort_ascending(nums)
+p sort_ascending(nums)
 # Output: [1, 2, 3, 5, 8]
 
 
@@ -298,11 +298,11 @@ nums = [5, 2, 8, 1, 3]
 # Problem 2: Write a function that sorts an array of strings in alphabetical order.
 
 def sort_alphabetical(words)
-
+  words.sort
 end
 
 word_list = ["banana", "apple", "cherry"]
-# p sort_alphabetical(word_list)
+p sort_alphabetical(word_list)
 # Output: ["apple", "banana", "cherry"]
 
 
@@ -320,11 +320,11 @@ word_list = ["banana", "apple", "cherry"]
 # Problem 3: Sort an array of numbers in descending order.
 
 def sort_descending(numbers)
-
+  numbers.sort.reverse
 end
 
 nums = [5, 2, 8, 1]
-# p sort_descending(nums)
+p sort_descending(nums)
 # Output: [8, 5, 2, 1]
 
 
@@ -341,11 +341,11 @@ nums = [5, 2, 8, 1]
 # Problem 4: Sort an array of numbers in descending order using this syntax `{ |a, b| b <=> a }`
 
 def sort_descending(numbers)
-
+  numbers.sort { |a, b| b <=> a }
 end
 
 nums = [5, 2, 8, 1]
-# p sort_descending(nums)
+p sort_descending(nums)
 # Output: [8, 5, 2, 1]
 
 
@@ -363,21 +363,21 @@ nums = [5, 2, 8, 1]
 # Problem 5: Write a function that sorts a hash by its keys.
 
 def sort_hash_by_keys(hash)
-
+  hash.sort.to_h
 end
 
 example_hash = { c: 3, a: 1, b: 2 }
-# p sort_hash_by_keys(example_hash)
+p sort_hash_by_keys(example_hash)
 # Output: { a: 1, b: 2, c: 3 }
 
-# # Solution
-# def sort_hash_by_keys(hash)
-#   hash.sort.to_h # Sorts key-value pairs by keys and converts the result back to a hash.
-# end
-#
-# example_hash = { c: 3, a: 1, b: 2 }
-# p sort_hash_by_keys(example_hash)
-# # Output: { a: 1, b: 2, c: 3 }
+# Solution
+def sort_hash_by_keys(hash)
+  hash.sort.to_h # Sorts key-value pairs by keys and converts the result back to a hash.
+end
+
+example_hash = { c: 3, a: 1, b: 2 }
+p sort_hash_by_keys(example_hash)
+# Output: { a: 1, b: 2, c: 3 }
 
 #------------------------------------------------------------------------------
 # Problem 6: Write a function that sorts a hash by its values.
