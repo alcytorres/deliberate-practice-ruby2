@@ -345,13 +345,38 @@ p max_sum
 # 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
 #    For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
 
-
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
-# result =
+result = false
+numbers.each do |n1|
+  numbers.each do |n2|
+    if n1 != n2 && n1 + n2 == 10
+      result = [n1, n2]
+      break
+    end
+  end
+  break if result
+end
+p result
 
-# p result
 
+
+# Why are the break and break if lines are located where they are? Why does it have to be that way?
+
+# In short, the inner break stops the inner loop as soon as we find a valid pair, but that alone won’t stop the outer loop from running. The break if result then stops the outer loop once a valid pair has been found and stored in result.
+
+# Here’s why it has to be that way:
+
+# Inner break
+
+# As soon as n1 + n2 == 10, we have a solution.
+# We set result = [n1, n2] and then call break immediately. This “inner” break only exits the inner loop (the second numbers.each do |n2| ... end).
+# Outer break if result
+
+# Even though we broke out of the inner loop, Ruby will continue the outer loop (numbers.each do |n1|) on the next iteration of n1 if we don’t do anything else.
+# But we already have our solution after the first time we break in the inner loop, so there’s no need to keep going.
+# Therefore, break if result is a simple check to see if we’ve already found a valid pair. If result is truthy (i.e., it isn’t false or nil), we exit the outer loop as well.
+# This two-level breaking strategy makes sure the loops stop as soon as we’ve found our first pair summing to 10 and don’t continue scanning the array for more.
 
 
 
@@ -471,6 +496,7 @@ strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 #         "amanaplanacanalpanama"
 # combined_strings =
 
+
 # p combined_strings
 
 
@@ -480,14 +506,13 @@ strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 
 
 
-
-
-
 # strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+# #         "amanaplanacanalpanama"
 # combined_strings = ""
-# strings.each do |current_pair|
-#   current_pair.each do |current_string|
-#     combined_strings << current_string
+# strings.each do |array|
+#   array.each do |string|
+#     combined_strings << string
 #   end
 # end
+
 # p combined_strings
