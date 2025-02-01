@@ -639,11 +639,11 @@ p find_value_in_hash(data, 2)
 # Problem 1: Write a function that counts how many numbers are greater than 10.
 
 def count_greater_than_ten(numbers)
-
+  numbers.count {|num| num > 10}
 end
 
 numbers = [5, 12, 13, 8, 20]
-# p count_greater_than_ten(numbers)
+p count_greater_than_ten(numbers)
 # Output: 3
 
 
@@ -662,11 +662,11 @@ numbers = [5, 12, 13, 8, 20]
 # Problem 2: Count occurrences of a specific element in an array.
 
 def count_specific_element(array, target)
-
+  array.count(target)
 end
 
 values = [1, 2, 2, 3, 3, 3]
-# p count_specific_element(values, 3)
+p count_specific_element(values, 3)
 # Output: 3
 
 
@@ -683,7 +683,7 @@ values = [1, 2, 2, 3, 3, 3]
 # Problem 3: Count the total number of key-value pairs in a hash.
 
 data = { a: 1, b: 2, c: 3 }
-# p data.count
+p data.count
 # Output: 3
 
 
@@ -693,21 +693,21 @@ data = { a: 1, b: 2, c: 3 }
 # # Output: 3
 
 #------------------------------------------------------------------------------
-# Problem 4: Count key-value pairs in a hash matching a condition.
+# Problem 4: Count key-value pairs in a hash where the values are greater than 1.
 
 def count_matching_pairs(hash)
-
+  hash.count {|_, value| value > 1}
 end
 
 hash = { a: 1, b: 2, c: 3 }
-# p count_matching_pairs(hash)
+p count_matching_pairs(hash)
 # Output: 2
 
 
 
 # # Solution
 # def count_matching_pairs(hash)
-#   hash.count { |key, value| value > 1 }
+#   hash.count {|_, value| value > 1}
 # end
 
 # hash = { a: 1, b: 2, c: 3 }
@@ -719,11 +719,12 @@ hash = { a: 1, b: 2, c: 3 }
 # Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
 
 def remove_negatives(numbers)
-
+  numbers.reject {|num| num < 0}
 end
 
 nums = [-1, 2, -3, 4]
-# p remove_negatives(nums)
+p remove_negatives(nums)
+# Output: [2, 4]
 
 
 
@@ -806,11 +807,11 @@ words = ["hello", "", "world", "", "ruby"]
 # Problem 1: Write a function that takes in an array of numbers and returns true if there is at least one negative number?
 
 def any_negative?(numbers)
-
+  numbers.any? {|num| num < 0}
 end
 
 nums = [1, -2, 3]
-# p any_negative?(nums)
+p any_negative?(nums)
 # Output: true
 
 
@@ -852,11 +853,11 @@ nums = [1, 3, 5]
 # Problem 1: Write a function that takes in an array of words and returns true if none of them start with "z"?
 
 def none_start_with_z?(words)
-
+  words.none? {|word| word[0] == "z"}
 end
 
 words = ["apple", "cat", "banana"]
-# p none_start_with_z?(words)
+p none_start_with_z?(words)
 # Output: true
 
 
@@ -876,11 +877,11 @@ words = ["apple", "cat", "banana"]
 # Problem 1: Write a function that returns the total sum of an array of integers.
 
 def total_sum(numbers)
-
+  numbers.sum
 end
 
 numbers = [1, 2, 3]
-# p total_sum(numbers)
+p total_sum(numbers)
 # Output: 6
 
 
@@ -918,11 +919,11 @@ end
 # Problem 1: Write a function that sort an array of numbers in ascending order.
 
 def sort_numbers(array)
-
+  array.sort_by {|num| num}
 end
 
 numbers = [5, 3, 8, 1]
-# p sort_numbers(numbers)
+p sort_numbers(numbers)
 # Output: [1, 3, 5, 8]
 
 
@@ -940,11 +941,11 @@ numbers = [5, 3, 8, 1]
 # Problem 2: Sort an array of strings by their length.
 
 def sort_by_length(array)
-
+  array.sort_by {|str| str.length}
 end
 
 words = ["apple", "cat", "banana"]
-# p sort_by_length(words)
+p sort_by_length(words)
 # Output: ["cat", "apple", "banana"]
 
 

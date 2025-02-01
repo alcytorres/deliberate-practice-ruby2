@@ -701,7 +701,7 @@ values = [1, 2, 2, 3, 3, 3]
 # Problem 3: Count the total number of key-value pairs in a hash.
 
 data = { a: 1, b: 2, c: 3 }
-# p data.count
+
 # Output: 3
 
 
@@ -711,7 +711,7 @@ data = { a: 1, b: 2, c: 3 }
 # # Output: 3
 
 #------------------------------------------------------------------------------
-# Problem 4: Count key-value pairs in a hash matching a condition.
+# Problem 4: Count key-value pairs in a hash where the values are greater than 1.
 
 def count_matching_pairs(hash)
 
@@ -725,7 +725,7 @@ hash = { a: 1, b: 2, c: 3 }
 
 # # Solution
 # def count_matching_pairs(hash)
-#   hash.count { |key, value| value > 1 }
+#   hash.count {|_, value| value > 1}
 # end
 
 # hash = { a: 1, b: 2, c: 3 }
@@ -742,6 +742,7 @@ end
 
 nums = [-1, 2, -3, 4]
 # p remove_negatives(nums)
+# Output: [2, 4]
 
 
 
