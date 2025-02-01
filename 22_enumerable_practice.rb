@@ -572,11 +572,11 @@ print_elements_with_index(nums)
 # Problem 1: Write a function that returns the first even number in an array.
 
 def first_even(numbers)
-
+  numbers.find {|num| num.even?}
 end
 
 numbers = [1, 3, 5, 6, 7]
-# p first_even(numbers)
+p first_even(numbers)
 # Output: 6
 
 
@@ -595,11 +595,11 @@ numbers = [1, 3, 5, 6, 7]
 # Problem 2: Write a function that returns the first word longer than 4 letters.
 
 def first_long_word(words)
-
+  words.find {|word| word.length > 4}
 end
 
 words = ["cat", "door", "apple", "hi"]
-# p first_long_word(words)
+p first_long_word(words)
 # Output: "apple"
 
 
@@ -617,11 +617,11 @@ words = ["cat", "door", "apple", "hi"]
 # Problem 3: Write a function that finds the First Key-Value Pair with a Specific Value
 
 def find_value_in_hash(hash, target)
-
+  hash.find {|_, value| value == target}
 end
 
 data = { a: 1, b: 2, c: 3 }
-# p find_value_in_hash(data, 2)
+p find_value_in_hash(data, 2)
 # Output: [:b, 2]
 
 
