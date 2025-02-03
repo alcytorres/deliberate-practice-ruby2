@@ -184,11 +184,11 @@ p includes_key?(data, :height)         # Output: false
 # Problem 1: Write a function that reverses a given string.
 
 def reverse_string(str)
-
+  str.reverse
 end
 
 greeting = "Hello"
-# p reverse_string(greeting)
+p reverse_string(greeting)
 # Output: "olleH"
 
 
@@ -206,11 +206,11 @@ greeting = "Hello"
 # Problem 1: Write a function that replaces all spaces in a string with hyphens.
 
 def spaces_to_hyphens(str)
-
+  str.gsub(" ", "-")
 end
 
 string = "hello world from ruby"
-# p spaces_to_hyphens(string)
+p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
@@ -228,11 +228,11 @@ string = "hello world from ruby"
 # Problem 2: Write a function that replaces all occurrences of a word with another word.
 
 def replace_word(string, old_word, new_word)
-
+  string.gsub(old_word, new_word)
 end
 
 sentence = "I love programming in Ruby. Ruby is great!"
-# p replace_word(sentence, "Ruby", "Python")
+p replace_word(sentence, "Ruby", "Python")
 # Output: "I love programming in Python. Python is great!"
 
 
@@ -249,11 +249,11 @@ sentence = "I love programming in Ruby. Ruby is great!"
 # Problem 3: Write a function that replaces all	spaces, tabs, newlines in a string with hyphens.
 
 def spaces_to_hyphens(str)
-
+  str.gsub(/\s/, "-")
 end
 
 string = "hello\tworld\nfrom ruby"
-# p spaces_to_hyphens(string)
+p spaces_to_hyphens(string)
 # Output: "hello-world-from-ruby"
 
 
@@ -319,11 +319,11 @@ test_str = "abc123def456"
 # Problem 1: Write a function that takes in a string and returns an array of its characters using .chars.
 
 def string_to_chars(str)
-
+  str.chars
 end
 
 greeting = "hi"
-# p string_to_chars(greeting)
+p string_to_chars(greeting)
 # Output: ["h", "i"]
 
 
@@ -341,14 +341,14 @@ greeting = "hi"
 # Problem 1: Write a function that checks if a string is empty.
 
 def string_empty?(str)
-
+  str.empty?
 end
 
 greeting = ""
-# p string_empty?(greeting)     # Output: true
+p string_empty?(greeting)     # Output: true
 
 greeting = "Hello"
-# p string_empty?(greeting)     # Output: false
+p string_empty?(greeting)     # Output: false
 
 
 
@@ -367,14 +367,14 @@ greeting = "Hello"
 # Problem 2: Write a function that checks if an array is empty.
 
 def array_empty?(arr)
-
+  arr.empty?
 end
 
 numbers = []
-# p array_empty?(numbers)     # Output: true
+p array_empty?(numbers)     # Output: true
 
 numbers = [1, 2, 3]
-# p array_empty?(numbers)     # Output: false
+p array_empty?(numbers)     # Output: false
 
 
 
@@ -393,7 +393,7 @@ numbers = [1, 2, 3]
 # Problem 3: Write a function that checks if a hash is empty.
 
 def hash_empty?(hash)
-
+  hash.empty?
 end
 
 data = {}
@@ -419,23 +419,25 @@ data = { a: 1, b: 2 }
 # Problem 4: Write a function that safely checks if a value is empty, handling nil values.
 
 def safe_empty?(value)
-
+  value.nil? || value.empty?
 end
 
 value = nil
-# p safe_empty?(value)     # Output: true
+p safe_empty?(value)     # Output: true
 
 value = ""
-# p safe_empty?(value)     # Output: true
+p safe_empty?(value)     # Output: true
 
 value = [1, 2, 3]
-# p safe_empty?(value)     # Output: false
+p safe_empty?(value)     # Output: false
 
 
 
 # # Solution
 # def safe_empty?(value)
 #   value.nil? || value.empty?
+# # Returns true if value is nil OR if calling empty? on value returns true.
+# # This works for strings, arrays, and other objects that implement the empty? method.
 # end
 
 # value = nil
@@ -458,11 +460,11 @@ value = [1, 2, 3]
 # Problem 1: Write a function that checks if a string starts with "hello" and ends with "bye" using .start_with? / .end_with?.
 
 def start_hello_end_bye?(str)
-
+  str.start_with?("hello") && str.end_with?("bye")
 end
 
 test_str = "hello something bye"
-# p start_hello_end_bye?(test_str)
+p start_hello_end_bye?(test_str)
 # Output: true
 
 
@@ -481,11 +483,11 @@ test_str = "hello something bye"
 # Problem 1: Write a function that removes leading and trailing whitespace from a given string.
 
 def remove_whitespace(input)
-
+  input.strip
 end
 
 input = "   hello world   "
-# p remove_whitespace(input)
+p remove_whitespace(input)
 # Output: "hello world"
 
 

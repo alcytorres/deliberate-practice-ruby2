@@ -436,6 +436,8 @@ value = [1, 2, 3]
 # # Solution
 # def safe_empty?(value)
 #   value.nil? || value.empty?
+# # Returns true if value is nil OR if calling empty? on value returns true.
+# # This works for strings, arrays, and other objects that implement the empty? method.
 # end
 
 # value = nil
