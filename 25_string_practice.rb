@@ -6,11 +6,11 @@
 # Problem 1: Write a function that takes a sentence and returns an array of words.
 
 def sentence_to_words(sentence)
-
+  sentence.split(" ")
 end
 
 sentence = "Hello world from Ruby"
-# p sentence_to_words(sentence)
+p sentence_to_words(sentence)
 # Output: ["Hello", "world", "from", "Ruby"]
 
 
@@ -32,7 +32,7 @@ def sentence_to_words(sentence)
 end
 
 sentence = "Hello-world-from-Ruby"
-# p sentence_to_words(sentence)
+p sentence_to_words(sentence)
 # Output: ["Hello", "world", "from", "Ruby"]
 
 
@@ -49,11 +49,11 @@ sentence = "Hello-world-from-Ruby"
 # Problem 3: Write a function that splits a string into characters.
 
 def split_into_chars(greeting)
-
+  greeting.split("")
 end
 
 greeting = "Hello"
-# p split_into_chars(greeting)
+p split_into_chars(greeting)
 # Output: ["H", "e", "l", "l", "o"]
 
 
@@ -72,11 +72,11 @@ greeting = "Hello"
 # Problem 1: Write a function that returns the length of a given string using .length (or .size).
 
 def string_length(str)
-
+  str.length
 end
 
 long_word = "supercalifragilistic"
-# p string_length(long_word)
+p string_length(long_word)
 # Output: 20
 
 
@@ -95,12 +95,12 @@ long_word = "supercalifragilistic"
 # Problem 1: Write a function that checks if a number exists in an array.
 
 def array_includes_number?(array, number)
-
+  array.include?(number)
 end
 
 nums = [1, 2, 3, 4, 5]
-# p array_includes_number?(nums, 3)     # Output: true
-# p array_includes_number?(nums, 6)     # Output: false
+p array_includes_number?(nums, 3)     # Output: true
+p array_includes_number?(nums, 6)     # Output: false
 
 
 # # Solution
@@ -116,13 +116,13 @@ nums = [1, 2, 3, 4, 5]
 # Problem 2: Write a function that checks if a string contains the substring "ruby".
 
 def contains_ruby?(str)
-
+  str.include?("ruby")
 end
 
 string1 = "I love ruby programming"
 string2 = "I love python programming"
-# p contains_ruby?(string1)             # Output: true
-# p contains_ruby?(string2)             # Output: false
+p contains_ruby?(string1)             # Output: true
+p contains_ruby?(string2)             # Output: false
 
 
 
@@ -140,12 +140,12 @@ string2 = "I love python programming"
 # Problem 3: Write a function that checks if a name is in a list of guests (comma-separated string).
 
 def guest_in_list?(guest_list, name)
-
+  guest_list.include?(name)
 end
 
-list = "Alice,Bob,Carol"
-# p guest_in_list?(list, "Bob")         # Output: true
-# p guest_in_list?(list, "David")       # Output: false
+list = "Alice, Bob, Carol"
+p guest_in_list?(list, "Bob")         # Output: true
+p guest_in_list?(list, "David")       # Output: false
 
 
 
@@ -162,12 +162,12 @@ list = "Alice,Bob,Carol"
 # Problem 4: Write a function that checks if a hash includes a specific key.
 
 def includes_key?(hash, key)
-
+  hash.include?(key)
 end
 
 data = { name: "Alice", age: 25 }
-# p includes_key?(data, :name)           # Output: true
-# p includes_key?(data, :height)         # Output: false
+p includes_key?(data, :name)           # Output: true
+p includes_key?(data, :height)         # Output: false
 
 
 # # Solution

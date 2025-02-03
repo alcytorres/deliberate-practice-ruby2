@@ -28,7 +28,7 @@ sentence = "Hello world from Ruby"
 # Problem 2: Write a function that takes a sentence with dash as the delimiter and returns an array of words.
 
 def sentence_to_words(sentence)
-  sentence.split("-")
+
 end
 
 sentence = "Hello-world-from-Ruby"
@@ -143,7 +143,7 @@ def guest_in_list?(guest_list, name)
 
 end
 
-list = "Alice,Bob,Carol"
+list = "Alice, Bob, Carol"
 # p guest_in_list?(list, "Bob")         # Output: true
 # p guest_in_list?(list, "David")       # Output: false
 
@@ -154,7 +154,7 @@ list = "Alice,Bob,Carol"
 #   guest_list.include?(name)
 # end
 
-# list = "Alice,Bob,Carol"
+# list = "Alice, Bob, Carol"
 # p guest_in_list?(list, "Bob")         # Output: true
 # p guest_in_list?(list, "David")       # Output: false
 
