@@ -12,9 +12,24 @@ pp
 # Short for "pretty print."
 # It's used for displaying complex data structures (like arrays and hashes) in a more readable format.
 
+#------------------------------------------------------------------------------
 inspect
 # What it does: Returns a string representation of an object, often used for debugging purposes.
 # Why use it: It provides a detailed look at an object, including its structure and values, making it helpful for troubleshooting.
+
+# Syntax:
+object.inspect # Returns a string representation of the object
+
+# Example 1: Inspecting an array
+arr = [1, 2, 3]
+puts arr.inspect
+# Output: "[1, 2, 3]"
+
+# Example 2: Inspecting a hash
+hash = {a: 1, b: 2}
+puts hash.inspect
+# Output: "{:a=>1, :b=>2}"
+
 
 
 #------------------------------------------------------------------------------
@@ -52,6 +67,13 @@ end
 # Iteration #1
 # Iteration #2
 
+#------------------------------------------------------------------------------
+# Problem 3: Run `times` for 3 iterations with an index
+3.times { |i| puts i + 1 }
+# Output:
+# 1
+# 2
+# 3
 
 #------------------------------------------------------------------------------
 initialize

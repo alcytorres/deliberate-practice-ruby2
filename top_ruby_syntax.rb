@@ -231,6 +231,35 @@ puts substring("HelloWorld", 1, 4)
 
 
 ################################################################################
+# 11. Infinite Loop with Conditional Break
+# What it does: Creates a loop that runs indefinitely until a specific condition is met,
+# and then exits the loop using the break statement.
+
+# Why use it: This construct is essential for tasks where you need to keep performing
+# actions (like prompting for user input) until an external event (e.g., a particular input)
+# signals you to stop. It is especially useful for interactive programs or servers.
+
+# Syntax:
+while true
+  # code to execute repeatedly
+  if condition
+    break
+  end
+end
+
+#------------------------------------------------------------------------------
+# Problem 11: Continuously prompt the user to enter a word until they type "stop".
+while true                  # Start an infinite loop
+  puts "enter a word"       # Prompt the user to enter a word
+  user_input = gets.chomp   # Read input from the user and remove the trailing newline
+  if user_input == "stop"   # Check if the input is "stop"
+    break                   # Exit the loop if the condition is met
+  end
+end
+
+
+
+################################################################################
 # Why This Order?
 # 1. Method Definition (def ... end) -> Fundamental for structuring solutions in Ruby.
 # 2. if/elsif/else                   -> Essential for conditional logic in every problem.
@@ -242,5 +271,8 @@ puts substring("HelloWorld", 1, 4)
 # 8. String Interpolation            -> Key for printing/debugging and creating dynamic strings.
 # 9. Ranges                          -> Used in loops, generating sequences, or slicing.
 # 10. Slicing                        -> Necessary for substring or subarray extraction logic.
+# 11. Infinite Loop with break       -> Repeats a block until a break condition is met, ideal for interactive input.
 
-# End of snippet
+
+
+
