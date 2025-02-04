@@ -273,21 +273,17 @@ strings = ["do", "or", "do", "not"]
 
 
 
-
-
 #GPT breakdown
-strings = ["do", "or", "do", "not"]
-strings_hash = {}
-strings.each do |string|
-  if strings_hash[string] == nil
-    strings_hash[string] = 0
+strings = ["do", "or", "do", "not"]       # Array of strings to process
+strings_hash = {}                         # Initialize an empty hash for counting occurrences
+strings.each do |string|                  # Iterate over each string in the array
+  if strings_hash[string] == nil          # If the string is not yet a key in the hash
+    strings_hash[string] = 0              # Initialize its count to 0
   end
-  strings_hash[string] += 1
+  strings_hash[string] += 1               # Increase the stored count for the current string by one
 end
 
-p strings_hash
-
-
+p strings_hash                          # Print the hash: {"do"=>2, "or"=>1, "not"=>1}
 
 
 
@@ -299,8 +295,8 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 #      ["a", 1, "b", 2, "c", 3, "d", 4]
 # flattened_array =
 
-# p flattened_array
 
+# p flattened_array
 
 
 
@@ -335,10 +331,8 @@ items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
 
+
 # p combined_hash
-
-
-
 
 
 
@@ -374,6 +368,7 @@ p combined_hash
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
+
 
 # p books_hash
 
@@ -433,6 +428,7 @@ p books_hash
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
 # flipped_hash =
+
 
 # p flipped_hash
 
