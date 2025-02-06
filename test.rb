@@ -49,21 +49,46 @@
 
 
 
-# Problem 4: Generate the first n multiples of 3 in an array using until.
+# # Problem 4: Generate the first n multiples of 3 in an array using until.
 
-def multiples_of_three(n)
-  result = []
-  count = 1
-  until count > n
-    result[count - 1] = 3 * count
-    count += 1
-  end
-  result
+# def multiples_of_three(n)
+#   result = []
+#   count = 1
+#   until count > n
+#     result[count - 1] = 3 * count
+#     count += 1
+#   end
+#   result
+# end
+
+# puts multiples_of_three(5).inspect
+# # Output: [3, 6, 9, 12, 15]
+
+
+# def string_combiner(s1, s2, s3)
+#   "#{s1} #{s2} #{s3}"
+# end
+
+# words = ["sky", "fly", "run"]
+# p string_combiner(*words) # Use the splat operator (*) to unpack the array
+
+
+
+# Example 1: Unpacking an array into arguments when calling a method.
+def add(a, b, c)
+  a + b + c  # Sums three numbers
 end
 
-puts multiples_of_three(5).inspect
-# Output: [3, 6, 9, 12, 15]
+numbers = [1, 2, 3]
+p add(*numbers)  # The '*' before 'numbers' expands the array into 1, 2, 3 as separate arguments.
+# Expected Output: 6
 
 
-# Problem 3: Run `times` for 3 iterations with an index
-3.times { |i| puts i + 1 }
+# Example 1: Unpacking an array into arguments when calling a method.
+def add(a, b, c)
+  a + b + c  # Sums three numbers
+end
+
+numbers = [1, 2, 3]
+p add(1, 2, 3)  # The '*' before 'numbers' expands the array into 1, 2, 3 as separate arguments.
+# Expected Output: 6

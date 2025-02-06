@@ -320,3 +320,100 @@ numbers = [1, 2, 2, 3, 3, 3]
 p frequency_count(numbers)
 
 
+#------------------------------------------------------------------------------
+Splat Operator
+
+What it does:
+Used to either expand an array into a list of individual elements or collect multiple arguments into a single array.
+
+Why use it:
+Expanding Arrays: It allows you to pass an array to a method that expects a list of arguments.
+Collecting Arguments: It lets you define methods that accept a variable number of arguments, gathering them into an array for flexible processing.
+
+
+#------------------------------------------------------------------------------
+# Example 1: Unpacking an array into arguments when calling a method.
+
+# Explanation:
+# - 'add' expects three separate arguments.
+# - 'numbers' is an array: [1, 2, 3].
+# - Using '*' before 'numbers' expands the array into individual arguments.
+#   Thus, add(*numbers) becomes add(1, 2, 3).
+
+def add(a, b, c)
+  a + b + c  # Sums three numbers
+end
+
+numbers = [1, 2, 3]
+p add(*numbers)  # The '*' before 'numbers' expands the array into 1, 2, 3 as separate arguments.
+# Expected Output: 6
+
+
+# In other words using the splat operator is like doing the following:
+# Example 1: Unpacking an array into arguments when calling a method.
+def add(a, b, c)
+  a + b + c  # Sums three numbers
+end
+
+numbers = [1, 2, 3]
+p add(1, 2, 3)
+# Expected Output: 6
+
+#------------------------------------------------------------------------------
+# Example 2: Collecting extra arguments into an array in a method definition.
+#
+# In a method definition, Ruby matches arguments to parameters in order.
+# Here, the method 'greet' has two parameters:
+#   1. 'greeting' — This will receive the first argument passed to the method.
+#   2. '*names'  — The splat operator (*) before 'names' tells Ruby:
+#                 "Take all remaining arguments (if any) and put them into an array called 'names'."
+#
+# When we call greet("Hello", "Alice", "Bob", "Carol"):
+#   - "Hello" is assigned to 'greeting'.
+#   - The rest of the arguments, ["Alice", "Bob", "Carol"], are collected into the array 'names'.
+def greet(greeting, *names)
+  # 'greeting' now holds "Hello"
+  # 'names' is now ["Alice", "Bob", "Carol"]
+  names.each do |name|
+    # For each name in the array, print a greeting.
+    puts "#{greeting}, #{name}!"
+  end
+end
+
+greet("Hello", "Alice", "Bob", "Carol")
+# Expected Output:
+# Hello, Alice!
+# Hello, Bob!
+# Hello, Carol!
+
+#------------------------------------------------------------------------------
+# Example 3: Array destructuring to capture remaining elements.
+#
+# Ruby allows you to assign array elements to multiple variables at once.
+# Here we use:
+#   - 'first' without a splat to capture the first element.
+#   - '*rest' with a splat to capture all remaining elements as an array.
+#
+# When you write: first, *rest = numbers
+# Ruby does the following:
+#   1. Assign the first element of 'numbers' to 'first'.
+#   2. Gather all remaining elements into an array and assign it to 'rest'.
+numbers = [1, 2, 3, 4, 5]
+first, *rest = numbers
+# Now:
+#   first is 1
+#   rest is [2, 3, 4, 5]
+p first  # Expected Output: 1
+p rest   # Expected Output: [2, 3, 4, 5]
+
+# Additional note:
+# If you instead did: *first, last = numbers
+# Then Ruby would assign:
+#   - 'last' the final element (5).
+#   - '*first' an array with all the preceding elements ([1, 2, 3, 4]).
+
+
+
+
+
+
