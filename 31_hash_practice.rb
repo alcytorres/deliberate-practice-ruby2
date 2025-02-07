@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Highest-importance methods ( .keys, .values, .has_key?, .merge, .fetch, .select, .reject) appear regularly in typical hashing or dictionary tasks and are crucial for many solutions in easy/medium algorithmic problems.
+# Highest-importance methods (.keys, .values, .has_key?, .merge, .fetch, .select, .reject) appear regularly in typical hashing or dictionary tasks and are crucial for many solutions in easy/medium algorithmic problems.
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ p all_keys(fruits)
 # Problem 2: Write a function that prints the keys in a hash, one per line.
 
 def print_keys(hash)
-  hash.keys.each {|key| puts key}
+  hash.keys.each {|key, _| puts key}
 end
 
 person = { name: "Alice", age: 25, city: "NYC" }
@@ -44,7 +44,7 @@ print_keys(person)
 
 # # Solution
 # def print_keys(hash)
-#   hash.keys.each { |key| puts key }
+#   hash.keys.each { |key, _| puts key }
 #   # .keys extracts all keys from the hash.
 #   # .each iterates through each key.
 # end
@@ -62,11 +62,11 @@ print_keys(person)
 # Problem 1: Write a function that returns all the values in a given hash.
 
 def all_values(hash)
-  hash.values
+
 end
 
 prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
-p all_values(prices)
+# p all_values(prices)
 # Output: [1.2, 0.5, 2.0]
 
 
@@ -85,11 +85,11 @@ p all_values(prices)
 # Problem 2: Write a function that prints all values in a hash, one per line.
 
 def print_values(hash)
-  hash.values.each {|value| puts value}
+
 end
 
 movie = { title: "Matrix", year: 1999, rating: 8.7 }
-print_values(movie)
+# print_values(movie)
 # Output (each value on its own line):
 # Matrix
 # 1999
@@ -114,20 +114,20 @@ print_values(movie)
 # Problem 1: Write a function that returns true if the hash contains the given key.
 
 def hash_has_key?(hash, key)
-  hash.has_key?(key)
+
 end
 
 data = { name: "Alice", age: 30 }
 
-p hash_has_key?(data, :name)
-# Output: true
-p hash_has_key?(data, :height)
-# Output: false
+# p hash_has_key?(data, :name)
+# # Output: true
+# p hash_has_key?(data, :height)
+# # Output: false
 
 
 # # Solution
 # def hash_has_key?(hash, key)
-#   hash.has_key?(key)
+#   hash.key?(key)
 # end
 
 # data = { name: "Alice", age: 30 }
@@ -142,8 +142,9 @@ p hash_has_key?(data, :height)
 # Problem 2: Write a function that takes a hash and a key as input and returns the value associated with the key if it exists; otherwise, return the string "Key not found".
 
 def fetch_value_if_key_exists(hash, key)
-  if hash.has_key?(key)
+  if hash.key?(key)
     hash[key]
+    # Return the value associated with the key.
   else
     "Key not found"
   end
@@ -151,10 +152,10 @@ end
 
 data = { name: "Alice", age: 30 }
 
-p fetch_value_if_key_exists(data, :age)
-# Output: 30
-p fetch_value_if_key_exists(data, :height)
-# Output: "Key not found"
+# p fetch_value_if_key_exists(data, :age)
+# # Output: 30
+# p fetch_value_if_key_exists(data, :height)
+# # Output: "Key not found"
 
 
 
@@ -181,12 +182,12 @@ p fetch_value_if_key_exists(data, :height)
 # Problem 1: Write a function that merges two hashes, returning a new hash without modifying the originals.
 
 def merge_hashes(hash1, hash2)
-  hash1.merge(hash2)
+
 end
 
 hash_a = { name: "Alice", age: 25 }
 hash_b = { city: "NYC", occupation: "Engineer" }
-p merge_hashes(hash_a, hash_b)
+# p merge_hashes(hash_a, hash_b)
 # Output: { name: "Alice", age: 25, city: "NYC", occupation: "Engineer" }
 
 
@@ -206,12 +207,12 @@ p merge_hashes(hash_a, hash_b)
 # Problem 2: Write a function that merges two hashes, with values from the second hash overriding duplicates in the first.
 
 def merge_override(hash1, hash2)
-  hash1.merge(hash2)
+
 end
 
 default_config = { timeout: 30, debug: false }
 user_config = { debug: true }
-p merge_override(default_config, user_config)
+# p merge_override(default_config, user_config)
 # Output: { timeout: 30, debug: true }
 
 
@@ -232,19 +233,19 @@ p merge_override(default_config, user_config)
 # Problem 3: Write a function that merges two hashes, adding the values together for any duplicate keys.
 
 def merge_with_custom_logic(hash1, hash2)
-  hash1.merge(hash2) {|key, old_vaue, new_value| old_vaue + new_value}
+
 end
 
 hash1 = { a: 1, b: 2 }
 hash2 = { b: 3, c: 4 }
-p merge_with_custom_logic(hash1, hash2)
+# p merge_with_custom_logic(hash1, hash2)
 # Output: { a: 1, b: 5, c: 4 }
 
 
 
 # # Solution
 # def merge_with_custom_logic(hash1, hash2)
-#   hash1.merge(hash2) { |key, old_val, new_val| old_val + new_val }
+# hash1.merge(hash2) { |key, old_val, new_val| old_val + new_val }
 # end
 
 # hash1 = { a: 1, b: 2 }
@@ -257,11 +258,11 @@ p merge_with_custom_logic(hash1, hash2)
 # Problem 1: Write a function that fetches a value from a hash given a key.
 
 def fetch_value(hash, key)
-  hash.fetch(key)
+
 end
 
 person = { name: "Alice", age: 25 }
-p fetch_value(person, :name)
+# p fetch_value(person, :name)
 # Output: "Alice"
 
 
@@ -280,11 +281,11 @@ p fetch_value(person, :name)
 # Problem 2: Write a function that fetches a value from a hash or returns a default if the key is missing.
 
 def fetch_with_default(hash, key, default)
-  hash.fetch(key, default)
+
 end
 
 data = { name: "Alice", age: 30 }
-p fetch_with_default(data, :height, 170)
+# p fetch_with_default(data, :height, 170)
 # Output: 170
 
 
@@ -303,13 +304,12 @@ p fetch_with_default(data, :height, 170)
 # Problem 3: Write a function that fetches the value for a given key from a hash. If the key is not present, the function should return a custom message using a block.
 
 def fetch_with_block(hash, key)
-  hash.fetch(key) {|missing_key| "#{missing_key} not found" }
+
 end
 
 data = { name: "Alice", age: 30 }
-p fetch_with_block(data, :height)
+# p fetch_with_block(data, :height)
 # Output: "height not found"
-
 
 
 # # Solution
@@ -322,15 +322,16 @@ p fetch_with_block(data, :height)
 # # Output: "height not found"
 
 
+
 #------------------------------------------------------------------------------
 # Problem 1: Write a function that selects all even numbers from an array.
 
 def select_even_numbers(array)
-  array.select {|num| num.even?}
+
 end
 
 nums = [1, 2, 3, 4, 5, 6]
-p select_even_numbers(nums)
+# p select_even_numbers(nums)
 # Output: [2, 4, 6]
 
 
@@ -348,11 +349,11 @@ p select_even_numbers(nums)
 # Problem 2: Write a function that selects all words that start with "a".
 
 def select_words_starting_with_a(words)
-  words.select {|word| word[0] == "a"}
+
 end
 
 words = ["apple", "banana", "apricot", "cherry"]
-p select_words_starting_with_a(words)
+# p select_words_starting_with_a(words)
 # Output: ["apple", "apricot"]
 
 
@@ -371,11 +372,11 @@ p select_words_starting_with_a(words)
 # Problem 3: Write a function that selects key-value pairs where the value is greater than 10.
 
 def select_values_greater_than_10(hash)
-  hash.select {|key, value| value > 10}
+
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
-p select_values_greater_than_10(data)
+# p select_values_greater_than_10(data)
 # Output: { b: 15, d: 20 }
 
 
@@ -392,11 +393,11 @@ p select_values_greater_than_10(data)
 # Problem 4: Write a function that selects all positive numbers from an array.
 
 def select_positive_numbers(array)
-  array.select {|num| num > 0}
+
 end
 
 nums = [-3, 0, 5, -1, 2]
-p select_positive_numbers(nums)
+# p select_positive_numbers(nums)
 # Output: [5, 2]
 
 
@@ -416,11 +417,11 @@ p select_positive_numbers(nums)
 # Problem 1: Write a function that takes in an array of numbers and returns an array without negative numbers?
 
 def remove_negatives(numbers)
-  numbers.reject {|num| num < 0}
+
 end
 
 nums = [-1, 2, -3, 4]
-p remove_negatives(nums)
+# p remove_negatives(nums)
 # Output: [2, 4]
 
 
@@ -438,11 +439,11 @@ p remove_negatives(nums)
 # Problem 2: Write a function that removes all even numbers from an array.
 
 def reject_even_numbers(array)
-  array.reject {|num| num.even?}
+
 end
 
 nums = [1, 2, 3, 4, 5, 6]
-p reject_even_numbers(nums)
+# p reject_even_numbers(nums)
 # Output: [1, 3, 5]
 
 
@@ -460,11 +461,11 @@ p reject_even_numbers(nums)
 # Problem 3: Write a function that exclude key-value pairs from a hash where the value is less than 10.
 
 def reject_values_less_than_10(hash)
-  hash.reject {|key, value| value < 10}
+
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
-p reject_values_less_than_10(data)
+# p reject_values_less_than_10(data)
 # Output: { b: 15, d: 20 }
 
 
@@ -481,17 +482,18 @@ p reject_values_less_than_10(data)
 # Problem 4: Write a function that exclude empty strings from an array.
 
 def reject_empty_strings(strings)
-  strings.reject {|str| str == ""}
+
 end
 
 words = ["hello", "", "world", "", "ruby"]
-p reject_empty_strings(words)
+# p reject_empty_strings(words)
 # Output: ["hello", "world", "ruby"]
 
 
 # # Solution
 # def reject_empty_strings(strings)
 #   strings.reject { |str| str.empty? }
+#   # str.empty? = str == ""
 # end
 
 # words = ["hello", "", "world", "", "ruby"]
@@ -509,15 +511,15 @@ p reject_empty_strings(words)
 # Problem 1: Write a function that retrieve a nested value from a hash.
 
 def fetch_nested_value(hash, key1, key2)
-  hash.dig(key1, key2)
+
 end
 
 data = { user: { name: "Alice", age: 30 } }
 
-p fetch_nested_value(data, :user, :name)
-# Output: "Alice"
-p fetch_nested_value(data, :user, :height)
-# Output: nil (key :height does not exist)
+# p fetch_nested_value(data, :user, :name)
+# # Output: "Alice"
+# p fetch_nested_value(data, :user, :height)
+# # Output: nil (key :height does not exist)
 
 
 
@@ -538,15 +540,15 @@ p fetch_nested_value(data, :user, :height)
 # Problem 2: Write a function that retrieve a nested value from an array.
 
 def fetch_nested_array_value(array, index1, index2)
-  array.dig(index1, index2)
+
 end
 
 data = [[1, 2, 3], [4, 5, 6]]
 
-p fetch_nested_array_value(data, 1, 2)
-# Output: 6
-p fetch_nested_array_value(data, 2, 0)
-# Output: nil (index 2 does not exist)
+# p fetch_nested_array_value(data, 1, 2)
+# # Output: 6
+# p fetch_nested_array_value(data, 2, 0)
+# # Output: nil (index 2 does not exist)
 
 
 # # Solution
@@ -566,15 +568,15 @@ p fetch_nested_array_value(data, 2, 0)
 # Problem 3: Write a function that retrieve a value from a mix of hash and array.
 
 def fetch_mixed_nested_value(data, key1, index2)
-  data.dig(key1, index2)
+
 end
 
 data = { users: [{ name: "Alice" }, { name: "Bob" }] }
 
-p fetch_mixed_nested_value(data, :users, 1)
-# Output: { name: "Bob" }
-p fetch_mixed_nested_value(data, :users, 2)
-# Output: nil (index 2 does not exist)
+# p fetch_mixed_nested_value(data, :users, 1)
+# # Output: { name: "Bob" }
+# p fetch_mixed_nested_value(data, :users, 2)
+# # Output: nil (index 2 does not exist)
 
 
 # # Solution
@@ -594,12 +596,12 @@ p fetch_mixed_nested_value(data, :users, 2)
 # Problem 1: Remove all even numbers from an array.
 
 def remove_even_numbers!(array)
-  array.delete_if {|num| num.even?}
+
 end
 
 nums = [1, 2, 3, 4, 5, 6]
 remove_even_numbers!(nums)
-p nums
+# p nums
 # Output: [1, 3, 5]
 
 
@@ -619,12 +621,12 @@ p nums
 # Problem 2: Remove all words longer than 3 characters from an array.
 
 def remove_long_words!(words)
-  words.delete_if {|word| word.size > 3}
+
 end
 
 words = ["cat", "dog", "elephant", "ant"]
 remove_long_words!(words)
-p words
+# p words
 # Output: ["cat", "dog", "ant"]
 
 
@@ -644,12 +646,12 @@ p words
 # Problem 3: Remove key-value pairs where the value is less than 10.
 
 def remove_low_values!(hash)
-  hash.delete_if {|key, value| value < 10}
+
 end
 
 data = { a: 5, b: 15, c: 8, d: 20 }
 remove_low_values!(data)
-p data
+# p data
 # Output: { b: 15, d: 20 }
 
 
@@ -669,11 +671,11 @@ p data
 # Problem 1: Write a function that converts a range to an array.
 
 def range_to_array(range)
-  range.to_a
+
 end
 
 range = (1..5)
-p range_to_array(range)
+# p range_to_array(range)
 # Output: [1, 2, 3, 4, 5]
 
 
@@ -690,11 +692,11 @@ p range_to_array(range)
 # Problem 2: Write a function that converts a hash to an array of key-value pairs.
 
 def hash_to_array(hash)
-  hash.to_a
+
 end
 
 hash = { a: 1, b: 2, c: 3 }
-p hash_to_array(hash)
+# p hash_to_array(hash)
 # Output: [[:a, 1], [:b, 2], [:c, 3]]
 
 
@@ -712,11 +714,11 @@ p hash_to_array(hash)
 # Problem 3: Write a function that converts an enumerator to an array.
 
 def enumerator_to_array(enum)
-  enum.to_a
+
 end
 
 enum = (1..3).each
-p enumerator_to_array(enum)
+# p enumerator_to_array(enum)
 # Output: [1, 2, 3]
 
 
@@ -735,11 +737,11 @@ p enumerator_to_array(enum)
 # Problem 1: Write a function that converts an array of key-value pairs into a hash.
 
 def array_to_hash(array)
-  array.to_h
+
 end
 
 array = [[:a, 1], [:b, 2], [:c, 3]]
-p array_to_hash(array)
+# p array_to_hash(array)
 # Output: { a: 1, b: 2, c: 3 }
 
 
@@ -756,11 +758,11 @@ p array_to_hash(array)
 # Problem 2: Write a function that converts an array of key-value pairs with duplicates (last one wins).
 
 def array_with_duplicates_to_hash(array)
-  array.to_h
+
 end
 
 array = [[:a, 1], [:b, 2], [:a, 3]]
-p array_with_duplicates_to_hash(array)
+# p array_with_duplicates_to_hash(array)
 # Output: { a: 3, b: 2 } (last :a pair wins)
 
 
@@ -778,11 +780,11 @@ p array_with_duplicates_to_hash(array)
 # Problem 3: Write a function that converts an enumerator of pairs to a hash.
 
 def enumerator_to_hash(enum)
-  enum.to_h
+
 end
 
 enum = [[:x, 10], [:y, 20]].each
-p enumerator_to_hash(enum)
+# p enumerator_to_hash(enum)
 # Output: { x: 10, y: 20 }
 
 
@@ -800,11 +802,11 @@ p enumerator_to_hash(enum)
 # Problem 1: Write a function that prints all keys in a hash.
 
 def print_keys(hash)
-  hash.each_key {|key| puts key}
+
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-print_keys(data)
+# print_keys(data)
 # Output:
 # name
 # age
@@ -827,13 +829,11 @@ print_keys(data)
 # Problem 2: Write a function that collects all keys into an array.
 
 def collect_keys(hash)
-  keys = []
-  hash.each_key {|key| keys << key}
-  keys
+
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-p collect_keys(data)
+# p collect_keys(data)
 # Output: [:name, :age, :city]
 
 
@@ -854,11 +854,11 @@ p collect_keys(data)
 # Problem 1: Write a function that prints all values in a hash.
 
 def print_values(hash)
-  hash.each_value {|value| puts value}
+
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-print_values(data)
+# print_values(data)
 # Output:
 # Alice
 # 30
@@ -882,12 +882,12 @@ print_values(data)
 
 def collect_values(hash)
   values = []
-  hash.each_value {|value| values << value}
+  hash.each_value { |value| values << value }
   values
 end
 
 data = { name: "Alice", age: 30, city: "New York" }
-p collect_values(data)
+# p collect_values(data)
 # Output: ["Alice", 30, "New York"]
 
 

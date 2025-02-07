@@ -1,5 +1,5 @@
 #------------------------------------------------------------------------------
-# Highest-importance methods ( .keys, .values, .has_key?, .merge, .fetch, .select, .reject) appear regularly in typical hashing or dictionary tasks and are crucial for many solutions in easy/medium algorithmic problems.
+# Highest-importance methods (.keys, .values, .has_key?, .merge, .fetch, .select, .reject) appear regularly in typical hashing or dictionary tasks and are crucial for many solutions in easy/medium algorithmic problems.
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ person = { name: "Alice", age: 25, city: "NYC" }
 
 # # Solution
 # def print_keys(hash)
-#   hash.keys.each { |key| puts key }
+#   hash.keys.each { |key, _| puts key }
 #   # .keys extracts all keys from the hash.
 #   # .each iterates through each key.
 # end

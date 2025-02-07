@@ -25,7 +25,7 @@ p all_keys(fruits)
 # Problem 2: Write a function that prints the keys in a hash, one per line.
 
 def print_keys(hash)
-  hash.keys.each { |key| puts key }
+  hash.keys.each { |key, _| puts key }
 end
 
 person = { name: "Alice", age: 25, city: "NYC" }
