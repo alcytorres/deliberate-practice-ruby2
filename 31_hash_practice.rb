@@ -62,11 +62,11 @@ print_keys(person)
 # Problem 1: Write a function that returns all the values in a given hash.
 
 def all_values(hash)
-
+  hash.values
 end
 
 prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
-# p all_values(prices)
+p all_values(prices)
 # Output: [1.2, 0.5, 2.0]
 
 
@@ -85,11 +85,11 @@ prices = { apple: 1.2, banana: 0.5, cherry: 2.0 }
 # Problem 2: Write a function that prints all values in a hash, one per line.
 
 def print_values(hash)
-
+  hash.values.each { |value| puts value }
 end
 
 movie = { title: "Matrix", year: 1999, rating: 8.7 }
-# print_values(movie)
+print_values(movie)
 # Output (each value on its own line):
 # Matrix
 # 1999
