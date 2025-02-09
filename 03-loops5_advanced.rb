@@ -6,13 +6,13 @@ array = []
 
 index1 = 0
 while index1 < number_pairs.length
-  pair = number_pairs[index1]       
-index2 = 0                
-  while index2 < pair.length        
-    array << pair[index2] 
-  index2 += 1          
+  pair = number_pairs[index1]
+  index2 = 0
+  while index2 < pair.length
+    array << pair[index2]
+    index2 += 1
   end
-index1 += 1
+  index1 += 1
 end
 p array
 
@@ -48,7 +48,7 @@ while index1 < letters.length
   first_letter = letters[index1]    #  first_letter = a
   index2 = 0
   while index2 < letters.length     # 0 is less than 4, continue
-    if first_letter != letters[index2]   
+    if first_letter != letters[index2]
       array << first_letter + letters[index2]
     end
     index2 += 1
@@ -72,7 +72,7 @@ while index1 < numbers.length
     if index1 != index2
       other_number = numbers[index2]
       product = current_number * other_number
-      if product > max_product 
+      if product > max_product
         max_product = product
       end
     end
@@ -105,7 +105,15 @@ pp sum
 # 6. Use a nested loop with two arrays of numbers to create a new array of the sums of each combination of numbers.
 # For example, [1, 2] and [6, 7, 8] becomes [7, 8, 9, 8, 9, 10].
 
-
+array1 = [1, 2]
+array2 = [6, 7, 8]
+combined_array = []
+array1.each do |num1|
+  array2.each do |num2|
+    combined_array << num1 + num2
+  end
+end
+p combined_array
 
 
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
