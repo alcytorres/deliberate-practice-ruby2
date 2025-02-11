@@ -29,7 +29,7 @@ numbers.each do |key, value|
   # Adds a key-value pair to numbers_hash, with the sub-array's first element as the key and the second as the value.
   numbers_hash[key] = value
 end
-p numbers_hash
+# p numbers_hash
 
 
 
@@ -81,7 +81,7 @@ items.each do |item|
   id = item[:id]
   hash[id] = item
 end
-p hash
+# p hash
 
 
 # items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
@@ -105,7 +105,7 @@ items.each do |item|
   price = item[:price]
   hash[id] = {id: id, color: color, price: price}
 end
-p hash
+# p hash
 
 
 # Why hash[id] = item Works:
@@ -150,7 +150,7 @@ while index < word.length                # Loop over each character by index.
   index += 1                             # Move to the next character.
 end
 
-p letter_frequencies                     # Print the resulting hash of letters and their counts.
+# p letter_frequencies                     # Print the resulting hash of letters and their counts.
 
 
 
@@ -162,6 +162,7 @@ items = {"chair" => 100, "book" => 14}
 # items_hash =
 
 
+# p items_hash
 
 
 
@@ -179,7 +180,7 @@ items_hash = []
 items.each do |key, value|
   items_hash << [key, value]
 end
-p items_hash
+# p items_hash
 
 
 
@@ -219,7 +220,8 @@ persons.each do |key, person|
   # This line adds a new hash to the persons_array for each person. The new hash contains:
   persons_array << {id: id, name: name, age: age}
 end
-p persons_array
+
+# p persons_array
 
 
 
@@ -235,7 +237,8 @@ people.each do |key, person|
   person[:id] = key
   persons_array << person
 end
-p persons_array
+
+# p persons_array
 
 
 # Why persons_array << person Works:
@@ -283,7 +286,7 @@ strings.each do |string|                  # Iterate over each string in the arra
   strings_hash[string] += 1               # Increase the stored count for the current string by one
 end
 
-p strings_hash                          # Print the hash: {"do"=>2, "or"=>1, "not"=>1}
+# p strings_hash                          # Print the hash: {"do"=>2, "or"=>1, "not"=>1}
 
 
 
@@ -308,14 +311,13 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 
 
 
-
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 hash.each do |key, value|
   flattened_array << key
   flattened_array << value
 end
-p flattened_array
+# p flattened_array
 
 
 
@@ -323,8 +325,6 @@ p flattened_array
 # 8. Combine data from a hash with names and prices and an array of hashes with names, colors, and weights to make a new hash.
 #    For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
 
-
-# Recently answered correctly
 
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
@@ -342,9 +342,7 @@ items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black
 
 
 
-
-
-
+# Solution
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 # {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
@@ -357,7 +355,7 @@ items.each do |item|
   combined_hash[name] = {price: price, color: color, weight: weight}
 end
 
-p combined_hash
+# p combined_hash
 
 
 
@@ -378,11 +376,7 @@ books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", tit
 
 
 
-
-
-
-
-
+# Solution
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 books_hash = {}
@@ -399,7 +393,8 @@ books.each do |book|
   # Appends the current book's title to the array associated with the author.
   books_hash[author] << title
 end
-p books_hash
+
+# p books_hash
 
 
 
@@ -438,12 +433,11 @@ original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 
 
 
-
-
+# Solution
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 flipped_hash = {}
 original_hash.each do |key, value|
   flipped_hash[value] = key
 end
 
-p flipped_hash
+# p flipped_hash
