@@ -60,13 +60,13 @@
 
 
 # # Solution
-while true                  # Start an infinite loop
-  puts "enter a word"       # Prompt the user to enter a word
-  user_input = gets.chomp   # Read input from the user and remove the trailing newline
-  if user_input == "stop"   # Check if the input is "stop"
-    break                   # Exit the loop if the condition is met
-  end
-end
+# while true                  # Start an infinite loop
+#   puts "enter a word"       # Prompt the user to enter a word
+#   user_input = gets.chomp   # Read input from the user and remove the trailing newline
+#   if user_input == "stop"   # Check if the input is "stop"
+#     break                   # Exit the loop if the condition is met
+#   end
+# end
 
 
 # 4. Write a while loop that prints the numbers 0 through 100, increasing by 5 each time.
@@ -96,14 +96,14 @@ end
 
 
 
-# Solution
-while true                 # Begin an infinite loop
-  puts "Enter a number: "  # Prompt the user to enter a number
-  input = gets.chomp       # Read user input and remove the newline character
-  if input.to_i > 10       # Convert the input to an integer and check if it's greater than 10
-    break                  # Exit the loop if the condition is met
-  end
-end
+# # Solution
+# while true                 # Begin an infinite loop
+#   puts "Enter a number: "  # Prompt the user to enter a number
+#   input = gets.chomp       # Read user input and remove the newline character
+#   if input.to_i > 10       # Convert the input to an integer and check if it's greater than 10
+#     break                  # Exit the loop if the condition is met
+#   end
+# end
 
 
 # The .to_i method is required because gets returns a string. Converting the string to an integer with .to_i allows you to perform a numeric comparison (i.e., check if the number is greater than 10).
@@ -142,11 +142,11 @@ end
 # 10. Write a while loop that prints the even numbers from 2 to 40.
 
 
-# number = 2
-# while number <= 40
-#   puts number
-#   number += 2
-# end
-
+# Solution
+num = 2
+while num <= 40
+  puts num
+  num += 2
+end
 
 
