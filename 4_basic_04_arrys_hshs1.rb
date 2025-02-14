@@ -68,6 +68,16 @@ numbers[0] = numbers[0] * 10
 pp numbers
 
 # 9. Create an array to store 2 numbers. Then print out each number on separate lines with a while loop.
+
+numbers = [1, 3]
+i = 0
+while i < numbers.length
+  puts numbers[i]
+  i += 1
+end
+
+
+
 numbers = [3, 10]
 index = 0
 while index < numbers.length
