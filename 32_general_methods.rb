@@ -75,6 +75,35 @@ end
 # 2
 # 3
 
+
+
+#------------------------------------------------------------------------------
+gets.chomp
+# What it does:
+# - `gets` takes user input as a string (including the newline character "\n").
+# - `chomp` removes the trailing newline from the input.
+#
+# Why use it: To take user input without an unwanted newline at the end.
+
+# Syntax:
+user_input = gets.chomp # Takes input from the user and removes the newline.
+
+#------------------------------------------------------------------------------
+# Example:
+# Problem: Ask the user for their name and print a greeting.
+puts "What is your name?"
+name = gets.chomp # Takes user input and removes the newline.
+puts "Hello, #{name}!" # Outputs a personalized greeting.
+
+# Example Run:
+# (User types "Alice" and presses Enter)
+# Output:
+# What is your name?
+# Alice
+# Hello, Alice!
+
+
+
 #------------------------------------------------------------------------------
 initialize
 # The initialize method is a special method in Ruby that is called automatically when you create a new instance of a class using .new. It is often used to set up instance variables and provide initial values for the object.

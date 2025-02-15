@@ -70,39 +70,35 @@
 # end
 
 
-# # 3. Write a while loop that asks the user to enter a word and will run forever until the user enters the word "stop".
+# 3. Write a while loop that asks the user to enter a word and will run forever until the user enters the word "stop".
 # #    REVIEW
 
 
-
-# # Solution
-# while true                  # Start an infinite loop
-#   puts "enter a word"       # Prompt the user to enter a word
+# Solution
+# while true                  # Start an infinite loop. This loop will keep running until a 'break' is encountered.
+#   puts "Enter a word"       # Prompt the user to enter a word
 #   user_input = gets.chomp   # Read input from the user and remove the trailing newline
-#   if user_input == "stop"   # Check if the input is "stop"
-#     break                   # Exit the loop if the condition is met
-#   end
+#   if user_input == "stop"   # Check if the user input is "stop"
+#     break                   # If the input is "stop", exit the loop immediately.
+#   end                       # If the input isn't "stop", the loop will continue and prompt again.
 # end
 
 
 # 4. Write a while loop that prints the numbers 0 through 100, increasing by 5 each time.
 
-
-
 # Solution
-# number = 0
-# while number <= 100
-#   puts number
-#   number += 5
+# num = 0
+# while num <= 100
+#   puts num
+#   num += 5
 # end
 
 
 # 5. Write a while loop that prints the number 9000 ten times.
 
-
 # Solution
-# index = 0
-# while index < 10
+# index = 1
+# while index <= 10
 #   puts 9000
 #   index += 1
 # end
@@ -110,9 +106,7 @@
 
 # 6. Write a while loop that asks the user to enter a number and will run forever until the user enters a number greater than 10.
 
-
-
-# # Solution
+# Solution
 # while true                 # Begin an infinite loop
 #   puts "Enter a number: "  # Prompt the user to enter a number
 #   input = gets.chomp       # Read user input and remove the newline character
@@ -127,15 +121,17 @@
 
 # 7. Write a while loop that prints the numbers 50 to 70.
 
-
-# number = 50
-# while number <= 70
-#   p number
-#   number += 1
+# Solution
+# num = 50
+# while num <= 70
+#   puts num
+#   num += 1
 # end
 
 
 # 8. Write a while loop that prints the phrase "Around the world" 144 times.
+
+# Solution
 # index = 1
 # while index <= 144
 #   puts "Around the world"
@@ -145,7 +141,7 @@
 
 # 9. Write a while loop that asks the user to enter a word and will run forever until the user enters a word with more than 5 letters.
 
-
+# Solution
 # while true
 #   puts "Enter a word"
 #   input = gets.chomp
@@ -156,7 +152,6 @@
 
 
 # 10. Write a while loop that prints the even numbers from 2 to 40.
-
 
 # Solution
 # num = 2
