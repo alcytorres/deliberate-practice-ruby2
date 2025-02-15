@@ -2,8 +2,6 @@
 
 # 1. Write a while loop to print the numbers 1 through 10.
 
-
-
 # # Solution
 # num = 1
 # while num <= 10
@@ -31,24 +29,42 @@
 #   numbers                   # Return the array of numbers after the loop finishes
 # end                         # End of the 'counter' method definition
 
-# number = 7                  # Assign the value 7 to the variable 'number'
+# number = 1                  # Assign the value 1 to the variable 'number'
 # p counter(number)           # Call the 'counter' method with 'number' as argument and print the returned array
 
+# Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+#------------------------------------------------------------------------------
+# Ruby while Loop Return Values
+    # Control Structure: while loops are for control flow, not value computation.
+    # Default Return: When a while loop ends naturally, it returns nil—not the last evaluated value.
+    # Explicit Return: To use a computed value from the loop, return it explicitly after the loop or use break with a value.
+
+# Example
+# num = 1
+# result = while num <= 3
+#            puts num
+#            num += 1
+#          end
+# puts "The while loop returned: #{result.inspect}"
+
+# Although the loop printed numbers from 1 to 3,
+# the variable 'result' will be nil because a while loop returns nil when it finishes naturally.
+#------------------------------------------------------------------------------
 
 
 # 2. Write a while loop that prints the word "hello" 5 times.
 
-
 # # Solution
-# index = 1
-# while index <= 5
+# i = 1
+# while i <= 5
 #   puts "hello"
-#   index += 1
+#   i += 1
 # end
 
 # # Solution
-# (0..5).each do |num|
-#   if num < 5
+# (1..5).each do |i|
+#   if i <= 5
 #     puts "hello"
 #   end
 # end
@@ -143,10 +159,10 @@
 
 
 # Solution
-num = 2
-while num <= 40
-  puts num
-  num += 2
-end
+# num = 2
+# while num <= 40
+#   puts num
+#   num += 2
+# end
 
 
