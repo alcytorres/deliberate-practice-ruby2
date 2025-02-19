@@ -73,13 +73,16 @@
 
 # 8. Write a program that uses variables to store a book's title and author, then prints out a sentence using that information with string interpolation (the #{} operator).
 
+# book_title = "Practical Object-Oriented Design in Ruby"
+# book_author = "Sandi Metz"
+# puts "The author of #{book_title} is #{book_author}."
 
 
 # 9. Write a program that asks the user to enter a password. If the password is "Joshua", the program responds "Shall we play a game?". For any other password, the program responds "Access denied"
 
 # puts "Enter a password"
-# user_input = gets.chomp
-# if user_input == "Joshua"
+# input = gets.chomp
+# if input == "Joshua"
 #   puts "Shall we play a game?"
 # else
 #   puts "Access denied"
