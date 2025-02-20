@@ -3,6 +3,8 @@
 # 1. Write a Song class with attributes and reader/writer methods for name, artist, and duration. Then write a method that prints the name, artist, and duration in a single sentence.
 
 # class Song
+
+
 class Song
   attr_reader :name, :artist, :duration
   attr_writer :name, :artist, :duration
@@ -19,36 +21,65 @@ class Song
 
 end
 
-new_song = Song.new("Thank You for the Music", "ABBA", "3:52")
-# new_song.print_info
+song1 = Song.new("Thank You for the Music", "ABBA", "3:52")
+# pp song1
+# song1.print_info
+
+# song2 = Song.new("Gloria", "Patti Smith", "5:56")
+# pp song2
+# song2.print_info
 
 
-# Breakdown
+# Full Breakdown
 class Song
-  # `attr_reader` makes it easy to get (read) the values of `name`, `artist`, and `duration` without writing separate methods.
-  attr_reader :name, :artist, :duration
+  # Defines a new class named Song.
+  # A class is like a blueprint for objects. It lets you bundle together data (attributes)
+  # and behaviors (methods) that belong together. Use a class when you want to create many objects
+  # that share the same properties and actions.
 
-  # `attr_writer` allows you to set (change) the values of `name`, `artist`, and `duration`.
+  attr_reader :name, :artist, :duration
+  # Creates getter methods for the instance variables @name, @artist, and @duration.
+  # Getter methods allow you to access these variables from outside the class, e.g., song.name.
+  # This is useful for encapsulation, letting you expose data in a controlled way.
+
   attr_writer :name, :artist, :duration
+  # Creates setter methods for @name, @artist, and @duration.
+  # Setter methods let you change these values from outside the class, e.g., song.name = "New Song".
+  # This gives controlled access to modify an object's state.
 
   def initialize(name, artist, duration)
-    # This method is called when you create a new Song. It sets up the song's name, artist, and duration.
-    @name = name       # Saves the song's name.
-    @artist = artist   # Saves the artist's name.
-    @duration = duration # Saves the song's duration.
+    # This is the constructor method.
+    # It runs automatically when you create a new Song object using Song.new.
+    # The purpose is to set up the initial state of the object.
+    @name = name
+    # Assigns the value of the argument 'name' to the instance variable @name.
+    # Instance variables (prefixed with @) belong to the specific object.
+    @artist = artist
+    # Assigns the argument 'artist' to @artist.
+    @duration = duration
+    # Assigns the argument 'duration' to @duration.
   end
 
   def print_info
-    # This method prints out the song's details in a nice format.
+    # Defines a method to print a sentence with the song's details.
+    # Methods inside a class let you perform actions using the object's data.
     puts "The song, #{@name} by #{@artist} has a duration of #{@duration}"
+    # Uses string interpolation to insert the object's values into a formatted string,
+    # and prints it out.
   end
 end
 
-# This creates a new song with the title "Thank You for the Music," artist "ABBA," and duration "3:52".
-new_song = Song.new("Thank You for the Music", "ABBA", "3:52")
+song1 = Song.new("Thank You for the Music", "ABBA", "3:52")
+# Creates a new instance of the Song class.
+# Here, song1 is an object with its own @name, @artist, and @duration.
+# The constructor (initialize) is called with the provided arguments.
 
-# This calls the `print_info` method, which prints the song's details.
-# new_song.print_info
+# pp song1
+# Pretty-prints the song1 object, showing its internal state.
+# This is useful for debugging and seeing the values of the instance variables.
+
+# song1.print_info
+# Calls the print_info method on song1, which prints the song's details in a sentence.
 
 
 # 2. Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.
@@ -66,7 +97,7 @@ class Rectangle
   end
 
   def area
-    return "The area is #{@width * @height}"
+    "The area is #{@width * @height}"
   end
 end
 
@@ -75,13 +106,9 @@ rectangle = Rectangle.new(10, 20)
 # pp rectangle.area
 
 
-
-
 # 3. Write a Person class with attributes and reader/writer methods for name and age. Then write a method that returns the person's name in all capital letters.
 
 # class Person
-
-
 
 class Person
   attr_reader :name, :age
@@ -102,11 +129,32 @@ person = Person.new("Alcy", 25)
 # pp person.name_cap
 
 
-
 # 4. Write a Coordinate class with attributes and reader/writer methods for latitude and longitude. Then write a method that prints out the latitude and longitude in a single sentence.
 
 
 # 5. Write an Account class with attributes and reader/writer methods for name and balance. Then write a method that prints a warning if the balance is below $100.
+
+class Account
+  attr_reader :name, :balance
+  attr_writer :name, :balance
+
+  def initialize(name, balance)
+    @name = name
+    @balance = balance
+  end
+
+  def warning
+    if @balance < 100
+      puts "WARNING: Your balance is below 100"
+    else
+      puts "Your balance is #{@balance}"
+    end
+  end
+end
+
+# account1 = Account.new("Mike", 60)
+# account1.warning
+# pp account1
 
 
 # 6. Write a Movie class with attributes and reader/writer methods for title, director, and year. Then write a method that prints out the attributes in a single sentence.
@@ -164,8 +212,6 @@ car = Car.new("Tesla", "Model X", "2024", "Red")
 # 8. Write a Point class with attributes and reader/writer methods for x, y, and z coordinates. Then write a method that returns true if all 3 numbers are positive, otherwise it returns false.
 
 # class Point
-
-
 
 
 class Point
@@ -238,7 +284,7 @@ end
 
 plant = Plant.new("Rose", "Medium", 10)
 
-pp plant
+# pp plant
 
+# plant.print_info
 # There is no need for a "pretty print" since the print_info method has a puts statement
-plant.print_info
