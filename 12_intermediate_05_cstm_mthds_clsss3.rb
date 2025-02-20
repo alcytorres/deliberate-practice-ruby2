@@ -31,55 +31,72 @@ song1 = Song.new("Thank You for the Music", "ABBA", "3:52")
 
 
 # Full Breakdown
+# This line creates a "Song" class - like a blueprint for making song objects
 class Song
-  # Defines a new class named Song.
-  # A class is like a blueprint for objects. It lets you bundle together data (attributes)
-  # and behaviors (methods) that belong together. Use a class when you want to create many objects
-  # that share the same properties and actions.
+  # Why: Classes help you group related data (like song details) and actions (like printing info) together
+  # When to use: Use a class when you want to create multiple items (like songs) with similar traits and behaviors
 
   attr_reader :name, :artist, :duration
-  # Creates getter methods for the instance variables @name, @artist, and @duration.
-  # Getter methods allow you to access these variables from outside the class, e.g., song.name.
-  # This is useful for encapsulation, letting you expose data in a controlled way.
+  # What: Makes "getter" methods so you can read the song’s name, artist, and duration
+  # Why: Lets you safely access these values from outside the class without changing them
+  # When to use: Use getters when you want others to see data but not mess with it
 
   attr_writer :name, :artist, :duration
-  # Creates setter methods for @name, @artist, and @duration.
-  # Setter methods let you change these values from outside the class, e.g., song.name = "New Song".
-  # This gives controlled access to modify an object's state.
+  # What: Makes "setter" methods so you can change the song’s name, artist, and duration
+  # Why: Gives you a way to update values after creating the song
+  # When to use: Use setters when you want to allow controlled updates to data
 
+  # This is the constructor - it runs when you make a new song
   def initialize(name, artist, duration)
-    # This is the constructor method.
-    # It runs automatically when you create a new Song object using Song.new.
-    # The purpose is to set up the initial state of the object.
-    @name = name
-    # Assigns the value of the argument 'name' to the instance variable @name.
-    # Instance variables (prefixed with @) belong to the specific object.
-    @artist = artist
-    # Assigns the argument 'artist' to @artist.
-    @duration = duration
-    # Assigns the argument 'duration' to @duration.
+    # Why: Sets up the song with starting values (like a birth certificate for the song)
+    @name = name         # Stores the song’s name in an instance variable
+    @artist = artist     # Stores the artist in an instance variable
+    @duration = duration # Stores the duration in an instance variable
+    # What are instance variables (@): They hold data unique to each song object
+    # When to use: Use a constructor when you need to set up an object with specific starting info
   end
 
+  # This is a method inside the class - it’s an action the song can do
   def print_info
-    # Defines a method to print a sentence with the song's details.
-    # Methods inside a class let you perform actions using the object's data.
+    # What: Prints a nice sentence with the song’s details
     puts "The song, #{@name} by #{@artist} has a duration of #{@duration}"
-    # Uses string interpolation to insert the object's values into a formatted string,
-    # and prints it out.
+    # Why: Makes it easy to display all the song’s info in one go
+    # When to use: Use methods inside a class for tasks or actions related to the object (like showing details)
   end
 end
 
+# This creates a new song object using the class blueprint
 song1 = Song.new("Thank You for the Music", "ABBA", "3:52")
-# Creates a new instance of the Song class.
-# Here, song1 is an object with its own @name, @artist, and @duration.
-# The constructor (initialize) is called with the provided arguments.
+# Why: You’re making a specific song with real data based on the class
+# What: "song1" is now an object (an instance of Song) with its own name, artist, and duration
 
-# pp song1
-# Pretty-prints the song1 object, showing its internal state.
-# This is useful for debugging and seeing the values of the instance variables.
+pp song1
+# What: Pretty-prints the song1 object to show its details in a readable way
+# Why: Helps you check what’s inside the object (good for testing or debugging)
 
-# song1.print_info
-# Calls the print_info method on song1, which prints the song's details in a sentence.
+song1.print_info
+# What: Runs the print_info method on song1 to show its info as a sentence
+# Why: Shows how you can use the class’s method to do something useful with the object’s data
+
+
+# Why This is Useful
+# Classes: Imagine you’re managing a music library. A Song class lets you make as many songs as you want, each with its own name, artist, and duration, without rewriting code.
+# Getters (attr_reader): You can ask, “What’s this song’s name?” without accidentally changing it.
+# Setters (attr_writer): You can fix a typo in the artist’s name later if needed.
+# Constructor (initialize): Sets everything up right away so every song starts with the right info.
+# Instance Variables (@): Each song remembers its own details separately (song1 doesn’t mix up with song2).
+# Methods (print_info): Saves time by letting you reuse actions (like printing) for any song.
+
+# When to Use Each Part
+# Class: Use when you have multiple items (songs, cars, people) that share traits and actions.
+# Getter Methods: Use when you want to share info but keep it safe from changes.
+# Setter Methods: Use when you need to update info later (like fixing a song’s duration).
+# Constructor: Use to give objects a proper start with required data.
+# Instance Variables: Use to store unique data for each object.
+# Method Inside Class: Use to add behaviors or tasks tied to the object (like printing or calculating something).
+
+# This setup is great for organizing code, especially for projects like a playlist app, game characters, or anything with repeatable “things” that need data and actions!
+
 
 
 # 2. Write a Rectangle class with attributes and reader/writer methods for width and height. Then write a method that returns the area of the rectangle.

@@ -8,16 +8,6 @@
 # If the customer is 60 years old or older, the ticket price is $7.
 
 
-# age =
-# time =
-
-
-
-
-
-
-
-
 age = 17
 time = 23
 if age <= 12
@@ -32,7 +22,7 @@ elsif age >= 60
   ticket_price = 7
 end
 
-puts "Ticket price: $#{ticket_price}"
+# puts "Ticket price: $#{ticket_price}"
 
 
 # 2. Write a program to store the type of book (regular, reference, or special collection) and the number of days its overdue. Then calculate the fine amount based on the following conditions:
@@ -43,24 +33,10 @@ puts "Ticket price: $#{ticket_price}"
 # If the book is a special collection book, the fine is $5 per day, regardless of the number of days overdue.
 
 
-# days_overdue =
-# book_type =
-
-# fine_amount =
-
-
-
-
-
-
-
-
-
-
-days_overdue = 10
 book_type = "special collection"
-
+days_overdue = 10
 fine_amount = 0
+
 if book_type == "regular"
   if days_overdue <= 7
     fine_amount = days_overdue * 1
@@ -73,7 +49,7 @@ elsif book_type == "special collection"
   fine_amount = days_overdue * 5
 end
 
-puts "Fine amount: $#{fine_amount}"
+# puts "Fine amount: $#{fine_amount}"
 
 
 # 3. Write a program that stores a person's order value and membership level (regular or premium). Then calculate a discount amount based on the following conditions:
@@ -83,19 +59,8 @@ puts "Fine amount: $#{fine_amount}"
 # If the total order value is greater than $100, the discount is 10% for regular customers and 15% for premium customers.
 
 
-# order_value =
-# membership =
-
-
-
-
-
-
-
-
-
 order_value = 1000
-membership = "premium"
+membership = "regular"
 
 if order_value < 50
   discount = 0
@@ -105,15 +70,23 @@ elsif order_value >= 50 && order_value <= 100
   else
     discount = 0.1
   end
+
 elsif order_value > 100
   if membership == "regular"
     discount = 0.1
   else
     discount = 0.15
   end
+
 end
 
-puts "Discount amount: $ #{order_value * discount}"
+# puts "Discount amount: $#{order_value * discount}"
+
+
+# Mistake Explanation: Forgot to add "end".
+  # One time I forgot to add the first end "end".
+  # My mistake was nesting the elsif order_value > 100 inside the elsif order_value > 50 && order_value < 100 block, causing it to only check values between 50 and 100, and skip anything over 100 (like 1000).
+  # It should be a separate, top-level condition.
 
 
 # 4. Write a Ruby program that stores the weight of a package and the destination (domestic or international). Then calculate the shipping fee based on the following conditions:
@@ -126,17 +99,6 @@ puts "Discount amount: $ #{order_value * discount}"
 # If the weight is greater than 1 kg, the shipping fee is $25.
 
 
-# destination =
-# weight =
-
-
-
-
-
-
-
-
-
 destination = "domestic"
 weight = 4
 
@@ -147,6 +109,7 @@ if destination == "domestic"
   else
     shipping_fee = 10
   end
+
 elsif destination == "international"
   if weight <= 1
     shipping_fee = 15
@@ -155,4 +118,4 @@ elsif destination == "international"
   end
 end
 
-puts "Shipping fee: $#{shipping_fee}"
+# puts "Shipping fee: $#{shipping_fee}"
