@@ -1,4 +1,4 @@
-# Write nested loops
+# Write nested loops manually
 
 
 # 1. Use a nested loop to convert an array of number pairs into a single flattened array.
@@ -17,7 +17,7 @@ while index1 < number_pairs.length
   end
   index1 += 1
 end
-p array
+# p array
 
 
 # 2. Use a nested loop with two arrays of strings to create a new array of strings with each string combined.
@@ -37,7 +37,7 @@ while index1 < letters1.length
   end
   index1 += 1
 end
-p combined_letters
+# p combined_letters
 
 
 
@@ -58,7 +58,7 @@ while index1 < letters.length
   end
   index1 +=1
 end
-p array
+# p array
 
 
 
@@ -83,12 +83,14 @@ while index1 < numbers.length
   end
   index1 += 1
 end
-p max_product
+# p max_product
 
 
 
 # 5. Use a nested loop to compute the sum of all the numbers in an array of number pairs.
 # For example, [[1, 3], [8, 9], [2, 16]] becomes 39.
+
+
 pairs = [[1, 3], [8, 9], [2, 16]]
 sum = 0
 index1 = 0
@@ -102,7 +104,7 @@ while index1 < pairs.length
   index1 += 1
 end
 
-pp sum
+# pp sum
 
 
 # 6. Use a nested loop with two arrays of numbers to create a new array of the sums of each combination of numbers.
@@ -123,7 +125,7 @@ while index1 < nums1.length
   end
   index1 += 1
 end
-p number_sums
+# p number_sums
 
 
 # # Solution using the each method
@@ -154,7 +156,7 @@ while index1 < nums.length
   end
   index1 += 1
 end
-p number_product
+# p number_product
 
 
 # 7.1 Use a nested loop with an array of numbers to compute an array with product of every pair of distinct numbers from a given array.
@@ -176,7 +178,7 @@ while index1 < nums.length
   end
   index1 += 1
 end
-p number_product
+# p number_product
 
 
 # 8. Use a nested loop to find the largest sum of any two different numbers within an array.
@@ -199,12 +201,14 @@ while index1 < nums.length
   end
   index1 += 1
 end
-p max_sum
+# p max_sum
 
 
 
 # 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
 # For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
+
+
 
 nums = [2, 5, 3, 1, 0, 7, 11]
 result = false
@@ -214,7 +218,7 @@ while index1 < nums.length
   index2 = 0
   while index2 < nums.length
     if nums[index1] != nums[index2] && nums[index1] + nums[index2] == 10
-      result = [ nums[index1], nums[index2] ]
+      result = [nums[index1], nums[index2]]
       break
     end
     index2 += 1
@@ -222,7 +226,7 @@ while index1 < nums.length
   index1 += 1
   break if result
 end
-p result
+# p result
 
 
 # Solution
@@ -246,28 +250,30 @@ while index1 < nums.length      # Loop through each element in the array using i
   break if result  # If a valid pair has been found, exit the outer loop early
 end
 
-p result  # Print the resulting pair or false if no valid pair exists
+# p result  # Print the resulting pair or false if no valid pair exists
 
 
 
 # 10. Use a nested loop to convert an array of string arrays into a single string.
 # For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama"
 
+
 # Solution
 nested_words = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+#              "amanaplanacanalpanama"
 combined_word = ""
 
 index1 = 0
 while index1 < nested_words.length
   index2 = 0
-  while index2 < nested_words[index1].length
-    combined_word << nested_words[index1][index2]
+  while index2 < nested_words[index1].length    # 0 < 2
+    combined_word += nested_words[index1][index2]
     index2 += 1
   end
   index1 += 1
 end
 
-p combined_word
+# p combined_word
 
 
 # # Solution
@@ -288,14 +294,3 @@ p combined_word
 # p combined_strings
 
 
-# Solution
-strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
-#         "amanaplanacanalpanama"
-combined_strings = ""
-strings.each do |array|
-  array.each do |string|
-    combined_strings << string
-  end
-end
-
-p combined_strings

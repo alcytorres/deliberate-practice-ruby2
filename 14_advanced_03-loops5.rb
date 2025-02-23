@@ -1,4 +1,4 @@
-# Write nested loops
+# Write nested loops with methods
 
 
 # 1. Use a nested loop to convert an array of number pairs into a single flattened array.
@@ -507,13 +507,13 @@ strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 
 
 
-# strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
-# #         "amanaplanacanalpanama"
-# combined_strings = ""
-# strings.each do |array|
-#   array.each do |string|
-#     combined_strings << string
-#   end
-# end
+strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+#         "amanaplanacanalpanama"
+combined_strings = ""
+strings.each do |array|
+  array.each do |string|
+    combined_strings << string
+  end
+end
 
 # p combined_strings

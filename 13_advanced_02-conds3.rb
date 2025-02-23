@@ -10,6 +10,7 @@
 
 age = 17
 time = 23
+
 if age <= 12
   ticket_price = 5
 elsif age >= 13 && age <= 59
@@ -101,8 +102,8 @@ end
 
 destination = "domestic"
 weight = 4
-
 shipping_fee = 0
+
 if destination == "domestic"
   if weight <= 1
     shipping_fee = 5
