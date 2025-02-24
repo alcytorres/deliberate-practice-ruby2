@@ -209,8 +209,16 @@ end
 # For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
 
 
+# nums = [2, 5, 3, 1, 0, 7, 11]
+# #      [3, 7]
+# result = false
+
+
+
+
 
 nums = [2, 5, 3, 1, 0, 7, 11]
+#      [3, 7]
 result = false
 
 index1 = 0
@@ -231,26 +239,62 @@ end
 
 # Solution
 nums = [2, 5, 3, 1, 0, 7, 11]
-result = false                  # Initialize result as false (no valid pair found yet)
+# Creates an array of numbers to work with
+#      [3, 7]   Expected output:
+result = false
+# Sets result to false as a starting point (if no pair is found, this is what we return)
 
-index1 = 0                      # Start with the first index for the outer loop
-while index1 < nums.length      # Loop through each element in the array using index1
-  index2 = 0                    # For each index1, start a new inner loop with index2
-  while index2 < nums.length    # Loop through each element in the array using index2
+index1 = 0
+# Starts the first loop with index1 at 0 (to look at each number in the array)
+
+while index1 < nums.length
+# Keeps looping through the array as long as index1 is less than the array’s length
+  index2 = 0
+  # Starts a second loop with index2 at 0 (to compare each number with every other number)
+
+  while index2 < nums.length
+  # Loops through the array again, checking every number against the one at index1
     if nums[index1] != nums[index2] && nums[index1] + nums[index2] == 10
-         # Check two conditions:
-         # 1. Ensure we're not comparing the same element (nums[index1] != nums[index2])
-         # 2. Check if the sum of the two distinct numbers equals 10 (nums[index1] + nums[index2] == 10)
-      result = [ nums[index1], nums[index2] ]  # Store the pair that sums to 10 in result
-      break   # Exit the inner loop as the valid pair has been found
+    # Checks two things:
+       # 1. The numbers at index1 and index2 aren’t the same (no using a number with itself)
+       # 2. The numbers add up to 10
+      result = [nums[index1], nums[index2]]
+      # If true, stores the two numbers (not their sum!) in an array as the result
+      break
+      # Stops the inner loop since we found a pair
     end
-    index2 += 1  # Move to the next index in the inner loop
+    index2 += 1
+        # Moves to the next number in the inner loop
   end
-  index1 += 1  # Move to the next index in the outer loop
-  break if result  # If a valid pair has been found, exit the outer loop early
+  index1 += 1
+    # Moves to the next number in the outer loop
+  break if result
+    # Stops the outer loop if we’ve found a pair (result isn’t false anymore)
 end
 
-# p result  # Print the resulting pair or false if no valid pair exists
+# p result
+# Prints the result (either [num1, num2] or false)
+
+
+
+# Outer Loop: index1 = 2 (number 3)
+# index1 < 7 is true.
+# index2 = 0.
+
+# Inner Loop:
+# index2 = 0: nums[2] = 3, nums[0] = 2. Check: 3 != 2 (true), 3 + 2 = 5.
+# index2 = 1: nums[2] = 3, nums[1] = 5. Check: 3 != 5 (true), 3 + 5 = 8.
+# index2 = 2: nums[2] = 3, nums[2] = 3. Check: 3 != 3 (false), skip.
+# index2 = 3: nums[2] = 3, nums[3] = 1. Check: 3 != 1 (true), 3 + 1 = 4.
+# index2 = 4: nums[2] = 3, nums[4] = 0. Check: 3 != 0 (true), 3 + 0 = 3.
+# index2 = 5: nums[2] = 3, nums[5] = 7. Check: 3 != 7 (true), and 3 + 7 = 10!
+# Condition is true!
+# result = [nums[2], nums[5]] = [3, 7].
+# break stops the inner loop.
+
+# After Inner Loop:
+# index1 += 1 (now index1 = 3).
+# break if result: result is [3, 7] (not false), so outer loop breaks.
 
 
 

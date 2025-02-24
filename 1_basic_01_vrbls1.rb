@@ -56,3 +56,4 @@ puts num1 * num2
 
 word = "SKY"
 p word.downcase
+
