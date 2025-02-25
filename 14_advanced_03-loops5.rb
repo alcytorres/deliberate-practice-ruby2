@@ -4,47 +4,27 @@
 # 1. Use a nested loop to convert an array of number pairs into a single flattened array.
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes [1, 3, 8, 9, 2, 16].
 
-number_pairs = [[1, 3], [8, 9], [2, 16]]
+# Solution
+num_pairs = [[1, 3], [8, 9], [2, 16]]
 #              [1, 3, 8, 9, 2, 16]
-# flattened_array =
-
-# p flattened_array
-
-
-
-
-
-
-
-
-
-
-
-number_pairs = [[1, 3], [8, 9], [2, 16]]
-flattened_array = []
-number_pairs.each do |current_pair|
-  current_pair.each do |current_number|
-    flattened_array << current_number
+flattened_nums = []
+num_pairs.each do |pair|
+  pair.each do |num|
+    flattened_nums << num
   end
 end
-p flattened_array
+# p flattened_nums
 
 
+# Solution
 # number_pairs = [[1, 3], [8, 9], [2, 16]]
-# flattened_numbers = []
-# index1 = 0
-# while index1 < number_pairs.length
-#   current_pair = number_pairs[index1]
-#   index2 = 0
-#   while index2 < current_pair.length
-#     current_number = current_pair[index2]
-#     flattened_numbers << current_number
-#     index2 += 1
+# flattened_nums = []
+# number_pairs.each do |current_pair|
+#   current_pair.each do |current_number|
+#     flattened_nums << current_number
 #   end
-#   index1 += 1
 # end
-# p flattened_numbers
-
+# p flattened_nums
 
 
 
@@ -73,7 +53,7 @@ letters1.each do |letter1|
     strings_combined << letter1 + letter2
   end
 end
-p strings_combined
+# p strings_combined
 
 
 
@@ -83,13 +63,9 @@ p strings_combined
 
 letters = ["a", "b", "c", "d"]
 #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
-# letter_combinations =
+# letter_combinations = []
 
 # p letter_combinations
-
-
-
-
 
 
 
@@ -109,7 +85,7 @@ letters.each do |l1|
     end
   end
 end
-p letter_combinations
+# p letter_combinations
 
 
 # letters = ["a", "b", "c", "d"]
@@ -139,11 +115,9 @@ p letter_combinations
 # 4. Use a nested loop to find the largest product of any two different numbers within a given array.
 #    For example, [5, -2, 1, -9, -7, 2, 6] becomes 63.
 
-
-
-numbers = [5, -2, 1, -9, -7, 2, 6]
+nums = [5, -2, 1, -9, -7, 2, 6]
 #         63
-# max_product =
+# max_product = nums[0] * nums[1]
 
 # p max_product
 
@@ -167,20 +141,18 @@ numbers.each do |num1|
     end
   end
 end
-p max_product
+# p max_product
 
 
 
 # 5. Use a nested loop to compute the sum of all the numbers in an array of number pairs.
 #    For example, [[1, 3], [8, 9], [2, 16]] becomes 39.
 
-numbers = [[1, 3], [8, 9], [2, 16]]
+nums = [[1, 3], [8, 9], [2, 16]]
 #         39
-# total =
+# total = 0
 
 # p total
-
-
 
 
 
@@ -197,7 +169,7 @@ numbers.each do |array|
     total += number
   end
 end
-p total
+# p total
 
 # numbers = [[1, 3], [8, 9], [2, 16]]
 # total = 0
@@ -221,10 +193,10 @@ p total
 # 6. Use a nested loop with two arrays of numbers to create a new array of the sums of each combination of numbers.
 #    For example, [1, 2] and [6, 7, 8] becomes [7, 8, 9, 8, 9, 10].
 
-numbers1 = [1, 2]
-numbers2 = [6, 7, 8]
+nums1 = [1, 2]
+nums2 = [6, 7, 8]
 #          [7, 8, 9, 8, 9, 10]
-# numbers_sum =
+# numbers_sum = []
 
 # p numbers_sum
 
@@ -232,39 +204,15 @@ numbers2 = [6, 7, 8]
 
 
 
-
-
-
-
-
-numbers1 = [1, 2]
-numbers2 = [6, 7, 8]
+# Solution
+nums1 = [1, 2]
+nums2 = [6, 7, 8]
 numbers_sum = []
-numbers1.each do |num1|
-  numbers2.each do |num2|
+nums1.each do |num1|
+  nums2.each do |num2|
     numbers_sum << num1 + num2
   end
 end
-p numbers_sum
-
-
-
-
-# numbers1 = [1, 2]
-# numbers2 = [6, 7, 8]
-# numbers_sum = []
-# index1 = 0
-# while index1 < numbers1.length
-#   first_number = numbers1[index1]
-#   index2 = 0
-#   while index2 < numbers2.length
-#     second_number = numbers2[index2]
-#     numbers_sum << first_number + second_number
-#     index2 += 1
-#   end
-#   index1 += 1
-# end
-
 # p numbers_sum
 
 
@@ -272,9 +220,9 @@ p numbers_sum
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
 #    For example, [2, 8, 3] becomes [4, 16, 6, 16, 64, 24, 6, 24, 9].
 
-numbers = [2, 8, 3]
+nums = [2, 8, 3]
 #         [4, 16, 6, 16, 64, 24, 6, 24, 9]
-# numbers_array =
+# numbers_array = []
 
 # p numbers_array
 
@@ -284,17 +232,17 @@ numbers = [2, 8, 3]
 
 
 
-
-
-
-numbers = [2, 8, 3]
+# Solution
+nums = [2, 8, 3]
+#         [4, 16, 6, 16, 64, 24, 6, 24, 9]
 numbers_array = []
-numbers.each do |num1|
-  numbers.each do |num2|
-    numbers_array << num1 * num2
+
+nums.each do |n1|
+  nums.each do |n2|
+    numbers_array << n1 * n2
   end
 end
-p numbers_array
+# p numbers_array
 
 
 
@@ -302,32 +250,20 @@ p numbers_array
 # 8. Use a nested loop to find the largest sum of any two different numbers within an array.
 #    For example, [1, 8, 3, 10] becomes 18.
 
-
-numbers = [1, 8, 3, 10]
+nums = [1, 8, 3, 10]
 #         18
-# max_sum =
-
+# max_sum = nums[0] + nums[1]
 
 # p max_sum
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-numbers = [1, 8, 3, 10]
-max_sum = numbers[0] + numbers[1]
-numbers.each do |num1|
-  numbers.each do |num2|
+# Solution
+nums = [1, 8, 3, 10]
+max_sum = nums[0] + nums[1]
+nums.each do |num1|
+  nums.each do |num2|
     if num1 != num2
       current_sum = num1 + num2
       if current_sum > max_sum
@@ -336,7 +272,7 @@ numbers.each do |num1|
     end
   end
 end
-p max_sum
+# p max_sum
 
 
 
@@ -345,6 +281,15 @@ p max_sum
 
 # 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
 #    For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
+
+nums = [2, 5, 3, 1, 0, 7, 11]
+#         [3, 7]
+# result = false
+
+# p result
+
+
+
 
 numbers = [2, 5, 3, 1, 0, 7, 11]
 #         [3, 7]
@@ -358,10 +303,10 @@ numbers.each do |n1|
   end
   break if result
 end
-p result
+# p result
 
 
-
+#------------------------------------------------------------------------------
 # Why are the break and break if lines are located where they are? Why does it have to be that way?
 
 # In short, the inner break stops the inner loop as soon as we find a valid pair, but that alone won’t stop the outer loop from running. The break if result then stops the outer loop once a valid pair has been found and stored in result.
@@ -372,14 +317,57 @@ p result
 
 # As soon as n1 + n2 == 10, we have a solution.
 # We set result = [n1, n2] and then call break immediately. This “inner” break only exits the inner loop (the second numbers.each do |n2| ... end).
-# Outer break if result
 
+# Outer break if result
 # Even though we broke out of the inner loop, Ruby will continue the outer loop (numbers.each do |n1|) on the next iteration of n1 if we don’t do anything else.
 # But we already have our solution after the first time we break in the inner loop, so there’s no need to keep going.
 # Therefore, break if result is a simple check to see if we’ve already found a valid pair. If result is truthy (i.e., it isn’t false or nil), we exit the outer loop as well.
 # This two-level breaking strategy makes sure the loops stop as soon as we’ve found our first pair summing to 10 and don’t continue scanning the array for more.
 
+#------------------------------------------------------------------------------
+# Why does the first break have to inside the inner loop?
+# The code ultimately prints: false
+# Here's a step-by-step walkthrough of what happens:
 
+# Initialization:
+# nums = [2, 5, 3, 1, 0, 7, 11]   # The array to search through.
+# result = false                  # Initially, result is set to false.
+
+# First Outer Loop Iteration (n1 = 2):
+# The inner loop starts:
+# First Inner Iteration (n2 = 2):
+# Check: if n1 != n2 && n1 + n2 == 10
+# 2 != 2 is false, so the condition fails.
+# Unconditional Break:
+# The inner loop immediately exits because of the break (regardless of whether a valid pair was found).
+# Since result is still false, the outer loop continues.
+
+# Second Outer Loop Iteration (n1 = 5):
+# The inner loop starts again:
+# First Inner Iteration (n2 = 2):
+# Check: 5 != 2 is true, but 5 + 2 equals 7, not 10.
+# Break:
+# The inner loop exits immediately.
+# result remains false, so the outer loop continues.
+
+# Subsequent Iterations (n1 = 3, 1, 0, 7, 11):
+# For each n1, the inner loop always:
+# Starts with n2 = 2.
+# Evaluates the condition:
+# For example, when n1 = 3, it checks if 3 != 2 (true) and 3 + 2 == 10 (false).
+# Breaks immediately after checking only the first element (n2 = 2).
+# No valid pair is ever found because the inner loop never checks other possible pairs.
+
+# After All Iterations:
+# The outer loop finishes because all elements have been processed.
+# result is still false because no two different numbers that add up to 10 were identified.
+
+# Output:
+# p result
+# # This prints 'false' to the console.
+# Summary:
+# The code never finds a pair that adds up to 10 because the inner loop always breaks after checking only the first element. As a result, the final output remains false.
+#------------------------------------------------------------------------------
 
 
 # The main difference between = and == is their purpose in code:
@@ -414,7 +402,7 @@ numbers.each do |num1|
   break if result
   # Break outer loop: Exits the entire loop once the result is found, since the problem only requires the first pair that sums to 10.
 end
-p result
+# p result
 
 
 
@@ -431,8 +419,9 @@ numbers.each do |num1|   # Iterate through each number in the array as num1
   break if result  # Break the outer loop if a pair is found (because result is now truthy)
 end
 
-p result  # Print the result, which will be the pair that sums to 10 or false if none is found
+# p result  # Print the result, which will be the pair that sums to 10 or false if none is found
 
+#------------------------------------------------------------------------------
 # Explanation of: break if result
 # This line is crucial. After the inner loop is broken, the outer loop will continue to its next iteration unless it is also explicitly BROKEN. The break if result line checks if result is no longer false (which means a valid pair has been found). If result is truthy (in this case, it will be an array [num1, num2]), the outer loop is also broken, and the program exits the loop structure entirely.
 
@@ -449,28 +438,7 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 
 # Summary:
       # break if result only triggers when result is no longer falsy (i.e., it becomes truthy after finding a pair). If result is still false (falsy), the loop continues.
-
-
-
-
-# numbers = [2, 5, 3, 1, 0, 7, 11]
-# result = false
-# index1 = 0
-# while index1 < numbers.length
-#   current_number = numbers[index1]
-#   index2 = 0
-#   while index2 < numbers.length
-#     if index1 != index2
-#       other_number = numbers[index2]
-#       if current_number + other_number == 10 && result == false
-#         result = [current_number, other_number]
-#       end
-#     end
-#     index2 += 1
-#   end
-#   index1 += 1
-# end
-# p result
+#------------------------------------------------------------------------------
 
 
 # THIS WAY RESULTS IN THE WRONG ANSWER: [7, 3]
@@ -493,20 +461,28 @@ p result  # Print the result, which will be the pair that sums to 10 or false if
 # 10. Use a nested loop to convert an array of string arrays into a single string.
 #     For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama".
 
+
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 #         "amanaplanacanalpanama"
 # combined_strings =
-
 
 # p combined_strings
 
 
 
+# Solution
+strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+#         "amanaplanacanalpanama"
+combined_strings = ""
+strings.each do |pair|
+  pair.each do |string|
+    combined_strings += string
+  end
+end
+# p combined_strings
 
 
-
-
-
+# Solution
 strings = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 #         "amanaplanacanalpanama"
 combined_strings = ""
@@ -515,5 +491,4 @@ strings.each do |array|
     combined_strings << string
   end
 end
-
 # p combined_strings

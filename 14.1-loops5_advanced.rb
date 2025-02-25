@@ -4,6 +4,8 @@
 # 1. Use a nested loop to convert an array of number pairs into a single flattened array.
 # For example, [[1, 3], [8, 9], [2, 16]] becomes [1, 3, 8, 9, 2, 16].
 
+
+
 # Solution
 number_pairs = [[1, 3], [8, 9], [2, 16]]
 #              [1, 3, 8, 9, 2, 16]
@@ -21,23 +23,25 @@ end
 # p array
 
 
-
 # Solution
 # number_pairs = [[1, 3], [8, 9], [2, 16]]
 # #              [1, 3, 8, 9, 2, 16]
-# array = []
+# flattened_numbers = []
 
 # index1 = 0
 # while index1 < number_pairs.length
-#   pair = number_pairs[index1]
+#   current_pair = number_pairs[index1]
 #   index2 = 0
-#   while index2 < pair.length
-#     array << pair[index2]
+#   while index2 < current_pair.length
+#     current_number = current_pair[index2]
+#     flattened_numbers << current_number
 #     index2 += 1
 #   end
 #   index1 += 1
 # end
-# p array
+# p flattened_numbers
+
+
 
 
 # 2. Use a nested loop with two arrays of strings to create a new array of strings with each string combined.
@@ -244,16 +248,23 @@ end
 # p number_sums
 
 
-# # Solution using the each method
-# nums1 = [1, 2]
-# nums2 = [6, 7, 8]
+# Solution
+# numbers1 = [1, 2]
+# numbers2 = [6, 7, 8]
 # numbers_sum = []
 
-# nums1.each do |num1|
-#   nums2.each do |num2|
-#     numbers_sum << num1 + num2
+# index1 = 0
+# while index1 < numbers1.length
+#   first_number = numbers1[index1]
+#   index2 = 0
+#   while index2 < numbers2.length
+#     second_number = numbers2[index2]
+#     numbers_sum << first_number + second_number
+#     index2 += 1
 #   end
+#   index1 += 1
 # end
+
 # p numbers_sum
 
 
@@ -411,6 +422,7 @@ end
 
 
 
+
 # Outer Loop: index1 = 2 (number 3)
 # index1 < 7 is true.
 # index2 = 0.
@@ -430,6 +442,27 @@ end
 # index1 += 1 (now index1 = 3).
 # break if result: result is [3, 7] (not false), so outer loop breaks.
 
+
+
+# Extended Solution
+# numbers = [2, 5, 3, 1, 0, 7, 11]
+# result = false
+# index1 = 0
+# while index1 < numbers.length
+#   current_number = numbers[index1]
+#   index2 = 0
+#   while index2 < numbers.length
+#     if index1 != index2
+#       other_number = numbers[index2]
+#       if current_number + other_number == 10 && result == false
+#         result = [current_number, other_number]
+#       end
+#     end
+#     index2 += 1
+#   end
+#   index1 += 1
+# end
+# p result
 
 
 # 10. Use a nested loop to convert an array of string arrays into a single string.
