@@ -24,39 +24,5 @@
 
 
 
-# Test
-
-
-
-
-
-#------------------------------------------------------------------------------
-# gets.chomp
-# What it does:
-# - `gets` takes user input as a string (including the newline character "\n").
-# - `chomp` removes the trailing newline from the input.
-#
-# Why use it: To take user input without an unwanted newline at the end.
-
-# Syntax:
-# user_input = gets.chomp # Takes input from the user and removes the newline.
-
-# Example:
-# Problem: Ask the user for their name and print a greeting.
-puts "What is your name?"
-name = gets # Takes user input and removes the newline.
-puts "Hello, #{name}!" # Outputs a personalized greeting.
-
-#------------------------------------------------------------------------------
-# Example Run:
-# (User types "Alice" and presses Enter)
-# Output:
-# What is your name?
-# Alice
-# Hello, Alice!
-
-
-
-
 
 

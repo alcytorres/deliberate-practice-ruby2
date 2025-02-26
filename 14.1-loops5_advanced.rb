@@ -1,4 +1,4 @@
-# Write nested loops manually
+# Write nested loops MANUALLY
 
 
 # 1. Use a nested loop to convert an array of number pairs into a single flattened array.
