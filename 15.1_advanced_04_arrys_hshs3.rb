@@ -233,7 +233,7 @@ while i < hash.length
   flattened_array << value
   i += 1
 end
-p flattened_array
+# p flattened_array
 
 
 
@@ -242,44 +242,80 @@ p flattened_array
 #    For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
 
 
-prices = {"chair" => 75, "book" => 15}
-items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
-#        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
-# combined_hash =
-
-
-# p combined_hash
-
-
-
-
-
-
-
-
 
 # Solution
 prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
-# combined_hash =
+combined_hash = {}
+keys = prices.keys
+i = 0
 
+while i < items.length
+  key = keys[i]
+  price = prices[key]
+  color = items[i][:color]
+  weight = items[i][:weight]
+  combined_hash[key] = {price: price, color: color, weight: weight}
+  i += 1
+end
 
 # p combined_hash
 
+
+
+# Using LOGS to solve problem of mistakenly using color and weight symbols in the items array instead of index
+
+# prices = {"chair" => 75, "book" => 15}
+# items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
+# combined_hash = {}
+# keys = prices.keys
+# i = 0
+
+# while i < items.length
+#   key = keys[i]
+#   price = prices[key]
+#   puts "Processing key: #{key} with price: #{price}"  # Log the key and price
+
+#   begin
+#     # These lines are problematic because 'items' is an array.
+#     # We're trying to access items using a symbol instead of an index.
+#     color = items[:color]
+#     weight = items[:weight]
+#     puts "Got color: #{color.inspect} and weight: #{weight.inspect}"  # Log the fetched values
+#   rescue Exception => e
+#     puts "Error encountered: #{e.message}"  # Log the error message
+#   end
+
+#   combined_hash[key] = {price: price, color: color, weight: weight}
+#   i += 1
+# end
+
+# p combined_hash
 
 
 
 # 9. Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
 #    For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
 
+
+# Solution
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
-# books_hash =
+books_hash = {}
+i = 0
 
+while i < books.length
+  author = books[i][:author]
+  title = books[i][:title]
+  if books_hash[author] == nil
+    books_hash[author] = []
+  end
+  books_hash[author] << books[i][:title]
+  i += 1
+end
 
 # p books_hash
-
 
 
 
@@ -298,7 +334,6 @@ books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", tit
 #   index += 1
 # end
 # p books_hash
-
 
 
 
@@ -325,7 +360,6 @@ end
 
 
 
-
 # 10. Given a hash, create a new hash that has the keys and values switched.
 #     For example, {"a" => 1, "b" => 2, "c" => 3} becomes {1 => "a", 2 => "b", 3 => "c"}.
 
@@ -337,13 +371,21 @@ original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 # p flipped_hash
 
 
-
-
-
-
-
 # Solution
+original_hash = { "a" => 1, "b" => 2, "c" => 3 }
+#               {1 => "a", 2 => "b", 3 => "c"}
+flipped_hash = {}
+keys = original_hash.keys
+i = 0
 
+while i < original_hash.length
+  key = keys[i]
+  value = original_hash[key]
+  flipped_hash[value] = key
+  i += 1
+end
+
+# p flipped_hash
 
 
 
