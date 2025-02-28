@@ -14,14 +14,7 @@ numbers = [[1, 3], [8, 9], [2, 16]]
 
 
 
-
-
-
-
-
-
-
-
+# Solution
 numbers = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
 numbers_hash = {}
@@ -58,14 +51,6 @@ items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }
 # hash =
 
 # p hash
-
-
-
-
-
-
-
-
 
 
 
@@ -128,28 +113,72 @@ end
 
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
-# letter_frequencies =
+letter_frequencies = {}
 
 # p letter_frequencies
 
 
+#------------------------------------------------------------------------------
+# Solution
+word = "bookkeeper"
+letter_frequencies = Hash.new(0)
+index = 0
+
+while index < word.length
+  letter_frequencies[word[index]] += 1
+  index += 1
+end
+# p letter_frequencies
 
 
+# Extra Clarification on Hash.new(0):
+# Imagine a hash as a bunch of labeled boxes. Each box has a label (the key, like "b") and something inside (the value, like 1).
+# Normally, if you look in a box that hasn’t been used yet (like "b" before we add it), it’s empty (nil), and you can’t do math like nil + 1.
+# Hash.new(0) is like saying: "If someone looks in an empty box, pretend there’s a 0 in there."
+# So when we say letter_frequencies["b"] += 1:
+# If "b" isn’t in the hash yet, it’s treated as 0, and 0 + 1 = 1.
+# If "b" is already there with a 1, it becomes 1 + 1 = 2.
+# This saves us from writing extra code to check if a letter is new or not.
+
+#------------------------------------------------------------------------------
+# Solution with .each_char
+word = "bookkeeper"
+letter_frequencies = Hash.new(0)  # Default value of 0 for new keys
+word.each_char { |char| letter_frequencies[char] += 1 }
+# p letter_frequencies
+
+#------------------------------------------------------------------------------
+# Solution
+word = "bookkeeper"
+letter_frequencies = {}
+index = 0
+
+while index < word.length
+  letter = word[index]
+  if letter_frequencies[letter]
+    letter_frequencies[letter] += 1
+  else
+    letter_frequencies[letter] = 1
+  end
+  index += 1
+end
+# p letter_frequencies
+
+#------------------------------------------------------------------------------
+# Solution
 # This code counts how many times each letter appears in the string "bookkeeper".
-
 word = "bookkeeper"                      # Define the string to analyze.
 letter_frequencies = {}                  # Create an empty hash to store each letter and its frequency.
 index = 0                                # Initialize a loop counter.
 
 while index < word.length                # Loop over each character by index.
   letter = word[index]                   # Retrieve the current character.
-  if letter_frequencies[letter].nil?
+  if letter_frequencies[letter] == nil
     letter_frequencies[letter] = 0       # If this letter hasn't been seen, start its count at 0.
   end
   letter_frequencies[letter] += 1        # Increment the count for this letter.
   index += 1                             # Move to the next character.
 end
-
 # p letter_frequencies                     # Print the resulting hash of letters and their counts.
 
 
@@ -192,9 +221,7 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # persons_array =
 
-
 # p persons_array
-
 
 
 
