@@ -89,49 +89,91 @@ end
 # 3. Use a nested loop with one array of strings to create a new array that contains every combination of each string with every other string in the array.
 # For example, ["a", "b", "c", "d"] becomes ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"].
 
+letters = ["a", "b", "c", "d"]
+#         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
+result = []
+
+
+# p result
+
+
+
 
 # Solution
 letters = ["a", "b", "c", "d"]
 #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
-array = []
+result = []
 
-index1 = 0
-while index1 < letters.length
-  index2 = 0
-  while index2 < letters.length
-    if letters[index1] != letters[index2]
-      array << letters[index1] + letters[index2]
+i1 = 0
+while i1 < letters.length
+  i2 = 0
+  while i2 < letters.length
+    if letters[i1] != letters[i2]
+      result << letters[i1] + letters[i2]
     end
-    index2 += 1
+    i2 += 1
   end
-  index1 += 1
+  i1 += 1
 end
-# p array
+# p result
+
 
 
 # Solution
 # letters = ["a", "b", "c", "d"]
 # #         ["ab", "ac", "ad", "ba", "bc", "bd", "ca", "cb", "cd", "da", "db", "dc"]
-# array = []
+# result = []
 
 # index1 = 0
 # while index1 < letters.length
 #   first_letter = letters[index1]    #  first_letter = a
 #   index2 = 0
 #   while index2 < letters.length     # 0 is less than 4, continue
-#     if first_letter != letters[index2]
-#       array << first_letter + letters[index2]
+#     second_letter = letters[index2]
+#     if first_letter != second_letter
+#       result << first_letter + second_letter
 #     end
 #     index2 += 1
 #   end
 #   index1 +=1
 # end
-# # p array
+# p result
 
 
 
 # 4 REDO. Use a nested loop to find the largest product of any two different numbers within a given array.
 # For example, [5, -2, 1, -9, -7, 2, 6] becomes 63.
+
+nums = [5, -2, 1, -9, -7, 2, 6]
+#         63
+max_product = nums[0] * nums[1]
+
+
+# p max_product
+
+
+
+
+# Solution
+nums = [5, -2, 1, -9, -7, 2, 6]
+#         63
+max_product = nums[0] * nums[1]
+
+i1 = 0
+while i1 < nums.length
+  i2 = 0
+  while i2 < nums.length
+    if nums[i1] != nums[i2]
+      current_product = nums[i1] * nums[i2]
+      if current_product > max_product
+        max_product = current_product
+      end
+    end
+    i2 += 1
+  end
+  i1 += 1
+end
+# p max_product
 
 
 
@@ -142,33 +184,11 @@ max_product = nums[0] * nums[1]
 
 index1 = 0
 while index1 < nums.length
+  current_number = nums[index1]
   index2 = 0
   while index2 < nums.length
-    if nums[index1] != nums[index2]
-      current_product = nums[index1] * nums[index2]
-      if current_product > max_product
-        max_product = current_product
-      end
-    end
-    index2 += 1
-  end
-  index1 += 1
-end
-# p max_product
-
-
-# Solution
-numbers = [5, -2, 1, -9, -7, 2, 6]
-#         63
-max_product = numbers[0] * numbers[1]
-
-index1 = 0
-while index1 < numbers.length
-  current_number = numbers[index1]
-  index2 = 0
-  while index2 < numbers.length
     if index1 != index2
-      other_number = numbers[index2]
+      other_number = nums[index2]
       product = current_number * other_number
       if product > max_product
         max_product = product
@@ -184,6 +204,10 @@ end
 
 # 5. Use a nested loop to compute the sum of all the numbers in an array of number pairs.
 # For example, [[1, 3], [8, 9], [2, 16]] becomes 39.
+
+pairs = [[1, 3], [8, 9], [2, 16]]
+#       39
+sum = 0
 
 
 
@@ -226,7 +250,13 @@ end
 # 6. Use a nested loop with two arrays of numbers to create a new array of the sums of each combination of numbers.
 # For example, [1, 2] and [6, 7, 8] becomes [7, 8, 9, 8, 9, 10].
 
+nums1 = [1, 2]
+nums2 = [6, 7, 8]
+#       [7, 8, 9, 8, 9, 10]
+nums_sum = []
 
+
+# p nums_sum
 
 
 
@@ -234,18 +264,18 @@ end
 nums1 = [1, 2]
 nums2 = [6, 7, 8]
 #       [7, 8, 9, 8, 9, 10]
-number_sums = []
+nums_sum = []
 
-index1 = 0
-while index1 < nums1.length
-  index2 = 0
-  while index2 < nums2.length
-    number_sums << nums1[index1] + nums2[index2]
-    index2 += 1
+i1 = 0
+while i1 < nums1.length
+  i2 = 0
+  while i2 < nums2.length
+    nums_sum << nums1[i1] + nums2[i2]
+    i2 += 1
   end
-  index1 += 1
+  i1 += 1
 end
-# p number_sums
+# p nums_sum
 
 
 # Solution
@@ -271,60 +301,76 @@ end
 # 7. Use a nested loop with an array of numbers to compute an array with every combination of products from each number.
 # For example, [2, 8, 3] becomes [4, 16, 6, 16, 64, 24, 6, 24, 9].
 
-# nums = [2, 8, 3]
-# number_product = []
+nums = [2, 8, 3]
+#      [4, 16, 6, 16, 64, 24, 6, 24, 9]
+nums_product = []
+
+
+# p nums_product
 
 
 
 # Solution
 nums = [2, 8, 3]
 #      [4, 16, 6, 16, 64, 24, 6, 24, 9]
-number_product = []
+nums_product = []
 
-index1 = 0
-while index1 < nums.length
-  index2 = 0
-  while index2 < nums.length
-    number_product << nums[index1] * nums[index2]
-    index2 += 1
+i1 = 0
+while i1 < nums.length
+  i2 = 0
+  while i2 < nums.length
+      nums_product << nums[i1] * nums[i2]
+    i2 += 1
   end
-  index1 += 1
+  i1 += 1
 end
-# p number_product
+# p nums_product
+
 
 
 # 7.1 Use a nested loop with an array of numbers to compute an array with product of every pair of distinct numbers from a given array.
 # For example, [2, 8, 3] becomes [16, 6, 16, 24, 6, 24].
 
-# nums = [2, 8, 3]
-# #      [16, 6, 16, 24, 6, 24]
-# number_product = []
+nums = [2, 8, 3]
+#      [16, 6, 16, 24, 6, 24]
+nums_product = []
 
 
+# p nums_product
 
 
 
 # Solution
 nums = [2, 8, 3]
 #      [16, 6, 16, 24, 6, 24]
-number_product = []
+nums_product = []
 
-index1 = 0
-while index1 < nums.length
-  index2 = 0
-  while index2 < nums.length
-    if nums[index1] != nums[index2]
-      number_product << nums[index1] * nums[index2]
+i1 = 0
+while i1 < nums.length
+  i2 = 0
+  while i2 < nums.length
+    if nums[i1] != nums[i2]
+      nums_product << nums[i1] * nums[i2]
     end
-    index2 += 1
+    i2 += 1
   end
-  index1 += 1
+  i1 += 1
 end
-# p number_product
+# p nums_product
+
 
 
 # 8. Use a nested loop to find the largest sum of any two different numbers within an array.
 # For example, [1, 8, 3, 10] becomes 18.
+
+nums = [1, 8, 3, 10]
+#      18
+max_sum = nums[0] + nums[1]
+
+
+# p max_sum
+
+
 
 
 # Solution
@@ -332,20 +378,21 @@ nums = [1, 8, 3, 10]
 #      18
 max_sum = nums[0] + nums[1]
 
-index1 = 0
-while index1 < nums.length
-  index2 = 0
-  while index2 < nums.length
-    if nums[index1] != nums[index2]
-      current_sum = nums[index1] + nums[index2]
+i1 = 0
+while i1 < nums.length
+  i2 = 0
+  while i2 < nums.length
+    if nums[i1] != nums[i2]
+      current_sum = nums[i1] + nums[i2]
       if current_sum > max_sum
         max_sum = current_sum
       end
     end
-    index2 += 1
+    i2 += 1
   end
-  index1 += 1
+  i1 += 1
 end
+
 # p max_sum
 
 
@@ -353,10 +400,12 @@ end
 # 9. Use nested loops with an array of numbers to compute a new array containing the first two numbers (from the original array) that add up to the number 10. If there are no two numbers that add up to 10, return false.
 # For example, [2, 5, 3, 1, 0, 7, 11] becomes [3, 7].
 
+nums = [2, 5, 3, 1, 0, 7, 11]
+#      [3, 7]
+result = false
 
-# nums = [2, 5, 3, 1, 0, 7, 11]
-# #      [3, 7]
-# result = false
+
+# p result
 
 
 
@@ -366,20 +415,22 @@ nums = [2, 5, 3, 1, 0, 7, 11]
 #      [3, 7]
 result = false
 
-index1 = 0
-while index1 < nums.length
-  index2 = 0
-  while index2 < nums.length
-    if nums[index1] != nums[index2] && nums[index1] + nums[index2] == 10
-      result = [nums[index1], nums[index2]]
+i1 = 0
+while i1 < nums.length
+  i2 = 0
+  while i2 < nums.length
+    if nums[i1] != nums[i2] && nums[i1] + nums[i2] == 10
+      result = [nums[i1], nums[i2]]
       break
     end
-    index2 += 1
+    i2 += 1
   end
-  index1 += 1
+  i1 += 1
   break if result
 end
+
 # p result
+
 
 
 # Solution
@@ -468,6 +519,12 @@ end
 # 10. Use a nested loop to convert an array of string arrays into a single string.
 # For example, [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]] becomes "amanaplanacanalpanama"
 
+nested_words = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
+#              "amanaplanacanalpanama"
+combined_word = ""
+
+
+# p combined_word
 
 
 
@@ -476,17 +533,18 @@ nested_words = [["a", "man"], ["a", "plan"], ["a", "canal"], ["panama"]]
 #              "amanaplanacanalpanama"
 combined_word = ""
 
-index1 = 0
-while index1 < nested_words.length
-  index2 = 0
-  while index2 < nested_words[index1].length    # 0 < 2
-    combined_word += nested_words[index1][index2]
-    index2 += 1
+i1 = 0
+while i1 < nested_words.length
+  i2 = 0
+  while i2 < nested_words[i1].length
+    current_string = nested_words[i1][i2]
+    combined_word << current_string
+    i2 += 1
   end
-  index1 += 1
+  i1 += 1
 end
-
 # p combined_word
+
 
 
 # # Solution
