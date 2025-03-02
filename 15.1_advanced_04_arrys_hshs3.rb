@@ -6,18 +6,27 @@
 
 nums = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
-nums_hash= {}
+nums_hash = {}
 
-index = 0
-while index < nums.length
-  key = nums[index][0]
-  value = nums[index][1]
-  nums_hash[key] = value
-  index += 1
-end
 
 # p nums_hash
 
+
+
+# Solution
+nums = [[1, 3], [8, 9], [2, 16]]
+#         {1 => 3, 8 => 9, 2 => 16}
+nums_hash = {}
+
+i = 0
+while i < nums.length
+  key = nums[i][0]
+  value = nums[i][1]
+  nums_hash[key] = value
+  i += 1
+end
+
+# p nums_hash
 
 
 
@@ -25,16 +34,20 @@ end
 #    For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
 
 
+
+
+
+# Solution
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 hash = {}
 
-index = 0
-while index < items.length
-  item = items[index]
+i = 0
+while i < items.length
+  item = items[i]
   id = item[:id]
   hash[id] = item
-  index += 1
+  i += 1
 end
 # p hash
 
@@ -44,19 +57,16 @@ items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
 hash = {}
 
-index = 0
-while index < items.length
-  item = items[index]
+i = 0
+while i < items.length
+  item = items[i]
   id = item[:id]
   color = item[:color]
   price = item[:price]
   hash[id] = {id: id, color: color, price: price}
-  index += 1
+  i += 1
 end
 # p hash
-
-
-
 
 
 
@@ -64,7 +74,17 @@ end
 #    For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
 # Look for alternative ways to solve this
 
+word = "bookkeeper"
+#      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
+letter_frequencies = {}
 
+
+# p letter_frequencies
+
+
+
+
+# Solution
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 letter_frequencies = {}
@@ -82,10 +102,15 @@ end
 
 
 
-
-
 # 4. Convert a hash into an array of arrays.
 #    For example, {"chair" => 100, "book" => 14} becomes [["chair", 100], ["book", 14]].
+
+items = {"chair" => 100, "book" => 14}
+#       [["chair", 100], ["book", 14]]
+result = []
+
+
+# p result
 
 
 
@@ -136,6 +161,16 @@ end
 # REVIEW THIS
 # 5. Convert a hash into an array of hashes using the keys from each hash as the :id key in each of the array's hashes.
 #    For example, {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}} becomes [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}].
+
+persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
+#         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
+persons_array = []
+
+
+# p persons_array
+
+
+
 
 
 # Solution
@@ -190,10 +225,16 @@ end
 
 
 
-
-
 # 6. Convert an array of strings into a hash with keys for each string in the array and values for the number of times the string appears in the array.
 #    For example, ["do", "or", "do", "not"] becomes {"do" => 2, "or" => 1, "not" => 1}.
+
+strings = ["do", "or", "do", "not"]
+#         {"do" => 2, "or" => 1, "not" => 1}
+result = {}
+i = 0
+
+
+# p result
 
 
 
@@ -214,9 +255,19 @@ end
 # p result
 
 
-
 # 7. Convert a hash into a flat array containing all the hash’s keys and values.
 #    For example, {"a" => 1, "b" => 2, "c" => 3, "d" => 4} becomes ["a", 1, "b", 2, "c", 3, "d", 4].
+
+# Solution
+hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
+#      ["a", 1, "b", 2, "c", 3, "d", 4]
+flattened_array = []
+i = 0
+
+# p flattened_array
+
+
+
 
 
 # Solution
@@ -225,21 +276,36 @@ hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 flattened_array = []
 i = 0
 keys = hash.keys
+# Get an array of the hash’s keys: ["a", "b", "c", "d"].
 
 while i < hash.length
+# Start a loop that runs as long as `i` is less than the number of key-value pairs (4).
   key = keys[i]
+  # Get the key at position `i` from the `keys` array (e.g., "a" when i=0).
   value = hash[key]
+  # Look up the value for that key in the hash (e.g., 1 for "a").
   flattened_array << key
   flattened_array << value
   i += 1
 end
-# p flattened_array
 
+# p flattened_array
 
 
 
 # 8. Combine data from a hash with names and prices and an array of hashes with names, colors, and weights to make a new hash.
 #    For example, {"chair" => 75, "book" => 15} and [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}] becomes {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}.
+
+prices = {"chair" => 75, "book" => 15}
+items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
+#        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
+combined_hash = {}
+i = 0
+
+
+# p combined_hash
+
+
 
 
 
@@ -248,15 +314,14 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 combined_hash = {}
-keys = prices.keys
 i = 0
 
 while i < items.length
-  key = keys[i]
-  price = prices[key]
+  name = items[i][:name]
   color = items[i][:color]
   weight = items[i][:weight]
-  combined_hash[key] = {price: price, color: color, weight: weight}
+  price = prices[name]
+  combined_hash[name] = {price: price, color: color, weight: weight}
   i += 1
 end
 
@@ -298,6 +363,17 @@ end
 # 9. Convert an array of hashes into a hash of arrays, using the author as keys and the titles as values.
 #    For example, [{author: "Jeff Smith", title: "Bone"}, {author: "George Orwell", title: "1984"}, {author: "Jeff Smith", title: "RASL"}] becomes {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}.
 
+books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
+#       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
+books_hash = {}
+i = 0
+
+
+# p books_hash
+
+
+
+
 
 # Solution
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
@@ -311,7 +387,7 @@ while i < books.length
   if books_hash[author] == nil
     books_hash[author] = []
   end
-  books_hash[author] << books[i][:title]
+  books_hash[author] << title
   i += 1
 end
 
@@ -365,10 +441,13 @@ end
 
 original_hash = { "a" => 1, "b" => 2, "c" => 3 }
 #               {1 => "a", 2 => "b", 3 => "c"}
-# flipped_hash =
+flipped_hash = {}
+i = 0
 
 
 # p flipped_hash
+
+
 
 
 # Solution
