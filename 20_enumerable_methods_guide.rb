@@ -53,12 +53,12 @@ end
 # Hashes:
 hash.each { |key, value| block }
 
-hash.each_key { |key| block }   # Iterates over keys only.
-hash.each_value { |value| block } # Iterates over values only.
-
 hash.each do |key, value|
   block
 end
+
+hash.each_key { |key| block }   # Iterates over keys only.
+hash.each_value { |value| block } # Iterates over values only.
 
 
 #------------------------------------------------------------------------------
