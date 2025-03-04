@@ -269,6 +269,7 @@ string.chars
 def string_to_chars(str)
   str.chars
 end
+
 greeting = "hi"
 p string_to_chars(greeting)
 # Output: ["h", "i"]

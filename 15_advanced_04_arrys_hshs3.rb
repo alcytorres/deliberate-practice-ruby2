@@ -1,28 +1,30 @@
-
 # Convert data from one data type into another
 
 
 # 1. Convert an array of arrays into a hash.
 #     For example, [[1, 3], [8, 9], [2, 16]] becomes {1 => 3, 8 => 9, 2 => 16}.
 
-numbers = [[1, 3], [8, 9], [2, 16]]
+nums = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
-# numbers_hash =
+nums_hash = {}
 
-# p numbers_hash
+nums.each do |key, value|
+  nums_hash[key] = value
+end
+# p nums_hash
 
 
 
 
 # Solution
-numbers = [[1, 3], [8, 9], [2, 16]]
+nums = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
-numbers_hash = {}
-numbers.each do |key, value|
-  # Adds a key-value pair to numbers_hash, with the sub-array's first element as the key and the second as the value.
-  numbers_hash[key] = value
+nums_hash = {}
+nums.each do |key, value|
+  # Adds a key-value pair to nums_hash, with the sub-array's first element as the key and the second as the value.
+  nums_hash[key] = value
 end
-# p numbers_hash
+# p nums_hash
 
 
 
@@ -44,13 +46,12 @@ end
 # 2. Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
 #    For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
 
-
-
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-# hash =
+# result =
 
-# p hash
+
+# p result
 
 
 
@@ -108,15 +109,33 @@ end
 
 # 3. Convert a string into a hash with keys for each letter in the string and values for the number of times the letter appears in the string.
 #    For example, "bookkeeper" becomes {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}.
-# Look for alternative ways to solve this
-
 
 word = "bookkeeper"
 #      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
 letter_frequencies = {}
 
+
 # p letter_frequencies
 
+
+
+
+
+# Solution with chars and each
+word = "bookkeeper"
+#      {"b" => 1, "o" => 2, "k" => 2, "e" => 3, "p" => 1, "r" => 1}
+letter_frequencies = {}
+
+word.chars.each do |letter|
+  if letter_frequencies[letter] == nil
+    letter_frequencies[letter] = 0
+  end
+    letter_frequencies[letter] += 1
+end
+# p letter_frequencies
+
+
+# *** Can NOT use the each method as standalone method bc "bookkeeper" is a string, not an array or hash. Must use a while loop or a combination of the each method with somehting else like chars ***
 
 #------------------------------------------------------------------------------
 # Solution
@@ -221,6 +240,7 @@ persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
 # persons_array =
 
+
 # p persons_array
 
 
@@ -323,7 +343,7 @@ end
 
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 #      ["a", 1, "b", 2, "c", 3, "d", 4]
-# flattened_array = []
+# flattened_array =
 
 
 # p flattened_array
@@ -357,6 +377,7 @@ prices = {"chair" => 75, "book" => 15}
 items = [{name: "chair", color: "red", weight: 10}, {name: "book", color: "black", weight: 1}]
 #        {"chair" => {price: 75, color: "red", weight: 10}, "book" => {price: 15, color: "black", weight: 1}}
 # combined_hash =
+
 
 # p combined_hash
 
@@ -392,6 +413,7 @@ end
 books = [{ author: "Jeff Smith", title: "Bone" }, { author: "George Orwell", title: "1984" }, { author: "Jeff Smith", title: "RASL" }]
 #       {"Jeff Smith" => ["Bone", "RASL"], "George Orwell" => ["1984"]}
 # books_hash =
+
 
 # p books_hash
 

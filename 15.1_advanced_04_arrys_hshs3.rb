@@ -17,8 +17,8 @@ nums_hash = {}
 nums = [[1, 3], [8, 9], [2, 16]]
 #         {1 => 3, 8 => 9, 2 => 16}
 nums_hash = {}
-
 i = 0
+
 while i < nums.length
   key = nums[i][0]
   value = nums[i][1]
@@ -33,6 +33,15 @@ end
 # 2. Convert an array of hashes into a hash using the :id key from the array's hashes as the keys in the new hash.
 #    For example, [{id: 1, color: "blue", price: 32}, {id: 2, color: "red", price: 12}] becomes {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}.
 
+items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
+#        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
+result = {}
+i = 0
+
+
+# p result
+
+
 
 
 
@@ -40,33 +49,33 @@ end
 # Solution
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-hash = {}
-
+result = {}
 i = 0
+
 while i < items.length
   item = items[i]
   id = item[:id]
-  hash[id] = item
+  result[id] = item
   i += 1
 end
-# p hash
+# p result
 
 
 
 items = [{ id: 1, color: "blue", price: 32 }, { id: 2, color: "red", price: 12 }]
 #        {1 => {id: 1, color: "blue", price: 32}, 2 => {id: 2, color: "red", price: 12}}
-hash = {}
-
+result = {}
 i = 0
+
 while i < items.length
   item = items[i]
   id = item[:id]
   color = item[:color]
   price = item[:price]
-  hash[id] = {id: id, color: color, price: price}
+  result[id] = {id: id, color: color, price: price}
   i += 1
 end
-# p hash
+# p result
 
 
 
@@ -119,10 +128,7 @@ result = []
 items = {"chair" => 100, "book" => 14}
 #       [["chair", 100], ["book", 14]]
 result = []
-
-keys = items.keys
-# Get an array of keys from the hash (["chair", "book"]).
-
+keys = items.keys     # Get an array of keys from the hash (["chair", "book"]).
 i = 0
 
 while i < keys.length
@@ -176,18 +182,18 @@ persons_array = []
 # Solution
 persons = {321 => {name: "Alice", age: 31}, 322 => {name: "Maria", age: 27}}
 #         [{id: 321, name: "Alice", age: 31}, {id: 322, name: "Maria", age: 27}]
-persons_array = []                       # Initialize an empty array for the result.
-keys = persons.keys                      # Get an array of keys from the hash.
-i = 0                                    # Start at index 0.
+persons_array = []         # Initialize an empty array for the result.
+keys = persons.keys        # Get an array of keys from the hash.
+i = 0                      # Start at index 0.
 
-while i < keys.length                    # Loop over each key.
-  key = keys[i]                          # Retrieve the current key.
+while i < keys.length      # Loop over each key.
+  key = keys[i]            # Retrieve the current key.
   persons_array << { id: key }.merge(persons[key])
   # Create a new hash merging the :id key with the details for that key.
   i += 1
 end
 
-# p persons_array
+p persons_array
 
 
 # Solution
@@ -274,9 +280,8 @@ i = 0
 hash = {"a" => 1, "b" => 2, "c" => 3, "d" => 4}
 #      ["a", 1, "b", 2, "c", 3, "d", 4]
 flattened_array = []
+keys = hash.keys         # Get an array of the hash’s keys: ["a", "b", "c", "d"].
 i = 0
-keys = hash.keys
-# Get an array of the hash’s keys: ["a", "b", "c", "d"].
 
 while i < hash.length
 # Start a loop that runs as long as `i` is less than the number of key-value pairs (4).
